@@ -1,0 +1,19 @@
+# Saltos de línea: LF en todo; CRLF solo en los scripts de Windows (ver .editorconfig).
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binarios
+*.exe binary
+*.dll binary
+*.pyd binary
+*.mo binary
+*.wav binary
+*.ogg binary
+*.png binary
+*.ico binary
+*.zip binary
+
+# El wheel de basskit (librería propia del autor) pesa más de 100 MB, el límite de GitHub para
+# un archivo normal: va por Git LFS. Hay que tener Git LFS instalado al clonar (git lfs install).
+__pip__/*.whl filter=lfs diff=lfs merge=lfs -text

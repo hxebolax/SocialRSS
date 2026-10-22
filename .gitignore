@@ -1,0 +1,42 @@
+# CLAVE PRIVADA de firma de actualizaciones: NUNCA debe salir de este equipo
+# (guarda una copia fuera; sin ella no se pueden firmar releases nuevas).
+tools/claves/
+
+# Documentación interna, investigaciones y material de trabajo: no forman parte del código.
+adjuntos/
+app/graft/
+app/.gitignore
+app/.ignore
+.claude/
+.codex_tmp/
+%temp%/
+
+# data/ es la carpeta de EJECUCIÓN: ahí la app guarda la base de datos, la configuración, los
+# secretos, las sesiones, los registros, las descargas y las cachés de quien la usa. Solo se
+# versiona lo que hace falta para ejecutar y compilar: ffmpeg, la documentación que se empaqueta,
+# las traducciones, los complementos y los sonidos por defecto.
+/data/*
+!/data/bin/
+/data/bin/*
+!/data/bin/ffmpeg.exe
+!/data/docs/
+!/data/locales/
+!/data/plugins/
+!/data/sounds/
+/data/sounds/*
+!/data/sounds/default/
+
+# Entornos y artefactos de build
+.venv/
+build/
+dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.nvda-addon
+
+# Temporales del actualizador (si se ejecuta desde el código fuente)
+_actualizacion_socialrss.zip
+_actualizacion_temp/
+_actualizar_socialrss.bat
+_actualizacion_error.log

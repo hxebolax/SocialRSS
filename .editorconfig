@@ -1,0 +1,19 @@
+# Norma de formato del proyecto (la respetan la mayoría de editores: Notepad++, Visual Studio,
+# PyCharm, VS Code con la extensión EditorConfig...).
+# Saltos de línea: LF en todo; CRLF solo en los scripts de Windows (.bat/.cmd), porque cmd.exe
+# puede fallar con etiquetas (goto, call :x) en archivos con LF.
+# Si algo entra con otro formato (por ejemplo, al restaurar una copia antigua):
+#     python tools/normalizar_saltos.py
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+[*.{bat,cmd}]
+end_of_line = crlf
+
+[*.py]
+indent_style = space
+indent_size = 4

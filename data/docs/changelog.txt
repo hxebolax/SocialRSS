@@ -1,0 +1,19 @@
+SocialRSS Accessible Suite. Novedades de la versión 1.0.26.
+
+CORREGIDO: TIRONES AL ESCRIBIR CON EL COMPOSITOR ABIERTO
+
+- Con el compositor abierto, la escritura podía atascarse un segundo o más y, con el lector de
+  pantalla, llegaban a salir mayúsculas en lugar de minúsculas (aunque el contador en vivo
+  estuviera desactivado). La culpa no era del compositor: detrás, cada publicación que llegaba en
+  tiempo real y cada actualización periódica repintaban la lista de la ventana principal, que está
+  tapada mientras escribes, y ese trabajo retrasaba tus teclas. Se notaba sobre todo al reconectar
+  el tiempo real, cuando llegan de golpe las publicaciones perdidas.
+- Ahora, mientras hay un diálogo abierto (el compositor, Preferencias...), la
+  lista principal no se toca: las novedades siguen guardándose y aparecen todas de una vez, en su
+  sitio y sin mover el foco, en cuanto cierras el diálogo.
+- El registro de la aplicación recoge ahora también qué estaba haciendo la interfaz en los
+  bloqueos cortos (a partir de un segundo), para poder localizar cualquier otro tirón.
+
+OTROS
+
+- Arreglos menores internos.

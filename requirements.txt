@@ -1,0 +1,154 @@
+# Dependencias de SocialRSS Accessible Suite
+wxPython==4.2.4
+# Mastodon.py 2.2.1: instalable desde PyPI (pip install Mastodon.py==2.2.1). Necesaria
+# para seguir hashtags, programar publicaciones, marcadores de lectura sincronizados,
+# historial de ediciones, tendencias de hashtags/enlaces, directorio, reportes, editar
+# perfil, etc. La 1.8.1 anterior no exponía esos endpoints.
+# 2.2.2 (2026-08): caché de la información de la instancia, timeline_is_available() y
+# parámetro limit en search. Sin cambios de firma en lo que usa la app (verificado).
+# Lo que la librería aún no envuelve (colecciones, /api/v1/profile...) va por HTTP directo.
+Mastodon.py==2.2.2
+google-genai>=1.60.0
+# IA: servicios compatibles con OpenAI (OpenAI, DeepSeek, xAI/Grok, OpenRouter, Groq, Mistral) y Claude.
+openai>=1.50.0
+anthropic>=0.40.0
+# 6.0.12: corrige un AssertionError con Python 3.10+ (auditoría RSS-08).
+feedparser==6.0.12
+# Parser de respaldo de alto rendimiento: si feedparser falla o tarda, se reintenta con este.
+fastfeedparser>=0.3.0
+# Visor HTML accesible (wx.html2.WebView con documento semántico legible por NVDA/JAWS) para el
+# lector limpio de artículos. Si no está disponible, el visor degrada a wx.html2.WebView directo y,
+# en último caso, a texto, sin romper.
+wx-accessible-webview>=0.2.0
+beautifulsoup4==4.13.0
+# Saneado de HTML no confiable (artículos RSS, publicaciones) con lista blanca de
+# etiquetas/atributos. Auditoría 2026-07: sin él actúa un respaldo propio con bs4.
+nh3>=0.2.17
+requests==2.32.5
+cryptography==42.0.5
+markdown==3.6
+readability-lxml==0.8.1
+# chardet lo arrastra readability-lxml; se FIJA a la 5.x porque la 7.x queda fuera del
+# rango soportado por Requests y disparaba RequestsDependencyWarning en cada arranque
+# (auditoría Bluesky §16 "Reparar Requests"). Verificado: readability funciona igual.
+chardet==5.2.0
+# lxml 5.x separó la limpieza de HTML en este paquete; readability-lxml lo necesita
+# para funcionar (sin él, la extracción de texto completo cae a BeautifulSoup).
+lxml_html_clean
+# Trafilatura: extractor del ARTÍCULO COMPLETO del lector RSS (el mejor en los bancos de prueba
+# abiertos; conserva subtítulo y párrafos que readability a veces pierde). readability-lxml queda
+# de respaldo. Se importa de forma DIFERIDA (primer uso, en un hilo de fondo). Arrastra courlan,
+# htmldate (dateparser, babel, regex, tld), justext y charset-normalizer 3.5.
+trafilatura==2.2.0
+# mutagen: etiquetas de los MP3 de los podcasts (notas del episodio y capítulos ID3), leídas
+# solo del principio del fichero. Pura Python, sin dependencias. Import diferido.
+mutagen==1.48.1
+pillow
+pywin32
+accessible-output2==0.17
+lxml
+# --- Bluesky / AT Protocol ---
+# SDK oficial autogenerado de lexicons (sync+async, DMs, firehose, rich text).
+# Se congela la versión: hasta la 1.0 puede romper compatibilidad entre versiones.
+# 0.0.69 (auditoría 2026-07 §16): modelos con carga diferida (~74% menos tiempo de
+# primera importación medido aquí) y lexicones actualizados (galerías, etc.).
+# 0.0.72 (2026-09): lexicones nuevos (silenciar solo reposts/citas, knownLikers, subida de vídeo
+# por partes), errores con texto legible ("400 Codigo: mensaje"), 429 como
+# RateLimitExceededError con retry_after, uniones con $type desconocido que ya no rompen la
+# respuesta y clon del cliente de chat que comparte la sesión. Arrastra zstandard (Jetstream).
+atproto==0.0.72
+# --- Telegram (cliente MTProto de usuario) ---
+# Kurigram: fork activo de Pyrogram con soporte moderno (Stories, Topics, etc.)
+kurigram>=2.2.0
+# TgCrypto acelera el cifrado MTProto (muy recomendado por rendimiento)
+tgcrypto>=1.2.5
+# PyTgCalls: chats de voz y envío de audio en directo (usa ntgcalls; no pasa por basskit)
+py-tgcalls>=2.1.0
+# qrcode: generar el código QR para iniciar sesión en Telegram escaneándolo
+qrcode>=7.4.2
+# --- IRC ---
+# pydle: cliente IRC asíncrono (IRCv3.1 completo, ISUPPORT, TLS, SASL, CTCP). Python puro.
+# El extra [sasl] instala pure-sasl para la autenticación SASL de las redes modernas.
+pydle[sasl]==1.1.0
+# --- Matrix ---
+# matrix-nio: cliente Matrix asíncrono (login, sync, salas, medios, E2EE). Python puro.
+# El CIFRADO requiere python-olm (C): NO va aquí porque en Windows hay que compilarlo con
+# una receta especial -> ejecutar UNA VEZ tools/build_python_olm.bat (instala python-olm y
+# matrix-nio[e2e]). Si olm no está, Matrix funciona igual pero sin salas cifradas.
+matrix-nio==0.25.2
+# pyspellchecker: corrector ortográfico (puro Python, sin dependencias nativas)
+pyspellchecker>=0.8.0
+# winsdk: proyección de WinRT para el OCR LOCAL (Windows.Media.Ocr), sin clave ni conexión.
+# OPCIONAL: si no está, el OCR local se desactiva solo y queda el OCR por IA. La app arranca igual
+# sin él (la importación es diferida y protegida).
+winsdk>=1.0.0b10
+# yt-dlp: extraer audio de YouTube/SoundCloud/etc. para el reproductor
+yt-dlp>=2024.1.0
+# --- X (Twitter) [CLIENTE NO OFICIAL, EXPERIMENTAL] ---
+# twikit: librería no oficial (API interna/GraphQL) para X. Es el núcleo del cliente de X.
+# IMPORTANTE: el cliente de X puede desactivarse por completo desde app/core/feature_flags.py
+# (X_CLIENTE_HABILITADO = False); si se desactiva, estas dependencias dejan de usarse.
+# Desde 2026-09 se usa TWIFORK (PawiX25/twifork), fork MANTENIDO de twikit que se importa igual
+# ("import twikit"): twikit original está parado desde 2025 y el fork de unclecode no traía los
+# arreglos de x-client-transaction-id ni los campos que X sacó de "legacy". Probado con una sesión
+# real: mismas lecturas que antes y API compatible con la de twikit 2.3.3. NO instalar a la vez
+# twikit y twifork (los dos proporcionan el módulo "twikit"): pip uninstall twikit antes.
+# Arrastra: httpx[socks], beautifulsoup4, lxml, pyotp, filetype, webvtt-py, m3u8, Js2Py-3.13
+twifork==2.4.0
+pyotp>=2.9.0
+filetype>=1.2.0
+webvtt-py>=0.5.1
+m3u8>=6.0.0
+Js2Py-3.13>=0.74.1
+# browser-cookie3: importar automáticamente las cookies de sesión de X desde el navegador
+# (Chrome/Edge/Firefox...) para el login fácil sin pedir la contraseña.
+browser-cookie3>=0.20.1
+# twscrape: SEGUNDO motor de X, opcional y de SOLO LECTURA (scraper de la API GraphQL, muy
+# mantenido). Se COMPLEMENTA con twikit de forma automática: cada lectura la sirve el mejor de los
+# dos con respaldo cruzado, y aporta endpoints extra (cronología con respuestas/solo multimedia,
+# seguidores verificados, hilo completo...). La ESCRITURA (publicar, me gusta, seguir, DM...)
+# siempre va por twikit. twscrape reutiliza las MISMAS cookies que ya guardamos para twikit (no hay
+# segundo login) y se importa de forma diferida (no al arrancar). Arrastra: aiosqlite,
+# fake-useragent, loguru, py-machineid (httpx, beautifulsoup4 y pyotp ya vienen con twikit).
+# 0.20.1: arregla la cabecera x-client-transaction-id (con 0.19.1 devolvía vacío).
+twscrape>=0.20.1
+aiosqlite>=0.17.0
+fake-useragent>=1.4.0
+loguru>=0.7.0
+py-machineid>=1.0.0
+# Zona horaria del perfil de Matrix (perfil extendido MSC4133): tzlocal detecta la zona IANA del
+# equipo y tzdata da la base de datos de zonas a zoneinfo (obligatoria en Windows, que no la trae).
+tzlocal>=5.0
+tzdata>=2024.1
+# Cliente XMPP (Jabber): slixmpp (MIT, asyncio, 129 plugins XEP). Casi puro Python (jid.pyd
+# opcional con fallback puro Python verificado). Dependencias puras: aiodns, pyasn1.
+slixmpp==1.16.0
+# Cifrado de extremo a extremo OMEMO (XEP-0384): slixmpp-omemo + backend python-omemo y sus
+# módulos (oldmemo/twomemo/DoubleRatchet/X3DH/XEdDSA). TODO en ruedas para Windows, sin compilar.
+slixmpp-omemo==2.2.0
+# --- Reddit ---
+# PRAW: cliente oficial de la API de Reddit (Python Reddit API Wrapper). Síncrono, encaja de
+# forma natural con task_manager (hilos de fondo). MISMA cobertura de API que Async PRAW (los
+# objetos y métodos son idénticos), por lo que la documentación de Async PRAW sirve de referencia.
+# Se importa de forma DIFERIDA (find_spec + fábrica en reddit_common): no se carga al arrancar.
+# Arrastra: prawcore (OAuth + rate limiting por cabeceras X-Ratelimit), update_checker, websocket-client.
+# Se fija a la serie 7.x A PROPÓSITO: PRAW 8 exige requests>=2.34.2 y este proyecto clava
+# requests==2.32.5 (validada con Mastodon.py/twikit/atproto). PRAW 7.8.x usa prawcore 2.x, que es
+# compatible con requests 2.32.5 y cubre igual toda la API (en 7.x los envíos son métodos separados
+# submit_image/submit_video/submit_gallery/submit_poll, equivalentes al submit() unificado de la 8.x).
+praw>=7.7.1,<8
+# --- PeerTube (10ª red: cliente de vídeo federado, multi-instancia) ---
+# httpx: cliente HTTP con timeouts, reintentos y HTTP/2. Es el cliente REST de PeerTube. Ya venía
+# de forma transitiva (twikit[socks]); se declara explícitamente porque ahora es dependencia directa.
+# Se importa de forma DIFERIDA (find_spec + fábrica en peertube_common), no al arrancar.
+httpx>=0.27
+# pydantic v2: validación de los modelos de entrada/salida de la API de PeerTube (tolerante a campos
+# extra por diferencias de versión entre instancias). No depende de requests, así que no interfiere
+# con el pin requests==2.32.5.
+pydantic>=2.0,<3
+# m3u8 (ya declarada arriba para X) y yt-dlp se reutilizan para resolver variantes HLS y análisis de
+# formatos en la reproducción con BassKit.
+# Instalación de basskit local desde la carpeta __pip__
+# 0.8.12 (win_amd64, con sus DLL de BASS 2.4.18.23). Desde la 0.4: callbacks en
+# basskit.callbacks.bass y QWORD sin signo (ver basskit_player_backend.py).
+./__pip__/basskit-0.8.12-py3-none-win_amd64.whl

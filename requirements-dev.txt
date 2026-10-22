@@ -1,0 +1,14 @@
+# Dependencias de DESARROLLO y EMPAQUETADO de SocialRSS (separadas del runtime,
+# auditoría 2026-07 §9.2: el usuario final no necesita pip, pytest ni cx_Freeze).
+# Instalar con: pip install -r requirements.txt -r requirements-dev.txt
+
+# Empaquetado del ejecutable (build.bat)
+cx_Freeze==8.5.3
+# Generación de catálogos de traducción gettext (tools de i18n)
+polib==1.2.0
+# Pruebas automatizadas (tests/)
+pytest>=8.0.0
+# Análisis estático: nombres sin definir e imports sin uso (configurado en setup.cfg
+# con builtins=_ para no ahogar los errores reales en falsos positivos de i18n)
+flake8>=7.0.0
+# keyring dejó de usarse en el código (los secretos van con DPAPI); se retira del runtime.
