@@ -1,19 +1,15 @@
-SocialRSS Accessible Suite. Novedades de la versión 1.0.26.
+SocialRSS Accessible Suite. Novedades de la versión 1.0.27.
 
-CORREGIDO: TIRONES AL ESCRIBIR CON EL COMPOSITOR ABIERTO
+NUEVO: CÓDIGO EN GITHUB Y ACTUALIZACIONES DE RESPALDO
 
-- Con el compositor abierto, la escritura podía atascarse un segundo o más y, con el lector de
-  pantalla, llegaban a salir mayúsculas en lugar de minúsculas (aunque el contador en vivo
-  estuviera desactivado). La culpa no era del compositor: detrás, cada publicación que llegaba en
-  tiempo real y cada actualización periódica repintaban la lista de la ventana principal, que está
-  tapada mientras escribes, y ese trabajo retrasaba tus teclas. Se notaba sobre todo al reconectar
-  el tiempo real, cuando llegan de golpe las publicaciones perdidas.
-- Ahora, mientras hay un diálogo abierto (el compositor, Preferencias...), la
-  lista principal no se toca: las novedades siguen guardándose y aparecen todas de una vez, en su
-  sitio y sin mover el foco, en cuanto cierras el diálogo.
-- El registro de la aplicación recoge ahora también qué estaba haciendo la interfaz en los
-  bloqueos cortos (a partir de un segundo), para poder localizar cualquier otro tirón.
+- El código fuente de SocialRSS está publicado en GitHub, en github.com/hxebolax/SocialRSS, con
+  instrucciones para compilarlo desde cero. Cada versión se publica también allí, en el apartado
+  Releases, desde donde se puede descargar.
+- Si el servidor de actualizaciones no responde, o no tiene el paquete, la aplicación busca y
+  descarga la actualización de GitHub. La comprobación de seguridad es la misma: firma digital y
+  huella del paquete; si no coinciden, no se instala nada.
 
-OTROS
+MEJORADO: TRADUCCIÓN AL INGLÉS
 
-- Arreglos menores internos.
+- La interfaz en inglés estaba incompleta y muchas opciones nuevas aparecían en español. Se han
+  traducido todas las cadenas nuevas.

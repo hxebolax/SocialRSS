@@ -2,12 +2,16 @@
 """
 Servicio de actualización de SocialRSS.
 
-De momento comprueba e instala desde el SERVIDOR PROPIO (más adelante se podrá cambiar a GitHub
-sin tocar la interfaz, solo este módulo).
+Comprueba e instala desde el SERVIDOR PROPIO y, si no responde, desde las RELEASES de GitHub
+(hxebolax/SocialRSS), que publican los mismos dos archivos: el zip y su version.json firmado. La
+seguridad no depende del origen: el manifiesto se verifica con la firma Ed25519 y el zip con su
+SHA-256, vengan de donde vengan.
 
 Flujo:
-1. Comprobar la versión publicada en el servidor (version.json) y compararla con la local.
-2. Si hay una versión nueva, descargar el ZIP con esa versión (SocialRSS_v<version>.zip).
+1. Comprobar la versión publicada en el servidor (version.json) y compararla con la local. Si el
+   servidor no responde, se lee el version.json de la última release de GitHub.
+2. Si hay una versión nueva, descargar el ZIP con esa versión (SocialRSS_v<version>.zip): primero
+   del servidor y, si falla, de la release de GitHub de esa versión.
 3. Extraer el ZIP a una carpeta temporal (quitando la carpeta raíz que contiene).
 4. Crear un script que ESPERA a que se cierre la aplicación, copia los archivos nuevos sobre la
    instalación (sin tocar la base de datos ni la configuración del usuario, que NO van en el ZIP),
@@ -30,9 +34,12 @@ from app.core.version import APP_VERSION
 
 log = logging.getLogger(__name__)
 
-# Base del servidor propio. El día de mañana, para usar GitHub, bastaría con cambiar esta capa
-# (obtener_version_remota / url_del_zip) por las llamadas a la API de releases de GitHub.
+# Base del servidor propio (origen principal).
 URL_BASE = "https://xebolax.synology.me/SocialRSS"
+# Respaldo: releases de GitHub. Se usan las URL de descarga directa (sin la API, que limita a 60
+# peticiones por hora sin autenticar): 'latest/download/<archivo>' redirige al de la última release
+# y 'download/v<version>/<archivo>' al de una versión concreta.
+URL_GITHUB_RELEASES = "https://github.com/hxebolax/SocialRSS/releases"
 _CABECERAS = {"User-Agent": "SocialRSS-Updater"}
 _TIEMPO_ESPERA = 20
 
@@ -68,12 +75,12 @@ def version_local():
     return APP_VERSION
 
 
-def obtener_info_remota(timeout=_TIEMPO_ESPERA):
-    """Devuelve el contenido de version.json del servidor como dict
-    ({version, sha256, size, ...}), o None si no se pudo. El sha256 (si el servidor lo
-    publica; lo genera build.bat junto al zip) sirve para VERIFICAR la descarga antes
-    de instalarla: una descarga corrupta o manipulada no se aplica."""
-    url = f"{URL_BASE}/version.json"
+class DescargaCancelada(Exception):
+    """El usuario canceló la descarga: no se prueba el origen de respaldo."""
+
+
+def _leer_manifiesto(url, timeout):
+    """Descarga y valida un version.json. Devuelve el dict o None (y lo deja en el log)."""
     try:
         req = urllib.request.Request(url, headers=_CABECERAS)
         with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -82,8 +89,22 @@ def obtener_info_remota(timeout=_TIEMPO_ESPERA):
             return None
         return datos
     except Exception as e:
-        log.debug(f"No se pudo comprobar la versión en el servidor: {e}")
+        log.debug(f"No se pudo leer el manifiesto de versión ({url}): {e}")
         return None
+
+
+def obtener_info_remota(timeout=_TIEMPO_ESPERA):
+    """Devuelve el contenido de version.json como dict ({version, sha256, size, ...}), o None si
+    no se pudo. Se pide al servidor propio y, si no responde, al de la última release de GitHub.
+    El sha256 sirve para VERIFICAR la descarga antes de instalarla (y la firma, el manifiesto):
+    una descarga corrupta o manipulada no se aplica."""
+    datos = _leer_manifiesto(f"{URL_BASE}/version.json", timeout)
+    if datos:
+        return datos
+    datos = _leer_manifiesto(f"{URL_GITHUB_RELEASES}/latest/download/version.json", timeout)
+    if datos:
+        log.info("El servidor de actualizaciones no responde: se usa la release de GitHub.")
+    return datos
 
 
 def obtener_version_remota(timeout=_TIEMPO_ESPERA):
@@ -160,6 +181,11 @@ def url_del_zip(version):
     return f"{URL_BASE}/SocialRSS_v{version}.zip"
 
 
+def url_del_zip_github(version):
+    """URL del ZIP de esa versión en su release de GitHub (etiqueta 'v<version>')."""
+    return f"{URL_GITHUB_RELEASES}/download/v{version}/SocialRSS_v{version}.zip"
+
+
 def actualizacion_disponible_para_instalar():
     """La instalación automática SOLO tiene sentido en la versión compilada (.exe). En código
     fuente se puede comprobar y avisar, pero no sobreescribir (no hay paquete equivalente)."""
@@ -174,8 +200,20 @@ def ruta_base_instalacion():
 def descargar_zip(version, ruta_destino, progreso=None, cancelado=None, timeout=120):
     """Descarga el ZIP de la versión indicada a 'ruta_destino', informando del avance con
     progreso(bytes_descargados, bytes_totales). Si cancelado() devuelve True, aborta.
-    Lanza excepción si algo falla (el llamador la captura para informar al usuario)."""
-    url = url_del_zip(version)
+    Se descarga del servidor propio y, si falla (no responde, no tiene el zip o se corta a
+    medias), se empieza de nuevo desde la release de GitHub de esa versión. Lanza excepción si
+    fallan los dos (el llamador la captura para informar al usuario)."""
+    try:
+        return _descargar_de(url_del_zip(version), ruta_destino, progreso, cancelado, timeout)
+    except DescargaCancelada:
+        raise
+    except Exception as e:
+        log.warning(f"No se pudo descargar la actualización del servidor ({e}); "
+                    "se intenta desde GitHub.")
+    return _descargar_de(url_del_zip_github(version), ruta_destino, progreso, cancelado, timeout)
+
+
+def _descargar_de(url, ruta_destino, progreso, cancelado, timeout):
     log.info(f"Descargando actualización: {url}")
     req = urllib.request.Request(url, headers=_CABECERAS)
     resp = urllib.request.urlopen(req, timeout=timeout)
@@ -186,7 +224,7 @@ def descargar_zip(version, ruta_destino, progreso=None, cancelado=None, timeout=
         with open(ruta_destino, "wb") as f:
             while True:
                 if cancelado and cancelado():
-                    raise Exception("Descarga cancelada.")
+                    raise DescargaCancelada("Descarga cancelada.")
                 trozo = resp.read(65536)
                 if not trozo:
                     break

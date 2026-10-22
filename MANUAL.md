@@ -1163,7 +1163,9 @@ redes se guarda la posición y te ofrece continuar la próxima vez.
 Al arrancar (y en **Ayuda → Buscar actualizaciones**) se comprueba si hay versión nueva. La
 descarga se verifica con **huella SHA-256 y firma digital Ed25519**: una descarga corrupta o un
 servidor comprometido no pueden colarte una actualización falsa. Se instala sin tocar tus datos y
-se reinicia.
+se reinicia. Si el servidor de actualizaciones no responde, la actualización se descarga de las
+releases de GitHub (github.com/hxebolax/SocialRSS), con las mismas comprobaciones. Ahí está
+también el código fuente.
 
 ## 20. Menú Ayuda y consejos para NVDA
 
