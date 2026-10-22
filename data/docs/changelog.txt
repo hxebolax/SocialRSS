@@ -8,6 +8,8 @@ NUEVO: CÓDIGO EN GITHUB Y ACTUALIZACIONES DE RESPALDO
 - Si el servidor de actualizaciones no responde, o no tiene el paquete, la aplicación busca y
   descarga la actualización de GitHub. La comprobación de seguridad es la misma: firma digital y
   huella del paquete; si no coinciden, no se instala nada.
+- SocialRSS es software libre con licencia GPL versión 3 (o posterior). El texto de la licencia
+  va incluido en la carpeta de la aplicación, en LICENSE.txt.
 
 MEJORADO: TRADUCCIÓN AL INGLÉS
 

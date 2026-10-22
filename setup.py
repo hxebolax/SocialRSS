@@ -72,6 +72,10 @@ import glob as _glob
 for _man in _glob.glob("manual_*.md"):
     include_files.append((_man, os.path.join("data", "docs", os.path.basename(_man))))
 
+# Licencia (GPL-3.0-or-later): la GPL exige que el ejecutable se distribuya con su texto.
+if os.path.exists("LICENSE"):
+    include_files.append(("LICENSE", "LICENSE.txt"))
+
 # Lista de teclas por idioma -> data/docs/teclas_<idioma>.md. El español canónico es
 # TECLAS.md (se copia como teclas_es.md), igual que el manual.
 if os.path.exists("TECLAS.md"):

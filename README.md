@@ -10,6 +10,7 @@ haga perder el foco.
 
 - [Para quien quiere usarla](#para-quien-quiere-usarla)
 - [Para quien quiere compilarla](#para-quien-quiere-compilarla)
+- [Licencia](#licencia)
 
 ---
 
@@ -204,3 +205,45 @@ Los detalles están en [scripts/README.md](scripts/README.md).
   interfaz solo pinta el resultado.
 - Las listas se actualizan sin mover el foco ni hacer que el lector repita lo que ya leyó.
 - Los textos visibles van siempre dentro de `_()` para poder traducirlos.
+
+---
+
+## Licencia
+
+Copyright (C) 2026 hxebolax.
+
+SocialRSS Accessible Suite es software libre: puedes redistribuirlo y modificarlo bajo los
+términos de la **Licencia Pública General de GNU, versión 3 o (a tu elección) cualquier versión
+posterior** (GPL-3.0-or-later). Se distribuye con la esperanza de que sea útil, pero **sin
+ninguna garantía**. El texto completo está en [LICENSE](LICENSE).
+
+### Permiso adicional para BASS
+
+El audio de la aplicación usa la biblioteca **BASS** de Un4seen Developments y sus complementos,
+a través de `basskit`. BASS no es software libre y no es compatible con la GPL. Por eso, conforme
+a la sección 7 de la GPLv3, el titular de los derechos concede este permiso adicional:
+
+> Si modificas este programa, o cualquier obra cubierta, enlazándolo o combinándolo con la
+> biblioteca BASS de Un4seen Developments o con sus complementos (o con una versión modificada de
+> ellos), con lo que la obra resultante contiene partes cubiertas por sus licencias, el titular de
+> los derechos de SocialRSS Accessible Suite te concede permiso adicional para distribuir esa
+> obra combinada. La fuente correspondiente de la obra combinada no tiene que incluir el código
+> fuente de BASS ni de sus complementos, pero sí el de las partes cubiertas por la GPL.
+
+Este permiso solo cubre BASS y sus complementos: no se extiende a ninguna otra biblioteca. Si
+redistribuyes una versión modificada, puedes conservarlo o quitarlo.
+
+### Componentes de terceros
+
+Cada uno mantiene su propia licencia:
+
+- **basskit** (`__pip__/`): el código Python es MIT; las DLL que lleva dentro (BASS, sus
+  complementos y FFmpeg) conservan sus licencias, detalladas en el propio paquete
+  (`basskit/data/licenses` y `THIRD_PARTY_NOTICES.md`). BASS es gratuito para uso no comercial;
+  el uso comercial necesita una licencia de [Un4seen](https://www.un4seen.com/bass.html#license).
+- **FFmpeg** (`data/bin/ffmpeg.exe`): compilación "essentials" de
+  [gyan.dev](https://www.gyan.dev/ffmpeg/builds/), con licencia GPL-3.0. Su código fuente está en
+  [ffmpeg.org](https://ffmpeg.org). La aplicación lo ejecuta como un programa aparte.
+- **Dependencias de Python** (`requirements.txt`): cada una con su licencia (MIT, BSD, Apache-2.0,
+  LGPL-3.0, la wxWindows Library License...). `slixmpp-omemo`, que da el cifrado OMEMO de XMPP,
+  es AGPL-3.0, compatible con la GPLv3 de este proyecto.

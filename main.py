@@ -1,4 +1,13 @@
 # -*- coding: utf-8 -*-
+# SocialRSS Accessible Suite
+# Copyright (C) 2026 hxebolax
+#
+# Este programa es software libre: puede redistribuirlo y/o modificarlo bajo los términos de la
+# Licencia Pública General de GNU publicada por la Free Software Foundation, ya sea la versión 3
+# de la Licencia o (a su elección) cualquier versión posterior. Se distribuye con la esperanza de
+# que sea útil, pero SIN NINGUNA GARANTÍA; ni siquiera la garantía implícita de COMERCIABILIDAD o
+# IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Consulte el archivo LICENSE y el permiso adicional para
+# la biblioteca BASS que se describe en README.md (apartado Licencia).
 """
 Punto de entrada principal para SocialRSS Accessible Suite.
 Inicializa el entorno, base de datos, configuraciones, traducciones, sonidos y lanza la UI.
