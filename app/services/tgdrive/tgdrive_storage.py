@@ -8,6 +8,7 @@ nube: crear el canal privado, subir un documento, descargarlo, borrar mensajes y
 el límite de tamaño de la cuenta. Añade gestión de FloodWait y reintentos con espera
 progresiva, que el resto del servicio de Telegram no hace.
 """
+from app.core.plataforma import llamar_en_ui
 import asyncio
 import os
 from typing import Optional, Callable, List, Dict, Any
@@ -209,8 +210,7 @@ class _DriveStorageMixin:
                 if progreso is None:
                     return
                 try:
-                    import wx
-                    wx.CallAfter(progreso, current, total)
+                    llamar_en_ui(progreso, current, total)
                 except Exception:
                     progreso(current, total)
 

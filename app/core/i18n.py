@@ -39,8 +39,15 @@ def idioma_sistema() -> str:
     except Exception:
         cod = ""
     if not cod:
+        import os
+        for var in ("LC_ALL", "LC_MESSAGES", "LANGUAGE", "LANG"):
+            valor = os.environ.get(var, "").split(":")[0]
+            if valor and valor not in ("C", "POSIX"):
+                cod = valor
+                break
+    if not cod:
         try:
-            cod = (locale.getdefaultlocale()[0] or "")
+            cod = (locale.getlocale()[0] or "")
         except Exception:
             cod = ""
     return cod.replace("-", "_").split("_")[0].lower()

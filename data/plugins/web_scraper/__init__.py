@@ -75,6 +75,10 @@ class WebScraperPlugin(PluginBase):
                 log.error(f"No se pudo cargar el módulo de scraper '{nombre}': {e}")
 
     def _abrir(self):
+        if self.api.interfaz() == "gtk":
+            from app.gtk.plugins_ui import DialogoScraperSitio
+            DialogoScraperSitio(self.api.get_main_window()).present()
+            return
         cls = _obtener_dialogo()
         dlg = cls(self.api.get_main_window())
         dlg.ShowModal()

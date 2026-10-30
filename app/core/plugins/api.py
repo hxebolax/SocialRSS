@@ -84,6 +84,12 @@ class PluginAPI:
     def get_main_window(self):
         return self._manager.main_window
 
+    def interfaz(self) -> str:
+        """'wx' (Windows) o 'gtk' (Linux): la interfaz en la que se ejecuta la app, para abrir las ventanas del
+        complemento con la librería gráfica adecuada."""
+        from app.core.plataforma import nombre_interfaz
+        return nombre_interfaz()
+
 
 class PluginBase:
     """Clase base de la que hereda todo complemento."""
@@ -105,4 +111,8 @@ class PluginBase:
 
     def get_settings_panel(self, parent):
         """Devuelve un wx.Panel de configuración (o None). Solo si get_info().has_settings."""
+        return None
+
+    def get_settings_dialog_gtk(self, parent):
+        """En Linux (interfaz GTK): devuelve una ventana Gtk de configuración (o None). Opcional."""
         return None

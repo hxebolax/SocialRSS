@@ -171,12 +171,11 @@ def _resumen_cpu(base: dict, transcurrido: float) -> str:
 
 
 def _bucle():
-    import wx
+    from .plataforma import hay_interfaz, llamar_en_ui
     ultimo_aviso = 0.0
     ultima_pila_fina = 0.0
     while not _parar.wait(_INTERVALO):
-        app = wx.App.Get()
-        if app is None:
+        if not hay_interfaz():
             continue
         recibido = threading.Event()
 
@@ -185,9 +184,7 @@ def _bucle():
 
         base_cpu = _tiempos_cpu()
         enviado = time.monotonic()
-        try:
-            wx.CallAfter(_pong)
-        except Exception:
+        if not llamar_en_ui(_pong):
             continue  # la app se está cerrando
         # Primera espera corta: si no respondió en _UMBRAL_PILA_FINA, el hilo está atascado AHORA
         # MISMO: se vuelca su pila en INFO (limitado a una por minuto), porque al terminar ya no

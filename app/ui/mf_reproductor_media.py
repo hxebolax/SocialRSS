@@ -459,22 +459,8 @@ class _Mf_reproductor_media:
 
     def _bucket_fecha(self, fecha_iso):
         """Devuelve la etiqueta de grupo (Hoy, Ayer, Esta semana, o la fecha)."""
-        try:
-            from datetime import datetime
-            d = datetime.fromisoformat(str(fecha_iso)).date()
-            hoy = datetime.now().date()
-            dias = (hoy - d).days
-            if dias <= 0:
-                return _("Hoy")
-            if dias == 1:
-                return _("Ayer")
-            if dias < 7:
-                return _("Esta semana")
-            if dias < 30:
-                return _("Este mes")
-            return d.strftime("%Y-%m")
-        except Exception:
-            return ""
+        from app.core.fechas_grupo import bucket_fecha
+        return bucket_fecha(fecha_iso)
 
     def _on_estadisticas_categoria(self, category_id):
         """Muestra total, no leídos y destacados de una categoría."""

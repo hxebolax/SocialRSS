@@ -553,48 +553,10 @@ class _Mf_ia_dialogos:
     # --- AYUDA Y MANUAL ---
     def _abrir_documento_md(self, base_compilado, base_raiz, titulo, salida, aviso):
         """Localiza un documento markdown (manual o teclas), lo convierte a HTML y lo abre en
-        el navegador. Busca: <base>_<idioma>.md y <base>_es.md en data/docs (compilado), y en
-        la raíz <base_raiz>_<idioma>.md y <BASE_RAIZ>.md (código fuente)."""
-        from app.core.paths import get_data_path
-        lang = config.get("general", "language", "es")
-        raiz = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        candidatos = [
-            str(get_data_path(f"docs/{base_compilado}_{lang}.md")),
-            str(get_data_path(f"docs/{base_compilado}_es.md")),
-            os.path.join(raiz, f"{base_compilado}_{lang}.md"),
-            os.path.join(raiz, f"{base_raiz}.md"),
-            os.path.join(os.getcwd(), f"{base_raiz}.md"),
-        ]
-        ruta_md = next((c for c in candidatos if os.path.exists(c)), None)
-        if not ruta_md:
-            notificar(aviso)
-            return
-        try:
-            with open(ruta_md, "r", encoding="utf-8") as fh:
-                texto_md = fh.read()
-            # Convertir Markdown a HTML con un índice navegable ([TOC]).
-            try:
-                import markdown
-                if "[TOC]" not in texto_md:
-                    texto_md = "[TOC]\n\n" + texto_md
-                cuerpo = markdown.markdown(
-                    texto_md,
-                    extensions=["tables", "toc", "fenced_code", "sane_lists", "attr_list"]
-                )
-            except Exception as e_md:
-                log.warning(f"No se pudo convertir el documento con markdown: {e_md}")
-                import html as _html
-                cuerpo = "<pre>" + _html.escape(texto_md) + "</pre>"
-            from app.core.html_utils import html_a_documento
-            documento = html_a_documento(titulo, cuerpo)
-            ruta = get_data_path("temp") / salida
-            with open(ruta, "w", encoding="utf-8") as fh:
-                fh.write(documento)
-            abrir_url(ruta.as_uri())
+        el navegador (ver app.core.documentos)."""
+        from app.core.documentos import abrir_documento_md
+        if abrir_documento_md(base_compilado, base_raiz, titulo, salida, aviso):
             speak(_("Abriendo en el navegador."), interrupt=True)
-        except Exception as e:
-            log.error(f"Error al abrir el documento {salida}: {e}")
-            notificar(aviso)
 
     def _on_ver_teclas_documento(self, event):
         """Abre el DOCUMENTO completo de teclas (teclas_<idioma>.md / TECLAS.md) en el navegador,

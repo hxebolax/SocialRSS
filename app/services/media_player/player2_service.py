@@ -22,12 +22,10 @@ import logging
 import threading
 from typing import Optional, Dict, Any, Callable
 
-import wx
-
 from app.core.config_manager import config
 from app.core.event_bus import event_bus
 from app.core.task_manager import task_manager
-from .backends.basskit_player_backend import BasskitPlayerBackend
+from .backends import crear_backend
 from .player_history import PlayerHistory
 from .player2_podcast import _Player2PodcastMixin
 
@@ -48,7 +46,7 @@ class Player2Service(_Player2PodcastMixin):
     podcasts (capítulos, cola, fin del episodio, saltar silencios) está en player2_podcast.py."""
 
     def __init__(self):
-        self.backend = BasskitPlayerBackend()
+        self.backend = crear_backend()
         self.historial = PlayerHistory()
 
         self.current_url: Optional[str] = None
@@ -251,7 +249,7 @@ class Player2Service(_Player2PodcastMixin):
 
     def establecer_velocidad(self, speed: float):
         """Ajusta la velocidad (solo afecta a podcast/YouTube) y la recuerda."""
-        from .backends.basskit_player_backend import VELOCIDAD_MAX, VELOCIDAD_MIN
+        from .backends import VELOCIDAD_MAX, VELOCIDAD_MIN
         speed = max(VELOCIDAD_MIN, min(VELOCIDAD_MAX, round(float(speed), 2)))
         self._velocidad_guardada = speed
         # La radio va siempre a velocidad normal.

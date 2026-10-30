@@ -108,8 +108,8 @@ def test_terminado_a_menos_de_un_minuto(reproductor):
 
 def test_fin_del_episodio_marca_leido_y_sigue_la_cola(reproductor, monkeypatch):
     srv, backend = reproductor
-    import wx
-    monkeypatch.setattr(wx, "CallAfter", lambda f, *a, **k: f(*a, **k))
+    from app.core import plataforma
+    monkeypatch.setattr(plataforma._interfaz, "llamar_en_ui", lambda f, *a, **k: f(*a, **k))
     lanzados = []
     from app.services.rss.rss_service import rss_service
     monkeypatch.setattr(rss_service, "reproducir_articulo_audio",

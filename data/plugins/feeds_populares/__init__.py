@@ -47,6 +47,10 @@ class FeedsPopularesPlugin(PluginBase):
         return True
 
     def _abrir(self):
+        if self.api.interfaz() == "gtk":
+            from app.gtk.plugins_ui import DialogoFeedsPopulares
+            DialogoFeedsPopulares(self.api.get_main_window(), CATALOGO).present()
+            return
         cls = _obtener_dialogo()
         dlg = cls(self.api.get_main_window())
         dlg.ShowModal()

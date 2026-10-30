@@ -108,7 +108,7 @@ def test_abortar_avisa_al_callback_y_corta_la_tarea():
     svc = _servicio_bluesky()
     svc._sesiones_revocadas.add(9)
     recibido = []
-    # Sin bucle de wx, wx.CallAfter no entrega: lo que se comprueba es que ABORTA.
+    # Sin interfaz, llamar_en_ui no entrega: lo que se comprueba es que ABORTA.
     assert svc.abortar_si_sesion_caducada(9, lambda r, e: recibido.append(e)) is True
     assert svc.abortar_si_sesion_caducada(1, lambda r, e: recibido.append(e)) is False
 

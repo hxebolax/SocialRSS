@@ -6,6 +6,7 @@ de hash y la cola de transferencias. La interfaz habla SOLO con este servicio. N
 widgets de wxPython: notifica el progreso mediante callbacks que la interfaz envuelve en
 wx.CallAfter.
 """
+from app.core.plataforma import llamar_en_ui
 import json
 import os
 import threading
@@ -65,16 +66,13 @@ class TgDriveService(_ColaTransferenciasMixin):
 
     def set_callback_ui(self, cb: Optional[Callable]):
         """Registra un callback (sin args) que la UI usa para refrescar la lista de
-        transferencias. El servicio lo invoca con wx.CallAfter si wx está disponible."""
+        transferencias. El servicio lo invoca en el hilo de la interfaz si hay una disponible."""
         self._on_update = cb
 
     def _notificar_ui(self):
         if self._on_update is None:
             return
-        try:
-            import wx
-            wx.CallAfter(self._on_update)
-        except Exception:
+        if not llamar_en_ui(self._on_update):
             try:
                 self._on_update()
             except Exception:

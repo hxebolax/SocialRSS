@@ -3,6 +3,7 @@
 
 Mixin de BlueskyService (parte de la refactorización modular).
 """
+from app.core.plataforma import llamar_en_ui
 from app.core.config_manager import config
 from app.services.bluesky.bluesky_common import (
     Any, Dict, db, security, BlueskyServiceError, log, HAS_ATPROTO, Client, _g,
@@ -191,8 +192,7 @@ class _SesionMixin:
             return False
         if callback:
             try:
-                import wx
-                wx.CallAfter(callback, None, self._error_sesion_caducada(account_id))
+                llamar_en_ui(callback, None, self._error_sesion_caducada(account_id))
             except Exception:
                 pass
         return True

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Módulo para el gestor central de efectos sonoros y eventos de audio.
-Utiliza basskit como motor principal y permite asociar sonidos a eventos específicos.
+Utiliza basskit (BASS) en Windows y GStreamer en Linux, y permite asociar sonidos a eventos.
 """
 
 import logging
@@ -17,7 +17,22 @@ try:
     from basskit.constantes.bass import BASS_UNICODE, BASS_STREAM_AUTOFREE, BASS_ATTRIB_VOL
     HAS_BASSKIT = True
 except ImportError as e:
-    logging.getLogger(__name__).warning(f"No se pudo importar basskit: {e}. El sistema de sonido estará desactivado.")
+    # En Linux basskit no existe (los efectos suenan con GStreamer): no es un aviso.
+    (logging.getLogger(__name__).debug if not __import__("sys").platform == "win32"
+     else logging.getLogger(__name__).warning)(
+        f"No se pudo importar basskit: {e}. El sistema de sonido estará desactivado.")
+
+# En Linux los efectos suenan con GStreamer (el mismo motor que el reproductor).
+HAS_GST = False
+if not HAS_BASSKIT:
+    try:
+        import gi
+        gi.require_version("Gst", "1.0")
+        from gi.repository import Gst
+        Gst.init(None)
+        HAS_GST = True
+    except Exception as e:
+        logging.getLogger(__name__).warning(f"GStreamer no disponible: {e}. Sin efectos de sonido.")
 
 from app.core.paths import get_resource_path, get_data_path
 from app.core.config_manager import config
@@ -166,6 +181,8 @@ EVENT_TO_FILE = {
     "wsocial_new_notification": "notification.wav",
     "wsocial_new_dm": "direct.wav",
     "wsocial_error": "error.wav",
+    # X: la otra persona está escribiendo en un mensaje directo (el sonido más corto, para que no moleste)
+    "x_typing": "ready.wav",
     # Eventos de IRC (reutilizan wavs existentes)
     "irc_new_message": "new_item.wav",
     "irc_highlight": "notification.wav",
@@ -211,7 +228,17 @@ class SoundManager:
         event_bus.subscribe("sound_trigger", self.play_event_sound)
 
     def inicializar(self) -> bool:
-        """Inicializa BASS a través de basskit."""
+        """Inicializa el motor de sonido (BASS a través de basskit, o GStreamer en Linux)."""
+        if HAS_GST:
+            with self._lock:
+                if not self._initialized:
+                    try:
+                        generar_todos_los_sonidos_predeterminados()
+                    except Exception as e:
+                        log.warning(f"No se pudieron generar los sonidos predeterminados: {e}")
+                    self._initialized = True
+                    log.info("Motor de sonido GStreamer listo.")
+                return True
         if not HAS_BASSKIT:
             return False
             
@@ -310,6 +337,9 @@ class SoundManager:
         """Consume la cola de sonidos y los reproduce en orden con BASS (reproducción asíncrona)."""
         while True:
             file_path = self._sound_queue.get()
+            if HAS_GST:
+                self._reproducir_gst(file_path)
+                continue
             try:
                 # Ruta en UTF-16LE para soporte de caracteres especiales
                 ruta_bytes = str(file_path).encode("utf-16-le") + b"\x00\x00"
@@ -337,8 +367,30 @@ class SoundManager:
             except Exception as e:
                 log.error(f"Error al reproducir archivo sonoro {file_path.name}: {e}")
 
+    def _reproducir_gst(self, file_path: Path):
+        """Reproduce un efecto con un playbin propio que se libera solo al terminar."""
+        try:
+            pipe = Gst.ElementFactory.make("playbin", None)
+            pipe.set_property("uri", Path(file_path).resolve().as_uri())
+            pipe.set_property("volume", max(0.0, min(1.0, float(config.get("audio", "volume", 0.8)))))
+            pipe.set_property("flags", 0x2)  # solo audio
+
+            def _fin(bus, msg):
+                if msg.type in (Gst.MessageType.EOS, Gst.MessageType.ERROR):
+                    # No se puede pasar a NULL desde el hilo del bus: se hace en otro.
+                    threading.Thread(target=pipe.set_state, args=(Gst.State.NULL,),
+                                     daemon=True).start()
+                return Gst.BusSyncReply.DROP
+            pipe.get_bus().set_sync_handler(_fin)
+            pipe.set_state(Gst.State.PLAYING)
+        except Exception as e:
+            log.error(f"Error al reproducir archivo sonoro {Path(file_path).name}: {e}")
+
     def liberar(self):
         """Libera BASS y cierra recursos."""
+        if HAS_GST:
+            self._initialized = False
+            return
         with self._lock:
             if self._initialized and HAS_BASSKIT:
                 try:

@@ -25,6 +25,7 @@ usuario borra o edita, se mantiene en memoria la lista VIGENTE de filtros de cad
 (se refresca al gestionar filtros y con el evento 'filters_changed' del streaming): si está
 cargada, manda sobre lo guardado en el toot.
 """
+from app.core.plataforma import llamar_en_ui
 import json
 import logging
 import threading
@@ -446,7 +447,6 @@ def _es_buffer_filtrable(timeline) -> bool:
 
 def repintar_buffer_activo(frame, account_id: int):
     """Repinta desde la caché el buffer activo si es de esa cuenta y admite filtros."""
-    import wx
 
     def _ui():
         try:
@@ -456,7 +456,7 @@ def repintar_buffer_activo(frame, account_id: int):
                 frame._cargar_listado_toots(cache_only=True)
         except Exception as e:
             log.debug("No se pudo repintar tras cambiar los filtros: %s", e)
-    wx.CallAfter(_ui)
+    llamar_en_ui(_ui)
 
 
 def ids_para_recalcular(account_id: int, timeline: str, visibles, limite: int = 200) -> List[str]:

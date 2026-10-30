@@ -10,6 +10,7 @@ reanudación y saltar silencios.
 - Saltar silencios: mientras suena, se mide el nivel cada 50 ms; si hay silencio más de un
   momento, se acelera (4x) hasta que vuelve la voz. No se pierde nada que se diga.
 """
+from app.core.plataforma import llamar_en_ui
 import logging
 import threading
 import time
@@ -28,9 +29,8 @@ VELOCIDAD_SILENCIO = 4.0
 def _avisar(texto: str):
     """Aviso importante (notificar) desde cualquier hilo, aunque la ventana esté cerrada."""
     try:
-        import wx
         from app.core.speech import notificar
-        wx.CallAfter(notificar, texto)
+        llamar_en_ui(notificar, texto)
     except Exception:
         pass
 
@@ -109,10 +109,7 @@ class _Player2PodcastMixin:
         def _lanzar():
             from app.services.rss.rss_service import rss_service
             rss_service.reproducir_articulo_audio(aid, callback=lambda ok, err=None: None)
-        try:
-            import wx
-            wx.CallAfter(_lanzar)
-        except Exception:
+        if not llamar_en_ui(_lanzar):
             _lanzar()
         return True
 

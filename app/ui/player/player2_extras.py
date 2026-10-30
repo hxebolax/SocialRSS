@@ -9,7 +9,7 @@ import wx
 
 from app.core.speech import speak, notificar
 from app.services.media_player import cola_podcasts
-from app.services.media_player.backends.basskit_player_backend import BANDAS_EQ
+from app.services.media_player.backends import BANDAS_EQ
 from app.services.media_player.player2_service import player2_service
 from app.ui.accessible_controls import AccessibleListCtrl, habilitar_escape_cierre, confirmar
 

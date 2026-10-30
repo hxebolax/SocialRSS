@@ -254,7 +254,8 @@ def test_task_manager_duplicada_avisa_al_callback(monkeypatch):
     from app.core.task_manager import TaskManager, TareaDuplicadaError
 
     # En las pruebas no hay bucle wx: entregar el aviso directamente.
-    monkeypatch.setattr(tm_mod.wx, "CallAfter", lambda fn, *a, **kw: fn(*a, **kw))
+    from app.core import plataforma
+    monkeypatch.setattr(plataforma._interfaz, "llamar_en_ui", lambda fn, *a, **kw: fn(*a, **kw))
 
     tm = TaskManager(max_workers=2)
     puerta = threading.Event()

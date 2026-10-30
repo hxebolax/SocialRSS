@@ -124,6 +124,8 @@ def main():
     from app.core.speech import speak
 
     app = wx.App(False)
+    from app.ui.wx_plataforma import registrar as _registrar_wx
+    _registrar_wx()
 
     # 3 pre. Forzar la locale de wxWidgets a ESPAÑOL para que los botones de los
     # diálogos estándar (Aceptar, Cancelar, Sí, No, Guardar...) salgan SIEMPRE en
