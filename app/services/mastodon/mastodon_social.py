@@ -651,8 +651,11 @@ class _SocialMixin:
             return {"acct": acct, "accion": accion}
         task_manager.start_task(_bg, callback=callback, success_sound="ready", error_sound="error", pass_context=True)
 
-    def silenciar_conversacion_async(self, account_id: int, toot_db_id: str, silenciar: bool = True, callback: Optional[Callable] = None):
-        """Silencia (o reactiva) las notificaciones de una conversación/hilo."""
+    def silenciar_conversacion_async(self, account_id: int, toot_db_id: str, silenciar: Optional[bool] = None, callback: Optional[Callable] = None):
+        """Silencia o reactiva las notificaciones de una conversación/hilo. Con silenciar=None
+        alterna según el estado real del servidor (Mastodon no permite listar las conversaciones
+        silenciadas, y así vale también para las silenciadas desde otro cliente). Devuelve True
+        si la conversación queda silenciada."""
         row = db.query_one("SELECT COALESCE(reblog_of_id, status_id) FROM mastodon_statuses WHERE id = ?", (toot_db_id,))
         if not row:
             if callback:
@@ -661,7 +664,12 @@ class _SocialMixin:
         status_id = row[0]
         def _bg(ctx):
             client = self.obtener_cliente(account_id)
-            return client.status_mute(status_id) if silenciar else client.status_unmute(status_id)
+            quedara = (not client.status(status_id).get("muted")) if silenciar is None else silenciar
+            if quedara:
+                client.status_mute(status_id)
+            else:
+                client.status_unmute(status_id)
+            return quedara
         task_manager.start_task(_bg, callback=callback, success_sound="ready", error_sound="error", pass_context=True)
 
     def descartar_notificacion_async(self, account_id: int, notif_id: str, callback: Optional[Callable] = None):

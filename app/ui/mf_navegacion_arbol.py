@@ -187,9 +187,11 @@ class _Mf_navegacion_arbol:
 
         item_dominios = menu_mastodon.Append(wx.ID_ANY, _("Dominios bloqueados..."), _("Ver, añadir o quitar dominios (instancias) bloqueados"))
         self.Bind(wx.EVT_MENU, self._on_dominios_bloqueados, item_dominios)
+        item_clientes_ign = menu_mastodon.Append(wx.ID_ANY, _("Clientes ignorados..."), _("Ver y recuperar los clientes (aplicaciones) cuyas publicaciones has ocultado"))
+        self.Bind(wx.EVT_MENU, self._on_clientes_ignorados, item_clientes_ign)
 
         menu_mastodon.AppendSeparator()
-        item_notif_agr = menu_mastodon.Append(wx.ID_ANY, _("Notificaciones agrupadas..."), _("Grupos reales del servidor (quién y cuántos), con ver cuentas y descartar por grupo"))
+        item_notif_agr =menu_mastodon.Append(wx.ID_ANY, _("Notificaciones agrupadas..."), _("Grupos reales del servidor (quién y cuántos), con ver cuentas y descartar por grupo"))
         self.Bind(wx.EVT_MENU, self._on_notificaciones_agrupadas, item_notif_agr)
         item_notif_pol = menu_mastodon.Append(wx.ID_ANY, _("Política de notificaciones..."), _("Filtrar notificaciones de desconocidos, cuentas nuevas, etc."))
         self.Bind(wx.EVT_MENU, self._on_politica_notificaciones, item_notif_pol)

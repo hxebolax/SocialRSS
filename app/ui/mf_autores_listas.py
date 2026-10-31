@@ -21,10 +21,11 @@ from app.core.database import db
 from app.core.speech import speak, notificar
 from app.core.task_manager import task_manager
 
+from app.services.mastodon import clientes_ignorados
 from app.services.mastodon.mastodon_service import mastodon_service
 from app.services.rss.rss_service import rss_service
 
-from .accessible_controls import confirmar
+from .accessible_controls import confirmar, mostrar_info
 
 log = logging.getLogger(__name__)
 
@@ -432,33 +433,63 @@ class _Mf_autores_listas:
                                                       duracion=duracion, notificaciones=notifs)
 
     def _on_silenciar_conversacion(self, db_id):
-        """Silencia las notificaciones de la conversación del toot."""
+        """Silencia las notificaciones de la conversación del toot, o las reactiva si ya lo estaba."""
         if not self.active_mastodon_account_id:
             return
-        speak(_("Silenciando conversación..."), interrupt=True)
+        speak(_("Procesando..."), interrupt=True)
 
-        def _fin(res, err):
+        def _fin(silenciada, err):
             if err:
-                notificar(_("No se pudo silenciar: {0}").format(err))
-            else:
+                notificar(_("No se pudo completar: {0}").format(err))
+            elif silenciada:
                 notificar(_("Conversación silenciada."))
-        mastodon_service.silenciar_conversacion_async(self.active_mastodon_account_id, db_id, True, callback=_fin)
+            else:
+                notificar(_("Conversación reactivada: vuelves a recibir sus notificaciones."))
+        mastodon_service.silenciar_conversacion_async(self.active_mastodon_account_id, db_id, callback=_fin)
+
+    def _cliente_del_toot(self, db_id) -> str:
+        """Cliente (app) desde el que se publicó el toot, o cadena vacía si no consta."""
+        row = db.query_one("SELECT application FROM mastodon_statuses WHERE id = ?", (db_id,))
+        return ((row[0] if row else "") or "").strip()
+
+    def _repintar_tras_cambiar_clientes(self):
+        """Reaplica los clientes ignorados a la lista que haya delante, sin ir a la red. Con
+        otra red o la bandeja delante no se toca: _cargar_listado_toots la dejaría vacía."""
+        if self.active_mastodon_account_id and not getattr(self, "_bandeja_activa", False):
+            self._cargar_listado_toots(cache_only=True)
 
     def _on_ignorar_cliente(self, db_id):
-        """Añade el cliente (app) del toot a la lista de clientes ignorados."""
-        row = db.query_one("SELECT application FROM mastodon_statuses WHERE id = ?", (db_id,))
-        cliente = (row[0] if row else "") or ""
-        if not cliente.strip():
+        """Oculta las publicaciones del cliente (app) del toot, o las recupera si ya lo estaban."""
+        cliente = self._cliente_del_toot(db_id)
+        if not cliente:
             speak(_("Esta publicación no indica el cliente desde el que se publicó."), interrupt=True)
             return
-        ignorados = list(config.get("mastodon", "ignored_clients", []))
-        if cliente in ignorados:
-            speak(_("Ese cliente ya está en la lista de ignorados."), interrupt=True)
+        if clientes_ignorados.esta_ignorado(cliente):
+            clientes_ignorados.dejar_de_ignorar(cliente)
+            notificar(_("Vuelven a mostrarse las publicaciones del cliente {0}.").format(cliente))
+        else:
+            # Se confirma porque oculta TODO lo publicado desde ese cliente, en todas las cuentas.
+            if not confirmar(self, _("¿Ocultar todas las publicaciones hechas desde el cliente {0}, en "
+                                     "todas tus cuentas de Mastodon? Podrás recuperarlas en el menú "
+                                     "Mastodon, Clientes ignorados.").format(cliente),
+                             _("Ignorar cliente")):
+                return
+            clientes_ignorados.ignorar(cliente)
+            notificar(_("Se ocultarán las publicaciones del cliente {0}.").format(cliente))
+        self._repintar_tras_cambiar_clientes()
+
+    def _on_clientes_ignorados(self, event):
+        """Lista de clientes ignorados, para recuperar los que ya no se quieren ocultar."""
+        if not clientes_ignorados.listar():
+            mostrar_info(self, _("No tienes clientes ignorados."), _("Clientes ignorados"))
             return
-        ignorados.append(cliente)
-        config.set("mastodon", "ignored_clients", ignorados)
-        self._cargar_listado_toots(cache_only=True)
-        speak(_("Se ocultarán las publicaciones del cliente {0}.").format(cliente), interrupt=True)
+        from .mastodon_filtros_dialogs import ClientesIgnoradosDialog
+        dlg = ClientesIgnoradosDialog(self)
+        dlg.ShowModal()
+        cambiado = dlg.cambiado
+        dlg.Destroy()
+        if cambiado:
+            self._repintar_tras_cambiar_clientes()
 
     # --- CACHÉ DE RELACIÓN CON AUTORES (para el menú contextual dinámico) ---
     # Guarda en memoria si sigues o no a cada autor: {(account_id, acct): bool}. Se rellena la

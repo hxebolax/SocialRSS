@@ -207,7 +207,7 @@ del elemento actual y el total, como en TWBlue ("Inicio, 3 de 120"); se desactiv
   gustó…", con descarte por grupo), **conversaciones de directos** (lista real del servidor),
   solicitudes de notificación **por lotes**, filtros del servidor, publicaciones programadas
   (reprogramables), hashtags (seguir, destacados), tendencias, directorio, dominios bloqueados,
-  editar perfil, **"Capacidades de tu instancia"** (límites reales del servidor en lenguaje llano)
+  clientes ignorados, editar perfil, **"Capacidades de tu instancia"** (límites reales del servidor en lenguaje llano)
   y "Acerca de esta instancia".
 - **Punto focal:** en los adjuntos de imagen del compositor eliges qué zona queda visible cuando
   otros clientes recortan la miniatura.
@@ -243,6 +243,24 @@ del elemento actual y el total, como en TWBlue ("Inicio, 3 de 120"); se desactiv
   quién puede citarte.
 - **Silenciar a un autor** pide **cuánto tiempo** (para siempre, 30 minutos, 1 hora, 6 horas, 1
   día, 3 días o 1 semana) y si ocultar **también sus notificaciones**.
+- **Cómo deshacer lo que has bloqueado u ocultado:**
+  - **Cuentas:** en los buffers **Bloqueados** y **Silenciados** de tu cuenta, menú contextual de
+    la cuenta → **"Desbloquear"** o **"Quitar silencio"**.
+  - **Dominios:** menú Mastodon → **"Dominios bloqueados..."**.
+  - **Clientes (aplicaciones):** "Ignorar publicaciones de este cliente" oculta de tus buffers de
+    publicaciones todo lo publicado desde esa aplicación, y antes de hacerlo pide confirmación. No
+    es un bloqueo del servidor: se guarda solo en tu equipo, afecta a todas tus cuentas de Mastodon
+    y la web oficial no sabe nada de ello. Para recuperarlos: menú Mastodon → **"Clientes
+    ignorados..."** (con los menús en subcategorías, dentro de "Listas y filtros"), eliges el
+    cliente y pulsas **"Dejar de ignorar"**: sus publicaciones vuelven al momento. Las notificaciones,
+    las menciones y la bandeja unificada no se ven afectadas; si ves ahí una publicación de ese
+    cliente, su menú contextual también ofrece **"Dejar de ignorar publicaciones de este cliente"**.
+  - **Conversaciones:** menú contextual de una publicación → **"Silenciar o reactivar esta
+    conversación"**. La misma opción sirve para las dos cosas: la app pregunta al servidor cómo
+    está y hace lo contrario, y te dice el resultado. Mastodon no permite listar las conversaciones
+    silenciadas, así que hay que hacerlo desde una publicación de esa conversación.
+  - **Publicaciones filtradas:** menú Mastodon → **"Filtros del servidor..."** →
+    **"Publicaciones filtradas..."**.
 - **Denunciar una publicación:** eliges el **motivo** (spam, contenido ilegal, incumple las normas
   del servidor u otro) y, en el tercer caso, **qué normas** de tu servidor incumple, en una lista
   de casillas; además del comentario y el reenvío al servidor del autor.

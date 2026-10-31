@@ -11,6 +11,17 @@ NUEVO: CÓDIGO EN GITHUB Y ACTUALIZACIONES DE RESPALDO
 - SocialRSS es software libre con licencia GPL versión 3 (o posterior). El texto de la licencia
   va incluido en la carpeta de la aplicación, en LICENSE.txt.
 
+CORREGIDO: LO QUE SE OCULTA EN MASTODON SE PUEDE RECUPERAR
+
+- La opción Ignorar publicaciones de este cliente no tenía vuelta atrás: el cliente quedaba oculto
+  y no había forma de recuperarlo desde la aplicación. Ahora el menú Mastodon tiene Clientes
+  ignorados, donde se ven todos y se recuperan con Dejar de ignorar.
+- Ignorar un cliente pide confirmación antes de ocultar nada y avisa de dónde se puede recuperar.
+- Silenciar una conversación tampoco se podía deshacer. La opción se llama ahora Silenciar o
+  reactivar esta conversación: consulta el estado real en el servidor y hace lo contrario.
+- Al ignorar un cliente desde la bandeja de entrada, la lista ya no se sustituye por la de Mastodon.
+- El manual explica cómo deshacer cada tipo de bloqueo o silencio en Mastodon.
+
 MEJORADO: TRADUCCIÓN AL INGLÉS
 
 - La interfaz en inglés estaba incompleta y muchas opciones nuevas aparecían en español. Se han

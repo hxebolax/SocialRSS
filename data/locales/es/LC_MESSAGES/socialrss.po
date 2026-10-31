@@ -560,6 +560,9 @@ msgstr "&Dejar / Rechazar"
 msgid "&Dejar de destacar"
 msgstr "&Dejar de destacar"
 
+msgid "&Dejar de ignorar"
+msgstr "&Dejar de ignorar"
+
 msgid "&Dejar de ocultar"
 msgstr "&Dejar de ocultar"
 
@@ -6783,6 +6786,12 @@ msgstr "Cliente de X (Twitter) - riesgos"
 msgid "Cliente: {0}"
 msgstr "Cliente: {0}"
 
+msgid "Clientes ignorados"
+msgstr "Clientes ignorados"
+
+msgid "Clientes ignorados..."
+msgstr "Clientes ignorados..."
+
 msgid "Co&mbinar las condiciones:"
 msgstr "Co&mbinar las condiciones:"
 
@@ -8053,6 +8062,9 @@ msgstr "Conversación quitada de tu lista."
 
 msgid "Conversación quitada."
 msgstr "Conversación quitada."
+
+msgid "Conversación reactivada: vuelves a recibir sus notificaciones."
+msgstr "Conversación reactivada: vuelves a recibir sus notificaciones."
 
 msgid "Conversación silenciada."
 msgstr "Conversación silenciada."
@@ -9335,6 +9347,9 @@ msgstr "Dejar de ignorar"
 
 msgid "Dejar de ignorar a {0}"
 msgstr "Dejar de ignorar a {0}"
+
+msgid "Dejar de ignorar publicaciones de este cliente"
+msgstr "Dejar de ignorar publicaciones de este cliente"
 
 msgid "Dejar de ignorar reportes"
 msgstr "Dejar de ignorar reportes"
@@ -13025,9 +13040,6 @@ msgstr "Ese artículo ya no está disponible (se eliminó)."
 msgid "Ese campo se edita en la pantalla del perfil, no aquí."
 msgstr "Ese campo se edita en la pantalla del perfil, no aquí."
 
-msgid "Ese cliente ya está en la lista de ignorados."
-msgstr "Ese cliente ya está en la lista de ignorados."
-
 msgid "Ese email SÍ está bloqueado ({0} coincidencias)."
 msgstr "Ese email SÍ está bloqueado ({0} coincidencias)."
 
@@ -15560,6 +15572,9 @@ msgstr "Ignorar a {0}"
 
 msgid "Ignorar a {0}..."
 msgstr "Ignorar a {0}..."
+
+msgid "Ignorar cliente"
+msgstr "Ignorar cliente"
 
 msgid "Ignorar publicaciones de este cliente"
 msgstr "Ignorar publicaciones de este cliente"
@@ -20893,9 +20908,6 @@ msgstr "No se pudo salir: {0}"
 msgid "No se pudo seguir: {0}"
 msgstr "No se pudo seguir: {0}"
 
-msgid "No se pudo silenciar: {0}"
-msgstr "No se pudo silenciar: {0}"
-
 msgid "No se pudo situar el mensaje en la conversación."
 msgstr "No se pudo situar el mensaje en la conversación."
 
@@ -21012,6 +21024,9 @@ msgstr "No tienes borradores ni publicaciones programadas."
 
 msgid "No tienes chats archivados."
 msgstr "No tienes chats archivados."
+
+msgid "No tienes clientes ignorados."
+msgstr "No tienes clientes ignorados."
 
 msgid "No tienes contactos ni grupos a los que reenviar."
 msgstr "No tienes contactos ni grupos a los que reenviar."
@@ -25923,6 +25938,9 @@ msgstr "Seleccione primero una cuenta activa para actualizar."
 msgid "Seleccione un bot."
 msgstr "Seleccione un bot."
 
+msgid "Seleccione un cliente."
+msgstr "Seleccione un cliente."
+
 msgid "Seleccione un elemento."
 msgstr "Seleccione un elemento."
 
@@ -26406,9 +26424,6 @@ msgstr "Silenciados"
 msgid "Silenciados los reposts de {0}."
 msgstr "Silenciados los reposts de {0}."
 
-msgid "Silenciando conversación..."
-msgstr "Silenciando conversación..."
-
 msgid "Silenciar"
 msgstr "Silenciar"
 
@@ -26444,6 +26459,9 @@ msgstr "Silenciar la instancia"
 
 msgid "Silenciar notificaciones"
 msgstr "Silenciar notificaciones"
+
+msgid "Silenciar o reactivar esta conversación"
+msgstr "Silenciar o reactivar esta conversación"
 
 msgid "Silenciar servidor"
 msgstr "Silenciar servidor"
@@ -27258,6 +27276,9 @@ msgstr "Suplantar: obtener una sesión como este usuario..."
 
 msgid "Sus me gusta (lo que le ha gustado)"
 msgstr "Sus me gusta (lo que le ha gustado)"
+
+msgid "Sus publicaciones están ocultas en todas tus cuentas de Mastodon:"
+msgstr "Sus publicaciones están ocultas en todas tus cuentas de Mastodon:"
 
 msgid "Suscribiendo a {0}..."
 msgstr "Suscribiendo a {0}..."
@@ -29732,6 +29753,11 @@ msgstr "Ver y quitar miembros"
 msgid "Ver y quitar usuarios ignorados de la red activa"
 msgstr "Ver y quitar usuarios ignorados de la red activa"
 
+msgid ""
+"Ver y recuperar los clientes (aplicaciones) cuyas publicaciones has ocultado"
+msgstr ""
+"Ver y recuperar los clientes (aplicaciones) cuyas publicaciones has ocultado"
+
 msgid "Ver y restaurar artículos eliminados"
 msgstr "Ver y restaurar artículos eliminados"
 
@@ -30118,6 +30144,9 @@ msgstr "Voz de lectura"
 
 msgid "Voz:"
 msgstr "Voz:"
+
+msgid "Vuelven a mostrarse las publicaciones del cliente {0}."
+msgstr "Vuelven a mostrarse las publicaciones del cliente {0}."
 
 msgid "Vuelves a estar disponible."
 msgstr "Vuelves a estar disponible."
@@ -32719,6 +32748,15 @@ msgstr ""
 
 msgid "¿Lista privada (solo la ves tú)?"
 msgstr "¿Lista privada (solo la ves tú)?"
+
+msgid ""
+"¿Ocultar todas las publicaciones hechas desde el cliente {0}, en todas tus "
+"cuentas de Mastodon? Podrás recuperarlas en el menú Mastodon, Clientes "
+"ignorados."
+msgstr ""
+"¿Ocultar todas las publicaciones hechas desde el cliente {0}, en todas tus "
+"cuentas de Mastodon? Podrás recuperarlas en el menú Mastodon, Clientes "
+"ignorados."
 
 msgid "¿Para qué es la lista?"
 msgstr "¿Para qué es la lista?"

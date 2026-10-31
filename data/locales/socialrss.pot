@@ -259,7 +259,7 @@ msgstr ""
 #: app/ui/bluesky_dialogs_moderacion.py:316
 #: app/ui/bluesky_dialogs_moderacion.py:693 app/ui/buffers_dialog.py:202
 #: app/ui/invisible_keymap_editor.py:253 app/ui/mastodon_colecciones_ui.py:70
-#: app/ui/mastodon_filtros_dialogs.py:363
+#: app/ui/mastodon_filtros_dialogs.py:365
 #: app/ui/mastodon_silenciar_dialog.py:32 app/ui/mf_media_servicio.py:1050
 #: app/ui/peertube_admin_dialogs.py:199
 #: app/ui/peertube_moderacion_dialogs.py:58 app/ui/reddit_fase3_dialogs.py:368
@@ -321,7 +321,7 @@ msgstr ""
 msgid "&Adjuntar imagen/vídeo..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:427
+#: app/ui/mf_navegacion_arbol.py:429
 msgid "&Administración"
 msgstr ""
 
@@ -461,7 +461,7 @@ msgstr ""
 msgid "&Bloquear/Desbloquear"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:312
+#: app/ui/mf_navegacion_arbol.py:314
 msgid "&Bluesky"
 msgstr ""
 
@@ -582,7 +582,7 @@ msgstr ""
 #: app/ui/bluesky_dialogs_moderacion.py:319
 #: app/ui/bluesky_dialogs_moderacion.py:697 app/ui/buffers_dialog.py:204
 #: app/ui/mastodon_colecciones_ui.py:73 app/ui/mastodon_compose.py:576
-#: app/ui/mastodon_filtros_dialogs.py:366 app/ui/mastodon_lists.py:166
+#: app/ui/mastodon_filtros_dialogs.py:368 app/ui/mastodon_lists.py:166
 #: app/ui/mastodon_lists.py:434 app/ui/mastodon_lists.py:610
 #: app/ui/mastodon_perfil_dialogs.py:315 app/ui/mastodon_reportar_dialog.py:43
 #: app/ui/mastodon_silenciar_dialog.py:35
@@ -649,8 +649,9 @@ msgstr ""
 #: app/ui/mastodon_colecciones_ui.py:127 app/ui/mastodon_colecciones_ui.py:253
 #: app/ui/mastodon_compose_helpers.py:97
 #: app/ui/mastodon_conversaciones_ui.py:53 app/ui/mastodon_drafts_ui.py:49
-#: app/ui/mastodon_filtros_dialogs.py:92
-#: app/ui/mastodon_filtros_dialogs.py:404 app/ui/mastodon_lists.py:47
+#: app/ui/mastodon_filtros_dialogs.py:473
+#: app/ui/mastodon_filtros_dialogs.py:94
+#: app/ui/mastodon_filtros_dialogs.py:406 app/ui/mastodon_lists.py:47
 #: app/ui/mastodon_lists.py:211 app/ui/mastodon_lists.py:341
 #: app/ui/mastodon_lists.py:465 app/ui/mastodon_lists.py:536
 #: app/ui/mastodon_notif_grupos_ui.py:58 app/ui/mastodon_perfil_dialogs.py:152
@@ -787,7 +788,7 @@ msgstr ""
 msgid "&Correo:"
 msgstr ""
 
-#: app/ui/filters_dialog.py:173 app/ui/mastodon_filtros_dialogs.py:322
+#: app/ui/filters_dialog.py:173 app/ui/mastodon_filtros_dialogs.py:324
 #: app/ui/matrix_dialogs.py:1150 app/ui/peertube_directos_dialogs.py:55
 #: app/ui/rss_views.py:214 app/ui/rss_views.py:433
 msgid "&Crear"
@@ -809,7 +810,7 @@ msgstr ""
 msgid "&Crear feed"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:80
+#: app/ui/mastodon_filtros_dialogs.py:82
 msgid "&Crear filtro..."
 msgstr ""
 
@@ -847,6 +848,10 @@ msgstr ""
 
 #: app/ui/mastodon_lists.py:533
 msgid "&Dejar de destacar"
+msgstr ""
+
+#: app/ui/mastodon_filtros_dialogs.py:470
+msgid "&Dejar de ignorar"
 msgstr ""
 
 #: app/ui/bluesky_dialogs_moderacion.py:595
@@ -1039,7 +1044,7 @@ msgstr ""
 
 #: app/ui/bluesky_dialogs_moderacion.py:167
 #: app/ui/mastodon_admin_dialogs.py:761 app/ui/mastodon_admin_dialogs.py:892
-#: app/ui/mastodon_colecciones_ui.py:241 app/ui/mastodon_filtros_dialogs.py:83
+#: app/ui/mastodon_colecciones_ui.py:241 app/ui/mastodon_filtros_dialogs.py:85
 #: app/ui/peertube_gestion_dialogs.py:129 app/ui/rss_reglas_ui.py:106
 #: app/ui/rss_reglas_ui.py:581 app/ui/snippets.py:101
 msgid "&Editar..."
@@ -1183,7 +1188,7 @@ msgid "&Grabar nota de voz"
 msgstr ""
 
 #: app/ui/ai_dialogs.py:95 app/ui/irc_dialogs.py:504
-#: app/ui/mastodon_filtros_dialogs.py:322 app/ui/mastodon_lists.py:163
+#: app/ui/mastodon_filtros_dialogs.py:324 app/ui/mastodon_lists.py:163
 #: app/ui/mastodon_lists.py:431 app/ui/mastodon_lists.py:606
 #: app/ui/mastodon_perfil_dialogs.py:311 app/ui/matrix_dialogs.py:518
 #: app/ui/matrix_dialogs.py:976 app/ui/peertube_biblioteca_dialogs.py:208
@@ -1260,7 +1265,7 @@ msgstr ""
 msgid "&Huellas OMEMO..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:691
+#: app/ui/mf_navegacion_arbol.py:693
 msgid "&IA"
 msgstr ""
 
@@ -1416,7 +1421,7 @@ msgstr ""
 msgid "&Marcar / desmarcar todos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:238
+#: app/ui/mf_navegacion_arbol.py:240
 msgid "&Mastodon"
 msgstr ""
 
@@ -1457,7 +1462,7 @@ msgstr ""
 msgid "&Modelo rápido (rellena el texto de abajo):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:356 app/ui/mf_navegacion_arbol.py:414
+#: app/ui/mf_navegacion_arbol.py:358 app/ui/mf_navegacion_arbol.py:416
 msgid "&Moderación"
 msgstr ""
 
@@ -1635,11 +1640,11 @@ msgstr ""
 msgid "&País:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:428
+#: app/ui/mf_navegacion_arbol.py:430
 msgid "&PeerTube"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:367
+#: app/ui/mf_navegacion_arbol.py:369
 msgid "&Personalización"
 msgstr ""
 
@@ -1695,7 +1700,7 @@ msgstr ""
 msgid "&Propiedades..."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:86
+#: app/ui/mastodon_filtros_dialogs.py:88
 msgid "&Publicaciones filtradas..."
 msgstr ""
 
@@ -1777,7 +1782,7 @@ msgstr ""
 msgid "&Quitar de mi lista"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:401
+#: app/ui/mastodon_filtros_dialogs.py:403
 msgid "&Quitar del filtro"
 msgstr ""
 
@@ -1805,7 +1810,7 @@ msgstr ""
 msgid "&Quién puede escribirme..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:537
+#: app/ui/mf_navegacion_arbol.py:539
 msgid "&RSS"
 msgstr ""
 
@@ -1847,7 +1852,7 @@ msgstr ""
 msgid "&Red:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:373
+#: app/ui/mf_navegacion_arbol.py:375
 msgid "&Reddit"
 msgstr ""
 
@@ -2103,7 +2108,7 @@ msgstr ""
 msgid "&Sí"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:614
+#: app/ui/mf_navegacion_arbol.py:616
 msgid "&Telegram"
 msgstr ""
 
@@ -2152,7 +2157,7 @@ msgstr ""
 msgid "&Token de registro (opcional, solo si el servidor lo pide):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:702
+#: app/ui/mf_navegacion_arbol.py:704
 msgid "&Traducción"
 msgstr ""
 
@@ -2284,7 +2289,7 @@ msgstr ""
 msgid "&W Social"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:656
+#: app/ui/mf_navegacion_arbol.py:658
 msgid "&X (Twitter)"
 msgstr ""
 
@@ -2433,7 +2438,7 @@ msgstr ""
 msgid "(destacado)"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:45
+#: app/ui/mastodon_filtros_dialogs.py:47
 msgid "(difumina la multimedia)"
 msgstr ""
 
@@ -2525,7 +2530,7 @@ msgstr ""
 msgid "(oculta por un filtro)"
 msgstr ""
 
-#: app/ui/mastodon_colecciones_ui.py:275 app/ui/mastodon_filtros_dialogs.py:43
+#: app/ui/mastodon_colecciones_ui.py:275 app/ui/mastodon_filtros_dialogs.py:45
 msgid "(oculta)"
 msgstr ""
 
@@ -2597,7 +2602,7 @@ msgstr ""
 msgid "(sin nombre)"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:41
+#: app/ui/mastodon_filtros_dialogs.py:43
 msgid "(sin palabras)"
 msgstr ""
 
@@ -2619,7 +2624,7 @@ msgstr ""
 
 #: app/ui/bluesky_outbox_ui.py:69 app/ui/mastodon_drafts_ui.py:67
 #: app/ui/mf_bandeja.py:308 app/ui/mf_bandeja.py:465
-#: app/ui/mf_telegram_handlers.py:1137
+#: app/ui/mf_telegram_handlers.py:1142
 #: app/ui/reddit_controller_acciones.py:364 app/ui/reddit_dialogs.py:264
 #: app/ui/reddit_fase3_dialogs.py:551 app/ui/reddit_fase3_dialogs.py:273
 #: app/ui/reddit_moderacion_dialogs.py:158 app/ui/telegram_bot_dialogs.py:93
@@ -2725,15 +2730,15 @@ msgid "1 año"
 msgstr ""
 
 #: app/ui/accessible_controls.py:90 app/ui/mastodon_compose.py:517
-#: app/ui/mastodon_filtros_dialogs.py:56
+#: app/ui/mastodon_filtros_dialogs.py:58
 #: app/ui/mastodon_silenciar_dialog.py:13 app/ui/telegram_dialogs_admin.py:414
 #: app/ui/xmpp_views.py:380
 msgid "1 día"
 msgstr ""
 
 #: app/ui/accessible_controls.py:88 app/ui/mastodon_compose.py:516
-#: app/ui/mastodon_filtros_dialogs.py:55
-#: app/ui/mastodon_silenciar_dialog.py:12 app/ui/mf_telegram_handlers.py:683
+#: app/ui/mastodon_filtros_dialogs.py:57
+#: app/ui/mastodon_silenciar_dialog.py:12 app/ui/mf_telegram_handlers.py:688
 #: app/ui/telegram_dialogs_admin.py:404 app/ui/ui_helpers.py:55
 #: app/ui/xmpp_views.py:380
 msgid "1 hora"
@@ -2747,7 +2752,7 @@ msgstr ""
 msgid "1 minuto"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:36
+#: app/ui/mastodon_filtros_dialogs.py:38
 msgid "1 publicación"
 msgstr ""
 
@@ -2759,7 +2764,7 @@ msgstr ""
 msgid "1 segundo"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:57
+#: app/ui/mastodon_filtros_dialogs.py:59
 #: app/ui/mastodon_silenciar_dialog.py:14 app/ui/xmpp_views.py:381
 msgid "1 semana"
 msgstr ""
@@ -2792,7 +2797,7 @@ msgstr ""
 msgid "1080p"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:56
+#: app/ui/mastodon_filtros_dialogs.py:58
 msgid "12 horas"
 msgstr ""
 
@@ -2804,7 +2809,7 @@ msgstr ""
 msgid "15 minutos"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:685
+#: app/ui/mf_telegram_handlers.py:690
 msgid "2 días"
 msgstr ""
 
@@ -2845,7 +2850,7 @@ msgstr ""
 msgid "30 días"
 msgstr ""
 
-#: app/ui/mastodon_compose.py:516 app/ui/mastodon_filtros_dialogs.py:55
+#: app/ui/mastodon_compose.py:516 app/ui/mastodon_filtros_dialogs.py:57
 #: app/ui/mastodon_silenciar_dialog.py:12
 msgid "30 minutos"
 msgstr ""
@@ -2867,7 +2872,7 @@ msgid "5 minutos"
 msgstr ""
 
 #: app/ui/accessible_controls.py:89 app/ui/mastodon_compose.py:517
-#: app/ui/mastodon_filtros_dialogs.py:56
+#: app/ui/mastodon_filtros_dialogs.py:58
 #: app/ui/mastodon_silenciar_dialog.py:13
 msgid "6 horas"
 msgstr ""
@@ -2889,7 +2894,7 @@ msgstr ""
 msgid "720p"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:684 app/ui/xmpp_views.py:380
+#: app/ui/mf_telegram_handlers.py:689 app/ui/xmpp_views.py:380
 msgid "8 horas"
 msgstr ""
 
@@ -2987,7 +2992,7 @@ msgstr ""
 msgid "A&viso de contenido en todo el hilo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:810
+#: app/ui/mf_navegacion_arbol.py:812
 msgid "A&yuda"
 msgstr ""
 
@@ -3093,7 +3098,7 @@ msgid ""
 "también en los menús."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:980
+#: app/ui/mf_telegram_handlers.py:985
 msgid "Abriendo Mensajes guardados..."
 msgstr ""
 
@@ -3210,7 +3215,7 @@ msgstr ""
 msgid "Abrir Preferencias"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:707
+#: app/ui/mf_navegacion_arbol.py:709
 msgid "Abrir Reproductor Multimedia..."
 msgstr ""
 
@@ -3249,7 +3254,7 @@ msgstr ""
 msgid "Abrir conversación"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:645
+#: app/ui/mf_telegram_handlers.py:650
 msgid "Abrir conversación (Enter)"
 msgstr ""
 
@@ -3266,7 +3271,7 @@ msgstr ""
 msgid "Abrir cronología de un usuario"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:110 app/ui/mf_navegacion_arbol.py:639
+#: app/ui/mf_navegacion_arbol.py:110 app/ui/mf_navegacion_arbol.py:641
 msgid "Abrir cronología de un usuario..."
 msgstr ""
 
@@ -3278,7 +3283,7 @@ msgstr ""
 msgid "Abrir el adjunto"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:876
+#: app/ui/mf_telegram_handlers.py:881
 #: app/ui/peertube_controller_acciones.py:178
 msgid "Abrir el canal"
 msgstr ""
@@ -3315,7 +3320,7 @@ msgstr ""
 msgid "Abrir el lector limpio"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:774
+#: app/ui/mf_navegacion_arbol.py:776
 msgid "Abrir el manual de usuario en el navegador"
 msgstr ""
 
@@ -3342,7 +3347,7 @@ msgstr ""
 #: app/ui/bluesky_controller_acciones.py:495
 #: app/ui/bluesky_controller_social.py:709 app/ui/bluesky_thread_viewer.py:287
 #: app/ui/invisible_keymap.py:65 app/ui/mastodon_perfil_dialogs.py:625
-#: app/ui/mf_autores_listas.py:271 app/ui/mf_autores_listas.py:270
+#: app/ui/mf_autores_listas.py:272 app/ui/mf_autores_listas.py:271
 #: app/ui/peertube_controller_acciones.py:174
 #: app/ui/peertube_controller_acciones.py:227
 #: app/ui/reddit_controller_acciones.py:246
@@ -3353,7 +3358,7 @@ msgstr ""
 msgid "Abrir en el navegador"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:786
+#: app/ui/mf_navegacion_arbol.py:788
 msgid "Abrir en el navegador el documento de teclas en el idioma activo"
 msgstr ""
 
@@ -3456,7 +3461,7 @@ msgstr ""
 msgid "Abrir la página de aplicaciones de Reddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:804
+#: app/ui/mf_navegacion_arbol.py:806
 msgid "Abrir la página de donaciones de PayPal en el navegador"
 msgstr ""
 
@@ -3468,15 +3473,15 @@ msgstr ""
 msgid "Abrir la ubicación en el mapa"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:328
+#: app/ui/mf_navegacion_arbol.py:330
 msgid "Abrir las publicaciones de un subreddit por su nombre"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:382
+#: app/ui/mf_navegacion_arbol.py:384
 msgid "Abrir los vídeos de un canal por su identificador"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:707
+#: app/ui/mf_navegacion_arbol.py:709
 msgid "Abrir panel de control de podcast/audio"
 msgstr ""
 
@@ -3504,11 +3509,11 @@ msgstr ""
 msgid "Abrir sus publicaciones como buffer"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:558
+#: app/ui/mf_navegacion_arbol.py:560
 msgid "Abrir tu chat de Mensajes guardados"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:260
+#: app/ui/mf_navegacion_arbol.py:262
 msgid "Abrir un borrador guardado"
 msgstr ""
 
@@ -3591,7 +3596,7 @@ msgstr ""
 msgid "Acción de moderación sobre @{0}"
 msgstr ""
 
-#: app/ui/filters_dialog.py:168 app/ui/mastodon_filtros_dialogs.py:283
+#: app/ui/filters_dialog.py:168 app/ui/mastodon_filtros_dialogs.py:285
 msgid "Acción del filtro"
 msgstr ""
 
@@ -3624,7 +3629,7 @@ msgstr ""
 msgid "Acción sobre «{0}»:"
 msgstr ""
 
-#: app/ui/filters_dialog.py:167 app/ui/mastodon_filtros_dialogs.py:278
+#: app/ui/filters_dialog.py:167 app/ui/mastodon_filtros_dialogs.py:280
 #: app/ui/mf_mastodon_extra.py:792
 msgid "Acción:"
 msgstr ""
@@ -3676,7 +3681,7 @@ msgstr ""
 msgid "Aceptar o rechazar a quienes piden seguirte (cuentas privadas)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:419
+#: app/ui/mf_navegacion_arbol.py:421
 msgid "Aceptar o rechazar registros"
 msgstr ""
 
@@ -3692,15 +3697,15 @@ msgstr ""
 msgid "Acerca de esta instancia"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:205
+#: app/ui/mf_navegacion_arbol.py:207
 msgid "Acerca de esta instancia..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:807
+#: app/ui/mf_navegacion_arbol.py:809
 msgid "Acerca de..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:654
+#: app/ui/mf_navegacion_arbol.py:656
 msgid "Acerca del cliente de X (riesgos)..."
 msgstr ""
 
@@ -3827,7 +3832,7 @@ msgstr ""
 msgid "Activar temas (foros)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:590
+#: app/ui/mf_navegacion_arbol.py:592
 msgid "Activar, cambiar o quitar la contraseña en la nube"
 msgstr ""
 
@@ -3852,11 +3857,11 @@ msgstr ""
 msgid "Active primero una cuenta RSS."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:101 app/ui/mf_autores_listas.py:110
-#: app/ui/mf_autores_listas.py:183 app/ui/mf_autores_listas.py:201
-#: app/ui/mf_autores_listas.py:225 app/ui/mf_autores_listas.py:251
-#: app/ui/mf_autores_listas.py:287 app/ui/mf_autores_listas.py:310
-#: app/ui/mf_autores_listas.py:323 app/ui/mf_autores_listas.py:336
+#: app/ui/mf_autores_listas.py:102 app/ui/mf_autores_listas.py:111
+#: app/ui/mf_autores_listas.py:184 app/ui/mf_autores_listas.py:202
+#: app/ui/mf_autores_listas.py:226 app/ui/mf_autores_listas.py:252
+#: app/ui/mf_autores_listas.py:288 app/ui/mf_autores_listas.py:311
+#: app/ui/mf_autores_listas.py:324 app/ui/mf_autores_listas.py:337
 #: app/ui/mf_publicacion.py:629 app/ui/mf_publicacion.py:657
 #: app/ui/mf_publicacion.py:667 app/ui/mf_publicacion.py:682
 #: app/ui/mf_publicacion.py:691 app/ui/mf_publicacion.py:700
@@ -4152,7 +4157,7 @@ msgstr ""
 msgid "Adjuntos:"
 msgstr ""
 
-#: app/ui/mf_matrix_handlers.py:116 app/ui/mf_navegacion_arbol.py:235
+#: app/ui/mf_matrix_handlers.py:116 app/ui/mf_navegacion_arbol.py:237
 #: app/ui/mf_xmpp_handlers.py:96
 msgid "Administración"
 msgstr ""
@@ -4226,7 +4231,7 @@ msgstr ""
 msgid "Administrar Cuentas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:454
+#: app/ui/mf_navegacion_arbol.py:456
 msgid "Administrar categorías RSS"
 msgstr ""
 
@@ -4303,7 +4308,7 @@ msgstr ""
 msgid "Agregar contacto..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:443
+#: app/ui/mf_navegacion_arbol.py:445
 msgid "Agregar una nueva fuente de noticias RSS"
 msgstr ""
 
@@ -4311,7 +4316,7 @@ msgstr ""
 msgid "Agrupación desactivada."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:520
+#: app/ui/mf_navegacion_arbol.py:522
 msgid "Agrupar por fecha"
 msgstr ""
 
@@ -4347,7 +4352,7 @@ msgstr ""
 msgid "Ahora se puede llamar a la puerta de «{0}»."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:245
+#: app/ui/mf_autores_listas.py:246
 msgid "Ahora sigues #{0}."
 msgstr ""
 
@@ -4363,12 +4368,12 @@ msgstr ""
 msgid "Ahora sigues a este usuario."
 msgstr ""
 
-#: app/ui/bluesky_controller_acciones.py:855 app/ui/mf_autores_listas.py:505
-#: app/ui/mf_autores_listas.py:382 app/ui/wsocial_controller_social.py:35
+#: app/ui/bluesky_controller_acciones.py:855 app/ui/mf_autores_listas.py:536
+#: app/ui/mf_autores_listas.py:383 app/ui/wsocial_controller_social.py:35
 msgid "Ahora sigues a {0}."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:196
+#: app/ui/mf_autores_listas.py:197
 msgid "Ahora sigues el hashtag {0}."
 msgstr ""
 
@@ -4376,7 +4381,7 @@ msgstr ""
 msgid "Ahora usa el límite general del servidor."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:561
+#: app/ui/mf_navegacion_arbol.py:563
 msgid "Ajustar quién ve tu información"
 msgstr ""
 
@@ -4396,7 +4401,7 @@ msgstr ""
 msgid "Ajustes de cuenta guardados."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:567
+#: app/ui/mf_navegacion_arbol.py:569
 msgid "Ajustes de cuenta..."
 msgstr ""
 
@@ -4672,7 +4677,7 @@ msgid ""
 "contiene:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:466
+#: app/ui/mf_navegacion_arbol.py:468
 msgid "Alertas por palabra clave..."
 msgstr ""
 
@@ -4892,8 +4897,8 @@ msgstr ""
 msgid "Aplicación de Reddit (necesaria para añadir cuentas)"
 msgstr ""
 
-#: app/ui/mf_media_servicio.py:84 app/ui/mf_telegram_handlers.py:999
-#: app/ui/mf_telegram_handlers.py:1037 app/ui/telegram_conv_extras.py:293
+#: app/ui/mf_media_servicio.py:84 app/ui/mf_telegram_handlers.py:1004
+#: app/ui/mf_telegram_handlers.py:1042 app/ui/telegram_conv_extras.py:293
 msgid "Aplicando..."
 msgstr ""
 
@@ -4917,7 +4922,7 @@ msgstr ""
 msgid "Aplicar a:"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:288
+#: app/ui/mastodon_filtros_dialogs.py:290
 msgid "Aplicar en:"
 msgstr ""
 
@@ -5017,11 +5022,11 @@ msgstr ""
 msgid "Archivar"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:665
+#: app/ui/mf_telegram_handlers.py:670
 msgid "Archivar / desarchivar"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:661
+#: app/ui/mf_telegram_handlers.py:666
 msgid "Archivar este chat"
 msgstr ""
 
@@ -5029,7 +5034,7 @@ msgstr ""
 msgid "Archivar y silenciar los chats nuevos de desconocidos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:564
+#: app/ui/mf_navegacion_arbol.py:566
 msgid "Archivar/silenciar chats nuevos, ocultar la hora de lectura, etc."
 msgstr ""
 
@@ -5364,7 +5369,7 @@ msgstr ""
 msgid "Autodestrucción de mensajes..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:567
+#: app/ui/mf_navegacion_arbol.py:569
 msgid ""
 "Autodestrucción por inactividad, cierre de sesiones, estado en línea y "
 "cambio de número"
@@ -5402,7 +5407,7 @@ msgstr ""
 msgid "Autor (contiene):"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:428
+#: app/ui/mf_autores_listas.py:429
 msgid "Autor bloqueado."
 msgstr ""
 
@@ -5426,7 +5431,7 @@ msgstr ""
 msgid "Autor original. "
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:428
+#: app/ui/mf_autores_listas.py:429
 msgid "Autor silenciado."
 msgstr ""
 
@@ -5480,11 +5485,11 @@ msgstr ""
 msgid "Avisar"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:279
+#: app/ui/mastodon_filtros_dialogs.py:281
 msgid "Avisar (ocultar tras un aviso que se puede mostrar)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:309
+#: app/ui/mf_navegacion_arbol.py:311
 msgid "Avisar al instante de las menciones a tu cuenta mediante el firehose"
 msgstr ""
 
@@ -5497,7 +5502,7 @@ msgstr ""
 msgid "Avisar antes"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:705
+#: app/ui/mf_telegram_handlers.py:710
 msgid "Avisar de captura de pantalla"
 msgstr ""
 
@@ -5541,7 +5546,7 @@ msgstr ""
 msgid "Avisarme cuando publique algo nuevo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:466
+#: app/ui/mf_navegacion_arbol.py:468
 msgid "Avisarte cuando llegue un artículo con ciertas palabras"
 msgstr ""
 
@@ -5767,7 +5772,7 @@ msgstr ""
 msgid "Añadir Feed RSS"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:443
+#: app/ui/mf_navegacion_arbol.py:445
 msgid "Añadir Feed RSS..."
 msgstr ""
 
@@ -5779,7 +5784,7 @@ msgstr ""
 msgid "Añadir a favoritos"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:563
+#: app/ui/mf_telegram_handlers.py:568
 msgid "Añadir a la cola de podcasts"
 msgstr ""
 
@@ -5832,7 +5837,7 @@ msgstr ""
 msgid "Añadir a una lista..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:742
+#: app/ui/mf_telegram_handlers.py:747
 msgid "Añadir a «{0}»"
 msgstr ""
 
@@ -5864,7 +5869,7 @@ msgstr ""
 msgid "Añadir canal de YouTube"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:451
+#: app/ui/mf_navegacion_arbol.py:453
 msgid "Añadir canal de YouTube..."
 msgstr ""
 
@@ -6193,7 +6198,7 @@ msgstr ""
 msgid "Barra lateral (descripción larga)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:365
+#: app/ui/mf_navegacion_arbol.py:367
 msgid "Barra lateral (widgets)..."
 msgstr ""
 
@@ -6224,7 +6229,7 @@ msgid ""
 msgstr ""
 
 #: app/ui/bluesky_controller_carga.py:620
-#: app/ui/mastodon_perfil_dialogs.py:229 app/ui/mf_telegram_handlers.py:1014
+#: app/ui/mastodon_perfil_dialogs.py:229 app/ui/mf_telegram_handlers.py:1019
 #: app/ui/x_controller.py:352
 msgid "Biografía"
 msgstr ""
@@ -6274,11 +6279,11 @@ msgstr ""
 msgid "Bloquear al autor"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:699
+#: app/ui/mf_telegram_handlers.py:704
 msgid "Bloquear al bot"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:699
+#: app/ui/mf_telegram_handlers.py:704
 msgid "Bloquear al usuario"
 msgstr ""
 
@@ -6292,7 +6297,7 @@ msgstr ""
 msgid "Bloquear comentarios"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:92 app/ui/mf_autores_listas.py:351
+#: app/ui/mf_autores_listas.py:93 app/ui/mf_autores_listas.py:352
 #: app/ui/mf_mastodon_extra.py:574
 msgid "Bloquear dominio"
 msgstr ""
@@ -6329,7 +6334,7 @@ msgstr ""
 msgid "Bloquear o desbloquear la sala..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:491
+#: app/ui/mf_telegram_handlers.py:496
 msgid "Bloquear todo el dominio del autor..."
 msgstr ""
 
@@ -6353,11 +6358,11 @@ msgstr ""
 msgid "Bloqueo {0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:227
+#: app/ui/mf_navegacion_arbol.py:229
 msgid "Bloqueos de IP..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:223
+#: app/ui/mf_navegacion_arbol.py:225
 msgid "Bloqueos de dominio de email..."
 msgstr ""
 
@@ -6365,7 +6370,7 @@ msgstr ""
 msgid "Bloqueos de email canónico (se guardan cifrados, no en claro):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:225
+#: app/ui/mf_navegacion_arbol.py:227
 msgid "Bloqueos de email concreto (canónico)..."
 msgstr ""
 
@@ -6455,7 +6460,7 @@ msgstr ""
 msgid "Borradores"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:260
+#: app/ui/mf_navegacion_arbol.py:262
 msgid "Borradores de Bluesky..."
 msgstr ""
 
@@ -6475,11 +6480,11 @@ msgstr ""
 msgid "Borradores y programados (elige uno):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:731
+#: app/ui/mf_navegacion_arbol.py:733
 msgid "Borradores y programados de todas las redes..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:166 app/ui/mf_navegacion_arbol.py:369
+#: app/ui/mf_navegacion_arbol.py:166 app/ui/mf_navegacion_arbol.py:371
 msgid "Borradores..."
 msgstr ""
 
@@ -6564,7 +6569,7 @@ msgstr ""
 msgid "Borrar datos / liberar espacio"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:752
+#: app/ui/mf_navegacion_arbol.py:754
 msgid "Borrar datos / liberar espacio..."
 msgstr ""
 
@@ -6580,7 +6585,7 @@ msgstr ""
 msgid "Borrar descarga"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:568
+#: app/ui/mf_telegram_handlers.py:573
 msgid "Borrar descarga (offline)"
 msgstr ""
 
@@ -6612,7 +6617,7 @@ msgstr ""
 msgid "Borrar esta cronología de usuario"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:702
+#: app/ui/mf_telegram_handlers.py:707
 msgid "Borrar este chat..."
 msgstr ""
 
@@ -6748,7 +6753,7 @@ msgid "Borrarlos definitivamente (no vuelven a aparecer)"
 msgstr ""
 
 #: app/ui/mf_app_despacho.py:69 app/ui/mf_app_despacho.py:440
-#: app/ui/mf_telegram_handlers.py:913 app/ui/telegram_dialogs_admin.py:899
+#: app/ui/mf_telegram_handlers.py:918 app/ui/telegram_dialogs_admin.py:899
 #: app/ui/telegram_dialogs_admin.py:156
 msgid "Bot"
 msgstr ""
@@ -6921,7 +6926,7 @@ msgstr ""
 msgid "Buscando el canal y reconstruyendo el índice..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:870
+#: app/ui/mf_telegram_handlers.py:875
 msgid "Buscando en canales públicos..."
 msgstr ""
 
@@ -6953,7 +6958,7 @@ msgstr ""
 msgid "Buscando pasarelas..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:274
+#: app/ui/mf_autores_listas.py:275
 msgid "Buscando publicaciones..."
 msgstr ""
 
@@ -6981,12 +6986,12 @@ msgstr ""
 msgid "Buscando tu cuenta..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:296 app/ui/reddit_controller_social.py:299
+#: app/ui/mf_autores_listas.py:297 app/ui/reddit_controller_social.py:299
 msgid "Buscando usuarios..."
 msgstr ""
 
 #: app/ui/bluesky_controller_social.py:641 app/ui/mf_acciones_toot.py:1305
-#: app/ui/mf_telegram_handlers.py:942 app/ui/mf_telegram_handlers.py:834
+#: app/ui/mf_telegram_handlers.py:947 app/ui/mf_telegram_handlers.py:839
 #: app/ui/radio_dialog.py:220 app/ui/rss_buscar_feeds.py:92
 #: app/ui/search_dialog.py:104 app/ui/telegram_bot_dialogs.py:298
 #: app/ui/wsocial_controller_social.py:118
@@ -7019,7 +7024,7 @@ msgstr ""
 msgid "Buscar actualizaciones de reglas BPC"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:799
+#: app/ui/mf_navegacion_arbol.py:801
 msgid "Buscar actualizaciones..."
 msgstr ""
 
@@ -7035,11 +7040,11 @@ msgstr ""
 msgid "Buscar canales"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:380
+#: app/ui/mf_navegacion_arbol.py:382
 msgid "Buscar canales por nombre o tema"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:380
+#: app/ui/mf_navegacion_arbol.py:382
 msgid "Buscar canales..."
 msgstr ""
 
@@ -7047,7 +7052,7 @@ msgstr ""
 msgid "Buscar comunidades"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:643
+#: app/ui/mf_navegacion_arbol.py:645
 msgid "Buscar comunidades de X, unirte o abrir sus publicaciones como buffer"
 msgstr ""
 
@@ -7055,11 +7060,11 @@ msgstr ""
 msgid "Buscar comunidades de X:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:333
+#: app/ui/mf_navegacion_arbol.py:335
 msgid "Buscar comunidades por nombre o tema"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:643
+#: app/ui/mf_navegacion_arbol.py:645
 msgid "Buscar comunidades..."
 msgstr ""
 
@@ -7091,7 +7096,7 @@ msgstr ""
 msgid "Buscar cuentas de X (nombre o @usuario):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:641
+#: app/ui/mf_navegacion_arbol.py:643
 msgid "Buscar cuentas de X por nombre o @usuario y actuar sobre ellas"
 msgstr ""
 
@@ -7106,7 +7111,7 @@ msgid ""
 "Buscar cuentas, ver detalles, desactivar, hacer admin, cambiar contraseña"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:272 app/ui/mf_navegacion_arbol.py:641
+#: app/ui/mf_navegacion_arbol.py:274 app/ui/mf_navegacion_arbol.py:643
 msgid "Buscar cuentas..."
 msgstr ""
 
@@ -7118,7 +7123,7 @@ msgstr ""
 msgid "Buscar en &directorios..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:908 app/ui/mf_telegram_handlers.py:933
+#: app/ui/mf_telegram_handlers.py:913 app/ui/mf_telegram_handlers.py:938
 msgid "Buscar en Telegram"
 msgstr ""
 
@@ -7130,7 +7135,7 @@ msgstr ""
 msgid "Buscar en X"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:445
+#: app/ui/mf_navegacion_arbol.py:447
 msgid ""
 "Buscar en directorios públicos (Apple Podcasts, fyyd, gPodder, Feedly, "
 "NewsBlur, Lemmy, Mastodon) y suscribirse"
@@ -7152,7 +7157,7 @@ msgstr ""
 msgid "Buscar en todo el contenido"
 msgstr ""
 
-#: app/ui/menu_teclas.py:189 app/ui/mf_navegacion_arbol.py:722
+#: app/ui/menu_teclas.py:189 app/ui/mf_navegacion_arbol.py:724
 msgid "Buscar en todo el contenido..."
 msgstr ""
 
@@ -7180,11 +7185,11 @@ msgstr ""
 msgid "Buscar feeds y podcasts en directorios públicos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:445
+#: app/ui/mf_navegacion_arbol.py:447
 msgid "Buscar feeds y podcasts..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:551
+#: app/ui/mf_navegacion_arbol.py:553
 msgid "Buscar mensajes en todos los chats"
 msgstr ""
 
@@ -7192,13 +7197,13 @@ msgstr ""
 msgid "Buscar personas en el directorio del servidor"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:548
+#: app/ui/mf_navegacion_arbol.py:550
 msgid ""
 "Buscar personas, grupos, supergrupos y canales públicos por nombre o "
 "@usuario"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:555
+#: app/ui/mf_navegacion_arbol.py:557
 msgid ""
 "Buscar por hashtag publicaciones públicas de canales de todo Telegram, "
 "aunque no estés suscrito"
@@ -7220,19 +7225,19 @@ msgstr ""
 msgid "Buscar publicaciones"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:847
+#: app/ui/mf_telegram_handlers.py:852
 msgid "Buscar publicaciones de canales"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:554
+#: app/ui/mf_navegacion_arbol.py:556
 msgid "Buscar publicaciones de canales..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:331
+#: app/ui/mf_navegacion_arbol.py:333
 msgid "Buscar publicaciones en todo Reddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:331
+#: app/ui/mf_navegacion_arbol.py:333
 msgid "Buscar publicaciones..."
 msgstr ""
 
@@ -7252,7 +7257,7 @@ msgstr ""
 msgid "Buscar subreddits"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:333
+#: app/ui/mf_navegacion_arbol.py:335
 msgid "Buscar subreddits..."
 msgstr ""
 
@@ -7268,7 +7273,7 @@ msgstr ""
 msgid "Buscar usuarios de XMPP"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:291
+#: app/ui/mf_autores_listas.py:292
 msgid "Buscar usuarios en Mastodon"
 msgstr ""
 
@@ -7276,19 +7281,19 @@ msgstr ""
 msgid "Buscar usuarios en {0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:335
+#: app/ui/mf_navegacion_arbol.py:337
 msgid "Buscar usuarios por nombre"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:272
+#: app/ui/mf_navegacion_arbol.py:274
 msgid "Buscar usuarios por nombre o handle"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:548
+#: app/ui/mf_navegacion_arbol.py:550
 msgid "Buscar usuarios, grupos y canales..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:113 app/ui/mf_navegacion_arbol.py:335
+#: app/ui/mf_navegacion_arbol.py:113 app/ui/mf_navegacion_arbol.py:337
 #: app/ui/mf_xmpp_handlers.py:67
 msgid "Buscar usuarios..."
 msgstr ""
@@ -7297,15 +7302,15 @@ msgstr ""
 msgid "Buscar vídeos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:378
+#: app/ui/mf_navegacion_arbol.py:380
 msgid "Buscar vídeos en la instancia"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:378
+#: app/ui/mf_navegacion_arbol.py:380
 msgid "Buscar vídeos..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:710
+#: app/ui/mf_navegacion_arbol.py:712
 msgid "Buscar y escuchar emisoras de radio de todo el mundo"
 msgstr ""
 
@@ -7334,15 +7339,15 @@ msgstr ""
 msgid "Búsqueda eliminada."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:722
+#: app/ui/mf_navegacion_arbol.py:724
 msgid "Búsqueda en texto completo en toots y artículos guardados"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:551
+#: app/ui/mf_navegacion_arbol.py:553
 msgid "Búsqueda global de mensajes..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:812
+#: app/ui/mf_telegram_handlers.py:817
 msgid "Búsqueda global en Telegram"
 msgstr ""
 
@@ -7409,7 +7414,7 @@ msgstr ""
 msgid "Búsquedas guardadas en el árbol"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:457
+#: app/ui/mf_navegacion_arbol.py:459
 msgid "Búsquedas guardadas..."
 msgstr ""
 
@@ -7417,7 +7422,7 @@ msgstr ""
 #: app/ui/invisible_keymap_editor.py:95 app/ui/invisible_keymap_editor.py:255
 #: app/ui/irc_dialogs.py:96 app/ui/irc_dialogs.py:507
 #: app/ui/mastodon_cuentas_dialogs.py:648
-#: app/ui/mastodon_filtros_dialogs.py:325 app/ui/matrix_dialogs.py:86
+#: app/ui/mastodon_filtros_dialogs.py:327 app/ui/matrix_dialogs.py:86
 #: app/ui/matrix_dialogs.py:521 app/ui/matrix_dialogs.py:979
 #: app/ui/matrix_dialogs.py:1153 app/ui/matrix_dialogs.py:1285
 #: app/ui/spellcheck_dialog.py:53 app/ui/xmpp_dialogs.py:57
@@ -7467,7 +7472,7 @@ msgid ""
 msgstr ""
 
 #: app/ui/bluesky_dialogs_moderacion.py:157
-#: app/ui/mastodon_filtros_dialogs.py:76 app/ui/matrix_admin_dialogs.py:761
+#: app/ui/mastodon_filtros_dialogs.py:78 app/ui/matrix_admin_dialogs.py:761
 #: app/ui/wsocial_dialogs_gestion.py:288
 msgid "Caduca"
 msgstr ""
@@ -7480,11 +7485,11 @@ msgstr ""
 msgid "Caducar en &segundos (vacío = permanente):"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:317
+#: app/ui/mastodon_filtros_dialogs.py:319
 msgid "Caducidad del filtro"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:314
+#: app/ui/mastodon_filtros_dialogs.py:316
 msgid "Caducidad:"
 msgstr ""
 
@@ -7496,7 +7501,7 @@ msgstr ""
 msgid "Calculando hash"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1110
+#: app/ui/mf_telegram_handlers.py:1115
 msgid "Calculando..."
 msgstr ""
 
@@ -7746,7 +7751,7 @@ msgid "Campos disponibles"
 msgstr ""
 
 #: app/ui/irc_dialogs.py:358 app/ui/mf_app_despacho.py:70
-#: app/ui/mf_app_despacho.py:441 app/ui/mf_telegram_handlers.py:914
+#: app/ui/mf_app_despacho.py:441 app/ui/mf_telegram_handlers.py:919
 #: app/ui/peertube_biblioteca_dialogs.py:75
 #: app/ui/peertube_biblioteca_dialogs.py:147
 #: app/ui/peertube_directos_dialogs.py:29 app/ui/telegram_dialogs_admin.py:109
@@ -7852,7 +7857,7 @@ msgstr ""
 msgid "Canales similares a «{0}»"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:716
+#: app/ui/mf_telegram_handlers.py:721
 msgid "Canales similares..."
 msgstr ""
 
@@ -7919,7 +7924,7 @@ msgstr ""
 msgid "Cancelar la nota de voz que estás grabando"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:130
+#: app/ui/mf_autores_listas.py:131
 msgid "Cancelar la publicación"
 msgstr ""
 
@@ -7931,7 +7936,7 @@ msgstr ""
 msgid "Cancelar mensaje programado"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:137
+#: app/ui/mf_autores_listas.py:138
 msgid "Cancelar programada"
 msgstr ""
 
@@ -7967,7 +7972,7 @@ msgstr ""
 msgid "Capacidades de tu instancia"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:207
+#: app/ui/mf_navegacion_arbol.py:209
 msgid "Capacidades de tu instancia..."
 msgstr ""
 
@@ -8067,7 +8072,7 @@ msgstr ""
 msgid "Cargando conversación..."
 msgstr ""
 
-#: app/ui/bluesky_controller_social.py:665 app/ui/mf_autores_listas.py:325
+#: app/ui/bluesky_controller_social.py:665 app/ui/mf_autores_listas.py:326
 msgid "Cargando cuentas sugeridas..."
 msgstr ""
 
@@ -8087,7 +8092,7 @@ msgstr ""
 msgid "Cargando detalles..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:338
+#: app/ui/mf_autores_listas.py:339
 msgid "Cargando dominios bloqueados..."
 msgstr ""
 
@@ -8095,7 +8100,7 @@ msgstr ""
 msgid "Cargando el contexto..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:312
+#: app/ui/mf_autores_listas.py:313
 msgid "Cargando el directorio de perfiles..."
 msgstr ""
 
@@ -8135,7 +8140,7 @@ msgstr ""
 msgid "Cargando encuesta..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:253
+#: app/ui/mf_autores_listas.py:254
 msgid "Cargando enlaces en tendencia..."
 msgstr ""
 
@@ -8164,7 +8169,7 @@ msgstr ""
 msgid "Cargando feeds sugeridos..."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:100
+#: app/ui/mastodon_filtros_dialogs.py:102
 msgid "Cargando filtros del servidor..."
 msgstr ""
 
@@ -8172,11 +8177,11 @@ msgstr ""
 msgid "Cargando grupos de notificaciones..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:227
+#: app/ui/mf_autores_listas.py:228
 msgid "Cargando hashtags en tendencia..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1127
+#: app/ui/mf_telegram_handlers.py:1132
 msgid "Cargando historias del canal..."
 msgstr ""
 
@@ -8239,7 +8244,7 @@ msgid "Cargando mensajes anteriores..."
 msgstr ""
 
 #: app/ui/bluesky_controller_social.py:929 app/ui/matrix_dialogs.py:177
-#: app/ui/mf_telegram_handlers.py:963 app/ui/telegram_dialogs_admin.py:135
+#: app/ui/mf_telegram_handlers.py:968 app/ui/telegram_dialogs_admin.py:135
 msgid "Cargando miembros..."
 msgstr ""
 
@@ -8267,7 +8272,7 @@ msgstr ""
 msgid "Cargando novedades..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:787 app/ui/reddit_controller_social.py:191
+#: app/ui/mf_telegram_handlers.py:792 app/ui/reddit_controller_social.py:191
 msgid "Cargando perfil..."
 msgstr ""
 
@@ -8295,7 +8300,7 @@ msgstr ""
 msgid "Cargando publicaciones más antiguas..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:112
+#: app/ui/mf_autores_listas.py:113
 msgid "Cargando publicaciones programadas..."
 msgstr ""
 
@@ -8323,7 +8328,7 @@ msgstr ""
 msgid "Cargando servicios de etiquetado..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:804
+#: app/ui/mf_telegram_handlers.py:809
 #: app/ui/peertube_controller_directos.py:78
 msgid "Cargando sesiones..."
 msgstr ""
@@ -8397,7 +8402,7 @@ msgstr ""
 #: app/ui/bluesky_controller_social.py:838
 #: app/ui/bluesky_dialogs_moderacion.py:300
 #: app/ui/mastodon_colecciones_ui.py:109
-#: app/ui/mastodon_filtros_dialogs.py:394 app/ui/mf_autores_listas.py:203
+#: app/ui/mastodon_filtros_dialogs.py:396 app/ui/mf_autores_listas.py:204
 #: app/ui/mf_publicacion.py:883 app/ui/mf_telegram_chats.py:787
 #: app/ui/reddit_fase3_dialogs.py:253 app/ui/reddit_fase4_dialogs.py:487
 #: app/ui/reddit_moderacion_dialogs.py:127
@@ -8407,7 +8412,7 @@ msgstr ""
 msgid "Cargando..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:535 app/ui/player/player2_extras.py:196
+#: app/ui/mf_autores_listas.py:566 app/ui/player/player2_extras.py:196
 msgid "Cargando: {0}"
 msgstr ""
 
@@ -8469,7 +8474,7 @@ msgstr ""
 msgid "Cargar más comentarios en Reddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:258 app/ui/mf_navegacion_arbol.py:323
+#: app/ui/mf_navegacion_arbol.py:260 app/ui/mf_navegacion_arbol.py:325
 msgid "Cargar más publicaciones"
 msgstr ""
 
@@ -8477,11 +8482,11 @@ msgstr ""
 msgid "Cargar más toots antiguos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:385
+#: app/ui/mf_navegacion_arbol.py:387
 msgid "Cargar más vídeos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:634 app/ui/x_controller.py:620
+#: app/ui/mf_navegacion_arbol.py:636 app/ui/x_controller.py:620
 msgid "Cargar publicaciones más antiguas"
 msgstr ""
 
@@ -8494,7 +8499,7 @@ msgstr ""
 msgid "Carpeta"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:997
+#: app/ui/mf_telegram_handlers.py:1002
 msgid "Carpeta actualizada."
 msgstr ""
 
@@ -8578,7 +8583,7 @@ msgstr ""
 msgid "Carpeta: {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:745
+#: app/ui/mf_telegram_handlers.py:750
 msgid "Carpetas"
 msgstr ""
 
@@ -8590,17 +8595,17 @@ msgstr ""
 msgid "Carpetas inteligentes"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:460
+#: app/ui/mf_navegacion_arbol.py:462
 msgid "Carpetas inteligentes..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:460
+#: app/ui/mf_navegacion_arbol.py:462
 msgid ""
 "Carpetas que se llenan solas según criterios (no leídos, texto, feed, "
 "fecha...) y viven en el árbol"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:573
+#: app/ui/mf_navegacion_arbol.py:575
 msgid "Carpetas..."
 msgstr ""
 
@@ -8694,7 +8699,7 @@ msgstr ""
 msgid "Centro de notificaciones (todas las redes)"
 msgstr ""
 
-#: app/ui/menu_teclas.py:190 app/ui/mf_navegacion_arbol.py:734
+#: app/ui/menu_teclas.py:190 app/ui/mf_navegacion_arbol.py:736
 msgid "Centro de notificaciones (todas las redes)..."
 msgstr ""
 
@@ -8855,7 +8860,7 @@ msgstr ""
 msgid "Chats frecuentes"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:576
+#: app/ui/mf_navegacion_arbol.py:578
 msgid "Chats frecuentes..."
 msgstr ""
 
@@ -8987,7 +8992,7 @@ msgid "Citando a {0}: {1}"
 msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:426 app/ui/invisible_keymap.py:61
-#: app/ui/mf_navegacion_arbol.py:254 app/ui/mf_navegacion_arbol.py:628
+#: app/ui/mf_navegacion_arbol.py:256 app/ui/mf_navegacion_arbol.py:630
 #: app/ui/wsocial_controller_acciones.py:481 app/ui/x_controller.py:602
 #: app/ui/x_hilos.py:186
 msgid "Citar"
@@ -9017,7 +9022,7 @@ msgstr ""
 msgid "Citar en X"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:254 app/ui/mf_navegacion_arbol.py:628
+#: app/ui/mf_navegacion_arbol.py:256 app/ui/mf_navegacion_arbol.py:630
 msgid "Citar la publicación enfocada"
 msgstr ""
 
@@ -9138,7 +9143,7 @@ msgstr ""
 msgid "Client Secret (API):"
 msgstr ""
 
-#: app/services/xmpp/xmpp_perfil.py:160
+#: app/services/xmpp/xmpp_perfil.py:160 app/ui/mastodon_filtros_dialogs.py:467
 msgid "Cliente"
 msgstr ""
 
@@ -9152,6 +9157,14 @@ msgstr ""
 
 #: app/ui/mf_media_servicio.py:1087
 msgid "Cliente: {0}"
+msgstr ""
+
+#: app/ui/mastodon_filtros_dialogs.py:457 app/ui/mf_autores_listas.py:484
+msgid "Clientes ignorados"
+msgstr ""
+
+#: app/ui/mf_navegacion_arbol.py:190
+msgid "Clientes ignorados..."
 msgstr ""
 
 #: app/ui/rss_reglas_ui.py:274
@@ -9170,7 +9183,7 @@ msgstr ""
 msgid "Cola de denuncias"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:410
+#: app/ui/mf_navegacion_arbol.py:412
 msgid "Cola de denuncias..."
 msgstr ""
 
@@ -9188,7 +9201,7 @@ msgstr ""
 msgid "Cola de moderación de r/{0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:340
+#: app/ui/mf_navegacion_arbol.py:342
 msgid "Cola de moderación..."
 msgstr ""
 
@@ -9261,7 +9274,7 @@ msgstr ""
 msgid "Colecciones que ha publicado esta cuenta. Intro muestra sus cuentas."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:354
+#: app/ui/mf_navegacion_arbol.py:356
 msgid "Colecciones..."
 msgstr ""
 
@@ -9551,7 +9564,7 @@ msgid ""
 "seguir"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:594
+#: app/ui/mf_telegram_handlers.py:599
 msgid "Compartir (Mastodon o Bluesky)..."
 msgstr ""
 
@@ -9584,7 +9597,7 @@ msgstr ""
 msgid "Complemento desactivado: {0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:534 app/ui/plugins_dialog.py:14
+#: app/ui/mf_navegacion_arbol.py:536 app/ui/plugins_dialog.py:14
 msgid "Complementos"
 msgstr ""
 
@@ -9608,15 +9621,15 @@ msgstr ""
 msgid "Componer una publicación en la red activa (Mastodon o Bluesky)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:250
+#: app/ui/mf_navegacion_arbol.py:252
 msgid "Componer y publicar un hilo encadenado"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:248
+#: app/ui/mf_navegacion_arbol.py:250
 msgid "Componer y publicar un post"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:624
+#: app/ui/mf_navegacion_arbol.py:626
 msgid "Componer y publicar un post en X"
 msgstr ""
 
@@ -9708,7 +9721,7 @@ msgstr ""
 msgid "Comprobar si hay actualizaciones de la aplicación al iniciar"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:800
+#: app/ui/mf_navegacion_arbol.py:802
 msgid "Comprobar si hay una versión nueva e instalarla"
 msgstr ""
 
@@ -9716,7 +9729,7 @@ msgstr ""
 msgid "Comprobar si tu cuenta administra el servidor"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:497
+#: app/ui/mf_navegacion_arbol.py:499
 msgid "Comprobar y optimizar base de datos"
 msgstr ""
 
@@ -9884,7 +9897,7 @@ msgstr ""
 msgid "Conectar a la red"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:487
+#: app/ui/mf_navegacion_arbol.py:489
 msgid ""
 "Conectar con tu servidor de Wallabag para enviar artículos y leerlos en "
 "otros dispositivos"
@@ -9943,7 +9956,7 @@ msgstr ""
 msgid "Configuración de la instancia"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:424
+#: app/ui/mf_navegacion_arbol.py:426
 msgid "Configuración de la instancia..."
 msgstr ""
 
@@ -9956,7 +9969,7 @@ msgstr ""
 msgid "Configuración del subreddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:349
+#: app/ui/mf_navegacion_arbol.py:351
 msgid "Configuración del subreddit..."
 msgstr ""
 
@@ -9968,7 +9981,7 @@ msgstr ""
 msgid "Configurando la verificación cruzada..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:766
+#: app/ui/mf_navegacion_arbol.py:768
 msgid "Configurar SocialRSS Accessible Suite"
 msgstr ""
 
@@ -9980,11 +9993,11 @@ msgstr ""
 msgid "Configurar Wallabag"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:487
+#: app/ui/mf_navegacion_arbol.py:489
 msgid "Configurar Wallabag (leer más tarde)..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:758
+#: app/ui/mf_navegacion_arbol.py:760
 msgid "Configurar cómo lee el lector de pantalla cada elemento"
 msgstr ""
 
@@ -10040,7 +10053,7 @@ msgstr ""
 #: app/ui/matrix_admin_dialogs.py:856 app/ui/matrix_admin_dialogs.py:371
 #: app/ui/matrix_dialogs.py:752 app/ui/matrix_dialogs.py:903
 #: app/ui/matrix_dialogs.py:315 app/ui/matrix_dialogs.py:362
-#: app/ui/mf_autores_listas.py:420 app/ui/mf_mastodon_extra.py:545
+#: app/ui/mf_autores_listas.py:421 app/ui/mf_mastodon_extra.py:545
 #: app/ui/mf_matrix_admin.py:94 app/ui/mf_media_servicio.py:266
 #: app/ui/peertube_admin_dialogs.py:185 app/ui/peertube_admin_dialogs.py:341
 #: app/ui/peertube_admin_dialogs.py:379 app/ui/peertube_admin_dialogs.py:271
@@ -10216,7 +10229,7 @@ msgstr ""
 msgid "Consultando a {0}..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1065
+#: app/ui/mf_telegram_handlers.py:1070
 msgid "Consultando bloqueados..."
 msgstr ""
 
@@ -10438,7 +10451,7 @@ msgstr ""
 msgid "Contenido para adultos (pornografía)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:300
+#: app/ui/mf_navegacion_arbol.py:302
 msgid ""
 "Contenido para adultos y qué hacer con cada etiqueta (mostrar, avisar u "
 "ocultar), general y por servicio de etiquetado"
@@ -10497,7 +10510,7 @@ msgstr ""
 msgid "Contexto del mensaje"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:75
+#: app/ui/mastodon_filtros_dialogs.py:77
 msgid "Contextos"
 msgstr ""
 
@@ -10669,7 +10682,7 @@ msgstr ""
 msgid "Contraseñas de aplicación activas:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:267
+#: app/ui/mf_navegacion_arbol.py:269
 msgid "Contraseñas de aplicación..."
 msgstr ""
 
@@ -10685,7 +10698,7 @@ msgstr ""
 msgid "Control de respuestas por defecto"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:713
+#: app/ui/mf_navegacion_arbol.py:715
 msgid "Controlar la reproducción de radio, podcast y YouTube"
 msgstr ""
 
@@ -10695,7 +10708,7 @@ msgstr ""
 
 #: app/ui/buffers_dialog.py:39 app/ui/buffers_dialog.py:54
 #: app/ui/buffers_dialog.py:68 app/ui/buffers_dialog.py:103
-#: app/ui/mastodon_filtros_dialogs.py:26 app/ui/mf_servicios_feeds.py:880
+#: app/ui/mastodon_filtros_dialogs.py:28 app/ui/mf_servicios_feeds.py:880
 #: app/ui/xmpp_views.py:41
 msgid "Conversaciones"
 msgstr ""
@@ -10720,7 +10733,7 @@ msgstr ""
 msgid "Conversaciones de mensajes directos..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:352
+#: app/ui/mf_navegacion_arbol.py:354
 msgid "Conversaciones de moderación de tus comunidades"
 msgstr ""
 
@@ -10838,7 +10851,11 @@ msgstr ""
 msgid "Conversación quitada."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:444 app/ui/wsocial_controller_social.py:286
+#: app/ui/mf_autores_listas.py:447
+msgid "Conversación reactivada: vuelves a recibir sus notificaciones."
+msgstr ""
+
+#: app/ui/mf_autores_listas.py:445 app/ui/wsocial_controller_social.py:286
 #: app/ui/wsocial_controller_social.py:194
 msgid "Conversación silenciada."
 msgstr ""
@@ -10957,7 +10974,7 @@ msgstr ""
 msgid "Copiar al portapapeles lo que se ve ahora"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:579 app/ui/rss_lector.py:114
+#: app/ui/mf_telegram_handlers.py:584 app/ui/rss_lector.py:114
 msgid "Copiar artículo completo"
 msgstr ""
 
@@ -10971,14 +10988,14 @@ msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:497
 #: app/ui/bluesky_thread_viewer.py:288 app/ui/irc_conversation.py:679
-#: app/ui/mastodon_perfil_dialogs.py:626 app/ui/mf_telegram_handlers.py:591
+#: app/ui/mastodon_perfil_dialogs.py:626 app/ui/mf_telegram_handlers.py:596
 #: app/ui/peertube_controller_acciones.py:175
 #: app/ui/reddit_controller_acciones.py:247 app/ui/reddit_thread_viewer.py:189
 #: app/ui/thread_viewer.py:404
 msgid "Copiar enlace"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:434 app/ui/mf_telegram_handlers.py:880
+#: app/ui/mf_telegram_handlers.py:434 app/ui/mf_telegram_handlers.py:885
 msgid "Copiar enlace de la publicación"
 msgstr ""
 
@@ -11023,7 +11040,7 @@ msgstr ""
 msgid "Copiar traducción automáticamente al portapapeles"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:576
+#: app/ui/mf_telegram_handlers.py:581
 msgid "Copiar título"
 msgstr ""
 
@@ -11031,7 +11048,7 @@ msgstr ""
 msgid "Copias de seguridad"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:746
+#: app/ui/mf_navegacion_arbol.py:748
 msgid "Copias de seguridad..."
 msgstr ""
 
@@ -11223,7 +11240,7 @@ msgstr ""
 msgid "Crear bot"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:479
+#: app/ui/mf_telegram_handlers.py:484
 msgid "Crear buffer con la cronología del autor o de un usuario mencionado..."
 msgstr ""
 
@@ -11239,7 +11256,7 @@ msgstr ""
 msgid "Crear canal"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:604
+#: app/ui/mf_navegacion_arbol.py:606
 msgid "Crear canal..."
 msgstr ""
 
@@ -11276,7 +11293,7 @@ msgstr ""
 msgid "Crear directo en PeerTube"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:399
+#: app/ui/mf_navegacion_arbol.py:401
 msgid "Crear directo..."
 msgstr ""
 
@@ -11318,7 +11335,7 @@ msgstr ""
 msgid "Crear feed desde una web sin RSS"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:448
+#: app/ui/mf_navegacion_arbol.py:450
 msgid "Crear feed desde una web..."
 msgstr ""
 
@@ -11326,7 +11343,7 @@ msgstr ""
 msgid "Crear grupo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:598
+#: app/ui/mf_navegacion_arbol.py:600
 msgid "Crear grupo..."
 msgstr ""
 
@@ -11336,7 +11353,7 @@ msgstr ""
 msgid "Crear lista"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:284
+#: app/ui/mf_navegacion_arbol.py:286
 msgid "Crear lista..."
 msgstr ""
 
@@ -11344,15 +11361,15 @@ msgstr ""
 msgid "Crear o borrar tokens para registrarse en un servidor restringido"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:267
+#: app/ui/mf_navegacion_arbol.py:269
 msgid "Crear o revocar contraseñas de aplicación"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:371
+#: app/ui/mf_navegacion_arbol.py:373
 msgid "Crear o seguir un hilo en directo y publicar novedades"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:306
+#: app/ui/mf_navegacion_arbol.py:308
 msgid "Crear paquete de bienvenida (starter pack)..."
 msgstr ""
 
@@ -11383,7 +11400,7 @@ msgstr ""
 msgid "Crear supergrupo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:601
+#: app/ui/mf_navegacion_arbol.py:603
 msgid "Crear supergrupo..."
 msgstr ""
 
@@ -11409,11 +11426,11 @@ msgstr ""
 msgid "Crear un buffer con las publicaciones del autor"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:637
+#: app/ui/mf_navegacion_arbol.py:639
 msgid "Crear un buffer con una búsqueda de X"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:270
+#: app/ui/mf_navegacion_arbol.py:272
 msgid "Crear un buffer con una búsqueda de publicaciones"
 msgstr ""
 
@@ -11421,7 +11438,7 @@ msgstr ""
 msgid "Crear un buffer con una búsqueda o hashtag"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:604
+#: app/ui/mf_navegacion_arbol.py:606
 msgid "Crear un canal nuevo"
 msgstr ""
 
@@ -11433,15 +11450,15 @@ msgstr ""
 msgid "Crear un espacio (contenedor de salas)"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:357
+#: app/ui/mastodon_filtros_dialogs.py:359
 msgid "Crear un filtro nuevo..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:289
+#: app/ui/mf_navegacion_arbol.py:291
 msgid "Crear un grupo de chat..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:598
+#: app/ui/mf_navegacion_arbol.py:600
 msgid "Crear un grupo nuevo"
 msgstr ""
 
@@ -11453,16 +11470,16 @@ msgstr ""
 msgid "Crear un nuevo hilo en la red activa (Mastodon o Bluesky)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:306
+#: app/ui/mf_navegacion_arbol.py:308
 msgid "Crear un starter pack propio a partir de una de tus listas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:601
+#: app/ui/mf_navegacion_arbol.py:603
 msgid ""
 "Crear un supergrupo (administración avanzada, opcionalmente con temas/foros)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:290
+#: app/ui/mf_navegacion_arbol.py:292
 msgid "Crear una conversación de grupo con varias cuentas"
 msgstr ""
 
@@ -11470,11 +11487,11 @@ msgstr ""
 msgid "Crear una cuenta en un servidor con registro abierto"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:399
+#: app/ui/mf_navegacion_arbol.py:401
 msgid "Crear una emisión en directo (RTMP)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:284
+#: app/ui/mf_navegacion_arbol.py:286
 msgid "Crear una lista de curación"
 msgstr ""
 
@@ -11482,7 +11499,7 @@ msgstr ""
 msgid "Crear una lista nueva..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:317
+#: app/ui/mf_navegacion_arbol.py:319
 msgid ""
 "Crear una publicación (texto, enlace, imagen, vídeo, galería o encuesta)"
 msgstr ""
@@ -11505,21 +11522,21 @@ msgstr ""
 msgid "Crear y asignar una etiqueta nueva"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:395
+#: app/ui/mf_navegacion_arbol.py:397
 msgid "Crear y borrar listas de reproducción"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:354
+#: app/ui/mf_navegacion_arbol.py:356
 msgid "Crear y gestionar colecciones de publicaciones de un subreddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:463
+#: app/ui/mf_navegacion_arbol.py:465
 msgid ""
 "Crear y gestionar etiquetas; un feed o artículo puede llevar varias y "
 "aparecen en el árbol"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:737
+#: app/ui/mf_navegacion_arbol.py:739
 msgid ""
 "Crear y gestionar textos reutilizables; insértalos al redactar con "
 "Ctrl+Mayús+J"
@@ -11529,11 +11546,11 @@ msgstr ""
 msgid "Crear y marcar la etiqueta nueva"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:397
+#: app/ui/mf_navegacion_arbol.py:399
 msgid "Crear, editar y borrar tus canales"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:573
+#: app/ui/mf_navegacion_arbol.py:575
 msgid "Crear, editar, reordenar o compartir carpetas de chats"
 msgstr ""
 
@@ -11541,11 +11558,11 @@ msgstr ""
 msgid "Crear, eliminar y gestionar listas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:649
+#: app/ui/mf_navegacion_arbol.py:651
 msgid "Crear, renombrar o borrar tus listas de X y gestionar sus miembros"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:746
+#: app/ui/mf_navegacion_arbol.py:748
 msgid "Crear, restaurar, exportar o importar copias de seguridad"
 msgstr ""
 
@@ -11743,7 +11760,7 @@ msgstr ""
 msgid "Cuenta añadida."
 msgstr ""
 
-#: app/ui/matrix_admin_dialogs.py:380 app/ui/mf_autores_listas.py:391
+#: app/ui/matrix_admin_dialogs.py:380 app/ui/mf_autores_listas.py:392
 msgid "Cuenta bloqueada."
 msgstr ""
 
@@ -11827,11 +11844,11 @@ msgstr ""
 msgid "Cuenta desactivada."
 msgstr ""
 
-#: app/ui/matrix_admin_dialogs.py:380 app/ui/mf_autores_listas.py:391
+#: app/ui/matrix_admin_dialogs.py:380 app/ui/mf_autores_listas.py:392
 msgid "Cuenta desbloqueada."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:64
+#: app/ui/mf_autores_listas.py:65
 msgid "Cuenta destacada en tu perfil."
 msgstr ""
 
@@ -11904,7 +11921,7 @@ msgstr ""
 msgid "Cuenta siguiente"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:390 app/ui/peertube_controller_social.py:125
+#: app/ui/mf_autores_listas.py:391 app/ui/peertube_controller_social.py:125
 msgid "Cuenta silenciada."
 msgstr ""
 
@@ -12070,7 +12087,7 @@ msgid "Cuentas similares al autor"
 msgstr ""
 
 #: app/ui/bluesky_controller_social.py:676
-#: app/ui/bluesky_controller_social.py:672 app/ui/mf_autores_listas.py:331
+#: app/ui/bluesky_controller_social.py:672 app/ui/mf_autores_listas.py:332
 msgid "Cuentas sugeridas"
 msgstr ""
 
@@ -12078,11 +12095,11 @@ msgstr ""
 msgid "Cuentas sugeridas (elige para ver el perfil y seguir):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:276
+#: app/ui/mf_navegacion_arbol.py:278
 msgid "Cuentas sugeridas..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:217
+#: app/ui/mf_navegacion_arbol.py:219
 msgid "Cuentas..."
 msgstr ""
 
@@ -12157,7 +12174,7 @@ msgid ""
 " es lo normal. Se aplica ya y del todo al reiniciar."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:509
+#: app/ui/mf_navegacion_arbol.py:511
 msgid "Cuántos artículos lees y qué feeds lees más"
 msgstr ""
 
@@ -12266,7 +12283,7 @@ msgstr ""
 msgid "Dar de baja la pasarela"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:256 app/ui/mf_navegacion_arbol.py:632
+#: app/ui/mf_navegacion_arbol.py:258 app/ui/mf_navegacion_arbol.py:634
 msgid "Dar o quitar me gusta a la publicación enfocada"
 msgstr ""
 
@@ -12416,7 +12433,7 @@ msgstr ""
 msgid "Decir a quién responde en {0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:201
+#: app/ui/mf_navegacion_arbol.py:203
 msgid "Decir cuántas notificaciones tienes sin leer"
 msgstr ""
 
@@ -12476,7 +12493,7 @@ msgstr ""
 msgid "Dejar de destacar"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:487
+#: app/ui/mf_telegram_handlers.py:492
 msgid "Dejar de destacar al autor"
 msgstr ""
 
@@ -12494,6 +12511,10 @@ msgstr ""
 
 #: app/ui/irc_conversation.py:709
 msgid "Dejar de ignorar a {0}"
+msgstr ""
+
+#: app/ui/mf_telegram_handlers.py:472
+msgid "Dejar de ignorar publicaciones de este cliente"
 msgstr ""
 
 #: app/ui/reddit_moderacion_dialogs.py:215
@@ -12519,11 +12540,11 @@ msgstr ""
 msgid "Dejar de seguir autor"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:720
+#: app/ui/mf_telegram_handlers.py:725
 msgid "Dejar de seguir el canal..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:524
+#: app/ui/mf_telegram_handlers.py:529
 msgid "Dejar de seguir el hashtag #{0}"
 msgstr ""
 
@@ -12707,7 +12728,7 @@ msgstr ""
 msgid "Desbloquear"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:696
+#: app/ui/mf_telegram_handlers.py:701
 msgid "Desbloquear (ahora bloqueado)"
 msgstr ""
 
@@ -12721,7 +12742,7 @@ msgstr ""
 msgid "Desbloquear comentarios"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:358
+#: app/ui/mf_autores_listas.py:359
 msgid "Desbloquear dominio"
 msgstr ""
 
@@ -12875,7 +12896,7 @@ msgstr ""
 msgid "Descargando {0} de {1}..."
 msgstr ""
 
-#: app/ui/bluesky_controller_carga.py:792 app/ui/mf_telegram_handlers.py:1152
+#: app/ui/bluesky_controller_carga.py:792 app/ui/mf_telegram_handlers.py:1157
 #: app/ui/peertube_controller_biblioteca.py:192
 #: app/ui/telegram_dialogs_admin.py:1279 app/ui/telegram_dialogs_perfil.py:635
 #: app/ui/telegram_dialogs_perfil.py:1402
@@ -12922,7 +12943,7 @@ msgstr ""
 msgid "Descargar el &artículo completo"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:571
+#: app/ui/mf_telegram_handlers.py:576
 msgid "Descargar episodio (escuchar offline)"
 msgstr ""
 
@@ -12930,11 +12951,11 @@ msgstr ""
 msgid "Descargar los adjuntos marcados"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:323
+#: app/ui/mf_navegacion_arbol.py:325
 msgid "Descargar más elementos del buffer activo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:385
+#: app/ui/mf_navegacion_arbol.py:387
 msgid "Descargar más elementos del catálogo activo"
 msgstr ""
 
@@ -12959,11 +12980,11 @@ msgstr ""
 msgid "Descargar una página de publicaciones más antiguas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:258
+#: app/ui/mf_navegacion_arbol.py:260
 msgid "Descargar una página de publicaciones más antiguas del buffer activo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:634
+#: app/ui/mf_navegacion_arbol.py:636
 msgid "Descargar una página de tweets más antiguos y añadirlos al final"
 msgstr ""
 
@@ -12979,7 +13000,7 @@ msgstr ""
 msgid "Descargas de podcast"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:503
+#: app/ui/mf_navegacion_arbol.py:505
 msgid "Descargas de podcast..."
 msgstr ""
 
@@ -13074,7 +13095,7 @@ msgstr ""
 msgid "Describe la imagen para personas ciegas:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:673
+#: app/ui/mf_navegacion_arbol.py:675
 msgid "Describir Imagen con IA"
 msgstr ""
 
@@ -13090,7 +13111,7 @@ msgstr ""
 msgid "Describir imagen"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:673
+#: app/ui/mf_navegacion_arbol.py:675
 msgid "Describir imagen adjunta usando Gemini/Ollama"
 msgstr ""
 
@@ -13267,7 +13288,7 @@ msgstr ""
 msgid "Descubrir &feeds..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:276
+#: app/ui/mf_navegacion_arbol.py:278
 msgid "Descubrir cuentas sugeridas para seguir"
 msgstr ""
 
@@ -13275,7 +13296,7 @@ msgstr ""
 msgid "Descubrir feeds"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:278
+#: app/ui/mf_navegacion_arbol.py:280
 msgid "Descubrir feeds personalizados populares"
 msgstr ""
 
@@ -13320,7 +13341,7 @@ msgstr ""
 msgid "Desfijar de arriba"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:655
+#: app/ui/mf_telegram_handlers.py:660
 msgid "Desfijar de la lista"
 msgstr ""
 
@@ -13405,16 +13426,16 @@ msgid "Destacados de {0}"
 msgstr ""
 
 #: app/ui/filters_dialog.py:24 app/ui/mf_acciones_toot.py:168
-#: app/ui/mf_telegram_handlers.py:543 app/ui/rss_reglas_ui.py:24
+#: app/ui/mf_telegram_handlers.py:548 app/ui/rss_reglas_ui.py:24
 #: app/ui/rss_reglas_ui.py:283
 msgid "Destacar"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:485
+#: app/ui/mf_telegram_handlers.py:490
 msgid "Destacar al autor en mi perfil"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:526
+#: app/ui/mf_telegram_handlers.py:531
 msgid "Destacar el hashtag #{0} en mi perfil"
 msgstr ""
 
@@ -13434,7 +13455,7 @@ msgstr ""
 msgid "Destacar mensaje"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:196
+#: app/ui/mf_navegacion_arbol.py:198
 msgid "Destacar un hashtag en mi perfil..."
 msgstr ""
 
@@ -13583,7 +13604,7 @@ msgstr ""
 msgid "Diaria"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:281
+#: app/ui/mastodon_filtros_dialogs.py:283
 msgid "Difuminar solo la multimedia (imágenes y vídeos)"
 msgstr ""
 
@@ -13760,7 +13781,7 @@ msgstr ""
 msgid "Directorio"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:318
+#: app/ui/mf_autores_listas.py:319
 msgid "Directorio de perfiles"
 msgstr ""
 
@@ -13931,7 +13952,7 @@ msgstr ""
 msgid "Diálogo de filtros de contenido"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:61
+#: app/ui/mastodon_filtros_dialogs.py:63
 msgid "Diálogo de filtros del servidor"
 msgstr ""
 
@@ -14020,7 +14041,7 @@ msgstr ""
 msgid "Documento"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:785
+#: app/ui/mf_navegacion_arbol.py:787
 msgid "Documento completo de teclas"
 msgstr ""
 
@@ -14040,7 +14061,7 @@ msgstr ""
 msgid "Dominio a bloquear (ej. ejemplo.social):"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:351
+#: app/ui/mf_autores_listas.py:352
 msgid "Dominio a bloquear (por ejemplo, ejemplo.social):"
 msgstr ""
 
@@ -14056,7 +14077,7 @@ msgstr ""
 msgid "Dominio a permitir:"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:356 app/ui/mf_mastodon_extra.py:584
+#: app/ui/mf_autores_listas.py:357 app/ui/mf_mastodon_extra.py:584
 msgid "Dominio bloqueado."
 msgstr ""
 
@@ -14068,7 +14089,7 @@ msgstr ""
 msgid "Dominio de email a bloquear:"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:360
+#: app/ui/mf_autores_listas.py:361
 msgid "Dominio desbloqueado."
 msgstr ""
 
@@ -14084,7 +14105,7 @@ msgstr ""
 msgid "Dominio remoto de las métricas"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:96
+#: app/ui/mf_autores_listas.py:97
 msgid "Dominio {0} bloqueado."
 msgstr ""
 
@@ -14124,15 +14145,15 @@ msgstr ""
 msgid "Dominios (admin)"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:346
+#: app/ui/mf_autores_listas.py:347
 msgid "Dominios bloqueados"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:345
+#: app/ui/mf_autores_listas.py:346
 msgid "Dominios bloqueados (elige uno para desbloquearlo, o añade uno nuevo):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:188 app/ui/mf_navegacion_arbol.py:219
+#: app/ui/mf_navegacion_arbol.py:188 app/ui/mf_navegacion_arbol.py:221
 msgid "Dominios bloqueados..."
 msgstr ""
 
@@ -14164,7 +14185,7 @@ msgstr ""
 msgid "Dominios permitidos (federación en modo lista blanca):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:221
+#: app/ui/mf_navegacion_arbol.py:223
 msgid "Dominios permitidos (lista blanca)..."
 msgstr ""
 
@@ -14302,7 +14323,7 @@ msgstr ""
 msgid "Dónde silenciarla"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:89 app/ui/rss_reglas_ui.py:110
+#: app/ui/mastodon_filtros_dialogs.py:91 app/ui/rss_reglas_ui.py:110
 #: app/ui/rss_reglas_ui.py:582 app/ui/snippets.py:104
 #: app/ui/thread_editor.py:972
 msgid "E&liminar"
@@ -14452,7 +14473,7 @@ msgstr ""
 msgid "Editar feed (título, dirección, ajustes)..."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:228
+#: app/ui/mastodon_filtros_dialogs.py:230
 msgid "Editar filtro del servidor"
 msgstr ""
 
@@ -14480,7 +14501,7 @@ msgstr ""
 msgid "Editar la publicación {0}:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:686
+#: app/ui/mf_navegacion_arbol.py:688
 msgid "Editar las plantillas de prompts de IA"
 msgstr ""
 
@@ -14489,7 +14510,7 @@ msgstr ""
 msgid "Editar lista"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:349
+#: app/ui/mf_navegacion_arbol.py:351
 msgid "Editar los ajustes básicos del subreddit"
 msgstr ""
 
@@ -14529,7 +14550,7 @@ msgstr ""
 msgid "Editar mi vídeo..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:265
+#: app/ui/mf_navegacion_arbol.py:267
 msgid "Editar nombre, biografía, avatar y handle"
 msgstr ""
 
@@ -14598,7 +14619,7 @@ msgstr ""
 msgid "Editor de plantillas de lectura"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:758
+#: app/ui/mf_navegacion_arbol.py:760
 msgid "Editor de plantillas de lectura..."
 msgstr ""
 
@@ -14720,7 +14741,7 @@ msgid ""
 "o vídeo con ningún otro archivo."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:89
+#: app/ui/mf_autores_listas.py:90
 msgid "El autor es de tu propia instancia; no se puede bloquear su dominio."
 msgstr ""
 
@@ -14758,11 +14779,11 @@ msgid ""
 "Archivos con partes que faltan en el canal: {3}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:995
+#: app/ui/mf_telegram_handlers.py:1000
 msgid "El chat no estaba en esa carpeta."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:994
+#: app/ui/mf_telegram_handlers.py:999
 msgid "El chat ya estaba en esa carpeta."
 msgstr ""
 
@@ -15119,7 +15140,7 @@ msgstr ""
 msgid "Elegir cuenta"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:402
+#: app/ui/mf_navegacion_arbol.py:404
 msgid "Elegir de qué recibir avisos"
 msgstr ""
 
@@ -15151,7 +15172,7 @@ msgstr ""
 msgid "Elegir lista"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:755
+#: app/ui/mf_navegacion_arbol.py:757
 msgid "Elegir qué buffers aparecen en el árbol de cada red"
 msgstr ""
 
@@ -15237,7 +15258,7 @@ msgstr ""
 msgid "Elige el archivo de contactos (CSV o vCard)"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:356
+#: app/ui/mastodon_filtros_dialogs.py:358
 msgid "Elige el filtro al que añadir la publicación:"
 msgstr ""
 
@@ -15533,11 +15554,11 @@ msgstr ""
 msgid "Eliminar adjunto seleccionado"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:606
+#: app/ui/mf_telegram_handlers.py:611
 msgid "Eliminar artículo (a la papelera)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:494
+#: app/ui/mf_navegacion_arbol.py:496
 msgid ""
 "Eliminar artículos antiguos según las preferencias (conserva destacados y "
 "leer más tarde)"
@@ -15624,7 +15645,7 @@ msgstr ""
 msgid "Eliminar feed"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:203
+#: app/ui/mastodon_filtros_dialogs.py:205
 msgid "Eliminar filtro"
 msgstr ""
 
@@ -15636,7 +15657,7 @@ msgstr ""
 msgid "Eliminar la etiqueta seleccionada"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:752
+#: app/ui/mf_navegacion_arbol.py:754
 msgid ""
 "Eliminar publicaciones, artículos o mensajes antiguos de la base de datos"
 msgstr ""
@@ -15729,11 +15750,11 @@ msgstr ""
 msgid "Emojis de un subreddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:363
+#: app/ui/mf_navegacion_arbol.py:365
 msgid "Emojis personalizados de un subreddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:363
+#: app/ui/mf_navegacion_arbol.py:365
 msgid "Emojis..."
 msgstr ""
 
@@ -15977,7 +15998,7 @@ msgstr ""
 msgid "Enlace a {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1010
+#: app/ui/mf_telegram_handlers.py:1015
 msgid "Enlace al reenviar mensajes"
 msgstr ""
 
@@ -15986,7 +16007,7 @@ msgid "Enlace borrado."
 msgstr ""
 
 #: app/ui/bluesky_thread_viewer.py:267 app/ui/mf_media_servicio.py:439
-#: app/ui/mf_media_servicio.py:867 app/ui/mf_telegram_handlers.py:897
+#: app/ui/mf_media_servicio.py:867 app/ui/mf_telegram_handlers.py:902
 #: app/ui/reddit_controller_acciones.py:395 app/ui/reddit_thread_viewer.py:218
 msgid "Enlace copiado al portapapeles."
 msgstr ""
@@ -16054,7 +16075,7 @@ msgstr ""
 msgid "Enlace de login de Telegram"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:269
+#: app/ui/mf_autores_listas.py:270
 msgid "Enlace en tendencia"
 msgstr ""
 
@@ -16082,7 +16103,7 @@ msgstr ""
 msgid "Enlaces en tendencia"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:263
+#: app/ui/mf_autores_listas.py:264
 msgid "Enlaces en tendencia (elige uno):"
 msgstr ""
 
@@ -16111,7 +16132,7 @@ msgstr ""
 msgid "Entrar en un grupo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:292
+#: app/ui/mf_navegacion_arbol.py:294
 msgid "Entrar en un grupo con un enlace..."
 msgstr ""
 
@@ -16246,7 +16267,7 @@ msgstr ""
 msgid "Enviar GIF..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:600
+#: app/ui/mf_telegram_handlers.py:605
 msgid "Enviar a Wallabag (leer más tarde)"
 msgstr ""
 
@@ -16337,7 +16358,7 @@ msgstr ""
 msgid "Enviar mensaje privado"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:326
+#: app/ui/mf_navegacion_arbol.py:328
 msgid "Enviar mensaje privado..."
 msgstr ""
 
@@ -16374,7 +16395,7 @@ msgstr ""
 msgid "Enviar ubicación..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:326
+#: app/ui/mf_navegacion_arbol.py:328
 msgid "Enviar un mensaje privado a un usuario"
 msgstr ""
 
@@ -16429,7 +16450,7 @@ msgstr ""
 msgid "Episodios (Intro reproduce el descargado):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:503
+#: app/ui/mf_navegacion_arbol.py:505
 msgid "Episodios descargados para escuchar sin conexión"
 msgstr ""
 
@@ -16636,11 +16657,11 @@ msgstr ""
 msgid "Error al leer el registro: {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:798
+#: app/ui/mf_telegram_handlers.py:803
 msgid "Error al listar sesiones: {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:781
+#: app/ui/mf_telegram_handlers.py:786
 msgid "Error al obtener el perfil: {0}"
 msgstr ""
 
@@ -16778,8 +16799,8 @@ msgid "Error en el reproductor: {0}"
 msgstr ""
 
 #: app/ui/bluesky_controller_social.py:645 app/ui/mf_acciones_toot.py:1313
-#: app/ui/mf_telegram_handlers.py:858 app/ui/mf_telegram_handlers.py:921
-#: app/ui/mf_telegram_handlers.py:820
+#: app/ui/mf_telegram_handlers.py:863 app/ui/mf_telegram_handlers.py:926
+#: app/ui/mf_telegram_handlers.py:825
 #: app/ui/peertube_controller_acciones.py:279 app/ui/radio_dialog.py:227
 #: app/ui/reddit_controller_social.py:272
 #: app/ui/reddit_controller_social.py:306 app/ui/search_dialog.py:206
@@ -16831,16 +16852,16 @@ msgstr ""
 #: app/ui/bluesky_controller_social.py:933
 #: app/ui/bluesky_controller_social.py:980 app/ui/bluesky_dialogs.py:837
 #: app/ui/bluesky_dialogs.py:871 app/ui/bluesky_dialogs_moderacion.py:532
-#: app/ui/mastodon_notif_grupos_ui.py:133 app/ui/mf_autores_listas.py:47
-#: app/ui/mf_autores_listas.py:62 app/ui/mf_autores_listas.py:82
-#: app/ui/mf_autores_listas.py:96 app/ui/mf_autores_listas.py:116
-#: app/ui/mf_autores_listas.py:196 app/ui/mf_autores_listas.py:207
-#: app/ui/mf_autores_listas.py:231 app/ui/mf_autores_listas.py:257
-#: app/ui/mf_autores_listas.py:300 app/ui/mf_autores_listas.py:316
-#: app/ui/mf_autores_listas.py:329 app/ui/mf_autores_listas.py:342
-#: app/ui/mf_autores_listas.py:141 app/ui/mf_autores_listas.py:219
-#: app/ui/mf_autores_listas.py:245 app/ui/mf_autores_listas.py:277
-#: app/ui/mf_autores_listas.py:356 app/ui/mf_autores_listas.py:360
+#: app/ui/mastodon_notif_grupos_ui.py:133 app/ui/mf_autores_listas.py:48
+#: app/ui/mf_autores_listas.py:63 app/ui/mf_autores_listas.py:83
+#: app/ui/mf_autores_listas.py:97 app/ui/mf_autores_listas.py:117
+#: app/ui/mf_autores_listas.py:197 app/ui/mf_autores_listas.py:208
+#: app/ui/mf_autores_listas.py:232 app/ui/mf_autores_listas.py:258
+#: app/ui/mf_autores_listas.py:301 app/ui/mf_autores_listas.py:317
+#: app/ui/mf_autores_listas.py:330 app/ui/mf_autores_listas.py:343
+#: app/ui/mf_autores_listas.py:142 app/ui/mf_autores_listas.py:220
+#: app/ui/mf_autores_listas.py:246 app/ui/mf_autores_listas.py:278
+#: app/ui/mf_autores_listas.py:357 app/ui/mf_autores_listas.py:361
 #: app/ui/mf_herramientas_extra.py:104 app/ui/mf_mastodon_extra.py:53
 #: app/ui/mf_mastodon_extra.py:197 app/ui/mf_mastodon_extra.py:209
 #: app/ui/mf_mastodon_extra.py:266 app/ui/mf_mastodon_extra.py:281
@@ -16858,8 +16879,8 @@ msgstr ""
 #: app/ui/mf_mastodon_extra.py:759 app/ui/mf_media_servicio.py:83
 #: app/ui/mf_media_servicio.py:235 app/ui/mf_media_servicio.py:318
 #: app/ui/mf_publicacion.py:39 app/ui/mf_publicacion.py:888
-#: app/ui/mf_publicacion.py:898 app/ui/mf_telegram_handlers.py:992
-#: app/ui/mf_telegram_handlers.py:1048 app/ui/mf_telegram_handlers.py:1062
+#: app/ui/mf_publicacion.py:898 app/ui/mf_telegram_handlers.py:997
+#: app/ui/mf_telegram_handlers.py:1053 app/ui/mf_telegram_handlers.py:1067
 #: app/ui/plugins_dialog.py:79 app/ui/rss_views.py:1149
 #: app/ui/telegram_conv_acciones.py:758 app/ui/telegram_conv_acciones.py:354
 #: app/ui/telegram_conv_extras.py:250 app/ui/telegram_conv_extras.py:287
@@ -17262,7 +17283,7 @@ msgstr ""
 msgid "Escribe un canal (ej: #nvda) y únete"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:274
+#: app/ui/mf_navegacion_arbol.py:276
 msgid ""
 "Escribe un handle (nombre.bsky.social) o DID y muestra su ficha, aunque sea "
 "un perfil citado que no esté en ninguna lista"
@@ -17304,7 +17325,7 @@ msgstr ""
 msgid "Escribe un usuario (acct) y abre sus publicaciones"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:639
+#: app/ui/mf_navegacion_arbol.py:641
 msgid ""
 "Escribe un usuario de X y abre sus publicaciones como buffer (todas, con "
 "respuestas o solo multimedia)"
@@ -17390,7 +17411,7 @@ msgstr ""
 msgid "Escuchando {0} de {1}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:794
+#: app/ui/mf_navegacion_arbol.py:796
 msgid "Escuchar e identificar los sonidos de la aplicación"
 msgstr ""
 
@@ -17400,10 +17421,6 @@ msgstr ""
 
 #: app/ui/matrix_dialogs.py:723
 msgid "Ese campo se edita en la pantalla del perfil, no aquí."
-msgstr ""
-
-#: app/ui/mf_autores_listas.py:456
-msgid "Ese cliente ya está en la lista de ignorados."
 msgstr ""
 
 #: app/ui/mf_mastodon_extra.py:751
@@ -17622,7 +17639,7 @@ msgstr ""
 msgid "Esta publicación no contiene imágenes que describir."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:452
+#: app/ui/mf_autores_listas.py:465
 msgid "Esta publicación no indica el cliente desde el que se publicó."
 msgstr ""
 
@@ -17735,7 +17752,7 @@ msgstr ""
 msgid "Estado de boosts"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:481
+#: app/ui/mf_navegacion_arbol.py:483
 msgid ""
 "Estado de cada feed: último éxito, errores, próxima comprobación y "
 "reintentos"
@@ -17837,7 +17854,7 @@ msgstr ""
 msgid "Estadísticas de la instancia"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:404
+#: app/ui/mf_navegacion_arbol.py:406
 msgid "Estadísticas de la instancia..."
 msgstr ""
 
@@ -17849,7 +17866,7 @@ msgstr ""
 msgid "Estadísticas de lectura de RSS"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:509
+#: app/ui/mf_navegacion_arbol.py:511
 msgid "Estadísticas de lectura..."
 msgstr ""
 
@@ -17857,7 +17874,7 @@ msgstr ""
 msgid "Estadísticas de mis redes"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:743
+#: app/ui/mf_navegacion_arbol.py:745
 msgid "Estadísticas de mis redes..."
 msgstr ""
 
@@ -17865,7 +17882,7 @@ msgstr ""
 msgid "Estadísticas del servidor"
 msgstr ""
 
-#: app/ui/mf_matrix_handlers.py:113 app/ui/mf_navegacion_arbol.py:232
+#: app/ui/mf_matrix_handlers.py:113 app/ui/mf_navegacion_arbol.py:234
 msgid "Estadísticas del servidor..."
 msgstr ""
 
@@ -17958,7 +17975,7 @@ msgstr ""
 msgid "Este buffer no admite cargar más."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1135
+#: app/ui/mf_telegram_handlers.py:1140
 msgid "Este canal no tiene historias activas."
 msgstr ""
 
@@ -18045,11 +18062,11 @@ msgstr ""
 msgid "Este espacio no anuncia salas."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:430
+#: app/ui/mastodon_filtros_dialogs.py:432
 msgid "Este filtro no tiene publicaciones sueltas."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:272
+#: app/ui/mastodon_filtros_dialogs.py:274
 msgid ""
 "Este filtro también oculta {0} publicaciones sueltas (se gestionan con "
 "«Publicaciones filtradas»)."
@@ -18334,7 +18351,7 @@ msgstr ""
 msgid "Etiquetas (flair) de r/{0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:361
+#: app/ui/mf_navegacion_arbol.py:363
 msgid "Etiquetas (flair)..."
 msgstr ""
 
@@ -18366,7 +18383,7 @@ msgstr ""
 msgid "Etiquetas de usuario"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:585
+#: app/ui/mf_telegram_handlers.py:590
 msgid "Etiquetas del artículo..."
 msgstr ""
 
@@ -18386,7 +18403,7 @@ msgstr ""
 msgid "Etiquetas generales (qué hacer con el contenido marcado):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:463
+#: app/ui/mf_navegacion_arbol.py:465
 msgid "Etiquetas..."
 msgstr ""
 
@@ -18427,7 +18444,7 @@ msgstr ""
 msgid "Explica brevemente el problema (opcional):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:610
+#: app/ui/mf_navegacion_arbol.py:612
 msgid ""
 "Explorador de archivos que guarda tus documentos en un canal privado: subir,"
 " descargar, carpetas, papelera..."
@@ -18470,7 +18487,7 @@ msgstr ""
 msgid "Exportar artículo como"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:582
+#: app/ui/mf_telegram_handlers.py:587
 msgid "Exportar artículo..."
 msgstr ""
 
@@ -18478,7 +18495,7 @@ msgstr ""
 msgid "Exportar artículos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:478
+#: app/ui/mf_navegacion_arbol.py:480
 msgid "Exportar artículos..."
 msgstr ""
 
@@ -18516,11 +18533,11 @@ msgstr ""
 msgid "Exportar el índice al canal"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:475
+#: app/ui/mf_navegacion_arbol.py:477
 msgid "Exportar feeds a OPML..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:475
+#: app/ui/mf_navegacion_arbol.py:477
 msgid "Exportar feeds activos a archivo OPML (con sus carpetas)"
 msgstr ""
 
@@ -18536,13 +18553,13 @@ msgstr ""
 msgid "Exportar la instalación a un archivo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:749
+#: app/ui/mf_navegacion_arbol.py:751
 msgid ""
 "Exportar o importar toda la instalación (cuentas, configuración y base de "
 "datos) para llevarla a otro equipo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:478
+#: app/ui/mf_navegacion_arbol.py:480
 msgid ""
 "Exportar varios artículos de una vez (vista actual, destacados o leer más "
 "tarde) a texto, HTML o Markdown"
@@ -18577,11 +18594,11 @@ msgstr ""
 msgid "Extractor del artículo completo:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:676
+#: app/ui/mf_navegacion_arbol.py:678
 msgid "Extraer texto de imagen (OCR con IA)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:679
+#: app/ui/mf_navegacion_arbol.py:681
 msgid "Extraer texto de imagen (OCR local, sin IA)"
 msgstr ""
 
@@ -18766,7 +18783,7 @@ msgstr ""
 msgid "Fecha no válida."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:167
+#: app/ui/mf_autores_listas.py:168
 msgid ""
 "Fecha no válida. Usa el formato AAAA-MM-DD HH:MM, por ejemplo 2026-07-15 "
 "09:30."
@@ -18796,7 +18813,7 @@ msgstr ""
 msgid "Federación"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:420
+#: app/ui/mf_navegacion_arbol.py:422
 msgid "Federación (instancias)..."
 msgstr ""
 
@@ -18945,7 +18962,7 @@ msgstr ""
 msgid "Feeds populares (elige uno):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:278
+#: app/ui/mf_navegacion_arbol.py:280
 msgid "Feeds populares..."
 msgstr ""
 
@@ -18953,7 +18970,7 @@ msgstr ""
 msgid "Feeds que más lees:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:280
+#: app/ui/mf_navegacion_arbol.py:282
 msgid "Feeds recomendados para ti por Bluesky"
 msgstr ""
 
@@ -18970,7 +18987,7 @@ msgstr ""
 msgid "Feeds sugeridos (elige uno):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:280
+#: app/ui/mf_navegacion_arbol.py:282
 msgid "Feeds sugeridos..."
 msgstr ""
 
@@ -18997,7 +19014,7 @@ msgstr ""
 msgid "Fijar"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:196
+#: app/ui/mf_navegacion_arbol.py:198
 msgid "Fijar (o quitar) un hashtag destacado en tu perfil"
 msgstr ""
 
@@ -19013,7 +19030,7 @@ msgstr ""
 msgid "Fijar en el árbol"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:655
+#: app/ui/mf_telegram_handlers.py:660
 msgid "Fijar en la lista"
 msgstr ""
 
@@ -19045,7 +19062,7 @@ msgstr ""
 msgid "Fijar publicación en tu perfil"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:282
+#: app/ui/mf_navegacion_arbol.py:284
 msgid "Fijar, reordenar o quitar tus feeds guardados"
 msgstr ""
 
@@ -19062,8 +19079,8 @@ msgstr ""
 msgid "Filtrar"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:351
 #: app/ui/mastodon_filtros_dialogs.py:353
+#: app/ui/mastodon_filtros_dialogs.py:355
 msgid "Filtrar esta publicación"
 msgstr ""
 
@@ -19075,7 +19092,7 @@ msgstr ""
 msgid "Filtrar los timelines (Inicio, Local y Federada)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:194
+#: app/ui/mf_navegacion_arbol.py:196
 msgid "Filtrar notificaciones de desconocidos, cuentas nuevas, etc."
 msgstr ""
 
@@ -19091,7 +19108,7 @@ msgstr ""
 msgid "Filtrar por dominio"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:74
+#: app/ui/mastodon_filtros_dialogs.py:76
 msgid "Filtro"
 msgstr ""
 
@@ -19099,11 +19116,11 @@ msgstr ""
 msgid "Filtro activado."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:170
+#: app/ui/mastodon_filtros_dialogs.py:172
 msgid "Filtro actualizado."
 msgstr ""
 
-#: app/ui/filters_dialog.py:113 app/ui/mastodon_filtros_dialogs.py:143
+#: app/ui/filters_dialog.py:113 app/ui/mastodon_filtros_dialogs.py:145
 msgid "Filtro creado."
 msgstr ""
 
@@ -19119,7 +19136,7 @@ msgstr ""
 msgid "Filtro desactivado."
 msgstr ""
 
-#: app/ui/filters_dialog.py:133 app/ui/mastodon_filtros_dialogs.py:210
+#: app/ui/filters_dialog.py:133 app/ui/mastodon_filtros_dialogs.py:212
 msgid "Filtro eliminado."
 msgstr ""
 
@@ -19127,11 +19144,11 @@ msgstr ""
 msgid "Filtro por estado de lectura"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:358
+#: app/ui/mastodon_filtros_dialogs.py:360
 msgid "Filtros"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:71
+#: app/ui/mastodon_filtros_dialogs.py:73
 msgid "Filtros aplicados por tu instancia (afectan a todos tus clientes):"
 msgstr ""
 
@@ -19143,11 +19160,11 @@ msgstr ""
 msgid "Filtros de contenido"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:725
+#: app/ui/mf_navegacion_arbol.py:727
 msgid "Filtros de contenido..."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:60
+#: app/ui/mastodon_filtros_dialogs.py:62
 msgid "Filtros del servidor"
 msgstr ""
 
@@ -19231,7 +19248,7 @@ msgstr ""
 msgid "Foto actualizada."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1008
+#: app/ui/mf_telegram_handlers.py:1013
 msgid "Foto de perfil"
 msgstr ""
 
@@ -19275,7 +19292,7 @@ msgstr ""
 msgid "Fragmentos de texto"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:737
+#: app/ui/mf_navegacion_arbol.py:739
 msgid "Fragmentos de texto..."
 msgstr ""
 
@@ -19398,7 +19415,7 @@ msgstr ""
 msgid "Generar enlace de autorización"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:682
+#: app/ui/mf_navegacion_arbol.py:684
 msgid "Generar resumen del texto actual con IA"
 msgstr ""
 
@@ -19406,7 +19423,7 @@ msgstr ""
 msgid "Generar texto alternativo con Gemini"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:423
+#: app/ui/mf_navegacion_arbol.py:425
 msgid "Generar tokens para runners de transcodificación"
 msgstr ""
 
@@ -19414,7 +19431,7 @@ msgstr ""
 msgid "Gestionar Categorías RSS"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:454
+#: app/ui/mf_navegacion_arbol.py:456
 msgid "Gestionar Categorías..."
 msgstr ""
 
@@ -19426,7 +19443,7 @@ msgstr ""
 msgid "Gestionar complementos..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:345
+#: app/ui/mf_navegacion_arbol.py:347
 msgid "Gestionar las relaciones de usuario del subreddit"
 msgstr ""
 
@@ -19438,7 +19455,7 @@ msgstr ""
 msgid "Gestionar listas de X"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:649
+#: app/ui/mf_navegacion_arbol.py:651
 msgid "Gestionar listas..."
 msgstr ""
 
@@ -19446,7 +19463,7 @@ msgstr ""
 msgid "Gestionar los hashtags que aparecen destacados en tu perfil"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:347
+#: app/ui/mf_navegacion_arbol.py:349
 msgid "Gestionar los motivos de eliminación del subreddit"
 msgstr ""
 
@@ -19458,19 +19475,19 @@ msgstr ""
 msgid "Gestionar miembros de listas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:286
+#: app/ui/mf_navegacion_arbol.py:288
 msgid "Gestionar miembros de listas..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:397
+#: app/ui/mf_navegacion_arbol.py:399
 msgid "Gestionar mis canales..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:282
+#: app/ui/mf_navegacion_arbol.py:284
 msgid "Gestionar mis feeds..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:395
+#: app/ui/mf_navegacion_arbol.py:397
 msgid "Gestionar mis listas..."
 msgstr ""
 
@@ -19482,7 +19499,7 @@ msgstr ""
 msgid "Gestionar temas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:418
+#: app/ui/mf_navegacion_arbol.py:420
 msgid "Gestionar usuarios, roles y cuotas"
 msgstr ""
 
@@ -19506,7 +19523,7 @@ msgstr ""
 msgid "Gestor de etiquetas de RSS"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:686
+#: app/ui/mf_navegacion_arbol.py:688
 msgid "Gestor de prompts..."
 msgstr ""
 
@@ -19572,7 +19589,7 @@ msgid "Groq"
 msgstr ""
 
 #: app/ui/mf_app_despacho.py:69 app/ui/mf_app_despacho.py:440
-#: app/ui/mf_telegram_handlers.py:913 app/ui/telegram_dialogs_admin.py:109
+#: app/ui/mf_telegram_handlers.py:918 app/ui/telegram_dialogs_admin.py:109
 #: app/ui/telegram_dialogs_admin.py:899 app/ui/wsocial_controller_carga.py:526
 msgid "Grupo"
 msgstr ""
@@ -19628,7 +19645,7 @@ msgstr ""
 msgid "Grupos de notificaciones de tu servidor ({0}):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:192
+#: app/ui/mf_navegacion_arbol.py:194
 msgid ""
 "Grupos reales del servidor (quién y cuántos), con ver cuentas y descartar "
 "por grupo"
@@ -19714,8 +19731,8 @@ msgstr ""
 msgid "Guardar búsqueda"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:128 app/ui/mf_navegacion_arbol.py:270
-#: app/ui/mf_navegacion_arbol.py:637
+#: app/ui/mf_navegacion_arbol.py:128 app/ui/mf_navegacion_arbol.py:272
+#: app/ui/mf_navegacion_arbol.py:639
 msgid "Guardar búsqueda como buffer..."
 msgstr ""
 
@@ -19824,7 +19841,7 @@ msgstr ""
 msgid "Guardar traducciones en el historial local"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:457
+#: app/ui/mf_navegacion_arbol.py:459
 msgid "Guardar y reutilizar búsquedas de artículos"
 msgstr ""
 
@@ -19836,7 +19853,7 @@ msgstr ""
 msgid "Género o etiqueta"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:769
+#: app/ui/mf_navegacion_arbol.py:771
 msgid "H&erramientas"
 msgstr ""
 
@@ -19962,8 +19979,8 @@ msgstr ""
 msgid "Has dejado de seguir a este usuario."
 msgstr ""
 
-#: app/ui/bluesky_controller_acciones.py:856 app/ui/mf_autores_listas.py:507
-#: app/ui/mf_autores_listas.py:382
+#: app/ui/bluesky_controller_acciones.py:856 app/ui/mf_autores_listas.py:538
+#: app/ui/mf_autores_listas.py:383
 msgid "Has dejado de seguir a {0}."
 msgstr ""
 
@@ -19971,7 +19988,7 @@ msgstr ""
 msgid "Has dejado de seguir la instancia."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:219
+#: app/ui/mf_autores_listas.py:220
 msgid "Has dejado de seguir {0}."
 msgstr ""
 
@@ -20019,7 +20036,7 @@ msgstr ""
 msgid "Hashtag (sin almohadilla, ej. accesibilidad):"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:846
+#: app/ui/mf_telegram_handlers.py:851
 msgid "Hashtag a buscar en canales públicos (con o sin #):"
 msgstr ""
 
@@ -20027,7 +20044,7 @@ msgstr ""
 msgid "Hashtag a destacar (sin el símbolo #):"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:186
+#: app/ui/mf_autores_listas.py:187
 msgid "Hashtag a seguir (con o sin #):"
 msgstr ""
 
@@ -20088,7 +20105,7 @@ msgstr ""
 msgid "Hashtags en tendencia"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:237
+#: app/ui/mf_autores_listas.py:238
 msgid "Hashtags en tendencia (elige para seguirlo):"
 msgstr ""
 
@@ -20100,7 +20117,7 @@ msgstr ""
 msgid "Hashtags que aparecen destacados en tu perfil:"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:213
+#: app/ui/mf_autores_listas.py:214
 msgid "Hashtags que sigues (elige para dejar de seguir):"
 msgstr ""
 
@@ -20108,7 +20125,7 @@ msgstr ""
 msgid "Hashtags que sigues..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:213
+#: app/ui/mf_autores_listas.py:214
 msgid "Hashtags seguidos"
 msgstr ""
 
@@ -20169,7 +20186,7 @@ msgstr ""
 #: app/ui/bluesky_controller_social.py:779 app/ui/irc_conversation.py:602
 #: app/ui/irc_dialogs.py:329 app/ui/irc_views.py:488
 #: app/ui/matrix_dialogs.py:378 app/ui/matrix_dialogs.py:1532
-#: app/ui/mf_autores_listas.py:392 app/ui/mf_mastodon_extra.py:501
+#: app/ui/mf_autores_listas.py:393 app/ui/mf_mastodon_extra.py:501
 #: app/ui/mf_mastodon_extra.py:549 app/ui/mf_mastodon_extra.py:797
 #: app/ui/peertube_gestion_dialogs.py:279
 #: app/ui/reddit_controller_acciones.py:514
@@ -20307,7 +20324,7 @@ msgstr ""
 msgid "Hilos en directo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:371
+#: app/ui/mf_navegacion_arbol.py:373
 msgid "Hilos en directo..."
 msgstr ""
 
@@ -20323,7 +20340,7 @@ msgstr ""
 msgid "Historia borrada."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1149 app/ui/telegram_dialogs_perfil.py:632
+#: app/ui/mf_telegram_handlers.py:1154 app/ui/telegram_dialogs_perfil.py:632
 msgid "Historia descargada en {0}."
 msgstr ""
 
@@ -20360,7 +20377,7 @@ msgstr ""
 msgid "Historial de IA borrado."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:688
+#: app/ui/mf_navegacion_arbol.py:690
 msgid "Historial de IA..."
 msgstr ""
 
@@ -20368,7 +20385,7 @@ msgstr ""
 msgid "Historial de Traducciones"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:699
+#: app/ui/mf_navegacion_arbol.py:701
 msgid "Historial de Traducciones..."
 msgstr ""
 
@@ -20384,7 +20401,7 @@ msgstr ""
 msgid "Historial de lectura de RSS"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:507
+#: app/ui/mf_navegacion_arbol.py:509
 msgid "Historial de lectura..."
 msgstr ""
 
@@ -20414,19 +20431,19 @@ msgstr ""
 msgid "Historias de Telegram"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1139
+#: app/ui/mf_telegram_handlers.py:1144
 msgid "Historias de «{0}» (Aceptar para descargar):"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1140
+#: app/ui/mf_telegram_handlers.py:1145
 msgid "Historias del canal"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:718
+#: app/ui/mf_telegram_handlers.py:723
 msgid "Historias del canal..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:582
+#: app/ui/mf_navegacion_arbol.py:584
 msgid "Historias..."
 msgstr ""
 
@@ -20717,7 +20734,11 @@ msgstr ""
 msgid "Ignorar a {0}..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:470
+#: app/ui/mf_autores_listas.py:475
+msgid "Ignorar cliente"
+msgstr ""
+
+#: app/ui/mf_telegram_handlers.py:474
 msgid "Ignorar publicaciones de este cliente"
 msgstr ""
 
@@ -20834,7 +20855,7 @@ msgstr ""
 msgid "Importar OPML: vista previa"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:469
+#: app/ui/mf_navegacion_arbol.py:471
 msgid "Importar archivo de suscripciones OPML"
 msgstr ""
 
@@ -20862,7 +20883,7 @@ msgstr ""
 msgid "Importar desde Google Takeout"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:469
+#: app/ui/mf_navegacion_arbol.py:471
 msgid "Importar feeds desde OPML..."
 msgstr ""
 
@@ -20870,11 +20891,11 @@ msgstr ""
 msgid "Importar hilo desde archivo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:472
+#: app/ui/mf_navegacion_arbol.py:474
 msgid "Importar suscripciones de YouTube (Google Takeout)..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:390
+#: app/ui/mf_navegacion_arbol.py:392
 msgid "Importar un vídeo desde una URL o magnet"
 msgstr ""
 
@@ -20890,7 +20911,7 @@ msgstr ""
 msgid "Importar vídeo por URL"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:390
+#: app/ui/mf_navegacion_arbol.py:392
 msgid "Importar vídeo por URL..."
 msgstr ""
 
@@ -20986,7 +21007,7 @@ msgstr ""
 msgid "Imágenes del artículo"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:588
+#: app/ui/mf_telegram_handlers.py:593
 msgid "Imágenes del artículo..."
 msgstr ""
 
@@ -21026,8 +21047,8 @@ msgstr ""
 msgid "Indica el subreddit de la conversación."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:153
-#: app/ui/mastodon_filtros_dialogs.py:181
+#: app/ui/mastodon_filtros_dialogs.py:155
+#: app/ui/mastodon_filtros_dialogs.py:183
 msgid "Indique un título o al menos una palabra, y un contexto."
 msgstr ""
 
@@ -21103,7 +21124,7 @@ msgstr ""
 msgid "Informes (elige uno):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:215
+#: app/ui/mf_navegacion_arbol.py:217
 msgid "Informes (reportes)..."
 msgstr ""
 
@@ -21225,7 +21246,7 @@ msgstr ""
 
 #: app/ui/bluesky_views.py:23 app/ui/buffers_dialog.py:30
 #: app/ui/buffers_dialog.py:42 app/ui/buffers_dialog.py:57
-#: app/ui/mastodon_filtros_dialogs.py:25 app/ui/mf_bandeja.py:33
+#: app/ui/mastodon_filtros_dialogs.py:27 app/ui/mf_bandeja.py:33
 #: app/ui/mf_bandeja.py:38 app/ui/mf_bandeja.py:45
 #: app/ui/mf_servicios_feeds.py:814 app/ui/wsocial_views.py:28
 msgid "Inicio"
@@ -21263,7 +21284,7 @@ msgstr ""
 msgid "Insertar emoji personalizado"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:763
+#: app/ui/mf_navegacion_arbol.py:765
 msgid "Inspeccionar logs internos del sistema"
 msgstr ""
 
@@ -21290,7 +21311,7 @@ msgstr ""
 msgid "Instalar plugin"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:422
+#: app/ui/mf_navegacion_arbol.py:424
 msgid "Instalar y desinstalar plugins"
 msgstr ""
 
@@ -21310,7 +21331,7 @@ msgstr ""
 msgid "Instancias seguidas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:420
+#: app/ui/mf_navegacion_arbol.py:422
 msgid "Instancias seguidas y seguidoras"
 msgstr ""
 
@@ -21535,7 +21556,7 @@ msgstr ""
 msgid "Invitaciones"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1013
+#: app/ui/mf_telegram_handlers.py:1018
 msgid "Invitaciones a grupos"
 msgstr ""
 
@@ -21601,7 +21622,7 @@ msgstr ""
 msgid "Invitar como moderador"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:803
+#: app/ui/mf_navegacion_arbol.py:805
 msgid "Invítame a un café si te gusta mi trabajo"
 msgstr ""
 
@@ -21609,7 +21630,7 @@ msgstr ""
 msgid "Ir a un canal"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:382
+#: app/ui/mf_navegacion_arbol.py:384
 msgid "Ir a un canal..."
 msgstr ""
 
@@ -21617,7 +21638,7 @@ msgstr ""
 msgid "Ir a un subreddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:328
+#: app/ui/mf_navegacion_arbol.py:330
 msgid "Ir a un subreddit..."
 msgstr ""
 
@@ -21829,7 +21850,7 @@ msgid ""
 "Telegram. Revócala desde otro dispositivo en Ajustes, Dispositivos."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:64
+#: app/ui/mf_autores_listas.py:65
 msgid "La cuenta ya no está destacada."
 msgstr ""
 
@@ -21919,7 +21940,7 @@ msgid ""
 "{1}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1151 app/ui/telegram_dialogs_perfil.py:634
+#: app/ui/mf_telegram_handlers.py:1156 app/ui/telegram_dialogs_perfil.py:634
 msgid "La historia no tiene archivo."
 msgstr ""
 
@@ -22014,7 +22035,7 @@ msgid ""
 "de todos modos?"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:170
+#: app/ui/mf_autores_listas.py:171
 msgid "La nueva fecha debe ser al menos 5 minutos en el futuro."
 msgstr ""
 
@@ -22303,7 +22324,7 @@ msgstr ""
 msgid "Leer automáticamente elementos nuevos al actualizar"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:716
+#: app/ui/mf_navegacion_arbol.py:718
 msgid "Leer barra de estado"
 msgstr ""
 
@@ -22312,7 +22333,7 @@ msgid "Leer el artículo en voz alta (Ctrl+Shift+L)"
 msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:509
-#: app/ui/mf_telegram_handlers.py:392 app/ui/mf_telegram_handlers.py:617
+#: app/ui/mf_telegram_handlers.py:392 app/ui/mf_telegram_handlers.py:622
 #: app/ui/telegram_conv_mensajes.py:880
 msgid "Leer en voz alta (TTS)"
 msgstr ""
@@ -22340,7 +22361,7 @@ msgstr ""
 #: app/ui/buffers_dialog.py:72 app/ui/mf_app_despacho.py:341
 #: app/ui/mf_app_despacho.py:376 app/ui/mf_app_despacho.py:312
 #: app/ui/mf_bandeja.py:42 app/ui/mf_servicios_feeds.py:922
-#: app/ui/mf_telegram_chats.py:973 app/ui/mf_telegram_handlers.py:548
+#: app/ui/mf_telegram_chats.py:973 app/ui/mf_telegram_handlers.py:553
 #: app/ui/rss_reglas_ui.py:25
 msgid "Leer más tarde"
 msgstr ""
@@ -22357,13 +22378,13 @@ msgstr ""
 msgid "Leer preferencias del servidor"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:448
+#: app/ui/mf_navegacion_arbol.py:450
 msgid ""
 "Leer una web que NO tiene RSS: se detectan sus artículos y se siguen como un"
 " feed"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:359
+#: app/ui/mf_navegacion_arbol.py:361
 msgid "Leer y editar las páginas wiki de un subreddit"
 msgstr ""
 
@@ -22428,7 +22449,7 @@ msgstr ""
 msgid "Limpiar Cola"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:494
+#: app/ui/mf_navegacion_arbol.py:496
 msgid "Limpiar artículos antiguos"
 msgstr ""
 
@@ -22625,7 +22646,7 @@ msgstr ""
 msgid "Lista de filtros de contenido"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:73
+#: app/ui/mastodon_filtros_dialogs.py:75
 msgid "Lista de filtros del servidor"
 msgstr ""
 
@@ -22879,7 +22900,7 @@ msgstr ""
 msgid "Listas del autor"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:495
+#: app/ui/mf_telegram_handlers.py:500
 msgid "Listas en las que está el autor..."
 msgstr ""
 
@@ -22907,7 +22928,7 @@ msgstr ""
 msgid "Listo para instalar."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:82
+#: app/ui/mf_autores_listas.py:83
 msgid "Listo."
 msgstr ""
 
@@ -22915,7 +22936,7 @@ msgstr ""
 msgid "Llama local (servidor propio)"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1011
+#: app/ui/mf_telegram_handlers.py:1016
 msgid "Llamadas"
 msgstr ""
 
@@ -23068,11 +23089,11 @@ msgid ""
 msgstr ""
 
 #: app/ui/bluesky_dialogs_moderacion.py:99
-#: app/ui/mastodon_filtros_dialogs.py:247
+#: app/ui/mastodon_filtros_dialogs.py:249
 msgid "Mantener (caduca el {0})"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:246
+#: app/ui/mastodon_filtros_dialogs.py:248
 msgid "Mantener (caducó el {0})"
 msgstr ""
 
@@ -23116,7 +23137,7 @@ msgstr ""
 msgid "Manual de usuario - SocialRSS"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:774
+#: app/ui/mf_navegacion_arbol.py:776
 msgid "Manual del Usuario"
 msgstr ""
 
@@ -23294,13 +23315,13 @@ msgid "Marcar como leída"
 msgstr ""
 
 #: app/ui/filters_dialog.py:23 app/ui/irc_views.py:216
-#: app/ui/mf_telegram_handlers.py:538 app/ui/reddit_controller_social.py:61
+#: app/ui/mf_telegram_handlers.py:543 app/ui/reddit_controller_social.py:61
 #: app/ui/rss_reglas_ui.py:24 app/ui/rss_reglas_ui.py:283
 #: app/ui/xmpp_views.py:365
 msgid "Marcar como leído"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:649
+#: app/ui/mf_telegram_handlers.py:654
 msgid "Marcar como leído ({0} sin leer)"
 msgstr ""
 
@@ -23308,7 +23329,7 @@ msgstr ""
 msgid "Marcar como leído al abrir"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:537 app/ui/mf_telegram_handlers.py:652
+#: app/ui/mf_telegram_handlers.py:542 app/ui/mf_telegram_handlers.py:657
 #: app/ui/reddit_controller_social.py:61 app/ui/xmpp_views.py:363
 msgid "Marcar como no leído"
 msgstr ""
@@ -23426,7 +23447,7 @@ msgstr ""
 msgid "Marcar todo como leído"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:552
+#: app/ui/mf_telegram_handlers.py:557
 msgid "Marcar todo el buffer como leído"
 msgstr ""
 
@@ -23521,7 +23542,7 @@ msgstr ""
 #: app/ui/bluesky_controller_social.py:836 app/ui/bluesky_views.py:27
 #: app/ui/buffers_dialog.py:44 app/ui/buffers_dialog.py:59
 #: app/ui/buffers_dialog.py:132 app/ui/mf_bandeja.py:38
-#: app/ui/mf_navegacion_arbol.py:256 app/ui/mf_navegacion_arbol.py:632
+#: app/ui/mf_navegacion_arbol.py:258 app/ui/mf_navegacion_arbol.py:634
 #: app/ui/notif_center_dialog.py:84 app/ui/peertube_controller_acciones.py:161
 #: app/ui/peertube_views.py:36 app/ui/wsocial_controller_acciones.py:483
 #: app/ui/wsocial_controller_carga.py:214
@@ -23637,7 +23658,7 @@ msgstr ""
 msgid "Menciones recientes en Mastodon ({0}):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:734
+#: app/ui/mf_navegacion_arbol.py:736
 msgid ""
 "Menciones, respuestas, me gusta, seguidores y chats sin leer de todas tus "
 "redes en una lista"
@@ -23955,7 +23976,7 @@ msgstr ""
 msgid "Mensajes de la denuncia"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1012
+#: app/ui/mf_telegram_handlers.py:1017
 msgid "Mensajes de voz"
 msgstr ""
 
@@ -23999,11 +24020,11 @@ msgstr ""
 msgid "Mensajes fijados de {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:977
+#: app/ui/mf_telegram_handlers.py:982
 msgid "Mensajes guardados"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:558
+#: app/ui/mf_navegacion_arbol.py:560
 msgid "Mensajes guardados..."
 msgstr ""
 
@@ -24111,8 +24132,8 @@ msgstr ""
 msgid "Mi perfil y estado..."
 msgstr ""
 
-#: app/ui/mf_listados_filas.py:783 app/ui/mf_navegacion_arbol.py:265
-#: app/ui/mf_navegacion_arbol.py:542
+#: app/ui/mf_listados_filas.py:783 app/ui/mf_navegacion_arbol.py:267
+#: app/ui/mf_navegacion_arbol.py:544
 msgid "Mi perfil..."
 msgstr ""
 
@@ -24162,7 +24183,7 @@ msgstr ""
 msgid "Miembros (menú contextual para administrar):"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:962
+#: app/ui/mf_telegram_handlers.py:967
 msgid "Miembros ({0})"
 msgstr ""
 
@@ -24231,7 +24252,7 @@ msgstr ""
 msgid "Migrar a otro ordenador"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:749
+#: app/ui/mf_navegacion_arbol.py:751
 msgid "Migrar a otro ordenador..."
 msgstr ""
 
@@ -24301,7 +24322,7 @@ msgstr ""
 msgid "Mis comentarios"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1023
+#: app/ui/mf_telegram_handlers.py:1028
 msgid "Mis contactos"
 msgstr ""
 
@@ -24309,7 +24330,7 @@ msgstr ""
 msgid "Mis denuncias"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:406
+#: app/ui/mf_navegacion_arbol.py:408
 msgid "Mis denuncias..."
 msgstr ""
 
@@ -24346,7 +24367,7 @@ msgstr ""
 msgid "Mis importaciones"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:392
+#: app/ui/mf_navegacion_arbol.py:394
 msgid "Mis importaciones..."
 msgstr ""
 
@@ -24431,7 +24452,7 @@ msgstr ""
 msgid "Moderar r/{0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:230
+#: app/ui/mf_navegacion_arbol.py:232
 msgid "Moderar tendencias, todos los hashtags y publicadores de enlaces"
 msgstr ""
 
@@ -24453,7 +24474,7 @@ msgstr ""
 msgid "Modificar toot"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:352
+#: app/ui/mf_navegacion_arbol.py:354
 msgid "Modmail (mensajería de moderación)..."
 msgstr ""
 
@@ -24465,7 +24486,7 @@ msgstr ""
 msgid "Modo de impulso"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:614
+#: app/ui/mf_telegram_handlers.py:619
 msgid "Modo de lectura limpia"
 msgstr ""
 
@@ -24518,7 +24539,7 @@ msgstr ""
 msgid "Modos y baneos del canal (para operadores)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:309
+#: app/ui/mf_navegacion_arbol.py:311
 msgid "Monitorización en vivo (avanzado)"
 msgstr ""
 
@@ -24654,7 +24675,7 @@ msgstr ""
 msgid "Mostrar el panel de vista previa del artículo enfocado"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:719
+#: app/ui/mf_navegacion_arbol.py:721
 msgid ""
 "Mostrar el texto alternativo que el autor puso a la imagen, vídeo o audio de"
 " la publicación enfocada"
@@ -24764,7 +24785,7 @@ msgstr ""
 msgid "Mostrar sin más"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:516
+#: app/ui/mf_navegacion_arbol.py:518
 msgid "Mostrar solo no leídos"
 msgstr ""
 
@@ -24786,7 +24807,7 @@ msgstr ""
 msgid "Mostrar u ocultar buffers"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:755
+#: app/ui/mf_navegacion_arbol.py:757
 msgid "Mostrar u ocultar buffers..."
 msgstr ""
 
@@ -24794,7 +24815,7 @@ msgstr ""
 msgid "Mostrar u ocultar la ventana"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:520
+#: app/ui/mf_navegacion_arbol.py:522
 msgid "Mostrar una etiqueta de fecha al inicio de cada grupo de artículos"
 msgstr ""
 
@@ -24885,7 +24906,7 @@ msgstr ""
 msgid "Motivos de eliminación de r/{0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:347
+#: app/ui/mf_navegacion_arbol.py:349
 msgid "Motivos de eliminación..."
 msgstr ""
 
@@ -25249,7 +25270,7 @@ msgid "Nada que publicar"
 msgstr ""
 
 #: app/ui/bluesky_dialogs.py:181 app/ui/bluesky_dialogs.py:938
-#: app/ui/mf_telegram_handlers.py:1023 app/ui/prefs_servicios.py:461
+#: app/ui/mf_telegram_handlers.py:1028 app/ui/prefs_servicios.py:461
 #: app/ui/wsocial_controller_social.py:741 app/ui/wsocial_dialogs.py:249
 #: app/ui/wsocial_dialogs.py:478
 msgid "Nadie"
@@ -25640,7 +25661,7 @@ msgstr ""
 msgid "No hay enlaces en esta publicación."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:260
+#: app/ui/mf_autores_listas.py:261
 msgid "No hay enlaces en tendencia."
 msgstr ""
 
@@ -25664,7 +25685,7 @@ msgstr ""
 msgid "No hay feeds sugeridos en este momento."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:117
+#: app/ui/mastodon_filtros_dialogs.py:119
 msgid "No hay filtros del servidor."
 msgstr ""
 
@@ -25672,7 +25693,7 @@ msgstr ""
 msgid "No hay filtros. Pulse Nuevo filtro para crear uno."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:234
+#: app/ui/mf_autores_listas.py:235
 msgid "No hay hashtags en tendencia."
 msgstr ""
 
@@ -25807,7 +25828,7 @@ msgstr ""
 msgid "No hay ninguna cuenta de Mastodon ni de Bluesky para compartir."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:770
+#: app/ui/mf_telegram_handlers.py:775
 msgid "No hay ninguna cuenta de Telegram. Añádala desde Gestionar Cuentas."
 msgstr ""
 
@@ -25953,7 +25974,7 @@ msgstr ""
 msgid "No hay un canal de almacenamiento configurado."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:990
+#: app/ui/mf_navegacion_arbol.py:992
 msgid "No hay un servicio en la posición {0}."
 msgstr ""
 
@@ -26108,7 +26129,7 @@ msgstr ""
 msgid "No se encontró el artículo."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:405 app/ui/mf_media_servicio.py:1022
+#: app/ui/mf_autores_listas.py:406 app/ui/mf_media_servicio.py:1022
 #: app/ui/mf_publicacion.py:122 app/ui/mf_publicacion.py:296
 #: app/ui/mf_publicacion.py:324 app/ui/mf_publicacion.py:416
 #: app/ui/mf_publicacion.py:766
@@ -26335,7 +26356,7 @@ msgid "No se pudieron cargar los mensajes: {0}"
 msgstr ""
 
 #: app/ui/mastodon_lists.py:220 app/ui/matrix_dialogs.py:192
-#: app/ui/mf_telegram_handlers.py:956 app/ui/telegram_conv_mensajes.py:175
+#: app/ui/mf_telegram_handlers.py:961 app/ui/telegram_conv_mensajes.py:175
 msgid "No se pudieron cargar los miembros: {0}"
 msgstr ""
 
@@ -26380,9 +26401,9 @@ msgid "No se pudieron cargar tus colecciones: {0}"
 msgstr ""
 
 #: app/ui/bluesky_dialogs_moderacion.py:483
-#: app/ui/mastodon_filtros_dialogs.py:106
-#: app/ui/mastodon_filtros_dialogs.py:418
-#: app/ui/mastodon_filtros_dialogs.py:419 app/ui/mastodon_lists.py:476
+#: app/ui/mastodon_filtros_dialogs.py:108
+#: app/ui/mastodon_filtros_dialogs.py:420
+#: app/ui/mastodon_filtros_dialogs.py:421 app/ui/mastodon_lists.py:476
 #: app/ui/mastodon_lists.py:547 app/ui/matrix_conversation.py:630
 #: app/ui/wsocial_controller_social.py:721
 #: app/ui/wsocial_dialogs_gestion.py:101 app/ui/wsocial_dialogs_gestion.py:183
@@ -26538,7 +26559,7 @@ msgstr ""
 msgid "No se pudo (¿tu cuenta no es administradora?): {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:974
+#: app/ui/mf_telegram_handlers.py:979
 msgid "No se pudo abrir Mensajes guardados: {0}"
 msgstr ""
 
@@ -26743,7 +26764,7 @@ msgstr ""
 msgid "No se pudo buscar: {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1115
+#: app/ui/mf_telegram_handlers.py:1120
 msgid "No se pudo calcular: {0}"
 msgstr ""
 
@@ -26793,7 +26814,7 @@ msgstr ""
 msgid "No se pudo cambiar la publicación fijada: {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1034 app/ui/telegram_conv_acciones.py:669
+#: app/ui/mf_telegram_handlers.py:1039 app/ui/telegram_conv_acciones.py:669
 #: app/ui/telegram_dialogs_perfil.py:830
 msgid "No se pudo cambiar: {0}"
 msgstr ""
@@ -26876,7 +26897,7 @@ msgstr ""
 msgid "No se pudo cargar la wiki: {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1132 app/ui/peertube_admin_dialogs.py:78
+#: app/ui/mf_telegram_handlers.py:1137 app/ui/peertube_admin_dialogs.py:78
 #: app/ui/telegram_dialogs_perfil.py:99 app/ui/telegram_dialogs_perfil.py:957
 #: app/ui/telegram_dialogs_perfil.py:1029
 #: app/ui/telegram_dialogs_perfil.py:1372 app/ui/wsocial_dialogs.py:629
@@ -26929,9 +26950,9 @@ msgstr ""
 msgid "No se pudo completar la operación: {0}"
 msgstr ""
 
-#: app/ui/mastodon_perfil_dialogs.py:194 app/ui/mf_autores_listas.py:388
-#: app/ui/mf_autores_listas.py:426 app/ui/mf_autores_listas.py:503
-#: app/ui/mf_autores_listas.py:379
+#: app/ui/mastodon_perfil_dialogs.py:194 app/ui/mf_autores_listas.py:389
+#: app/ui/mf_autores_listas.py:427 app/ui/mf_autores_listas.py:443
+#: app/ui/mf_autores_listas.py:534 app/ui/mf_autores_listas.py:380
 msgid "No se pudo completar: {0}"
 msgstr ""
 
@@ -27058,7 +27079,7 @@ msgstr ""
 msgid "No se pudo crear la encuesta: {0}"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:141 app/ui/mastodon_lists.py:82
+#: app/ui/mastodon_filtros_dialogs.py:143 app/ui/mastodon_lists.py:82
 #: app/ui/matrix_admin_dialogs.py:845 app/ui/matrix_views.py:590
 #: app/ui/mf_reproductor_media.py:509 app/ui/telegram_dialogs_perfil.py:489
 msgid "No se pudo crear: {0}"
@@ -27096,7 +27117,7 @@ msgid "No se pudo descargar."
 msgstr ""
 
 #: app/ui/matrix_conversation.py:397 app/ui/matrix_conversation.py:425
-#: app/ui/mf_telegram_handlers.py:1147
+#: app/ui/mf_telegram_handlers.py:1152
 #: app/ui/peertube_controller_biblioteca.py:200
 #: app/ui/telegram_dialogs_admin.py:1288
 #: app/ui/telegram_dialogs_perfil.py:1407 app/ui/xmpp_conversation.py:772
@@ -27139,7 +27160,7 @@ msgstr ""
 msgid "No se pudo editar la lista: {0}"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:168
+#: app/ui/mastodon_filtros_dialogs.py:170
 #: app/ui/telegram_dialogs_perfil.py:809
 msgid "No se pudo editar: {0}"
 msgstr ""
@@ -27160,7 +27181,7 @@ msgstr ""
 msgid "No se pudo eliminar la nube: {0}"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:208 app/ui/mastodon_lists.py:98
+#: app/ui/mastodon_filtros_dialogs.py:210 app/ui/mastodon_lists.py:98
 msgid "No se pudo eliminar: {0}"
 msgstr ""
 
@@ -27534,7 +27555,7 @@ msgstr ""
 
 #: app/ui/bluesky_controller_social.py:952
 #: app/ui/mastodon_colecciones_ui.py:204
-#: app/ui/mastodon_filtros_dialogs.py:442 app/ui/mastodon_lists.py:291
+#: app/ui/mastodon_filtros_dialogs.py:444 app/ui/mastodon_lists.py:291
 #: app/ui/mastodon_lists.py:509
 msgid "No se pudo quitar: {0}"
 msgstr ""
@@ -27611,13 +27632,13 @@ msgstr ""
 msgid "No se pudo reproducir."
 msgstr ""
 
-#: app/ui/bluesky_controller_acciones.py:986 app/ui/mf_autores_listas.py:539
+#: app/ui/bluesky_controller_acciones.py:986 app/ui/mf_autores_listas.py:570
 #: app/ui/mf_media_servicio.py:763 app/ui/rss_views.py:1187
 #: app/ui/player/player2_extras.py:195
 msgid "No se pudo reproducir: {0}"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:175
+#: app/ui/mf_autores_listas.py:176
 msgid "No se pudo reprogramar: {0}"
 msgstr ""
 
@@ -27635,10 +27656,6 @@ msgstr ""
 
 #: app/ui/mf_publicacion.py:855
 msgid "No se pudo seguir: {0}"
-msgstr ""
-
-#: app/ui/mf_autores_listas.py:442
-msgid "No se pudo silenciar: {0}"
 msgstr ""
 
 #: app/ui/telegram_conv_acciones.py:533
@@ -27805,7 +27822,7 @@ msgstr ""
 msgid "No sigues la actividad de ninguna cuenta."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:210
+#: app/ui/mf_autores_listas.py:211
 msgid "No sigues ningún hashtag."
 msgstr ""
 
@@ -27824,6 +27841,10 @@ msgstr ""
 
 #: app/ui/xmpp_views.py:196
 msgid "No tienes chats archivados."
+msgstr ""
+
+#: app/ui/mastodon_filtros_dialogs.py:493 app/ui/mf_autores_listas.py:484
+msgid "No tienes clientes ignorados."
 msgstr ""
 
 #: app/ui/xmpp_conversation.py:637
@@ -27915,7 +27936,7 @@ msgstr ""
 msgid "No tienes otros dispositivos OMEMO publicados."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:119
+#: app/ui/mf_autores_listas.py:120
 msgid "No tienes publicaciones programadas."
 msgstr ""
 
@@ -27931,7 +27952,7 @@ msgstr ""
 msgid "No tienes solicitudes de seguimiento pendientes."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1051
+#: app/ui/mf_telegram_handlers.py:1056
 msgid "No tienes usuarios bloqueados."
 msgstr ""
 
@@ -28167,7 +28188,7 @@ msgstr ""
 msgid "Nombre del subreddit (sin r/):"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:907
+#: app/ui/mf_telegram_handlers.py:912
 msgid "Nombre o @usuario de la persona, grupo o canal a buscar:"
 msgstr ""
 
@@ -28240,7 +28261,7 @@ msgstr ""
 msgid "Nombre visible: {0}"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:290
+#: app/ui/mf_autores_listas.py:291
 msgid "Nombre, @usuario o usuario@instancia a buscar:"
 msgstr ""
 
@@ -28291,7 +28312,7 @@ msgstr ""
 msgid "Nota del contacto..."
 msgstr ""
 
-#: app/ui/mf_app_despacho.py:641 app/ui/mf_autores_listas.py:47
+#: app/ui/mf_app_despacho.py:641 app/ui/mf_autores_listas.py:48
 msgid "Nota guardada."
 msgstr ""
 
@@ -28303,11 +28324,11 @@ msgstr ""
 msgid "Nota interna (opcional):"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:38
+#: app/ui/mf_autores_listas.py:39
 msgid "Nota personal sobre @{0} (vacío para borrarla):"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:483
+#: app/ui/mf_telegram_handlers.py:488
 msgid "Nota personal sobre el autor..."
 msgstr ""
 
@@ -28319,7 +28340,7 @@ msgstr ""
 msgid "Nota quitada."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:39
+#: app/ui/mf_autores_listas.py:40
 msgid "Nota sobre la cuenta"
 msgstr ""
 
@@ -28351,7 +28372,7 @@ msgstr ""
 #: app/ui/bluesky_views.py:24 app/ui/buffers_dialog.py:30
 #: app/ui/buffers_dialog.py:42 app/ui/buffers_dialog.py:57
 #: app/ui/buffers_dialog.py:83 app/ui/buffers_dialog.py:125
-#: app/ui/mastodon_filtros_dialogs.py:25 app/ui/mf_servicios_feeds.py:815
+#: app/ui/mastodon_filtros_dialogs.py:27 app/ui/mf_servicios_feeds.py:815
 #: app/ui/peertube_notif_dialog.py:37 app/ui/peertube_views.py:41
 #: app/ui/reddit_fase4_dialogs.py:51 app/ui/wsocial_views.py:29
 #: app/ui/x_controller.py:29
@@ -28370,7 +28391,7 @@ msgstr ""
 msgid "Notificaciones agrupadas de Mastodon"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:192
+#: app/ui/mf_navegacion_arbol.py:194
 msgid "Notificaciones agrupadas..."
 msgstr ""
 
@@ -28378,7 +28399,7 @@ msgstr ""
 msgid "Notificaciones de Windows"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:199
+#: app/ui/mf_navegacion_arbol.py:201
 msgid ""
 "Notificaciones de cuentas filtradas (desconocidos): aceptar o descartar"
 msgstr ""
@@ -28391,7 +28412,7 @@ msgstr ""
 msgid "Notificaciones marcadas como leídas."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:201
+#: app/ui/mf_navegacion_arbol.py:203
 msgid "Notificaciones sin leer (contador)"
 msgstr ""
 
@@ -28518,7 +28539,7 @@ msgstr ""
 msgid "Nueva conversación de modmail"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:157
+#: app/ui/mf_autores_listas.py:158
 msgid "Nueva fecha y hora (formato AAAA-MM-DD HH:MM, hora local):"
 msgstr ""
 
@@ -28570,7 +28591,7 @@ msgstr ""
 msgid "Nueva publicación"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:317
+#: app/ui/mf_navegacion_arbol.py:319
 msgid "Nueva publicación de Reddit..."
 msgstr ""
 
@@ -28661,7 +28682,7 @@ msgstr ""
 msgid "Nuevo filtro de contenido"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:228
+#: app/ui/mastodon_filtros_dialogs.py:230
 msgid "Nuevo filtro del servidor"
 msgstr ""
 
@@ -28682,7 +28703,7 @@ msgstr ""
 msgid "Nuevo hilo de Bluesky"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:250
+#: app/ui/mf_navegacion_arbol.py:252
 msgid "Nuevo hilo de Bluesky..."
 msgstr ""
 
@@ -28748,11 +28769,11 @@ msgstr ""
 msgid "Nuevo post de Bluesky"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:248
+#: app/ui/mf_navegacion_arbol.py:250
 msgid "Nuevo post de Bluesky..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:624
+#: app/ui/mf_navegacion_arbol.py:626
 msgid "Nuevo post de X..."
 msgstr ""
 
@@ -28823,14 +28844,14 @@ msgstr ""
 
 #: app/services/mastodon/filtros_servidor.py:387
 #: app/ui/bluesky_dialogs_moderacion.py:196
-#: app/ui/mastodon_filtros_dialogs.py:55
-#: app/ui/mastodon_filtros_dialogs.py:250
-#: app/ui/mastodon_filtros_dialogs.py:243
+#: app/ui/mastodon_filtros_dialogs.py:57
+#: app/ui/mastodon_filtros_dialogs.py:252
+#: app/ui/mastodon_filtros_dialogs.py:245
 #: app/ui/wsocial_dialogs_gestion.py:307
 msgid "Nunca"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:243
+#: app/ui/mastodon_filtros_dialogs.py:245
 msgid "Nunca (quitar la caducidad)"
 msgstr ""
 
@@ -28839,7 +28860,7 @@ msgstr ""
 msgid "Nº"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1009 app/ui/telegram_dialogs_cuenta.py:37
+#: app/ui/mf_telegram_handlers.py:1014 app/ui/telegram_dialogs_cuenta.py:37
 msgid "Número de teléfono"
 msgstr ""
 
@@ -28847,7 +28868,7 @@ msgstr ""
 msgid "Número de teléfono cambiado correctamente."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:579
+#: app/ui/mf_navegacion_arbol.py:581
 msgid "Número total de chats y de contactos de tu cuenta"
 msgstr ""
 
@@ -28916,7 +28937,7 @@ msgstr ""
 msgid "Ocultar a quién sigo y quién me sigue"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:524
+#: app/ui/mf_navegacion_arbol.py:526
 msgid "Ocultar artículos anclados (fecha futura)"
 msgstr ""
 
@@ -28954,26 +28975,26 @@ msgstr ""
 msgid "Ocultar esta publicación para mí"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:524
+#: app/ui/mf_navegacion_arbol.py:526
 msgid ""
 "Ocultar las entradas que algunos feeds fijan con fecha futura para que el "
 "primero sea el último artículo real"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:516
+#: app/ui/mf_navegacion_arbol.py:518
 msgid "Ocultar los artículos ya leídos en las listas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:725
+#: app/ui/mf_navegacion_arbol.py:727
 msgid ""
 "Ocultar o marcar automáticamente publicaciones y artículos por palabra clave"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:280
+#: app/ui/mastodon_filtros_dialogs.py:282
 msgid "Ocultar por completo"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:296
+#: app/ui/mf_navegacion_arbol.py:298
 msgid "Ocultar publicaciones que contengan ciertas palabras"
 msgstr ""
 
@@ -29290,11 +29311,11 @@ msgid ""
 "Palabras clave que te avisan en cualquier sala (se guardan en el servidor)"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:268
+#: app/ui/mastodon_filtros_dialogs.py:270
 msgid "Palabras del filtro, una por línea"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:264
+#: app/ui/mastodon_filtros_dialogs.py:266
 msgid "Palabras o frases a filtrar (una por línea):"
 msgstr ""
 
@@ -29316,7 +29337,7 @@ msgstr ""
 msgid "Palabras silenciadas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:296
+#: app/ui/mf_navegacion_arbol.py:298
 msgid "Palabras silenciadas..."
 msgstr ""
 
@@ -29341,7 +29362,7 @@ msgstr ""
 msgid "Papelera de artículos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:500
+#: app/ui/mf_navegacion_arbol.py:502
 msgid "Papelera de artículos..."
 msgstr ""
 
@@ -29416,7 +29437,7 @@ msgid ""
 msgstr ""
 
 #: app/ui/bluesky_dialogs_moderacion.py:37
-#: app/ui/mastodon_silenciar_dialog.py:12 app/ui/mf_telegram_handlers.py:686
+#: app/ui/mastodon_silenciar_dialog.py:12 app/ui/mf_telegram_handlers.py:691
 #: app/ui/xmpp_views.py:381
 msgid "Para siempre"
 msgstr ""
@@ -29683,7 +29704,7 @@ msgid ""
 "publicaciones fijadas."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:26
+#: app/ui/mastodon_filtros_dialogs.py:28
 msgid "Perfiles"
 msgstr ""
 
@@ -29899,7 +29920,7 @@ msgstr ""
 msgid "Plantillas de etiqueta"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:361
+#: app/ui/mf_navegacion_arbol.py:363
 msgid "Plantillas de etiqueta y tu propia etiqueta en un subreddit"
 msgstr ""
 
@@ -29923,11 +29944,11 @@ msgstr ""
 msgid "Plugins instalados"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:422
+#: app/ui/mf_navegacion_arbol.py:424
 msgid "Plugins..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:534 app/ui/rss_buscar_feeds.py:21
+#: app/ui/mf_autores_listas.py:565 app/ui/rss_buscar_feeds.py:21
 #: app/ui/rss_views.py:1081 app/ui/player/player2_dialog.py:153
 msgid "Podcast"
 msgstr ""
@@ -29964,7 +29985,7 @@ msgstr ""
 msgid "Política de notificaciones cargada."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:194
+#: app/ui/mf_navegacion_arbol.py:196
 msgid "Política de notificaciones..."
 msgstr ""
 
@@ -29996,7 +30017,7 @@ msgstr ""
 msgid "Ponte al día (resumen con IA)"
 msgstr ""
 
-#: app/ui/menu_teclas.py:193 app/ui/mf_navegacion_arbol.py:740
+#: app/ui/menu_teclas.py:193 app/ui/mf_navegacion_arbol.py:742
 msgid "Ponte al día (resumen con IA)..."
 msgstr ""
 
@@ -30142,7 +30163,7 @@ msgstr ""
 msgid "Preferencias de moderación guardadas."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:300
+#: app/ui/mf_navegacion_arbol.py:302
 msgid "Preferencias de moderación..."
 msgstr ""
 
@@ -30150,7 +30171,7 @@ msgstr ""
 msgid "Preferencias de notificaciones"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:402 app/ui/peertube_controller_notif.py:91
+#: app/ui/mf_navegacion_arbol.py:404 app/ui/peertube_controller_notif.py:91
 msgid "Preferencias de notificaciones..."
 msgstr ""
 
@@ -30162,7 +30183,7 @@ msgstr ""
 msgid "Preferencias del feed Siguiendo y de los hilos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:304
+#: app/ui/mf_navegacion_arbol.py:306
 msgid "Preferencias del feed Siguiendo y de los hilos..."
 msgstr ""
 
@@ -30171,7 +30192,7 @@ msgstr ""
 msgid "Preferencias guardadas."
 msgstr ""
 
-#: app/ui/menu_teclas.py:197 app/ui/mf_navegacion_arbol.py:766
+#: app/ui/menu_teclas.py:197 app/ui/mf_navegacion_arbol.py:768
 msgid "Preferencias..."
 msgstr ""
 
@@ -30383,7 +30404,7 @@ msgstr ""
 msgid "Prioridad de la regla"
 msgstr ""
 
-#: app/ui/mastodon_perfil_dialogs.py:476 app/ui/mf_telegram_handlers.py:1025
+#: app/ui/mastodon_perfil_dialogs.py:476 app/ui/mf_telegram_handlers.py:1030
 #: app/ui/peertube_biblioteca_dialogs.py:89
 #: app/ui/peertube_biblioteca_dialogs.py:154
 #: app/ui/peertube_biblioteca_dialogs.py:202
@@ -30392,11 +30413,11 @@ msgstr ""
 msgid "Privacidad"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1036 app/ui/telegram_dialogs_perfil.py:830
+#: app/ui/mf_telegram_handlers.py:1041 app/ui/telegram_dialogs_perfil.py:830
 msgid "Privacidad actualizada."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1017
+#: app/ui/mf_telegram_handlers.py:1022
 msgid "Privacidad de Telegram"
 msgstr ""
 
@@ -30416,7 +30437,7 @@ msgstr ""
 msgid "Privacidad global de Telegram"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:564
+#: app/ui/mf_navegacion_arbol.py:566
 msgid "Privacidad global..."
 msgstr ""
 
@@ -30428,7 +30449,7 @@ msgstr ""
 msgid "Privacidad por defecto en PeerTube"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:561
+#: app/ui/mf_navegacion_arbol.py:563
 msgid "Privacidad..."
 msgstr ""
 
@@ -30481,15 +30502,16 @@ msgstr ""
 msgid "Procesando GIF..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:422 app/ui/mf_autores_listas.py:498
+#: app/ui/mf_autores_listas.py:423 app/ui/mf_autores_listas.py:439
+#: app/ui/mf_autores_listas.py:529
 msgid "Procesando..."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:141 app/ui/mf_herramientas_extra.py:104
+#: app/ui/mf_autores_listas.py:142 app/ui/mf_herramientas_extra.py:104
 msgid "Programada cancelada."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:123
+#: app/ui/mf_autores_listas.py:124
 msgid "Programadas (elige una):"
 msgstr ""
 
@@ -30527,7 +30549,7 @@ msgstr ""
 msgid "Programar publicación"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:630
+#: app/ui/mf_navegacion_arbol.py:632
 msgid "Programar publicación..."
 msgstr ""
 
@@ -30653,7 +30675,7 @@ msgstr ""
 msgid "Prueba de sonidos identificativos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:793
+#: app/ui/mf_navegacion_arbol.py:795
 msgid "Prueba de sonidos identificativos..."
 msgstr ""
 
@@ -30691,7 +30713,7 @@ msgstr ""
 msgid "Publicaciones de X (Twitter)"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:864
+#: app/ui/mf_telegram_handlers.py:869
 msgid "Publicaciones de canales (Aceptar para ver opciones):"
 msgstr ""
 
@@ -30716,7 +30738,7 @@ msgstr ""
 msgid "Publicaciones de {0} (@{1}):"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:397
+#: app/ui/mastodon_filtros_dialogs.py:399
 msgid "Publicaciones del filtro"
 msgstr ""
 
@@ -30732,7 +30754,7 @@ msgstr ""
 msgid "Publicaciones en tendencia"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:386
+#: app/ui/mastodon_filtros_dialogs.py:388
 msgid "Publicaciones filtradas: {0}"
 msgstr ""
 
@@ -30745,7 +30767,7 @@ msgstr ""
 msgid "Publicaciones ocultadas"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:302
+#: app/ui/mf_navegacion_arbol.py:304
 msgid "Publicaciones ocultadas..."
 msgstr ""
 
@@ -30770,12 +30792,12 @@ msgstr ""
 msgid "Publicaciones por carga:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:743
+#: app/ui/mf_navegacion_arbol.py:745
 msgid ""
 "Publicaciones por día, horas más activas e interacciones, con datos locales"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:123
+#: app/ui/mf_autores_listas.py:124
 msgid "Publicaciones programadas"
 msgstr ""
 
@@ -30791,7 +30813,7 @@ msgstr ""
 msgid "Publicaciones públicas con la etiqueta, desde mastodon.social."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:262
+#: app/ui/mf_navegacion_arbol.py:264
 msgid ""
 "Publicaciones que no llegaron a confirmarse: reintentar sin duplicados o "
 "borrar"
@@ -30830,7 +30852,7 @@ msgid "Publicaciones: {0}; seguidores: {1}; seguidos: {2}"
 msgstr ""
 
 #: app/ui/bluesky_dialogs_moderacion.py:593
-#: app/ui/mastodon_filtros_dialogs.py:398 app/ui/mf_reproductor_media.py:644
+#: app/ui/mastodon_filtros_dialogs.py:400 app/ui/mf_reproductor_media.py:644
 #: app/ui/reddit_moderacion_dialogs.py:150
 msgid "Publicación"
 msgstr ""
@@ -30871,11 +30893,11 @@ msgstr ""
 msgid "Publicación cruzada (varias redes)"
 msgstr ""
 
-#: app/ui/menu_teclas.py:192 app/ui/mf_navegacion_arbol.py:728
+#: app/ui/menu_teclas.py:192 app/ui/mf_navegacion_arbol.py:730
 msgid "Publicación cruzada (varias redes)..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:881
+#: app/ui/mf_telegram_handlers.py:886
 msgid "Publicación de canal"
 msgstr ""
 
@@ -30883,7 +30905,7 @@ msgstr ""
 msgid "Publicación de una cuenta con aviso"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:888
+#: app/ui/mf_telegram_handlers.py:893
 msgid "Publicación de {0}"
 msgstr ""
 
@@ -30917,7 +30939,7 @@ msgid ""
 "ocultadas."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:129
+#: app/ui/mf_autores_listas.py:130
 msgid "Publicación programada"
 msgstr ""
 
@@ -30929,7 +30951,7 @@ msgstr ""
 msgid "Publicación quitada de tu perfil."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:444
+#: app/ui/mastodon_filtros_dialogs.py:446
 msgid "Publicación quitada del filtro."
 msgstr ""
 
@@ -30941,7 +30963,7 @@ msgstr ""
 msgid "Publicación reportada."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:177
+#: app/ui/mf_autores_listas.py:178
 msgid "Publicación reprogramada para {0}."
 msgstr ""
 
@@ -30959,7 +30981,7 @@ msgstr ""
 msgid "Publicación y encuesta"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:424
+#: app/ui/mastodon_filtros_dialogs.py:426
 msgid "Publicación {0}"
 msgstr ""
 
@@ -31052,7 +31074,7 @@ msgstr ""
 msgid "Publicar"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:728
+#: app/ui/mf_navegacion_arbol.py:730
 msgid "Publicar el mismo mensaje en Mastodon, Bluesky y X a la vez"
 msgstr ""
 
@@ -31072,7 +31094,7 @@ msgstr ""
 msgid "Publicar historia"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:630
+#: app/ui/mf_navegacion_arbol.py:632
 msgid "Publicar más tarde, en una fecha y hora"
 msgstr ""
 
@@ -31237,7 +31259,7 @@ msgstr ""
 msgid "Pública: {0}"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:25
+#: app/ui/mastodon_filtros_dialogs.py:27
 msgid "Públicas"
 msgstr ""
 
@@ -31355,7 +31377,7 @@ msgstr ""
 msgid "Quitar administrador (degradar a miembro)"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:489
+#: app/ui/mf_telegram_handlers.py:494
 msgid "Quitar al autor de mis seguidores"
 msgstr ""
 
@@ -31387,7 +31409,7 @@ msgstr ""
 msgid "Quitar conversación"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:547
+#: app/ui/mf_telegram_handlers.py:552
 msgid "Quitar de Leer más tarde"
 msgstr ""
 
@@ -31395,7 +31417,7 @@ msgstr ""
 msgid "Quitar de Mis GIF"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:542
+#: app/ui/mf_telegram_handlers.py:547
 msgid "Quitar de destacados"
 msgstr ""
 
@@ -31429,7 +31451,7 @@ msgstr ""
 msgid "Quitar de mis seguidores"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:738
+#: app/ui/mf_telegram_handlers.py:743
 msgid "Quitar de «{0}»"
 msgstr ""
 
@@ -31584,7 +31606,7 @@ msgstr ""
 msgid "Quitar restricciones (podrá volver a escribir)"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:78
+#: app/ui/mf_autores_listas.py:79
 msgid "Quitar seguidor"
 msgstr ""
 
@@ -31718,7 +31740,7 @@ msgstr ""
 msgid "Qué admite (CLIENTINFO)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:207
+#: app/ui/mf_navegacion_arbol.py:209
 msgid ""
 "Qué admite tu servidor: límites de caracteres y adjuntos, encuestas, "
 "traducción, citas nativas..."
@@ -31795,7 +31817,7 @@ msgstr ""
 msgid "Radio por internet"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:710
+#: app/ui/mf_navegacion_arbol.py:712
 msgid "Radio por internet..."
 msgstr ""
 
@@ -31878,7 +31900,7 @@ msgstr ""
 msgid "Reactivar acceso"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:678
+#: app/ui/mf_telegram_handlers.py:683
 msgid "Reactivar notificaciones (ahora silenciado)"
 msgstr ""
 
@@ -32010,7 +32032,7 @@ msgstr ""
 msgid "Recordarme describir las imagenes al publicar"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:654
+#: app/ui/mf_navegacion_arbol.py:656
 msgid "Recordatorio de que el cliente de X es no oficial y sus riesgos"
 msgstr ""
 
@@ -32262,7 +32284,7 @@ msgstr ""
 msgid "Registro de moderación"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:342
+#: app/ui/mf_navegacion_arbol.py:344
 msgid "Registro de moderación..."
 msgstr ""
 
@@ -32358,7 +32380,7 @@ msgstr ""
 msgid "Reglas asociadas al informe"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:484
+#: app/ui/mf_navegacion_arbol.py:486
 msgid "Reglas automáticas para procesar feeds"
 msgstr ""
 
@@ -32379,11 +32401,11 @@ msgstr ""
 msgid "Reglas y Filtros RSS Automáticos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:484
+#: app/ui/mf_navegacion_arbol.py:486
 msgid "Reglas y Filtros RSS..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:205
+#: app/ui/mf_navegacion_arbol.py:207
 msgid "Reglas, descripción, términos del servicio e idiomas del servidor"
 msgstr ""
 
@@ -32624,7 +32646,7 @@ msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:484
 #: app/ui/bluesky_thread_viewer.py:289 app/ui/mastodon_perfil_dialogs.py:627
-#: app/ui/mf_telegram_handlers.py:500 app/ui/thread_viewer.py:405
+#: app/ui/mf_telegram_handlers.py:505 app/ui/thread_viewer.py:405
 msgid "Reportar publicación..."
 msgstr ""
 
@@ -32765,7 +32787,7 @@ msgid "Reproducir audio del &enlace (YouTube, SoundCloud...)"
 msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:502
-#: app/ui/mf_telegram_handlers.py:603
+#: app/ui/mf_telegram_handlers.py:608
 msgid "Reproducir audio del enlace (YouTube, SoundCloud...)"
 msgstr ""
 
@@ -32813,7 +32835,7 @@ msgstr ""
 msgid "Reproducir o pausar"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:561
+#: app/ui/mf_telegram_handlers.py:566
 msgid "Reproducir podcast / audio"
 msgstr ""
 
@@ -32849,12 +32871,12 @@ msgstr ""
 msgid "Reproductor Multimedia Accesible"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:525 app/ui/prefs_avanzado.py:464
+#: app/ui/mf_autores_listas.py:556 app/ui/prefs_avanzado.py:464
 #: app/ui/player/player2_dialog.py:29 app/ui/player/player2_dialog.py:32
 msgid "Reproductor de radio, podcast y YouTube"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:713
+#: app/ui/mf_navegacion_arbol.py:715
 msgid "Reproductor de radio, podcast y YouTube..."
 msgstr ""
 
@@ -32874,15 +32896,15 @@ msgstr ""
 msgid "Reproductores"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:134 app/ui/mf_herramientas_extra.py:97
+#: app/ui/mf_autores_listas.py:135 app/ui/mf_herramientas_extra.py:97
 msgid "Reprogramar"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:130
+#: app/ui/mf_autores_listas.py:131
 msgid "Reprogramar (cambiar fecha y hora)"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:158
+#: app/ui/mf_autores_listas.py:159
 msgid "Reprogramar publicación"
 msgstr ""
 
@@ -32917,8 +32939,8 @@ msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:424
 #: app/ui/bluesky_controller_acciones.py:528 app/ui/invisible_keymap.py:58
-#: app/ui/mf_acciones_toot.py:137 app/ui/mf_navegacion_arbol.py:252
-#: app/ui/mf_navegacion_arbol.py:319 app/ui/mf_navegacion_arbol.py:626
+#: app/ui/mf_acciones_toot.py:137 app/ui/mf_navegacion_arbol.py:254
+#: app/ui/mf_navegacion_arbol.py:321 app/ui/mf_navegacion_arbol.py:628
 #: app/ui/mf_telegram_handlers.py:288 app/ui/peertube_comment_dialog.py:168
 #: app/ui/reddit_controller_acciones.py:228
 #: app/ui/reddit_controller_acciones.py:515
@@ -32947,7 +32969,7 @@ msgstr ""
 msgid "Responder a este mensaje..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:252 app/ui/mf_navegacion_arbol.py:626
+#: app/ui/mf_navegacion_arbol.py:254 app/ui/mf_navegacion_arbol.py:628
 msgid "Responder a la publicación enfocada"
 msgstr ""
 
@@ -32963,7 +32985,7 @@ msgstr ""
 msgid "Responder a «{0}»:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:319
+#: app/ui/mf_navegacion_arbol.py:321
 msgid "Responder al elemento enfocado"
 msgstr ""
 
@@ -33096,7 +33118,7 @@ msgstr ""
 msgid "Respuestas del hilo:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:304
+#: app/ui/mf_navegacion_arbol.py:306
 msgid ""
 "Respuestas, reposts y citas en Inicio, y orden de las respuestas en los "
 "hilos"
@@ -33213,12 +33235,12 @@ msgstr ""
 msgid "Resultado enviado."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:865 app/ui/mf_telegram_handlers.py:826
+#: app/ui/mf_telegram_handlers.py:870 app/ui/mf_telegram_handlers.py:831
 #: app/ui/rss_buscar_feeds.py:52 app/ui/xmpp_dialogs.py:553
 msgid "Resultados"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:932 app/ui/mf_telegram_handlers.py:826
+#: app/ui/mf_telegram_handlers.py:937 app/ui/mf_telegram_handlers.py:831
 msgid "Resultados (Aceptar abre la conversación):"
 msgstr ""
 
@@ -33238,7 +33260,7 @@ msgstr ""
 msgid "Resultados actualizados."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:305
+#: app/ui/mf_autores_listas.py:306
 msgid "Resultados de búsqueda: {0}"
 msgstr ""
 
@@ -33275,7 +33297,7 @@ msgstr ""
 msgid "Resumen completo del informe"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:740
+#: app/ui/mf_navegacion_arbol.py:742
 msgid ""
 "Resumen con inteligencia artificial de lo que no has leído en todas tus "
 "redes"
@@ -33285,7 +33307,7 @@ msgstr ""
 msgid "Resumen de IA"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:579
+#: app/ui/mf_navegacion_arbol.py:581
 msgid "Resumen de Telegram"
 msgstr ""
 
@@ -33293,7 +33315,7 @@ msgstr ""
 msgid "Resumen de artículos sin leer"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:512
+#: app/ui/mf_navegacion_arbol.py:514
 msgid "Resumen de artículos sin leer..."
 msgstr ""
 
@@ -33317,7 +33339,7 @@ msgstr ""
 msgid "Resumiendo..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:682
+#: app/ui/mf_navegacion_arbol.py:684
 msgid "Resumir Entrada con IA"
 msgstr ""
 
@@ -33434,7 +33456,7 @@ msgstr ""
 msgid "Revisar el canal"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:340
+#: app/ui/mf_navegacion_arbol.py:342
 msgid "Revisar los elementos pendientes de moderar"
 msgstr ""
 
@@ -33442,7 +33464,7 @@ msgstr ""
 msgid "Revisar y reparar el canal..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:410
+#: app/ui/mf_navegacion_arbol.py:412
 msgid "Revisar y resolver las denuncias de la instancia"
 msgstr ""
 
@@ -33518,7 +33540,7 @@ msgid ""
 "¿Continuar?"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:663
+#: app/ui/mf_telegram_handlers.py:668
 msgid "Sacar del archivo"
 msgstr ""
 
@@ -33622,7 +33644,7 @@ msgstr ""
 msgid "Salida pendiente de W Social"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:262
+#: app/ui/mf_navegacion_arbol.py:264
 msgid "Salida pendiente..."
 msgstr ""
 
@@ -33659,7 +33681,7 @@ msgstr ""
 msgid "Salir del grupo"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:710
+#: app/ui/mf_telegram_handlers.py:715
 msgid "Salir del grupo..."
 msgstr ""
 
@@ -33699,7 +33721,7 @@ msgstr ""
 msgid "Salud de los feeds"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:481
+#: app/ui/mf_navegacion_arbol.py:483
 msgid "Salud de los feeds..."
 msgstr ""
 
@@ -33843,7 +33865,7 @@ msgstr ""
 msgid "Se ocultan las entradas y salidas de este canal."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:461
+#: app/ui/mf_autores_listas.py:478
 msgid "Se ocultarán las publicaciones del cliente {0}."
 msgstr ""
 
@@ -33937,7 +33959,7 @@ msgstr ""
 msgid "Seguidores conocidos"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:493
+#: app/ui/mf_telegram_handlers.py:498
 msgid "Seguidores conocidos del autor..."
 msgstr ""
 
@@ -34013,7 +34035,7 @@ msgstr ""
 msgid "Seguir autor"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:522
+#: app/ui/mf_telegram_handlers.py:527
 msgid "Seguir el hashtag #{0}"
 msgstr ""
 
@@ -34025,7 +34047,7 @@ msgstr ""
 msgid "Seguir en &vivo"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:186 app/ui/mf_autores_listas.py:241
+#: app/ui/mf_autores_listas.py:187 app/ui/mf_autores_listas.py:242
 msgid "Seguir hashtag"
 msgstr ""
 
@@ -34283,11 +34305,15 @@ msgstr ""
 msgid "Seleccione un bot."
 msgstr ""
 
+#: app/ui/mastodon_filtros_dialogs.py:500
+msgid "Seleccione un cliente."
+msgstr ""
+
 #: app/ui/telegram_dialogs_perfil.py:1391
 msgid "Seleccione un elemento."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:123
+#: app/ui/mastodon_filtros_dialogs.py:125
 msgid "Seleccione un filtro."
 msgstr ""
 
@@ -34312,7 +34338,7 @@ msgstr ""
 msgid "Seleccione una historia."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:436
+#: app/ui/mastodon_filtros_dialogs.py:438
 msgid "Seleccione una publicación."
 msgstr ""
 
@@ -34430,7 +34456,7 @@ msgstr ""
 msgid "Servicios de etiquetado"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:298
+#: app/ui/mf_navegacion_arbol.py:300
 msgid "Servicios de etiquetas..."
 msgstr ""
 
@@ -34527,7 +34553,7 @@ msgstr ""
 msgid "Sesiones activas de Telegram"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:545
+#: app/ui/mf_navegacion_arbol.py:547
 msgid "Sesiones activas..."
 msgstr ""
 
@@ -34833,10 +34859,6 @@ msgstr ""
 msgid "Silenciados los reposts de {0}."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:438
-msgid "Silenciando conversación..."
-msgstr ""
-
 #: app/ui/bluesky_controller_acciones.py:326
 #: app/ui/bluesky_controller_acciones.py:385 app/ui/mf_mastodon_extra.py:536
 #: app/ui/mf_mastodon_extra.py:539 app/ui/mf_mastodon_extra.py:581
@@ -34869,7 +34891,6 @@ msgstr ""
 msgid "Silenciar cuenta"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:466
 #: app/ui/wsocial_controller_acciones.py:514
 msgid "Silenciar esta conversación"
 msgstr ""
@@ -34890,8 +34911,12 @@ msgstr ""
 msgid "Silenciar la instancia"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:689
+#: app/ui/mf_telegram_handlers.py:694
 msgid "Silenciar notificaciones"
+msgstr ""
+
+#: app/ui/mf_telegram_handlers.py:467
+msgid "Silenciar o reactivar esta conversación"
 msgstr ""
 
 #: app/ui/peertube_controller_social.py:134
@@ -34931,7 +34956,7 @@ msgstr ""
 msgid "Silencio quitado."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:390
+#: app/ui/mf_autores_listas.py:391
 msgid "Silencio retirado."
 msgstr ""
 
@@ -35108,7 +35133,7 @@ msgstr ""
 msgid "Sin mensajes desde fuera del canal"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:959
+#: app/ui/mf_telegram_handlers.py:964
 msgid "Sin miembros visibles."
 msgstr ""
 
@@ -35140,16 +35165,16 @@ msgstr ""
 msgid "Sin resolver"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:861
+#: app/ui/mf_telegram_handlers.py:866
 msgid "Sin resultados para #{0}."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:303
+#: app/ui/mf_autores_listas.py:304
 msgid "Sin resultados para «{0}»."
 msgstr ""
 
-#: app/ui/bluesky_controller_social.py:648 app/ui/mf_telegram_handlers.py:924
-#: app/ui/mf_telegram_handlers.py:823 app/ui/radio_dialog.py:81
+#: app/ui/bluesky_controller_social.py:648 app/ui/mf_telegram_handlers.py:929
+#: app/ui/mf_telegram_handlers.py:828 app/ui/radio_dialog.py:81
 #: app/ui/rss_buscar_feeds.py:103 app/ui/search_dialog.py:232
 #: app/ui/telegram_bot_dialogs.py:312 app/ui/telegram_busqueda.py:272
 #: app/ui/xmpp_perfil_dialogs.py:208
@@ -35192,7 +35217,7 @@ msgstr ""
 msgid "Sincronización con servidor"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:490
+#: app/ui/mf_navegacion_arbol.py:492
 msgid "Sincronización con servidor..."
 msgstr ""
 
@@ -35235,7 +35260,7 @@ msgstr ""
 msgid "Sincronizar cada (minutos):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:490
+#: app/ui/mf_navegacion_arbol.py:492
 msgid ""
 "Sincronizar feeds y estado leído/destacado con FreshRSS, Inoreader, Miniflux"
 " u otro servidor compatible"
@@ -35409,7 +35434,7 @@ msgstr ""
 msgid "Solicitudes de notificación"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:199
+#: app/ui/mf_navegacion_arbol.py:201
 msgid "Solicitudes de notificación..."
 msgstr ""
 
@@ -35417,7 +35442,7 @@ msgstr ""
 msgid "Solicitudes de registro"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:419
+#: app/ui/mf_navegacion_arbol.py:421
 msgid "Solicitudes de registro..."
 msgstr ""
 
@@ -35629,8 +35654,8 @@ msgstr ""
 msgid "Solo no leídos"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:306
-#: app/ui/mastodon_filtros_dialogs.py:307
+#: app/ui/mastodon_filtros_dialogs.py:308
+#: app/ui/mastodon_filtros_dialogs.py:309
 msgid "Solo palabras completas"
 msgstr ""
 
@@ -35874,7 +35899,7 @@ msgstr ""
 msgid "Subir archivos... (Ctrl+U)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:388
+#: app/ui/mf_navegacion_arbol.py:390
 msgid "Subir un vídeo desde tu equipo"
 msgstr ""
 
@@ -35890,7 +35915,7 @@ msgstr ""
 msgid "Subir vídeo a PeerTube"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:388
+#: app/ui/mf_navegacion_arbol.py:390
 msgid "Subir vídeo..."
 msgstr ""
 
@@ -35927,7 +35952,7 @@ msgid "Sugerencias:"
 msgstr ""
 
 #: app/ui/mf_app_despacho.py:70 app/ui/mf_app_despacho.py:441
-#: app/ui/mf_telegram_handlers.py:914 app/ui/telegram_dialogs_admin.py:109
+#: app/ui/mf_telegram_handlers.py:919 app/ui/telegram_dialogs_admin.py:109
 #: app/ui/telegram_dialogs_admin.py:900
 msgid "Supergrupo"
 msgstr ""
@@ -35956,11 +35981,15 @@ msgstr ""
 msgid "Sus me gusta (lo que le ha gustado)"
 msgstr ""
 
+#: app/ui/mastodon_filtros_dialogs.py:463
+msgid "Sus publicaciones están ocultas en todas tus cuentas de Mastodon:"
+msgstr ""
+
 #: app/ui/rss_buscar_feeds.py:161
 msgid "Suscribiendo a {0}..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:472
+#: app/ui/mf_navegacion_arbol.py:474
 msgid ""
 "Suscribirse a tus canales y listas de YouTube desde el ZIP que descargas de "
 "Google Takeout"
@@ -35974,7 +36003,7 @@ msgstr ""
 msgid "Suscribirse al resultado elegido"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:451
+#: app/ui/mf_navegacion_arbol.py:453
 msgid "Suscribirte a un canal de YouTube para escuchar sus vídeos como audio"
 msgstr ""
 
@@ -36213,7 +36242,7 @@ msgstr ""
 msgid "Teclas de la aplicación"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:777
+#: app/ui/mf_navegacion_arbol.py:779
 msgid "Teclas de la aplicación (lista actual)"
 msgstr ""
 
@@ -36225,7 +36254,7 @@ msgstr ""
 msgid "Teclas de la interfaz invisible"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:781
+#: app/ui/mf_navegacion_arbol.py:783
 msgid "Teclas de la interfaz invisible (lista actual)"
 msgstr ""
 
@@ -36255,7 +36284,7 @@ msgstr ""
 msgid "Telegram Drive (nube personal)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:609
+#: app/ui/mf_navegacion_arbol.py:611
 msgid "Telegram Drive (tu nube personal)..."
 msgstr ""
 
@@ -36388,8 +36417,8 @@ msgstr ""
 
 #: app/ui/bluesky_views.py:32 app/ui/buffers_dialog.py:35
 #: app/ui/buffers_dialog.py:46 app/ui/buffers_dialog.py:61
-#: app/ui/buffers_dialog.py:123 app/ui/mf_autores_listas.py:237
-#: app/ui/mf_autores_listas.py:263 app/ui/mf_mastodon_extra.py:788
+#: app/ui/buffers_dialog.py:123 app/ui/mf_autores_listas.py:238
+#: app/ui/mf_autores_listas.py:264 app/ui/mf_mastodon_extra.py:788
 #: app/ui/mf_servicios_feeds.py:824 app/ui/peertube_views.py:29
 #: app/ui/wsocial_views.py:38 app/ui/x_controller.py:744
 msgid "Tendencias"
@@ -36419,7 +36448,7 @@ msgstr ""
 msgid "Tendencias de un lugar"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:647
+#: app/ui/mf_navegacion_arbol.py:649
 msgid "Tendencias de un país o ciudad..."
 msgstr ""
 
@@ -36427,11 +36456,11 @@ msgstr ""
 msgid "Tendencias en {0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:229
+#: app/ui/mf_navegacion_arbol.py:231
 msgid "Tendencias y descubrimiento..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:645
+#: app/ui/mf_navegacion_arbol.py:647
 msgid "Tendencias..."
 msgstr ""
 
@@ -36488,7 +36517,7 @@ msgstr ""
 msgid "Texto a buscar en el registro"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:812
+#: app/ui/mf_telegram_handlers.py:817
 msgid "Texto a buscar en todos los chats:"
 msgstr ""
 
@@ -36813,7 +36842,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1118
+#: app/ui/mf_telegram_handlers.py:1123
 msgid "Tienes {0} chats y {1} contactos."
 msgstr ""
 
@@ -37028,7 +37057,7 @@ msgstr ""
 #: app/ui/bluesky_dialogs.py:181 app/ui/bluesky_dialogs.py:938
 #: app/ui/filters_dialog.py:17 app/ui/log_viewer.py:117
 #: app/ui/mastodon_admin_dialogs.py:522 app/ui/mastodon_admin_dialogs.py:532
-#: app/ui/mf_bandeja.py:41 app/ui/mf_telegram_handlers.py:1023
+#: app/ui/mf_bandeja.py:41 app/ui/mf_telegram_handlers.py:1028
 #: app/ui/prefs_servicios.py:461 app/ui/search_dialog.py:57
 #: app/ui/telegram_conv_extras.py:216 app/ui/wsocial_dialogs.py:248
 #: app/ui/wsocial_dialogs.py:477
@@ -37131,7 +37160,7 @@ msgstr ""
 msgid "Tokens de registro:"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:423
+#: app/ui/mf_navegacion_arbol.py:425
 msgid "Tokens de runners..."
 msgstr ""
 
@@ -37203,7 +37232,7 @@ msgstr ""
 msgid "Trabajos del servidor"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:421
+#: app/ui/mf_navegacion_arbol.py:423
 msgid "Trabajos del servidor..."
 msgstr ""
 
@@ -37298,11 +37327,11 @@ msgstr ""
 msgid "Traducir (Telegram)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:696
+#: app/ui/mf_navegacion_arbol.py:698
 msgid "Traducir Elemento"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:611 app/ui/rss_lector.py:118
+#: app/ui/mf_telegram_handlers.py:616 app/ui/rss_lector.py:118
 msgid "Traducir artículo"
 msgstr ""
 
@@ -37327,7 +37356,7 @@ msgstr ""
 msgid "Traducir mensaje"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:696
+#: app/ui/mf_navegacion_arbol.py:698
 msgid "Traducir post o artículo seleccionado al español"
 msgstr ""
 
@@ -37365,13 +37394,13 @@ msgstr ""
 msgid "Transcodificación: {0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:679
+#: app/ui/mf_navegacion_arbol.py:681
 msgid ""
 "Transcribir el texto de la imagen con el motor de Windows, sin necesidad de "
 "clave ni conexión"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:676
+#: app/ui/mf_navegacion_arbol.py:678
 msgid ""
 "Transcribir el texto que aparece en la imagen adjunta usando la IA "
 "configurada"
@@ -37503,7 +37532,7 @@ msgid ""
 "Tu servidor no admite filtrar publicaciones sueltas (necesita Mastodon 4.0)."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:189
+#: app/ui/mastodon_filtros_dialogs.py:191
 msgid "Tu servidor no admite filtrar publicaciones sueltas."
 msgstr ""
 
@@ -37572,7 +37601,7 @@ msgid ""
 "actuar):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:369
+#: app/ui/mf_navegacion_arbol.py:371
 msgid "Tus borradores de publicaciones: crear, publicar y borrar"
 msgstr ""
 
@@ -37580,7 +37609,7 @@ msgstr ""
 msgid "Tus carpetas inteligentes (se abren desde el árbol de RSS):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:576
+#: app/ui/mf_navegacion_arbol.py:578
 msgid "Tus chats más usados por categoría (personas, bots, grupos, canales)"
 msgstr ""
 
@@ -37704,11 +37733,11 @@ msgstr ""
 msgid "Título del feed:"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:258
+#: app/ui/mastodon_filtros_dialogs.py:260
 msgid "Título del filtro"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:257
+#: app/ui/mastodon_filtros_dialogs.py:259
 msgid "Título del filtro (obligatorio si no hay palabras):"
 msgstr ""
 
@@ -37852,7 +37881,7 @@ msgstr ""
 msgid "Un navegador (Firefox)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:512
+#: app/ui/mf_navegacion_arbol.py:514
 msgid ""
 "Un resumen (con IA si la tienes configurada) de tus artículos pendientes por"
 " temas"
@@ -37900,7 +37929,7 @@ msgstr ""
 msgid "Unirse a Telegram"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:595
+#: app/ui/mf_navegacion_arbol.py:597
 msgid "Unirse a grupo/canal por enlace..."
 msgstr ""
 
@@ -37936,11 +37965,11 @@ msgstr ""
 msgid "Unirse al canal"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:595
+#: app/ui/mf_navegacion_arbol.py:597
 msgid "Unirse mediante enlace de invitación o @usuario"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:293
+#: app/ui/mf_navegacion_arbol.py:295
 msgid "Unirte a un grupo con su enlace de invitación"
 msgstr ""
 
@@ -38009,7 +38038,7 @@ msgstr ""
 #: app/ui/matrix_admin_dialogs.py:57 app/ui/matrix_admin_dialogs.py:86
 #: app/ui/matrix_dialogs.py:156 app/ui/matrix_dialogs.py:1416
 #: app/ui/matrix_dialogs.py:1263 app/ui/mf_app_despacho.py:510
-#: app/ui/mf_app_despacho.py:512 app/ui/mf_telegram_handlers.py:913
+#: app/ui/mf_app_despacho.py:512 app/ui/mf_telegram_handlers.py:918
 #: app/ui/peertube_admin_dialogs.py:14 app/ui/peertube_admin_dialogs.py:107
 #: app/ui/peertube_admin_dialogs.py:192 app/ui/reddit_fase4_dialogs.py:87
 #: app/ui/reddit_moderacion_dialogs.py:436
@@ -38128,7 +38157,7 @@ msgstr ""
 msgid "Usuario del servidor"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1062 app/ui/peertube_admin_dialogs.py:177
+#: app/ui/mf_telegram_handlers.py:1067 app/ui/peertube_admin_dialogs.py:177
 #: app/ui/telegram_conv_extras.py:517
 msgid "Usuario desbloqueado."
 msgstr ""
@@ -38195,7 +38224,7 @@ msgstr ""
 msgid "Usuarios (Aplicaciones para acciones):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:345
+#: app/ui/mf_navegacion_arbol.py:347
 msgid "Usuarios (baneados, silenciados, moderadores)..."
 msgstr ""
 
@@ -38211,7 +38240,7 @@ msgstr ""
 msgid "Usuarios activos este mes: {0}"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:233
+#: app/ui/mf_navegacion_arbol.py:235
 msgid ""
 "Usuarios activos, registros, interacciones, informes, idiomas y retención "
 "(últimos 30 días)"
@@ -38221,15 +38250,15 @@ msgstr ""
 msgid "Usuarios baneados"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1056
+#: app/ui/mf_telegram_handlers.py:1061
 msgid "Usuarios bloqueados"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1055
+#: app/ui/mf_telegram_handlers.py:1060
 msgid "Usuarios bloqueados (Aceptar para desbloquear):"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:570
+#: app/ui/mf_navegacion_arbol.py:572
 msgid "Usuarios bloqueados..."
 msgstr ""
 
@@ -38278,7 +38307,7 @@ msgstr ""
 msgid "Usuarios silenciados"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:418
+#: app/ui/mf_navegacion_arbol.py:420
 msgid "Usuarios..."
 msgstr ""
 
@@ -38290,7 +38319,7 @@ msgstr ""
 msgid "Vaciando la papelera..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:669
+#: app/ui/mf_telegram_handlers.py:674
 msgid "Vaciar canal (borra los mensajes para todos, solo admin)..."
 msgstr ""
 
@@ -38306,7 +38335,7 @@ msgstr ""
 msgid "Vaciar conversación (borrar mensajes)..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:671
+#: app/ui/mf_telegram_handlers.py:676
 msgid "Vaciar conversación..."
 msgstr ""
 
@@ -38549,7 +38578,7 @@ msgstr ""
 msgid "Ver como &HTML"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:620
+#: app/ui/mf_telegram_handlers.py:625
 msgid "Ver como HTML en el navegador"
 msgstr ""
 
@@ -38574,7 +38603,7 @@ msgstr ""
 msgid "Ver conversación de mensajes directos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:807
+#: app/ui/mf_navegacion_arbol.py:809
 msgid "Ver créditos e información del programa"
 msgstr ""
 
@@ -38590,7 +38619,7 @@ msgstr ""
 msgid "Ver datos de {0} (whois)"
 msgstr ""
 
-#: app/ui/bluesky_thread_viewer.py:286 app/ui/mf_navegacion_arbol.py:719
+#: app/ui/bluesky_thread_viewer.py:286 app/ui/mf_navegacion_arbol.py:721
 msgid "Ver descripción de la multimedia"
 msgstr ""
 
@@ -38616,7 +38645,7 @@ msgstr ""
 msgid "Ver detalles de la cuenta..."
 msgstr ""
 
-#: app/ui/mastodon_perfil_dialogs.py:628 app/ui/mf_telegram_handlers.py:473
+#: app/ui/mastodon_perfil_dialogs.py:628 app/ui/mf_telegram_handlers.py:478
 #: app/ui/thread_viewer.py:406
 msgid "Ver detalles del autor..."
 msgstr ""
@@ -38629,19 +38658,19 @@ msgstr ""
 msgid "Ver el detalle del reporte"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:406
+#: app/ui/mf_navegacion_arbol.py:408
 msgid "Ver el estado de las denuncias que has puesto"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:421
+#: app/ui/mf_navegacion_arbol.py:423
 msgid "Ver el estado de los trabajos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:392
+#: app/ui/mf_navegacion_arbol.py:394
 msgid "Ver el estado de tus importaciones"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:688
+#: app/ui/mf_navegacion_arbol.py:690
 msgid "Ver el historial de operaciones de IA"
 msgstr ""
 
@@ -38657,7 +38686,7 @@ msgstr ""
 msgid "Ver el perfil del autor"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:876
+#: app/ui/mf_telegram_handlers.py:881
 msgid "Ver el texto completo"
 msgstr ""
 
@@ -38689,7 +38718,7 @@ msgstr ""
 msgid "Ver hilo"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:509
+#: app/ui/mf_telegram_handlers.py:514
 msgid "Ver historial de ediciones..."
 msgstr ""
 
@@ -38734,13 +38763,13 @@ msgstr ""
 msgid "Ver la descripción de la multimedia"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:778
+#: app/ui/mf_navegacion_arbol.py:780
 msgid ""
 "Ver la lista de teclas con tus combinaciones actuales (incluidas las "
 "personalizadas)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:782
+#: app/ui/mf_navegacion_arbol.py:784
 msgid ""
 "Ver la lista de teclas globales de la interfaz invisible con tus "
 "combinaciones actuales"
@@ -38754,17 +38783,17 @@ msgstr ""
 msgid "Ver la tabla como página HTML"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:404
+#: app/ui/mf_navegacion_arbol.py:406
 msgid "Ver las estadísticas públicas de la instancia"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:790
+#: app/ui/mf_navegacion_arbol.py:792
 msgid ""
 "Ver las novedades de esta versión en un cuadro de solo lectura, como al "
 "actualizar"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:302
+#: app/ui/mf_navegacion_arbol.py:304
 msgid "Ver las publicaciones que ocultaste para ti y volver a mostrarlas"
 msgstr ""
 
@@ -38772,19 +38801,19 @@ msgstr ""
 msgid "Ver las salas de este espacio..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:645
+#: app/ui/mf_navegacion_arbol.py:647
 msgid "Ver las tendencias actuales de X"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:647
+#: app/ui/mf_navegacion_arbol.py:649
 msgid "Ver las tendencias de un país o una ciudad"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:342
+#: app/ui/mf_navegacion_arbol.py:344
 msgid "Ver las últimas acciones de moderación"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:651
+#: app/ui/mf_navegacion_arbol.py:653
 msgid "Ver los datos de tu perfil"
 msgstr ""
 
@@ -38808,11 +38837,11 @@ msgstr ""
 msgid "Ver los usuarios del canal"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:365
+#: app/ui/mf_navegacion_arbol.py:367
 msgid "Ver los widgets de la barra lateral de un subreddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:507
+#: app/ui/mf_navegacion_arbol.py:509
 msgid "Ver los últimos artículos que has abierto y reabrirlos"
 msgstr ""
 
@@ -38848,7 +38877,7 @@ msgstr ""
 msgid "Ver mensajes programados..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:651
+#: app/ui/mf_navegacion_arbol.py:653
 msgid "Ver mi perfil de X..."
 msgstr ""
 
@@ -38856,7 +38885,7 @@ msgstr ""
 msgid "Ver miembros de la conversación"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:708
+#: app/ui/mf_telegram_handlers.py:713
 msgid "Ver miembros..."
 msgstr ""
 
@@ -38893,7 +38922,7 @@ msgstr ""
 msgid "Ver perfil de una cuenta"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:116 app/ui/mf_navegacion_arbol.py:274
+#: app/ui/mf_navegacion_arbol.py:116 app/ui/mf_navegacion_arbol.py:276
 msgid "Ver perfil de una cuenta..."
 msgstr ""
 
@@ -38919,7 +38948,7 @@ msgstr ""
 msgid "Ver propiedades, perfil y multimedia"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:476
+#: app/ui/mf_telegram_handlers.py:481
 msgid "Ver publicaciones del autor o de un usuario mencionado..."
 msgstr ""
 
@@ -38927,7 +38956,7 @@ msgstr ""
 msgid "Ver publicaciones del usuario"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:270 app/ui/mf_autores_listas.py:273
+#: app/ui/mf_autores_listas.py:271 app/ui/mf_autores_listas.py:274
 msgid "Ver publicaciones que lo comentan"
 msgstr ""
 
@@ -38935,7 +38964,7 @@ msgstr ""
 msgid "Ver publicación"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:515
+#: app/ui/mf_telegram_handlers.py:520
 msgid "Ver publicación y encuesta..."
 msgstr ""
 
@@ -38967,11 +38996,11 @@ msgstr ""
 msgid "Ver quién la ha republicado"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:505
+#: app/ui/mf_telegram_handlers.py:510
 msgid "Ver quién la impulsó..."
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:507
+#: app/ui/mf_telegram_handlers.py:512
 msgid "Ver quién la marcó favorita..."
 msgstr ""
 
@@ -39048,7 +39077,7 @@ msgstr ""
 msgid "Ver sus salas"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:502
+#: app/ui/mf_telegram_handlers.py:507
 msgid "Ver tarjeta de enlace de la publicación..."
 msgstr ""
 
@@ -39060,11 +39089,11 @@ msgstr ""
 msgid "Ver todos los buffers de esta cuenta..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:699
+#: app/ui/mf_navegacion_arbol.py:701
 msgid "Ver traducciones guardadas en base de datos"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:424
+#: app/ui/mf_navegacion_arbol.py:426
 msgid "Ver un resumen de la configuración"
 msgstr ""
 
@@ -39078,7 +39107,7 @@ msgid ""
 "desde otro para que puedan cifrarse entre sí"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:545
+#: app/ui/mf_navegacion_arbol.py:547
 msgid "Ver y cerrar sesiones de Telegram"
 msgstr ""
 
@@ -39086,19 +39115,19 @@ msgstr ""
 msgid "Ver y dejar de seguir hashtags"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:412
+#: app/ui/mf_navegacion_arbol.py:414
 msgid "Ver y desbloquear los vídeos bloqueados"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:570
+#: app/ui/mf_navegacion_arbol.py:572
 msgid "Ver y desbloquear usuarios"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:542
+#: app/ui/mf_navegacion_arbol.py:544
 msgid "Ver y editar tu perfil de Telegram"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:731
+#: app/ui/mf_navegacion_arbol.py:733
 msgid ""
 "Ver y gestionar tus borradores y publicaciones programadas de todas las "
 "redes en un solo sitio"
@@ -39116,7 +39145,12 @@ msgstr ""
 msgid "Ver y quitar usuarios ignorados de la red activa"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:500
+#: app/ui/mf_navegacion_arbol.py:190
+msgid ""
+"Ver y recuperar los clientes (aplicaciones) cuyas publicaciones has ocultado"
+msgstr ""
+
+#: app/ui/mf_navegacion_arbol.py:502
 msgid "Ver y restaurar artículos eliminados"
 msgstr ""
 
@@ -39128,7 +39162,7 @@ msgstr ""
 msgid "Ver últimos mensajes"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:286
+#: app/ui/mf_navegacion_arbol.py:288
 msgid "Ver, añadir o quitar cuentas de tus listas; silenciar listas"
 msgstr ""
 
@@ -39136,15 +39170,15 @@ msgstr ""
 msgid "Ver, añadir o quitar dominios (instancias) bloqueados"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:582
+#: app/ui/mf_navegacion_arbol.py:584
 msgid "Ver, publicar, repostear y gestionar tus historias"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:298
+#: app/ui/mf_navegacion_arbol.py:300
 msgid "Ver, suscribirte o darte de baja de servicios de moderación (labelers)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:716
+#: app/ui/mf_navegacion_arbol.py:718
 msgid "Verbalizar la información de la barra de estado"
 msgstr ""
 
@@ -39154,7 +39188,7 @@ msgid ""
 "aparecerán unos emojis para comparar en ambos."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:497
+#: app/ui/mf_navegacion_arbol.py:499
 msgid "Verifica la integridad y compacta la base de datos"
 msgstr ""
 
@@ -39194,7 +39228,7 @@ msgstr ""
 msgid "Verificación en dos pasos desactivada."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:590
+#: app/ui/mf_navegacion_arbol.py:592
 msgid "Verificación en dos pasos..."
 msgstr ""
 
@@ -39275,7 +39309,7 @@ msgstr ""
 msgid "Versiones anteriores del artículo"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:557
+#: app/ui/mf_telegram_handlers.py:562
 msgid "Versiones anteriores del artículo..."
 msgstr ""
 
@@ -39391,7 +39425,7 @@ msgstr ""
 msgid "Visor de Registros (Logs)"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:763
+#: app/ui/mf_navegacion_arbol.py:765
 msgid "Visor de Registros (Logs)..."
 msgstr ""
 
@@ -39548,7 +39582,7 @@ msgstr ""
 msgid "Votar en la encuesta..."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:321
+#: app/ui/mf_navegacion_arbol.py:323
 msgid "Votar positivo o quitar el voto del elemento enfocado"
 msgstr ""
 
@@ -39587,7 +39621,7 @@ msgstr ""
 msgid "Voto negativo."
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:321 app/ui/reddit_controller_acciones.py:223
+#: app/ui/mf_navegacion_arbol.py:323 app/ui/reddit_controller_acciones.py:223
 #: app/ui/reddit_controller_acciones.py:508
 #: app/ui/reddit_controller_carga.py:193 app/ui/reddit_controller_carga.py:329
 msgid "Voto positivo"
@@ -39626,6 +39660,10 @@ msgstr ""
 
 #: app/ui/tts_dialog.py:74
 msgid "Voz:"
+msgstr ""
+
+#: app/ui/mastodon_filtros_dialogs.py:505 app/ui/mf_autores_listas.py:469
+msgid "Vuelven a mostrarse las publicaciones del cliente {0}."
 msgstr ""
 
 #: app/ui/irc_views.py:576
@@ -39717,7 +39755,7 @@ msgstr ""
 msgid "Vídeos bloqueados"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:412
+#: app/ui/mf_navegacion_arbol.py:414
 msgid "Vídeos bloqueados..."
 msgstr ""
 
@@ -39785,7 +39823,7 @@ msgstr ""
 msgid "Wiki de un subreddit"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:359
+#: app/ui/mf_navegacion_arbol.py:361
 msgid "Wiki..."
 msgstr ""
 
@@ -39938,7 +39976,7 @@ msgstr ""
 msgid "Ya se está reproduciendo {0}. ¿Detenerlo y reproducir esto?"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:523
+#: app/ui/mf_autores_listas.py:554
 msgid ""
 "Ya se está reproduciendo {0}. ¿Quieres detenerlo y reproducir lo nuevo?"
 msgstr ""
@@ -40055,7 +40093,7 @@ msgstr ""
 msgid "[Añadir una palabra nueva...]"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:344
+#: app/ui/mf_autores_listas.py:345
 msgid "[Bloquear un dominio nuevo...]"
 msgstr ""
 
@@ -40463,7 +40501,7 @@ msgstr ""
 msgid "cambió el tema a: {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:888
+#: app/ui/mf_telegram_handlers.py:893
 msgid "canal"
 msgstr ""
 
@@ -40992,7 +41030,7 @@ msgstr ""
 msgid "otra cuenta"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:524 app/ui/radio_dialog.py:420
+#: app/ui/mf_autores_listas.py:555 app/ui/radio_dialog.py:420
 #: app/ui/telegram_dialogs_perfil.py:1428
 msgid "otro audio"
 msgstr ""
@@ -41932,7 +41970,7 @@ msgstr ""
 msgid "{0} privados sin leer"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:36
+#: app/ui/mastodon_filtros_dialogs.py:38
 msgid "{0} publicaciones"
 msgstr ""
 
@@ -41940,11 +41978,11 @@ msgstr ""
 msgid "{0} publicaciones en la conversación."
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:426
+#: app/ui/mastodon_filtros_dialogs.py:428
 msgid "{0} publicaciones filtradas:"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:279
+#: app/ui/mf_autores_listas.py:280
 msgid "{0} publicaciones que comentan el enlace (búscalas en tus buffers)."
 msgstr ""
 
@@ -42617,7 +42655,7 @@ msgstr ""
 msgid "¿Aprobar a {0}? (No para rechazar)"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:91
+#: app/ui/mf_autores_listas.py:92
 msgid ""
 "¿Bloquear TODO el dominio {0}? Dejarás de ver a todas las cuentas de esa "
 "instancia."
@@ -42806,7 +42844,7 @@ msgstr ""
 msgid "¿Borrar tu vídeo «{0}»? No se puede deshacer."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:137
+#: app/ui/mf_autores_listas.py:138
 msgid "¿Cancelar esta publicación programada?"
 msgstr ""
 
@@ -42897,7 +42935,7 @@ msgstr ""
 msgid "¿Dejar de silenciar «{0}»?"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:358
+#: app/ui/mf_autores_listas.py:359
 msgid "¿Desbloquear el dominio {0}?"
 msgstr ""
 
@@ -42954,7 +42992,7 @@ msgstr ""
 msgid "¿Eliminar el feed '{0}' y todos sus artículos?"
 msgstr ""
 
-#: app/ui/mastodon_filtros_dialogs.py:202
+#: app/ui/mastodon_filtros_dialogs.py:204
 msgid "¿Eliminar el filtro «{0}»?"
 msgstr ""
 
@@ -43047,6 +43085,13 @@ msgstr ""
 msgid "¿Lista privada (solo la ves tú)?"
 msgstr ""
 
+#: app/ui/mf_autores_listas.py:472
+msgid ""
+"¿Ocultar todas las publicaciones hechas desde el cliente {0}, en todas tus "
+"cuentas de Mastodon? Podrás recuperarlas en el menú Mastodon, Clientes "
+"ignorados."
+msgstr ""
+
 #: app/ui/wsocial_controller_social.py:259
 msgid "¿Para qué es la lista?"
 msgstr ""
@@ -43100,7 +43145,7 @@ msgstr ""
 msgid "¿Quitar a @{0} de la lista?"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:77
+#: app/ui/mf_autores_listas.py:78
 msgid "¿Quitar a @{0} de tus seguidores? (no se le bloquea)"
 msgstr ""
 
@@ -43158,11 +43203,11 @@ msgstr ""
 msgid "¿Quién puede ver esta historia?"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1025
+#: app/ui/mf_telegram_handlers.py:1030
 msgid "¿Quién puede verlo?"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1017
+#: app/ui/mf_telegram_handlers.py:1022
 msgid "¿Qué ajuste de privacidad quieres cambiar?"
 msgstr ""
 
@@ -43202,11 +43247,11 @@ msgstr ""
 msgid "¿Qué quieres hacer con esta historia en tu perfil?"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:128
+#: app/ui/mf_autores_listas.py:129
 msgid "¿Qué quieres hacer con esta publicación programada?"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:269
+#: app/ui/mf_autores_listas.py:270
 msgid "¿Qué quieres hacer con este enlace?"
 msgstr ""
 
@@ -43214,7 +43259,7 @@ msgstr ""
 msgid "¿Qué quieres hacer con «{0}»?"
 msgstr ""
 
-#: app/ui/mf_media_servicio.py:44 app/ui/mf_telegram_handlers.py:881
+#: app/ui/mf_media_servicio.py:44 app/ui/mf_telegram_handlers.py:886
 msgid "¿Qué quieres hacer?"
 msgstr ""
 
@@ -43330,7 +43375,7 @@ msgstr ""
 msgid "¿Seguir a las {0} cuentas del paquete?"
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:241
+#: app/ui/mf_autores_listas.py:242
 msgid "¿Seguir el hashtag #{0}?"
 msgstr ""
 
@@ -43362,7 +43407,7 @@ msgstr ""
 msgid "¿Seguro que quieres bloquear a @{0}? Dejaréis de veros."
 msgstr ""
 
-#: app/ui/mf_autores_listas.py:419
+#: app/ui/mf_autores_listas.py:420
 msgid "¿Seguro que quieres bloquear a {0}?"
 msgstr ""
 
@@ -43530,7 +43575,7 @@ msgstr ""
 msgid "Última semana"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:1007
+#: app/ui/mf_telegram_handlers.py:1012
 msgid "Última vez y en línea"
 msgstr ""
 
@@ -43538,7 +43583,7 @@ msgstr ""
 msgid "Último año"
 msgstr ""
 
-#: app/ui/mf_navegacion_arbol.py:789
+#: app/ui/mf_navegacion_arbol.py:791
 msgid "Último changelog"
 msgstr ""
 

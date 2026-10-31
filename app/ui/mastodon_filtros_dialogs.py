@@ -9,6 +9,7 @@
   y "Solo palabras completas" se aplica también a las palabras que ya tenía el filtro.
 - ElegirFiltroDialog: para "Filtrar esta publicación…" (elegir un filtro o crear uno nuevo).
 - PublicacionesFiltroDialog: ver y quitar las publicaciones sueltas de un filtro.
+- ClientesIgnoradosDialog: ver y recuperar los clientes (apps) ocultados, que es un filtro local.
 
 Separado de mastodon_lists.py (que sigue reexportando las dos primeras clases).
 """
@@ -16,6 +17,7 @@ import wx
 
 from app.core.speech import speak, notificar
 from app.services.mastodon.mastodon_service import mastodon_service
+from app.services.mastodon import clientes_ignorados
 from app.services.mastodon import filtros_servidor as fsrv
 from .accessible_controls import (AccessibleListCtrl, AccessibleTextCtrl, confirmar,
                                   habilitar_escape_cierre)
@@ -446,3 +448,59 @@ class PublicacionesFiltroDialog(wx.Dialog):
             if self:
                 self._cargar()
         mastodon_service.quitar_publicacion_de_filtro_async(self.account_id, it["id"], callback=_fin)
+
+
+class ClientesIgnoradosDialog(wx.Dialog):
+    """Clientes ocultados con "Ignorar publicaciones de este cliente": verlos y recuperarlos."""
+
+    def __init__(self, parent):
+        titulo = _("Clientes ignorados")
+        super().__init__(parent, title=titulo, size=(520, 380),
+                         style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER, name=titulo)
+        self.clientes = clientes_ignorados.listar()
+        self.cambiado = False
+        s = wx.BoxSizer(wx.VERTICAL)
+        self.lbl = wx.StaticText(self, label=_("Sus publicaciones están ocultas en todas tus cuentas de Mastodon:"))
+        s.Add(self.lbl, 0, wx.ALL, 5)
+        self.lista = AccessibleListCtrl(self, style=wx.LC_REPORT | wx.LC_SINGLE_SEL | wx.BORDER_SUNKEN,
+                                        name=titulo)
+        self.lista.InsertColumn(0, _("Cliente"), width=460)
+        s.Add(self.lista, 1, wx.EXPAND | wx.ALL, 5)
+        bs = wx.BoxSizer(wx.HORIZONTAL)
+        self.b_quitar = wx.Button(self, label=_("&Dejar de ignorar"))
+        self.b_quitar.Bind(wx.EVT_BUTTON, self._on_quitar)
+        bs.Add(self.b_quitar, 0, wx.ALL, 5)
+        self.b_cerrar = wx.Button(self, wx.ID_CLOSE, _("&Cerrar"))
+        bs.Add(self.b_cerrar, 0, wx.ALL, 5)
+        self.Bind(wx.EVT_BUTTON, lambda e: self.EndModal(wx.ID_CLOSE), id=wx.ID_CLOSE)
+        s.Add(bs, 0, wx.ALIGN_RIGHT | wx.ALL, 5)
+        self.SetSizer(s)
+        self.Bind(wx.EVT_CLOSE, lambda e: self.EndModal(wx.ID_CLOSE))
+        habilitar_escape_cierre(self, wx.ID_CLOSE)
+        self.CenterOnParent()
+        self._pintar(0)
+        self.lista.SetFocus()
+
+    def _pintar(self, foco):
+        self.lista.DeleteAllItems()
+        for i, cliente in enumerate(self.clientes):
+            self.lista.InsertItem(i, cliente)
+        if self.clientes:
+            foco = min(foco, len(self.clientes) - 1)
+            self.lista.Focus(foco)
+            self.lista.Select(foco)
+        else:
+            self.lbl.SetLabel(_("No tienes clientes ignorados."))
+            self.b_quitar.Disable()
+            self.b_cerrar.SetFocus()
+
+    def _on_quitar(self, event):
+        idx = self.lista.GetFocusedItem()
+        if idx is None or idx < 0 or idx >= len(self.clientes):
+            speak(_("Seleccione un cliente."), interrupt=True)
+            return
+        cliente = self.clientes.pop(idx)
+        clientes_ignorados.dejar_de_ignorar(cliente)
+        self.cambiado = True
+        notificar(_("Vuelven a mostrarse las publicaciones del cliente {0}.").format(cliente))
+        self._pintar(idx)

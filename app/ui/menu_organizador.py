@@ -155,7 +155,7 @@ ESQUEMAS_BARRA = {
         ]),
         ("Listas y filtros", [
             "Listas de Mastodon...", "Mis colecciones...", "Colecciones en las que apareces...",
-            "Filtros del servidor...", "Dominios bloqueados...",
+            "Filtros del servidor...", "Dominios bloqueados...", "Clientes ignorados...",
         ]),
         ("Tu instancia", [
             "Acerca de esta instancia...", "Capacidades de tu instancia...",
@@ -526,7 +526,8 @@ ESQUEMA_CONTEXTUAL = [
     ("Moderación y seguridad", [
         # Mastodon
         "Silenciar al autor", "Bloquear al autor", "Bloquear todo el dominio del autor...",
-        "Silenciar esta conversación", "Ignorar publicaciones de este cliente",
+        "Silenciar esta conversación", "Silenciar o reactivar esta conversación",
+        "Ignorar publicaciones de este cliente", "Dejar de ignorar publicaciones de este cliente",
         "Filtrar esta publicación...", "Reportar publicación...",
         # Buffers de cuentas / XMPP
         "Silenciar", "Quitar silencio", "Bloquear", "Desbloquear",

@@ -45030,3 +45030,48 @@ msgstr "⬆ Uploading {0} — 0 %"
 #: app/ui/telegram_conv_acciones.py:138
 msgid "⬆ Subiendo {0} — {1} %"
 msgstr "⬆ Uploading {0} — {1} %"
+
+msgid "&Dejar de ignorar"
+msgstr "&Stop ignoring"
+
+msgid "Clientes ignorados"
+msgstr "Ignored clients"
+
+msgid "Clientes ignorados..."
+msgstr "Ignored clients..."
+
+msgid "Conversación reactivada: vuelves a recibir sus notificaciones."
+msgstr "Conversation unmuted: you will receive its notifications again."
+
+msgid "Dejar de ignorar publicaciones de este cliente"
+msgstr "Stop ignoring posts from this client"
+
+msgid "Ignorar cliente"
+msgstr "Ignore client"
+
+msgid "No tienes clientes ignorados."
+msgstr "You have no ignored clients."
+
+msgid "Seleccione un cliente."
+msgstr "Select a client."
+
+msgid "Silenciar o reactivar esta conversación"
+msgstr "Mute or unmute this conversation"
+
+msgid "Sus publicaciones están ocultas en todas tus cuentas de Mastodon:"
+msgstr "Their posts are hidden on all your Mastodon accounts:"
+
+msgid ""
+"Ver y recuperar los clientes (aplicaciones) cuyas publicaciones has ocultado"
+msgstr "View and restore the clients (apps) whose posts you have hidden"
+
+msgid "Vuelven a mostrarse las publicaciones del cliente {0}."
+msgstr "Posts from the client {0} are shown again."
+
+msgid ""
+"¿Ocultar todas las publicaciones hechas desde el cliente {0}, en todas tus "
+"cuentas de Mastodon? Podrás recuperarlas en el menú Mastodon, Clientes "
+"ignorados."
+msgstr ""
+"Hide all posts made from the client {0}, on all your Mastodon accounts? You "
+"can restore them from the Mastodon menu, Ignored clients."

@@ -463,11 +463,16 @@ class _Mf_telegram_handlers:
                 item_bloquear = menu.Append(wx.ID_ANY, _("Bloquear al autor"))
                 self.Bind(wx.EVT_MENU, lambda evt, d=db_id_m: self._on_silenciar_o_bloquear_autor(d, "block"), item_bloquear)
 
-            item_mute_conv = menu.Append(wx.ID_ANY, _("Silenciar esta conversación"))
+            # Mastodon no dice si está silenciada sin preguntar: la acción alterna según el servidor.
+            item_mute_conv = menu.Append(wx.ID_ANY, _("Silenciar o reactivar esta conversación"))
             self.Bind(wx.EVT_MENU, lambda evt, d=db_id_m: self._on_silenciar_conversacion(d), item_mute_conv)
             self._items_menu_filtrar_publicacion(menu, db_id_m)
 
-            item_ignorar_cliente = menu.Append(wx.ID_ANY, _("Ignorar publicaciones de este cliente"))
+            from app.services.mastodon import clientes_ignorados
+            _lbl_cliente = (_("Dejar de ignorar publicaciones de este cliente")
+                            if clientes_ignorados.esta_ignorado(self._cliente_del_toot(db_id_m))
+                            else _("Ignorar publicaciones de este cliente"))
+            item_ignorar_cliente = menu.Append(wx.ID_ANY, _lbl_cliente)
             self.Bind(wx.EVT_MENU, lambda evt, d=db_id_m: self._on_ignorar_cliente(d), item_ignorar_cliente)
 
             item_detalles = menu.Append(wx.ID_ANY, _("Ver detalles del autor..."))
