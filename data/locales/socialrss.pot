@@ -532,6 +532,10 @@ msgstr ""
 msgid "&Buscar actualizaciones de reglas..."
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:138
+msgid "&Buscar chat:"
+msgstr ""
+
 #: app/ui/matrix_admin_dialogs.py:42
 msgid "&Buscar cuenta:"
 msgstr ""
@@ -548,7 +552,7 @@ msgstr ""
 msgid "&Buscar sala:"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:292
+#: app/ui/telegram_conversation.py:294
 msgid "&Buscar..."
 msgstr ""
 
@@ -599,6 +603,7 @@ msgstr ""
 #: app/ui/reddit_moderacion_dialogs.py:500
 #: app/ui/reddit_moderacion_dialogs.py:593
 #: app/ui/reddit_moderacion_dialogs.py:678 app/ui/rss_views.py:1092
+#: app/ui/telegram_compartir_dialog.py:212
 #: app/ui/telegram_dialogs_admin.py:186 app/ui/telegram_dialogs_admin.py:766
 #: app/ui/telegram_envio.py:86 app/ui/tgdrive_dialogs.py:297
 #: app/ui/thread_editor.py:977 app/ui/traductor_redaccion.py:59
@@ -670,7 +675,7 @@ msgstr ""
 #: app/ui/rss_views.py:934 app/ui/search_dialog.py:82 app/ui/snippets.py:108
 #: app/ui/telegram_bot_dialogs.py:75 app/ui/telegram_bot_dialogs.py:288
 #: app/ui/telegram_bot_dialogs.py:380 app/ui/telegram_busqueda.py:173
-#: app/ui/telegram_conversation.py:337 app/ui/telegram_mensaje_dialog.py:62
+#: app/ui/telegram_conversation.py:339 app/ui/telegram_mensaje_dialog.py:62
 #: app/ui/thread_editor.py:322 app/ui/thread_viewer.py:106
 #: app/ui/trash_dialog.py:42 app/ui/tts_dialog.py:109
 #: app/ui/update_dialog.py:203 app/ui/xmpp_conversation.py:139
@@ -1085,7 +1090,7 @@ msgstr ""
 #: app/ui/bluesky_dialogs.py:558 app/ui/irc_conversation.py:124
 #: app/ui/matrix_conversation.py:86 app/ui/reddit_dialogs.py:37
 #: app/ui/reddit_fase4_dialogs.py:263 app/ui/telegram_bot_dialogs.py:284
-#: app/ui/telegram_conversation.py:259 app/ui/telegram_envio.py:82
+#: app/ui/telegram_conversation.py:261 app/ui/telegram_envio.py:82
 #: app/ui/wsocial_dialogs.py:742 app/ui/xmpp_conversation.py:95
 #: app/ui/x_dialogs.py:303
 msgid "&Enviar"
@@ -1181,7 +1186,7 @@ msgid "&Gestor de prompts..."
 msgstr ""
 
 #: app/ui/matrix_conversation.py:93 app/ui/matrix_conversation.py:608
-#: app/ui/telegram_conversation.py:272 app/ui/telegram_conv_acciones.py:421
+#: app/ui/telegram_conversation.py:274 app/ui/telegram_conv_acciones.py:421
 #: app/ui/telegram_conv_acciones.py:405 app/ui/xmpp_conversation.py:844
 #: app/ui/xmpp_conversation.py:867 app/ui/xmpp_conversation.py:102
 msgid "&Grabar nota de voz"
@@ -1248,7 +1253,7 @@ msgstr ""
 msgid "&Género:"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:327 app/ui/telegram_conv_acciones.py:334
+#: app/ui/telegram_conversation.py:329 app/ui/telegram_conv_acciones.py:334
 #: app/ui/telegram_conv_acciones.py:357 app/ui/telegram_conv_acciones.py:321
 msgid "&Hablar por el micro"
 msgstr ""
@@ -1479,7 +1484,11 @@ msgstr ""
 msgid "&Mostrar respuestas de:"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:332
+#: app/ui/telegram_compartir_dialog.py:143
+msgid "&Mostrar:"
+msgstr ""
+
+#: app/ui/telegram_conversation.py:334
 msgid "&Más acciones..."
 msgstr ""
 
@@ -1696,7 +1705,7 @@ msgstr ""
 msgid "&Probar y guardar"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:296
+#: app/ui/telegram_conversation.py:298
 msgid "&Propiedades..."
 msgstr ""
 
@@ -1794,6 +1803,10 @@ msgstr ""
 msgid "&Quitar foto"
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:172
+msgid "&Quitar los pies de foto y descripciones"
+msgstr ""
+
 #: app/ui/xmpp_perfil_dialogs.py:87
 msgid "&Quitar mi estado"
 msgstr ""
@@ -1862,6 +1875,10 @@ msgstr ""
 
 #: app/ui/telegram_dialogs_perfil.py:731
 msgid "&Reemplazar archivo..."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:168
+msgid "&Reenviar (se ve quién lo escribió)"
 msgstr ""
 
 #: app/ui/xmpp_dialogs.py:428
@@ -1961,7 +1978,7 @@ msgstr ""
 msgid "&Restablecer (plano)"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1039
+#: app/ui/mf_acciones_toot.py:1043
 msgid "&Restaurar SocialRSS"
 msgstr ""
 
@@ -2009,7 +2026,7 @@ msgstr ""
 msgid "&Sala (sala@conference.servidor):"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1048
+#: app/ui/mf_acciones_toot.py:1052
 msgid "&Salir"
 msgstr ""
 
@@ -2110,6 +2127,10 @@ msgstr ""
 
 #: app/ui/mf_navegacion_arbol.py:616
 msgid "&Telegram"
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:157
+msgid "&Tema del foro:"
 msgstr ""
 
 #: app/ui/irc_conversation.py:131
@@ -2309,7 +2330,7 @@ msgstr ""
 msgid "(En el navegador: DevTools → Aplicación → Cookies de x.com)"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1264
+#: app/ui/telegram_conv_mensajes.py:1236
 msgid "(Encuesta cerrada)"
 msgstr ""
 
@@ -2317,7 +2338,7 @@ msgstr ""
 msgid "(Espacio para descargar)"
 msgstr ""
 
-#: app/ui/matrix_conversation.py:144 app/ui/telegram_conversation.py:168
+#: app/ui/matrix_conversation.py:144 app/ui/telegram_conversation.py:170
 #: app/ui/telegram_conv_mensajes.py:66 app/ui/xmpp_conversation.py:199
 msgid "(Espacio para reproducir)"
 msgstr ""
@@ -2444,7 +2465,7 @@ msgstr ""
 
 #: app/services/matrix/matrix_producto.py:183
 #: app/services/xmpp/xmpp_historial.py:203 app/ui/matrix_conversation.py:135
-#: app/ui/telegram_conversation.py:171 app/ui/xmpp_conversation.py:194
+#: app/ui/telegram_conversation.py:173 app/ui/xmpp_conversation.py:194
 msgid "(editado)"
 msgstr ""
 
@@ -2517,7 +2538,7 @@ msgid "(nueva página)"
 msgstr ""
 
 #: app/ui/irc_conversation.py:171 app/ui/matrix_conversation.py:154
-#: app/ui/reddit_controller_carga.py:426 app/ui/telegram_conversation.py:112
+#: app/ui/reddit_controller_carga.py:426 app/ui/telegram_conversation.py:114
 #: app/ui/telegram_conv_mensajes.py:304 app/ui/xmpp_conversation.py:207
 msgid "(nuevo) "
 msgstr ""
@@ -2742,6 +2763,10 @@ msgstr ""
 #: app/ui/telegram_dialogs_admin.py:404 app/ui/ui_helpers.py:55
 #: app/ui/xmpp_views.py:380
 msgid "1 hora"
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:76
+msgid "1 marcado"
 msgstr ""
 
 #: app/ui/telegram_dialogs_admin.py:415 app/ui/telegram_dialogs_perfil.py:1053
@@ -3102,7 +3127,7 @@ msgstr ""
 msgid "Abriendo Mensajes guardados..."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:935 app/ui/telegram_dialogs_admin.py:1202
+#: app/ui/telegram_conv_mensajes.py:954 app/ui/telegram_dialogs_admin.py:1202
 msgid "Abriendo archivo."
 msgstr ""
 
@@ -3142,7 +3167,7 @@ msgstr ""
 msgid "Abriendo en el navegador."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:943
+#: app/ui/telegram_conv_mensajes.py:962
 msgid "Abriendo en streaming…"
 msgstr ""
 
@@ -3223,7 +3248,7 @@ msgstr ""
 msgid "Abrir administrador de hilos locales"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:897 app/ui/telegram_dialogs_admin.py:1165
+#: app/ui/telegram_conv_mensajes.py:916 app/ui/telegram_dialogs_admin.py:1165
 msgid "Abrir archivo"
 msgstr ""
 
@@ -3231,7 +3256,7 @@ msgstr ""
 msgid "Abrir artículo"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:899 app/ui/telegram_dialogs_admin.py:1167
+#: app/ui/telegram_conv_mensajes.py:918 app/ui/telegram_dialogs_admin.py:1167
 msgid "Abrir carpeta del archivo"
 msgstr ""
 
@@ -3266,7 +3291,7 @@ msgstr ""
 msgid "Abrir conversación de directos como buffer"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1130 app/ui/mf_rss_handlers.py:1143
+#: app/ui/mf_rss_handlers.py:1134 app/ui/mf_rss_handlers.py:1147
 #: app/ui/x_cronologias.py:30
 msgid "Abrir cronología de un usuario"
 msgstr ""
@@ -3380,11 +3405,11 @@ msgstr ""
 msgid "Abrir enlace original"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:776
+#: app/ui/telegram_conv_mensajes.py:783
 msgid "Abrir enlace..."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:776
+#: app/ui/telegram_conv_mensajes.py:783
 msgid "Abrir enlaces ({0})..."
 msgstr ""
 
@@ -3435,7 +3460,7 @@ msgid ""
 "Abrir la conversación de la publicación enfocada (Mastodon, Bluesky o X)"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1121
+#: app/ui/mf_rss_handlers.py:1125
 msgid ""
 "Abrir la cronología de un usuario solo está disponible en Mastodon, Bluesky "
 "y X."
@@ -3542,7 +3567,7 @@ msgstr ""
 msgid "Acceso"
 msgstr ""
 
-#: app/services/rss/rss_parseo.py:1061
+#: app/services/rss/rss_parseo.py:1051
 msgid "Acceso denegado ({0}): el feed necesita credenciales o configuración."
 msgstr ""
 
@@ -3891,7 +3916,7 @@ msgstr ""
 msgid "Actual: {0} mensajes/segundo, ráfaga {1}."
 msgstr ""
 
-#: app/ui/irc_dialogs.py:232 app/ui/telegram_conversation.py:300
+#: app/ui/irc_dialogs.py:232 app/ui/telegram_conversation.py:302
 msgid "Actuali&zar"
 msgstr ""
 
@@ -3934,8 +3959,8 @@ msgstr ""
 msgid "Actualizado"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1260 app/ui/mf_acciones_toot.py:1268
-#: app/ui/mf_acciones_toot.py:1276
+#: app/ui/mf_acciones_toot.py:1264 app/ui/mf_acciones_toot.py:1272
+#: app/ui/mf_acciones_toot.py:1280
 msgid "Actualizado."
 msgstr ""
 
@@ -3963,15 +3988,15 @@ msgstr ""
 msgid "Actualizando feeds..."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1325
+#: app/ui/mf_acciones_toot.py:1329
 msgid "Actualizando lista..."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1286
+#: app/ui/mf_acciones_toot.py:1290
 msgid "Actualizando tendencias..."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1342
+#: app/ui/mf_acciones_toot.py:1346
 msgid "Actualizando timeline de Mastodon..."
 msgstr ""
 
@@ -4052,7 +4077,7 @@ msgstr ""
 msgid "Actualizar la sala"
 msgstr ""
 
-#: app/ui/mf_listados_filas.py:663 app/ui/telegram_conversation.py:300
+#: app/ui/mf_listados_filas.py:663 app/ui/telegram_conversation.py:302
 msgid "Actualizar mensajes"
 msgstr ""
 
@@ -4070,12 +4095,12 @@ msgstr ""
 msgid "Actualizar todos los feeds"
 msgstr ""
 
-#: app/ui/matrix_conversation.py:89 app/ui/telegram_conversation.py:263
+#: app/ui/matrix_conversation.py:89 app/ui/telegram_conversation.py:265
 #: app/ui/thread_editor.py:276 app/ui/xmpp_conversation.py:98
 msgid "Ad&juntar archivo..."
 msgstr ""
 
-#: app/ui/telegram_conversation.py:287
+#: app/ui/telegram_conversation.py:289
 msgid "Ad&ministrar..."
 msgstr ""
 
@@ -4091,7 +4116,7 @@ msgstr ""
 msgid "Adjuntar imagen o vídeo"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:263
+#: app/ui/telegram_conversation.py:265
 msgid "Adjuntar y enviar archivo"
 msgstr ""
 
@@ -4239,7 +4264,7 @@ msgstr ""
 msgid "Administrar cuentas de Mastodon, Bluesky, RSS y Telegram"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:287
+#: app/ui/telegram_conversation.py:289
 msgid "Administrar grupo o canal"
 msgstr ""
 
@@ -4272,7 +4297,7 @@ msgid "Advertencia de contenido:"
 msgstr ""
 
 #: app/ui/mastodon_perfil_dialogs.py:555 app/ui/mf_bandeja.py:736
-#: app/ui/mf_media_servicio.py:1101 app/ui/mf_rss_handlers.py:1084
+#: app/ui/mf_media_servicio.py:1101 app/ui/mf_rss_handlers.py:1088
 msgid "Advertencia de contenido: {0}"
 msgstr ""
 
@@ -4634,7 +4659,7 @@ msgstr ""
 msgid "Alerta RSS"
 msgstr ""
 
-#: app/services/rss/rss_parseo.py:865 app/services/rss/rss_parseo.py:1152
+#: app/services/rss/rss_parseo.py:862 app/services/rss/rss_parseo.py:1142
 msgid "Alerta RSS «{0}»: {1}"
 msgstr ""
 
@@ -4654,8 +4679,8 @@ msgstr ""
 msgid "Alerta creada."
 msgstr ""
 
-#: app/services/rss/rss_parseo.py:866 app/services/rss/rss_parseo.py:869
-#: app/services/rss/rss_parseo.py:1153
+#: app/services/rss/rss_parseo.py:863 app/services/rss/rss_parseo.py:866
+#: app/services/rss/rss_parseo.py:1143
 msgid "Alerta de palabra clave"
 msgstr ""
 
@@ -4693,11 +4718,11 @@ msgstr ""
 msgid "Alias de la sala"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1549
+#: app/ui/mf_rss_handlers.py:1553
 msgid "Alias guardado: {0} se leerá como {1}."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1532
+#: app/ui/mf_rss_handlers.py:1536
 msgid "Alias local de la cuenta"
 msgstr ""
 
@@ -4705,14 +4730,14 @@ msgstr ""
 msgid "Alias local para este autor..."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1530
+#: app/ui/mf_rss_handlers.py:1534
 msgid ""
 "Alias local para {0} (@{1}). Solo cambia cómo se lee el nombre en TUS "
 "listas; el @usuario real sigue visible. Deja el cuadro vacío para quitar el "
 "alias:"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1550
+#: app/ui/mf_rss_handlers.py:1554
 msgid "Alias quitado: se vuelve a leer el nombre real."
 msgstr ""
 
@@ -5084,7 +5109,7 @@ msgstr ""
 msgid "Archivo grande ({0:.1f} MB): solo el final."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1134
+#: app/ui/telegram_conv_mensajes.py:1131
 msgid "Archivo reemplazado."
 msgstr ""
 
@@ -5962,7 +5987,7 @@ msgstr ""
 msgid "Añadir o quitar de marcadores"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1293
+#: app/ui/telegram_conv_mensajes.py:1265
 msgid "Añadir opción"
 msgstr ""
 
@@ -5994,11 +6019,11 @@ msgstr ""
 msgid "Añadir regla administrativa"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1422
+#: app/ui/telegram_conv_mensajes.py:1394
 msgid "Añadir tareas"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1390
+#: app/ui/telegram_conv_mensajes.py:1362
 msgid "Añadir tareas nuevas..."
 msgstr ""
 
@@ -6039,7 +6064,7 @@ msgstr ""
 msgid "Añadir una nueva cuenta"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1274
+#: app/ui/telegram_conv_mensajes.py:1246
 msgid "Añadir una opción..."
 msgstr ""
 
@@ -6394,7 +6419,7 @@ msgstr ""
 msgid "Bluesky: {0}"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1642 app/ui/mf_acciones_toot.py:546
+#: app/ui/mf_acciones_toot.py:1646 app/ui/mf_acciones_toot.py:546
 #: app/ui/mf_app_despacho.py:246 app/ui/mf_telegram_chats.py:626
 msgid "Boosteado"
 msgstr ""
@@ -6506,7 +6531,7 @@ msgstr ""
 
 #: app/ui/reddit_controller_acciones.py:239
 #: app/ui/reddit_controller_acciones.py:518
-#: app/ui/telegram_conv_mensajes.py:808 app/ui/telegram_dialogs_admin.py:585
+#: app/ui/telegram_conv_mensajes.py:815 app/ui/telegram_dialogs_admin.py:585
 #: app/ui/telegram_dialogs_admin.py:266 app/ui/x_controller.py:791
 #: app/ui/x_dialogs.py:424
 msgid "Borrar"
@@ -6589,7 +6614,7 @@ msgstr ""
 msgid "Borrar descarga (offline)"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:903 app/ui/telegram_dialogs_admin.py:1171
+#: app/ui/telegram_conv_mensajes.py:922 app/ui/telegram_dialogs_admin.py:1171
 msgid "Borrar descarga local"
 msgstr ""
 
@@ -6713,7 +6738,7 @@ msgstr ""
 msgid "Borrar publicaciones de X"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1461 app/ui/wsocial_controller_acciones.py:242
+#: app/ui/mf_rss_handlers.py:1465 app/ui/wsocial_controller_acciones.py:242
 #: app/ui/x_controller.py:646
 msgid "Borrar publicación"
 msgstr ""
@@ -6734,7 +6759,7 @@ msgstr ""
 msgid "Borrar vídeo"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1486
+#: app/ui/mf_rss_handlers.py:1490
 msgid "Borrar y volver a redactar"
 msgstr ""
 
@@ -6790,7 +6815,7 @@ msgstr ""
 msgid "Botones del mensaje de Telegram"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:770
+#: app/ui/telegram_conv_mensajes.py:777
 msgid "Botones del mensaje..."
 msgstr ""
 
@@ -6825,6 +6850,7 @@ msgid ""
 msgstr ""
 
 #: app/ui/buffers_dialog.py:77 app/ui/mf_listados_filas.py:40
+#: app/ui/telegram_compartir_dialog.py:42
 #: app/ui/telegram_dialogs_perfil.py:905
 msgid "Bots"
 msgstr ""
@@ -6990,7 +7016,7 @@ msgstr ""
 msgid "Buscando usuarios..."
 msgstr ""
 
-#: app/ui/bluesky_controller_social.py:641 app/ui/mf_acciones_toot.py:1305
+#: app/ui/bluesky_controller_social.py:641 app/ui/mf_acciones_toot.py:1309
 #: app/ui/mf_telegram_handlers.py:947 app/ui/mf_telegram_handlers.py:839
 #: app/ui/radio_dialog.py:220 app/ui/rss_buscar_feeds.py:92
 #: app/ui/search_dialog.py:104 app/ui/telegram_bot_dialogs.py:298
@@ -7046,6 +7072,10 @@ msgstr ""
 
 #: app/ui/mf_navegacion_arbol.py:382
 msgid "Buscar canales..."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:140
+msgid "Buscar chat"
 msgstr ""
 
 #: app/ui/x_gestion_ui.py:74
@@ -7145,7 +7175,7 @@ msgstr ""
 msgid "Buscar en el artículo"
 msgstr ""
 
-#: app/ui/telegram_busqueda.py:119 app/ui/telegram_conversation.py:292
+#: app/ui/telegram_busqueda.py:119 app/ui/telegram_conversation.py:294
 msgid "Buscar en la conversación"
 msgstr ""
 
@@ -7430,8 +7460,16 @@ msgstr ""
 msgid "C&ancelar"
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:149
+msgid "C&hats (Espacio marca o desmarca; puedes elegir varios):"
+msgstr ""
+
 #: app/ui/player/player2_extras.py:41
 msgid "C&ola..."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:209
+msgid "C&ompartir"
 msgstr ""
 
 #: app/ui/rss_editar_feed.py:57
@@ -7726,7 +7764,7 @@ msgid "Campo de la condición {0}"
 msgstr ""
 
 #: app/ui/irc_conversation.py:110 app/ui/matrix_conversation.py:73
-#: app/ui/telegram_conversation.py:245 app/ui/xmpp_conversation.py:80
+#: app/ui/telegram_conversation.py:247 app/ui/xmpp_conversation.py:80
 msgid "Campo de redacción de mensaje"
 msgstr ""
 
@@ -7829,6 +7867,7 @@ msgstr ""
 #: app/ui/buffers_dialog.py:78 app/ui/buffers_dialog.py:96
 #: app/ui/irc_views.py:37 app/ui/mf_listados_filas.py:43
 #: app/ui/peertube_gestion_dialogs.py:124
+#: app/ui/telegram_compartir_dialog.py:41
 #: app/ui/telegram_dialogs_perfil.py:907
 msgid "Canales"
 msgstr ""
@@ -7900,7 +7939,7 @@ msgstr ""
 msgid "Cancelar"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:277 app/ui/xmpp_conversation.py:106
+#: app/ui/telegram_conversation.py:279 app/ui/xmpp_conversation.py:106
 msgid "Cancelar &grabación"
 msgstr ""
 
@@ -7920,7 +7959,7 @@ msgstr ""
 msgid "Cancelar este mensaje programado"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:277 app/ui/xmpp_conversation.py:106
+#: app/ui/telegram_conversation.py:279 app/ui/xmpp_conversation.py:106
 msgid "Cancelar la nota de voz que estás grabando"
 msgstr ""
 
@@ -8028,7 +8067,7 @@ msgid "Cargando audio del vídeo..."
 msgstr ""
 
 #: app/ui/matrix_conversation.py:361 app/ui/mf_media_servicio.py:735
-#: app/ui/telegram_conv_mensajes.py:629 app/ui/xmpp_conversation.py:722
+#: app/ui/telegram_conv_mensajes.py:636 app/ui/xmpp_conversation.py:722
 msgid "Cargando audio..."
 msgstr ""
 
@@ -8052,7 +8091,7 @@ msgid "Cargando colecciones..."
 msgstr ""
 
 #: app/ui/peertube_comment_dialog.py:77 app/ui/reddit_thread_viewer.py:113
-#: app/ui/telegram_conv_mensajes.py:1463
+#: app/ui/telegram_conv_mensajes.py:1435
 msgid "Cargando comentarios..."
 msgstr ""
 
@@ -8116,7 +8155,7 @@ msgstr ""
 msgid "Cargando el registro..."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1406
+#: app/ui/mf_rss_handlers.py:1410
 msgid "Cargando el texto original para editar..."
 msgstr ""
 
@@ -8353,7 +8392,7 @@ msgstr ""
 msgid "Cargando tendencias..."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1856
+#: app/ui/mf_acciones_toot.py:1860
 msgid "Cargando toots más antiguos..."
 msgstr ""
 
@@ -8450,7 +8489,7 @@ msgstr ""
 msgid "Cargar mensajes &anteriores"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:219
+#: app/ui/telegram_conversation.py:221
 msgid "Cargar mensajes an&teriores"
 msgstr ""
 
@@ -8458,7 +8497,7 @@ msgstr ""
 msgid "Cargar mensajes an&teriores ({0} más)"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:220
+#: app/ui/telegram_conversation.py:222
 msgid "Cargar mensajes anteriores de la conversación"
 msgstr ""
 
@@ -8775,7 +8814,7 @@ msgstr ""
 msgid "Cerrar el visor"
 msgstr ""
 
-#: app/ui/matrix_conversation.py:811 app/ui/telegram_conv_mensajes.py:855
+#: app/ui/matrix_conversation.py:811 app/ui/telegram_conv_mensajes.py:874
 msgid "Cerrar encuesta"
 msgstr ""
 
@@ -8846,6 +8885,10 @@ msgstr ""
 
 #: app/ui/telegram_dialogs_perfil.py:378
 msgid "Chats a incluir en el enlace"
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:151
+msgid "Chats de destino"
 msgstr ""
 
 #: app/ui/telegram_conv_acciones.py:602
@@ -9034,7 +9077,7 @@ msgstr ""
 msgid "Citar siempre"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1176
+#: app/ui/mf_rss_handlers.py:1180
 msgid "Citar solo está disponible en Mastodon, Bluesky, X y W Social."
 msgstr ""
 
@@ -9147,7 +9190,7 @@ msgstr ""
 msgid "Cliente"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1227
+#: app/ui/mf_rss_handlers.py:1231
 msgid "Cliente de X (Twitter)"
 msgstr ""
 
@@ -9326,6 +9369,10 @@ msgstr ""
 msgid "Columnas (en orden): {0}"
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:181
+msgid "Com&entario (opcional, se envía antes de los mensajes):"
+msgstr ""
+
 #: app/ui/telegram_bot_dialogs.py:370 app/ui/xmpp_admin_dialogs.py:263
 msgid "Comando"
 msgstr ""
@@ -9434,7 +9481,7 @@ msgid "Combinación vacía."
 msgstr ""
 
 #: app/ui/peertube_controller_social.py:97
-#: app/ui/telegram_conv_mensajes.py:1468 app/ui/telegram_conv_mensajes.py:1459
+#: app/ui/telegram_conv_mensajes.py:1440 app/ui/telegram_conv_mensajes.py:1431
 msgid "Comentar"
 msgstr ""
 
@@ -9446,7 +9493,7 @@ msgstr ""
 #: app/ui/peertube_comment_dialog.py:51
 #: app/ui/peertube_moderacion_dialogs.py:91
 #: app/ui/reddit_moderacion_dialogs.py:150 app/ui/reddit_thread_viewer.py:64
-#: app/ui/telegram_envio.py:59
+#: app/ui/telegram_compartir_dialog.py:184 app/ui/telegram_envio.py:59
 msgid "Comentario"
 msgstr ""
 
@@ -9478,7 +9525,7 @@ msgstr ""
 msgid "Comentario en mis vídeos"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1478
+#: app/ui/telegram_conv_mensajes.py:1450
 msgid "Comentario enviado."
 msgstr ""
 
@@ -9518,7 +9565,7 @@ msgstr ""
 msgid "Comentarios"
 msgstr ""
 
-#: app/services/rss/rss_foros.py:87 app/ui/telegram_conv_mensajes.py:1456
+#: app/services/rss/rss_foros.py:87 app/ui/telegram_conv_mensajes.py:1428
 msgid "Comentarios ({0})"
 msgstr ""
 
@@ -9564,6 +9611,14 @@ msgid ""
 "seguir"
 msgstr ""
 
+#: app/ui/telegram_conv_compartir.py:174
+msgid "Compartiendo en {0} chats..."
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:172
+msgid "Compartiendo en {0}..."
+msgstr ""
+
 #: app/ui/mf_telegram_handlers.py:599
 msgid "Compartir (Mastodon o Bluesky)..."
 msgstr ""
@@ -9576,8 +9631,28 @@ msgstr ""
 msgid "Compartir carpeta"
 msgstr ""
 
+#: app/ui/telegram_conv_mensajes.py:852
+msgid "Compartir el mensaje marcado... (Ctrl+Mayús+C)"
+msgstr ""
+
+#: app/ui/telegram_conv_mensajes.py:850
+msgid "Compartir los {0} mensajes marcados... (Ctrl+Mayús+C)"
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:118
+msgid "Compartir mensaje"
+msgstr ""
+
 #: app/ui/telegram_bot_dialogs.py:147
 msgid "Compartir tu contacto"
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:118
+msgid "Compartir {0} mensajes"
+msgstr ""
+
+#: app/ui/telegram_conv_mensajes.py:854
+msgid "Compartir... (Ctrl+Mayús+C)"
 msgstr ""
 
 #: app/ui/plugins_dialog.py:28
@@ -9649,7 +9724,7 @@ msgstr ""
 msgid "Comprobación terminada: {0}"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:880
+#: app/ui/mf_rss_handlers.py:882
 msgid "Comprobando actualizaciones..."
 msgstr ""
 
@@ -10090,7 +10165,7 @@ msgstr ""
 
 #: app/ui/cleanup_dialog.py:100 app/ui/matrix_admin_dialogs.py:622
 #: app/ui/reddit_controller_acciones.py:344
-#: app/ui/telegram_conv_mensajes.py:1042 app/ui/telegram_dialogs_admin.py:1242
+#: app/ui/telegram_conv_mensajes.py:1061 app/ui/telegram_dialogs_admin.py:1242
 msgid "Confirmar borrado"
 msgstr ""
 
@@ -10283,7 +10358,7 @@ msgstr ""
 msgid "Consultando quién se unió..."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1159
+#: app/ui/telegram_conv_mensajes.py:1156
 msgid "Consultando reacciones..."
 msgstr ""
 
@@ -10870,7 +10945,7 @@ msgstr ""
 
 #: app/ui/bluesky_controller_carga.py:285 app/ui/irc_conversation.py:66
 #: app/ui/irc_conversation.py:239 app/ui/matrix_conversation.py:33
-#: app/ui/telegram_conversation.py:20 app/ui/telegram_conv_acciones.py:149
+#: app/ui/telegram_conversation.py:22 app/ui/telegram_conv_acciones.py:149
 #: app/ui/wsocial_controller_carga.py:109 app/ui/wsocial_dialogs.py:717
 #: app/ui/xmpp_conversation.py:29 app/ui/x_hilos.py:321
 msgid "Conversación: {0}"
@@ -10958,14 +11033,6 @@ msgstr ""
 msgid "Copiar (Ctrl+C)"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1225
-msgid "Copiar a otro chat"
-msgstr ""
-
-#: app/ui/telegram_conv_mensajes.py:840
-msgid "Copiar a otro chat..."
-msgstr ""
-
 #: app/ui/invisible_keymap.py:67
 msgid "Copiar al portapapeles"
 msgstr ""
@@ -10976,10 +11043,6 @@ msgstr ""
 
 #: app/ui/mf_telegram_handlers.py:584 app/ui/rss_lector.py:114
 msgid "Copiar artículo completo"
-msgstr ""
-
-#: app/ui/telegram_conv_mensajes.py:1225
-msgid "Copiar el mensaje a:"
 msgstr ""
 
 #: app/ui/wsocial_dialogs.py:824 app/ui/x_hilos.py:204
@@ -11024,7 +11087,7 @@ msgstr ""
 msgid "Copiar mensaje"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:834
+#: app/ui/telegram_conv_mensajes.py:841
 msgid "Copiar texto del mensaje"
 msgstr ""
 
@@ -11462,7 +11525,7 @@ msgstr ""
 msgid "Crear un grupo nuevo"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1013
+#: app/ui/mf_rss_handlers.py:1017
 msgid "Crear un hilo solo está disponible en Mastodon, Bluesky y W Social."
 msgstr ""
 
@@ -11504,7 +11567,7 @@ msgid ""
 "Crear una publicación (texto, enlace, imagen, vídeo, galería o encuesta)"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1003
+#: app/ui/mf_rss_handlers.py:1007
 msgid ""
 "Crear una publicación solo está disponible en Mastodon, Bluesky, X, Reddit y"
 " W Social."
@@ -11700,7 +11763,7 @@ msgstr ""
 msgid "Cuenta"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1138
+#: app/ui/mf_rss_handlers.py:1142
 msgid "Cuenta (handle, por ejemplo nombre.bsky.social):"
 msgstr ""
 
@@ -12232,6 +12295,11 @@ msgstr ""
 msgid "Código reenviado a {0}."
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:167
+#: app/ui/telegram_compartir_dialog.py:170
+msgid "Cómo compartir"
+msgstr ""
+
 #: app/ui/rss_reglas_ui.py:271
 msgid "Cómo se combinan las condiciones"
 msgstr ""
@@ -12393,7 +12461,7 @@ msgstr ""
 msgid "Debe enfocar un toot para poder citar."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1244
+#: app/ui/mf_rss_handlers.py:1248
 msgid "Debe enfocar un toot para poder responder."
 msgstr ""
 
@@ -12770,11 +12838,11 @@ msgstr ""
 msgid "Descarga del episodio borrada."
 msgstr ""
 
-#: app/services/rss/rss_articulos.py:429 app/services/rss/rss_podcast.py:323
+#: app/services/rss/rss_articulos.py:429 app/services/rss/rss_podcast.py:322
 msgid "Descarga incompleta ({0} de {1} bytes)."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:989 app/ui/telegram_dialogs_admin.py:1234
+#: app/ui/telegram_conv_mensajes.py:1008 app/ui/telegram_dialogs_admin.py:1234
 msgid "Descarga local borrada."
 msgstr ""
 
@@ -12791,7 +12859,7 @@ msgid "Descarga terminada: {0} de {1} archivo(s)."
 msgstr ""
 
 #: app/ui/rss_views.py:1135 app/ui/telegram_conv_mensajes.py:94
-#: app/ui/telegram_conv_mensajes.py:998 app/ui/telegram_dialogs_admin.py:1000
+#: app/ui/telegram_conv_mensajes.py:1017 app/ui/telegram_dialogs_admin.py:1000
 #: app/ui/telegram_dialogs_admin.py:1118
 msgid "Descargado"
 msgstr ""
@@ -12919,7 +12987,7 @@ msgstr ""
 msgid "Descargar a la carpeta de descargas"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:906
+#: app/ui/telegram_conv_mensajes.py:925
 msgid "Descargar archivo"
 msgstr ""
 
@@ -12988,7 +13056,7 @@ msgstr ""
 msgid "Descargar una página de tweets más antiguos y añadirlos al final"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:908 app/ui/telegram_dialogs_admin.py:1178
+#: app/ui/telegram_conv_mensajes.py:927 app/ui/telegram_dialogs_admin.py:1178
 msgid "Descargar y reproducir"
 msgstr ""
 
@@ -13115,7 +13183,7 @@ msgstr ""
 msgid "Describir imagen adjunta usando Gemini/Ollama"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:884
+#: app/ui/telegram_conv_mensajes.py:903
 msgid "Describir imagen con IA"
 msgstr ""
 
@@ -13213,7 +13281,7 @@ msgid ""
 msgstr ""
 
 #: app/ui/bluesky_thread_viewer.py:327 app/ui/mf_ia_dialogos.py:165
-#: app/ui/telegram_conv_mensajes.py:603 app/ui/thread_viewer.py:486
+#: app/ui/telegram_conv_mensajes.py:610 app/ui/thread_viewer.py:486
 msgid "Descripción de la multimedia"
 msgstr ""
 
@@ -13279,7 +13347,7 @@ msgstr ""
 msgid "Descripción:"
 msgstr ""
 
-#: app/ui/mf_publicacion.py:365 app/ui/telegram_conv_mensajes.py:602
+#: app/ui/mf_publicacion.py:365 app/ui/telegram_conv_mensajes.py:609
 #: app/ui/telegram_dialogs_admin.py:130 app/ui/tgdrive_dialogs.py:134
 msgid "Descripción: {0}"
 msgstr ""
@@ -13349,7 +13417,7 @@ msgstr ""
 msgid "Desfijar feed"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:830
+#: app/ui/telegram_conv_mensajes.py:837
 msgid "Desfijar mensaje"
 msgstr ""
 
@@ -13374,8 +13442,20 @@ msgstr ""
 msgid "Deshacer retweet"
 msgstr ""
 
+#: app/ui/telegram_conv_compartir.py:70
+msgid "Desmarcado"
+msgstr ""
+
+#: app/ui/telegram_conv_mensajes.py:859
+msgid "Desmarcar este mensaje"
+msgstr ""
+
 #: app/ui/tgdrive_window.py:168
 msgid "Desmarcar todo"
+msgstr ""
+
+#: app/ui/telegram_conv_mensajes.py:863
+msgid "Desmarcar todos ({0})"
 msgstr ""
 
 #: app/ui/bluesky_dialogs.py:29
@@ -14333,7 +14413,7 @@ msgstr ""
 msgid "E&liminar de favoritos"
 msgstr ""
 
-#: app/ui/rss_lector.py:131 app/ui/telegram_conversation.py:304
+#: app/ui/rss_lector.py:131 app/ui/telegram_conversation.py:306
 msgid "E&xportar..."
 msgstr ""
 
@@ -14373,7 +14453,7 @@ msgstr ""
 msgid "Editada"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1645 app/ui/mf_app_despacho.py:249
+#: app/ui/mf_acciones_toot.py:1649 app/ui/mf_app_despacho.py:249
 #: app/ui/mf_telegram_chats.py:629 app/ui/telegram_conv_mensajes.py:96
 #: app/ui/telegram_mensaje_dialog.py:164
 msgid "Editado"
@@ -14397,7 +14477,7 @@ msgstr ""
 
 #: app/ui/reddit_controller_acciones.py:517
 #: app/ui/reddit_controller_acciones.py:238
-#: app/ui/telegram_conv_mensajes.py:1026 app/ui/telegram_conv_mensajes.py:794
+#: app/ui/telegram_conv_mensajes.py:1045 app/ui/telegram_conv_mensajes.py:801
 #: app/ui/wsocial_dialogs.py:532
 msgid "Editar"
 msgstr ""
@@ -14447,7 +14527,7 @@ msgstr ""
 msgid "Editar descripción de texto alternativo"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1079
+#: app/ui/telegram_conv_mensajes.py:1098
 msgid "Editar el pie (descripción) del archivo:"
 msgstr ""
 
@@ -14514,7 +14594,7 @@ msgstr ""
 msgid "Editar los ajustes básicos del subreddit"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1026
+#: app/ui/telegram_conv_mensajes.py:1045
 msgid "Editar mensaje:"
 msgstr ""
 
@@ -14558,11 +14638,11 @@ msgstr ""
 msgid "Editar palabra silenciada"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1080 app/ui/telegram_dialogs_perfil.py:799
+#: app/ui/telegram_conv_mensajes.py:1099 app/ui/telegram_dialogs_perfil.py:799
 msgid "Editar pie"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:800
+#: app/ui/telegram_conv_mensajes.py:807
 msgid "Editar pie (descripción)..."
 msgstr ""
 
@@ -14714,7 +14794,7 @@ msgid ""
 "El archivo pesa {0:.1f} MB y este servidor admite como máximo {1:.1f} MB."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:922 app/ui/telegram_dialogs_admin.py:1190
+#: app/ui/telegram_conv_mensajes.py:941 app/ui/telegram_dialogs_admin.py:1190
 #: app/ui/telegram_dialogs_admin.py:1210
 msgid "El archivo ya no está descargado."
 msgstr ""
@@ -14835,11 +14915,11 @@ msgstr ""
 msgid "El episodio supera el tamaño máximo (1 GiB)."
 msgstr ""
 
-#: app/services/rss/rss_podcast.py:317
+#: app/services/rss/rss_podcast.py:316
 msgid "El episodio supera el tamaño máximo."
 msgstr ""
 
-#: app/services/rss/rss_parseo.py:1048
+#: app/services/rss/rss_parseo.py:1038
 msgid "El feed fue retirado por el servidor (410); se ha pausado."
 msgstr ""
 
@@ -14848,11 +14928,11 @@ msgstr ""
 msgid "El feed ya no existe."
 msgstr ""
 
-#: app/services/rss/rss_parseo.py:1103
+#: app/services/rss/rss_parseo.py:1093
 msgid "El feed «{0}» se ha mudado y su dirección se ha actualizado sola."
 msgstr ""
 
-#: app/services/rss/rss_parseo.py:1051
+#: app/services/rss/rss_parseo.py:1041
 msgid "El feed «{0}» ya no existe (410) y se ha puesto en pausa."
 msgstr ""
 
@@ -14889,7 +14969,7 @@ msgid ""
 " en tiempo real. Los servicios que tengas apagados no se actualizan."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1199
+#: app/ui/telegram_conv_mensajes.py:1196
 msgid "El mensaje no tiene texto que copiar."
 msgstr ""
 
@@ -15053,7 +15133,7 @@ msgstr ""
 msgid "El servidor respondió {0}: {1}"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1206 app/ui/mf_acciones_toot.py:1814
+#: app/ui/mf_acciones_toot.py:1210 app/ui/mf_acciones_toot.py:1818
 msgid "El sistema está ocupado actualizando. Espere un momento."
 msgstr ""
 
@@ -15122,6 +15202,10 @@ msgstr ""
 
 #: app/services/bluesky/bluesky_publicar.py:454
 msgid "El vídeo supera los 50 MB que admite Bluesky."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:262
+msgid "Elegido: {0}."
 msgstr ""
 
 #: app/ui/reddit_dialogs.py:120 app/ui/reddit_dialogs.py:225
@@ -15383,6 +15467,10 @@ msgstr ""
 msgid "Elige un fragmento para insertar:"
 msgstr ""
 
+#: app/ui/telegram_conv_compartir.py:104
+msgid "Elige un mensaje para compartir."
+msgstr ""
+
 #: app/ui/wsocial_controller_social.py:729
 msgid "Elige un paquete para verlo:"
 msgstr ""
@@ -15462,7 +15550,7 @@ msgstr ""
 msgid "Elija el GIF o vídeo corto"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1119
+#: app/ui/telegram_conv_mensajes.py:1116
 msgid "Elija el archivo que reemplazará al actual"
 msgstr ""
 
@@ -15490,7 +15578,7 @@ msgstr ""
 msgid "Elija la nueva foto de perfil"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1299
+#: app/ui/telegram_conv_mensajes.py:1271
 msgid "Elija la opción a quitar:"
 msgstr ""
 
@@ -15498,7 +15586,7 @@ msgstr ""
 msgid "Elija los chats de la carpeta"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1306 app/ui/telegram_conv_mensajes.py:1308
+#: app/ui/telegram_conv_mensajes.py:1278 app/ui/telegram_conv_mensajes.py:1280
 msgid "Elija su voto:"
 msgstr ""
 
@@ -15510,7 +15598,7 @@ msgstr ""
 msgid "Elija un tema:"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1061
+#: app/ui/telegram_conv_mensajes.py:1080
 msgid "Elija una reacción:"
 msgstr ""
 
@@ -15892,13 +15980,13 @@ msgstr ""
 msgid "Enclosure multimedia: {0}"
 msgstr ""
 
-#: app/ui/matrix_conversation.py:787 app/ui/mf_acciones_toot.py:1644
+#: app/ui/matrix_conversation.py:787 app/ui/mf_acciones_toot.py:1648
 #: app/ui/mf_acciones_toot.py:587 app/ui/mf_app_despacho.py:248
 #: app/ui/mf_bandeja.py:377 app/ui/mf_telegram_chats.py:628
 #: app/ui/notif_center_dialog.py:68 app/ui/reddit_dialogs.py:63
 #: app/ui/telegram_conv_extras.py:116 app/ui/telegram_conv_extras.py:119
-#: app/ui/telegram_conv_mensajes.py:223 app/ui/telegram_conv_mensajes.py:1278
-#: app/ui/telegram_conv_mensajes.py:1286 app/ui/x_dialogs.py:230
+#: app/ui/telegram_conv_mensajes.py:223 app/ui/telegram_conv_mensajes.py:1250
+#: app/ui/telegram_conv_mensajes.py:1258 app/ui/x_dialogs.py:230
 #: app/ui/x_dialogs.py:219
 msgid "Encuesta"
 msgstr ""
@@ -15915,7 +16003,7 @@ msgstr ""
 msgid "Encuesta cerrada"
 msgstr ""
 
-#: app/ui/matrix_conversation.py:824 app/ui/telegram_conv_mensajes.py:1352
+#: app/ui/matrix_conversation.py:824 app/ui/telegram_conv_mensajes.py:1324
 msgid "Encuesta cerrada."
 msgstr ""
 
@@ -15959,7 +16047,7 @@ msgid "Enfoca primero un mensaje del hilo."
 msgstr ""
 
 #: app/ui/mastodon_perfil_dialogs.py:584 app/ui/mastodon_perfil_dialogs.py:610
-#: app/ui/mf_rss_handlers.py:988
+#: app/ui/mf_rss_handlers.py:992
 msgid "Enfoca primero una publicación."
 msgstr ""
 
@@ -16085,7 +16173,7 @@ msgstr ""
 
 #: app/ui/mf_bandeja.py:352 app/ui/mf_filtros_mastodon.py:67
 #: app/ui/mf_media_servicio.py:1120 app/ui/mf_publicacion.py:371
-#: app/ui/mf_rss_handlers.py:1107 app/ui/mf_rss_vista.py:72
+#: app/ui/mf_rss_handlers.py:1111 app/ui/mf_rss_vista.py:72
 #: app/ui/reddit_controller_acciones.py:134
 msgid "Enlace: {0}"
 msgstr ""
@@ -16123,7 +16211,7 @@ msgstr ""
 msgid "Entrando al chat de voz..."
 msgstr ""
 
-#: app/ui/telegram_conversation.py:322 app/ui/telegram_conv_acciones.py:333
+#: app/ui/telegram_conversation.py:324 app/ui/telegram_conv_acciones.py:333
 msgid "Entrar a chat de &voz"
 msgstr ""
 
@@ -16140,7 +16228,7 @@ msgstr ""
 msgid "Entrar en una sala de grupo (MUC)"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:322
+#: app/ui/telegram_conversation.py:324
 msgid "Entrar o salir del chat de voz"
 msgstr ""
 
@@ -16263,6 +16351,10 @@ msgstr ""
 msgid "Enviar &mensaje al canal/grupo..."
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:188
+msgid "Enviar &sin sonido (no avisa a los destinatarios)"
+msgstr ""
+
 #: app/ui/telegram_conv_acciones.py:579
 msgid "Enviar GIF..."
 msgstr ""
@@ -16297,6 +16389,10 @@ msgstr ""
 
 #: app/ui/telegram_conv_acciones.py:604
 msgid "Enviar como (elegir perfil/canal)..."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:169
+msgid "Enviar como co&pia (sin el autor original)"
 msgstr ""
 
 #: app/ui/reddit_fase4_dialogs.py:222
@@ -16340,7 +16436,7 @@ msgid "Enviar lista de tareas..."
 msgstr ""
 
 #: app/ui/irc_conversation.py:124 app/ui/matrix_conversation.py:86
-#: app/ui/telegram_conversation.py:259 app/ui/telegram_dialogs_admin.py:212
+#: app/ui/telegram_conversation.py:261 app/ui/telegram_dialogs_admin.py:212
 #: app/ui/telegram_dialogs_admin.py:790 app/ui/xmpp_conversation.py:95
 msgid "Enviar mensaje"
 msgstr ""
@@ -16403,7 +16499,7 @@ msgstr ""
 msgid "Enviar un zumbido"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:267
+#: app/ui/telegram_conversation.py:269
 msgid "Enviar varias fotos o vídeos como álbum"
 msgstr ""
 
@@ -16419,7 +16515,7 @@ msgstr ""
 msgid "Enviar wallops..."
 msgstr ""
 
-#: app/ui/telegram_conversation.py:267
+#: app/ui/telegram_conversation.py:269
 msgid "Enviar á&lbum..."
 msgstr ""
 
@@ -16487,7 +16583,7 @@ msgid "Error al actualizar: {0}"
 msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:896 app/ui/cleanup_dialog.py:147
-#: app/ui/telegram_conv_mensajes.py:1053 app/ui/x_dialogs.py:429
+#: app/ui/telegram_conv_mensajes.py:1072 app/ui/x_dialogs.py:429
 msgid "Error al borrar: {0}"
 msgstr ""
 
@@ -16515,7 +16611,7 @@ msgstr ""
 msgid "Error al cargar la información: {0}"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1333
+#: app/ui/mf_acciones_toot.py:1337
 msgid "Error al cargar la lista: {0}"
 msgstr ""
 
@@ -16540,7 +16636,7 @@ msgstr ""
 msgid "Error al cargar miembros: {0}"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1862
+#: app/ui/mf_acciones_toot.py:1866
 msgid "Error al cargar más toots: {0}"
 msgstr ""
 
@@ -16554,7 +16650,7 @@ msgstr ""
 msgid "Error al cargar temas: {0}"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1294
+#: app/ui/mf_acciones_toot.py:1298
 msgid "Error al cargar tendencias: {0}"
 msgstr ""
 
@@ -16564,10 +16660,6 @@ msgstr ""
 
 #: app/ui/prefs_rss_articulo.py:205
 msgid "Error al comprobar reglas."
-msgstr ""
-
-#: app/ui/telegram_conv_mensajes.py:1233
-msgid "Error al copiar: {0}"
 msgstr ""
 
 #: app/ui/mf_media_servicio.py:175
@@ -16599,11 +16691,11 @@ msgstr ""
 msgid "Error al desconectar: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1088
+#: app/ui/telegram_conv_mensajes.py:1107
 msgid "Error al editar el pie: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1034
+#: app/ui/telegram_conv_mensajes.py:1053
 msgid "Error al editar: {0}"
 msgstr ""
 
@@ -16690,11 +16782,11 @@ msgstr ""
 msgid "Error al purgar: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1069
+#: app/ui/telegram_conv_mensajes.py:1088
 msgid "Error al reaccionar: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1131
+#: app/ui/telegram_conv_mensajes.py:1128
 msgid "Error al reemplazar el archivo: {0}"
 msgstr ""
 
@@ -16727,7 +16819,7 @@ msgstr ""
 msgid "Error al resumir: {0}"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1401
+#: app/ui/mf_acciones_toot.py:1405
 msgid "Error al sincronizar Telegram: {0}"
 msgstr ""
 
@@ -16798,7 +16890,7 @@ msgstr ""
 msgid "Error en el reproductor: {0}"
 msgstr ""
 
-#: app/ui/bluesky_controller_social.py:645 app/ui/mf_acciones_toot.py:1313
+#: app/ui/bluesky_controller_social.py:645 app/ui/mf_acciones_toot.py:1317
 #: app/ui/mf_telegram_handlers.py:863 app/ui/mf_telegram_handlers.py:926
 #: app/ui/mf_telegram_handlers.py:825
 #: app/ui/peertube_controller_acciones.py:279 app/ui/radio_dialog.py:227
@@ -16885,9 +16977,9 @@ msgstr ""
 #: app/ui/telegram_conv_acciones.py:758 app/ui/telegram_conv_acciones.py:354
 #: app/ui/telegram_conv_extras.py:250 app/ui/telegram_conv_extras.py:287
 #: app/ui/telegram_conv_extras.py:473 app/ui/telegram_conv_extras.py:494
-#: app/ui/telegram_conv_extras.py:515 app/ui/telegram_conv_mensajes.py:1190
-#: app/ui/telegram_conv_mensajes.py:1245 app/ui/telegram_conv_mensajes.py:1350
-#: app/ui/telegram_conv_mensajes.py:1380 app/ui/telegram_conv_mensajes.py:1478
+#: app/ui/telegram_conv_extras.py:515 app/ui/telegram_conv_mensajes.py:1187
+#: app/ui/telegram_conv_mensajes.py:1217 app/ui/telegram_conv_mensajes.py:1322
+#: app/ui/telegram_conv_mensajes.py:1352 app/ui/telegram_conv_mensajes.py:1450
 #: app/ui/telegram_dialogs_admin.py:202 app/ui/telegram_dialogs_admin.py:222
 #: app/ui/telegram_dialogs_admin.py:231 app/ui/telegram_dialogs_admin.py:305
 #: app/ui/telegram_dialogs_admin.py:374 app/ui/telegram_dialogs_admin.py:443
@@ -17037,7 +17129,7 @@ msgstr ""
 msgid "Escriba palabras a buscar y pulse Intro o el botón Buscar."
 msgstr ""
 
-#: app/ui/telegram_conversation.py:246
+#: app/ui/telegram_conversation.py:248
 msgid "Escriba su mensaje y pulse Ctrl+Enter o el botón Enviar."
 msgstr ""
 
@@ -17209,6 +17301,11 @@ msgstr ""
 msgid "Escribe para filtrar; flecha abajo para ir a la lista."
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:141
+msgid ""
+"Escribe parte del nombre o del @usuario para filtrar la lista de chats."
+msgstr ""
+
 #: app/ui/bluesky_dialogs.py:396
 msgid "Escribe parte del nombre o del handle de la cuenta a mencionar:"
 msgstr ""
@@ -17373,7 +17470,7 @@ msgstr ""
 msgid "Escribir descripción manualmente"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:242
+#: app/ui/telegram_conversation.py:244
 msgid "Escribir mensaje (Ctrl+Enter para enviar):"
 msgstr ""
 
@@ -17391,7 +17488,7 @@ msgid ""
 "comandos):"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1125
+#: app/ui/mf_rss_handlers.py:1129
 msgid "Escribir otra cuenta..."
 msgstr ""
 
@@ -17501,12 +17598,12 @@ msgstr ""
 msgid "Esta acción elimina publicaciones. ¿Continuar?"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1212
+#: app/ui/mf_rss_handlers.py:1216
 msgid ""
 "Esta acción solo está disponible en Mastodon, Bluesky, X, Reddit y PeerTube."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1806
+#: app/ui/mf_acciones_toot.py:1810
 msgid ""
 "Esta acción solo está disponible en publicaciones de Mastodon, Bluesky o X."
 msgstr ""
@@ -17600,7 +17697,7 @@ msgstr ""
 msgid "Esta multimedia está oculta por moderación y no se puede mostrar."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:605
+#: app/ui/telegram_conv_mensajes.py:612
 msgid "Esta multimedia no tiene descripción."
 msgstr ""
 
@@ -17651,7 +17748,7 @@ msgstr ""
 msgid "Esta publicación no tiene audio ni vídeo."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1453
+#: app/ui/telegram_conv_mensajes.py:1425
 msgid "Esta publicación no tiene comentarios."
 msgstr ""
 
@@ -17966,7 +18063,7 @@ msgstr ""
 msgid "Este buffer estará disponible en una próxima tanda."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1827
+#: app/ui/mf_acciones_toot.py:1831
 msgid "Este buffer no admite cargar elementos anteriores."
 msgstr ""
 
@@ -17985,6 +18082,12 @@ msgstr ""
 
 #: app/ui/telegram_conv_extras.py:337
 msgid "Este chat no tiene contenido descargable con ese filtro."
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:63 app/ui/telegram_conv_compartir.py:93
+msgid ""
+"Este chat tiene el contenido protegido: Telegram no permite reenviar sus "
+"mensajes."
 msgstr ""
 
 #: app/services/xmpp/xmpp_medios.py:90
@@ -18076,8 +18179,16 @@ msgstr ""
 msgid "Este formato puede no reproducirse; intentándolo..."
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:300
+msgid "Este grupo no tiene temas"
+msgstr ""
+
 #: app/ui/telegram_conv_acciones.py:634
 msgid "Este grupo no tiene temas de foro."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:297
+msgid "Este grupo tiene {0} temas: puedes elegir en cuál compartir."
 msgstr ""
 
 #: app/ui/telegram_mensaje_dialog.py:204
@@ -18104,23 +18215,23 @@ msgstr ""
 msgid "Este mensaje no contiene enlaces."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:598
+#: app/ui/telegram_conv_mensajes.py:605
 msgid "Este mensaje no contiene multimedia."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:580
+#: app/ui/telegram_conv_mensajes.py:587
 msgid "Este mensaje no contiene texto para traducir."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:589
+#: app/ui/telegram_conv_mensajes.py:596
 msgid "Este mensaje no contiene texto que copiar."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:571
+#: app/ui/telegram_conv_mensajes.py:578
 msgid "Este mensaje no contiene una imagen."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1248
+#: app/ui/telegram_conv_mensajes.py:1220
 msgid "Este mensaje no es una encuesta."
 msgstr ""
 
@@ -18128,7 +18239,7 @@ msgstr ""
 msgid "Este mensaje no es una imagen."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1383
+#: app/ui/telegram_conv_mensajes.py:1355
 msgid "Este mensaje no es una lista de tareas."
 msgstr ""
 
@@ -18511,7 +18622,7 @@ msgstr ""
 msgid "Exportar claves de cifrado..."
 msgstr ""
 
-#: app/ui/bluesky_thread_viewer.py:98 app/ui/telegram_conversation.py:304
+#: app/ui/bluesky_thread_viewer.py:98 app/ui/telegram_conversation.py:306
 #: app/ui/thread_viewer.py:100
 msgid "Exportar conversación"
 msgstr ""
@@ -18646,6 +18757,10 @@ msgstr ""
 msgid "Fallo en la prueba: {0}"
 msgstr ""
 
+#: app/ui/telegram_conv_compartir.py:132
+msgid "Falló en {0}."
+msgstr ""
+
 #: app/services/peertube/peertube_notificaciones.py:112
 msgid "Falló una importación de vídeo"
 msgstr ""
@@ -18713,7 +18828,7 @@ msgstr ""
 msgid "Favorita (arriba del todo)"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:138 app/ui/mf_acciones_toot.py:1641
+#: app/ui/mf_acciones_toot.py:138 app/ui/mf_acciones_toot.py:1645
 #: app/ui/mf_acciones_toot.py:545 app/ui/mf_app_despacho.py:245
 #: app/ui/mf_bandeja.py:730 app/ui/mf_telegram_chats.py:625
 #: app/ui/notif_center_dialog.py:67
@@ -18759,7 +18874,7 @@ msgstr ""
 msgid "Fecha"
 msgstr ""
 
-#: app/ui/telegram_conv_extras.py:39
+#: app/ui/telegram_compartir_dialog.py:196 app/ui/telegram_conv_extras.py:39
 msgid "Fecha de envío:"
 msgstr ""
 
@@ -18999,7 +19114,7 @@ msgstr ""
 msgid "Ficha guardada."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1647 app/ui/mf_app_despacho.py:89
+#: app/ui/mf_acciones_toot.py:1651 app/ui/mf_app_despacho.py:89
 #: app/ui/mf_app_despacho.py:251 app/ui/mf_app_despacho.py:457
 #: app/ui/mf_telegram_chats.py:631 app/ui/reddit_controller_carga.py:203
 #: app/ui/reddit_controller_carga.py:337
@@ -19046,7 +19161,7 @@ msgstr ""
 msgid "Fijar feed arriba"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:828
+#: app/ui/telegram_conv_mensajes.py:835
 msgid "Fijar mensaje"
 msgstr ""
 
@@ -19575,7 +19690,7 @@ msgstr ""
 msgid "Grabar una prueba y reproducirla"
 msgstr ""
 
-#: app/ui/matrix_conversation.py:93 app/ui/telegram_conversation.py:272
+#: app/ui/matrix_conversation.py:93 app/ui/telegram_conversation.py:274
 #: app/ui/xmpp_conversation.py:102
 msgid "Grabar y enviar una nota de voz"
 msgstr ""
@@ -19632,8 +19747,8 @@ msgid "Grupo reabierto."
 msgstr ""
 
 #: app/ui/buffers_dialog.py:77 app/ui/buffers_dialog.py:104
-#: app/ui/mf_listados_filas.py:41 app/ui/telegram_dialogs_perfil.py:906
-#: app/ui/xmpp_views.py:43
+#: app/ui/mf_listados_filas.py:41 app/ui/telegram_compartir_dialog.py:40
+#: app/ui/telegram_dialogs_perfil.py:906 app/ui/xmpp_views.py:43
 msgid "Grupos"
 msgstr ""
 
@@ -19659,14 +19774,14 @@ msgstr ""
 msgid "Guardada en marcadores."
 msgstr ""
 
-#: app/ui/bluesky_controller_carga.py:95 app/ui/mf_acciones_toot.py:1643
+#: app/ui/bluesky_controller_carga.py:95 app/ui/mf_acciones_toot.py:1647
 #: app/ui/mf_app_despacho.py:247 app/ui/mf_telegram_chats.py:627
 #: app/ui/reddit_controller_carga.py:197 app/ui/reddit_controller_carga.py:333
 #: app/ui/x_lectura.py:85
 msgid "Guardado"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1369
+#: app/ui/telegram_conv_mensajes.py:1341
 msgid "Guardado en Mis GIF."
 msgstr ""
 
@@ -19760,7 +19875,7 @@ msgstr ""
 msgid "Guardar código QR"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:864
+#: app/ui/telegram_conv_mensajes.py:883
 msgid "Guardar en Mis GIF"
 msgstr ""
 
@@ -19877,7 +19992,7 @@ msgstr ""
 msgid "Habilitar notificaciones y sonidos para nuevos artículos RSS"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:327
+#: app/ui/telegram_conversation.py:329
 msgid "Hablar por el micrófono o silenciarlo"
 msgstr ""
 
@@ -20191,7 +20306,7 @@ msgstr ""
 #: app/ui/peertube_gestion_dialogs.py:279
 #: app/ui/reddit_controller_acciones.py:514
 #: app/ui/reddit_controller_social.py:88 app/ui/telegram_bot_dialogs.py:180
-#: app/ui/telegram_conv_mensajes.py:1331 app/ui/telegram_dialogs_admin.py:305
+#: app/ui/telegram_conv_mensajes.py:1303 app/ui/telegram_dialogs_admin.py:305
 #: app/ui/telegram_dialogs_perfil.py:1278
 #: app/ui/wsocial_controller_acciones.py:198
 #: app/ui/wsocial_controller_social.py:292 app/ui/xmpp_dialogs.py:367
@@ -20456,15 +20571,16 @@ msgstr ""
 msgid "Hora (0 a 23)"
 msgstr ""
 
-#: app/ui/telegram_conv_extras.py:43
+#: app/ui/telegram_compartir_dialog.py:197 app/ui/telegram_conv_extras.py:43
 msgid "Hora de envío"
 msgstr ""
 
-#: app/ui/telegram_conv_extras.py:47
+#: app/ui/telegram_compartir_dialog.py:200 app/ui/telegram_conv_extras.py:47
 msgid "Hora de envío, hora"
 msgstr ""
 
-#: app/ui/mastodon_compose.py:543 app/ui/telegram_conv_extras.py:45
+#: app/ui/mastodon_compose.py:543 app/ui/telegram_compartir_dialog.py:199
+#: app/ui/telegram_conv_extras.py:45
 msgid "Hora:"
 msgstr ""
 
@@ -20967,7 +21083,7 @@ msgstr ""
 msgid "Impulso"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1372
+#: app/ui/mf_rss_handlers.py:1376
 msgid "Impulso deshecho."
 msgstr ""
 
@@ -21037,6 +21153,10 @@ msgstr ""
 
 #: app/services/irc/irc_canales.py:53
 msgid "Inactivo desde hace {0} minutos."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:177
+msgid "Incluir el álbum comp&leto"
 msgstr ""
 
 #: app/ui/mastodon_reportar_dialog.py:16
@@ -21659,21 +21779,21 @@ msgid "Ir adelante (Alt+Derecha)"
 msgstr ""
 
 #: app/ui/bluesky_dialogs.py:568 app/ui/irc_conversation.py:138
-#: app/ui/matrix_conversation.py:102 app/ui/telegram_conversation.py:313
+#: app/ui/matrix_conversation.py:102 app/ui/telegram_conversation.py:315
 #: app/ui/xmpp_conversation.py:120
 msgid "Ir al &final"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:309
+#: app/ui/telegram_conversation.py:311
 msgid "Ir al primer &no leído"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:309
+#: app/ui/telegram_conversation.py:311
 msgid "Ir al primer mensaje no leído"
 msgstr ""
 
 #: app/ui/irc_conversation.py:138 app/ui/matrix_conversation.py:102
-#: app/ui/telegram_conversation.py:313 app/ui/xmpp_conversation.py:120
+#: app/ui/telegram_conversation.py:315 app/ui/xmpp_conversation.py:120
 msgid "Ir al último mensaje"
 msgstr ""
 
@@ -21923,11 +22043,11 @@ msgstr ""
 msgid "La fecha de programación debe ser al menos 5 minutos en el futuro."
 msgstr ""
 
-#: app/ui/telegram_conv_extras.py:72
+#: app/ui/telegram_compartir_dialog.py:327 app/ui/telegram_conv_extras.py:72
 msgid "La fecha no es válida."
 msgstr ""
 
-#: app/ui/telegram_conv_extras.py:77
+#: app/ui/telegram_compartir_dialog.py:332 app/ui/telegram_conv_extras.py:77
 msgid ""
 "La fecha y hora deben ser futuras. Elige una fecha y hora posteriores a "
 "ahora."
@@ -22074,7 +22194,7 @@ msgstr ""
 msgid "La publicación lleva una encuesta"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1502
+#: app/ui/mf_rss_handlers.py:1506
 msgid ""
 "La publicación tenía archivos adjuntos: no se recuperan, habría que "
 "adjuntarlos de nuevo."
@@ -22334,7 +22454,7 @@ msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:509
 #: app/ui/mf_telegram_handlers.py:392 app/ui/mf_telegram_handlers.py:622
-#: app/ui/telegram_conv_mensajes.py:880
+#: app/ui/telegram_conv_mensajes.py:899
 msgid "Leer en voz alta (TTS)"
 msgstr ""
 
@@ -22388,7 +22508,7 @@ msgstr ""
 msgid "Leer y editar las páginas wiki de un subreddit"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1251
+#: app/ui/telegram_conv_mensajes.py:1223
 msgid "Leyendo encuesta..."
 msgstr ""
 
@@ -22396,7 +22516,7 @@ msgstr ""
 msgid "Leyendo la copia {0} de {1} del archivo..."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1375
+#: app/ui/telegram_conv_mensajes.py:1347
 msgid "Leyendo lista de tareas..."
 msgstr ""
 
@@ -22481,8 +22601,8 @@ msgstr ""
 msgid "Lista"
 msgstr ""
 
-#: app/ui/mastodon_lists.py:117 app/ui/mf_acciones_toot.py:1336
-#: app/ui/telegram_conv_mensajes.py:1438 app/ui/x_gestion_ui.py:214
+#: app/ui/mastodon_lists.py:117 app/ui/mf_acciones_toot.py:1340
+#: app/ui/telegram_conv_mensajes.py:1410 app/ui/x_gestion_ui.py:214
 msgid "Lista actualizada."
 msgstr ""
 
@@ -22683,7 +22803,7 @@ msgid "Lista de listas de Mastodon"
 msgstr ""
 
 #: app/ui/irc_conversation.py:94 app/ui/matrix_conversation.py:60
-#: app/ui/telegram_conversation.py:226 app/ui/xmpp_conversation.py:70
+#: app/ui/telegram_conversation.py:228 app/ui/xmpp_conversation.py:70
 msgid "Lista de mensajes de la conversación"
 msgstr ""
 
@@ -22777,11 +22897,11 @@ msgstr ""
 
 #: app/ui/telegram_conv_extras.py:130 app/ui/telegram_conv_extras.py:138
 #: app/ui/telegram_conv_extras.py:148 app/ui/telegram_conv_mensajes.py:225
-#: app/ui/telegram_conv_mensajes.py:1391 app/ui/telegram_conv_mensajes.py:1394
+#: app/ui/telegram_conv_mensajes.py:1363 app/ui/telegram_conv_mensajes.py:1366
 msgid "Lista de tareas"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:860
+#: app/ui/telegram_conv_mensajes.py:879
 msgid "Lista de tareas (marcar/añadir)..."
 msgstr ""
 
@@ -23157,6 +23277,10 @@ msgstr ""
 msgid "Marca al menos un adjunto."
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:320
+msgid "Marca al menos un chat de destino con la barra espaciadora."
+msgstr ""
+
 #: app/ui/crosspost_dialog.py:178
 msgid "Marca al menos una cuenta."
 msgstr ""
@@ -23165,7 +23289,7 @@ msgstr ""
 msgid "Marca de mensajes no leídos"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:762
+#: app/ui/telegram_conv_mensajes.py:769
 msgid "Marca de mensajes no leídos."
 msgstr ""
 
@@ -23177,7 +23301,7 @@ msgstr ""
 msgid "Marca las etiquetas de {0}:"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1407
+#: app/ui/telegram_conv_mensajes.py:1379
 msgid "Marca las que estén hechas:"
 msgstr ""
 
@@ -23185,7 +23309,7 @@ msgstr ""
 msgid "Marca las solicitudes a gestionar (Espacio marca y desmarca):"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1404
+#: app/ui/telegram_conv_mensajes.py:1376
 msgid "Marca las tareas hechas"
 msgstr ""
 
@@ -23226,6 +23350,10 @@ msgstr ""
 msgid "Marcada como vista."
 msgstr ""
 
+#: app/ui/telegram_conv_compartir.py:74
+msgid "Marcado"
+msgstr ""
+
 #: app/ui/reddit_controller_acciones.py:293
 msgid "Marcado como +18."
 msgstr ""
@@ -23254,6 +23382,10 @@ msgstr ""
 
 #: app/ui/reddit_controller_acciones.py:298
 msgid "Marcado como spoiler."
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:24
+msgid "Marcado: "
 msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:732 app/ui/x_hilos.py:222
@@ -23406,6 +23538,10 @@ msgid ""
 "usa el menú contextual."
 msgstr ""
 
+#: app/ui/telegram_conv_mensajes.py:860
+msgid "Marcar para compartir"
+msgstr ""
+
 #: app/ui/rss_reglas_ui.py:284
 msgid "Marcar para leer más tarde"
 msgstr ""
@@ -23422,7 +23558,7 @@ msgstr ""
 msgid "Marcar spoiler"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1390
+#: app/ui/telegram_conv_mensajes.py:1362
 msgid "Marcar tareas como hechas/no hechas..."
 msgstr ""
 
@@ -23723,12 +23859,12 @@ msgstr ""
 msgid "Mensaje añadido."
 msgstr ""
 
-#: app/ui/matrix_conversation.py:998 app/ui/telegram_conv_mensajes.py:1056
+#: app/ui/matrix_conversation.py:998 app/ui/telegram_conv_mensajes.py:1075
 #: app/ui/x_dialogs.py:431
 msgid "Mensaje borrado."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1235 app/ui/xmpp_conversation.py:1051
+#: app/ui/xmpp_conversation.py:1051
 msgid "Mensaje copiado."
 msgstr ""
 
@@ -23790,7 +23926,7 @@ msgstr ""
 msgid "Mensaje del aviso:"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1192
+#: app/ui/telegram_conv_mensajes.py:1189
 msgid "Mensaje desfijado."
 msgstr ""
 
@@ -23803,7 +23939,7 @@ msgstr ""
 #: app/ui/mastodon_perfil_dialogs.py:546 app/ui/matrix_admin_dialogs.py:122
 #: app/ui/matrix_views.py:601 app/ui/mf_acciones_toot.py:541
 #: app/ui/mf_app_despacho.py:113 app/ui/mf_bandeja.py:720
-#: app/ui/mf_media_servicio.py:1074 app/ui/mf_rss_handlers.py:1581
+#: app/ui/mf_media_servicio.py:1074 app/ui/mf_rss_handlers.py:1585
 #: app/ui/mf_telegram_chats.py:538 app/ui/mf_telegram_chats.py:365
 msgid "Mensaje directo"
 msgstr ""
@@ -23833,7 +23969,7 @@ msgstr ""
 msgid "Mensaje directo recibido"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1037
+#: app/ui/telegram_conv_mensajes.py:1056
 msgid "Mensaje editado."
 msgstr ""
 
@@ -23856,7 +23992,7 @@ msgstr ""
 msgid "Mensaje fijado"
 msgstr ""
 
-#: app/ui/matrix_conversation.py:1043 app/ui/telegram_conv_mensajes.py:1192
+#: app/ui/matrix_conversation.py:1043 app/ui/telegram_conv_mensajes.py:1189
 msgid "Mensaje fijado."
 msgstr ""
 
@@ -23932,7 +24068,7 @@ msgid "Mensajes"
 msgstr ""
 
 #: app/ui/irc_conversation.py:91 app/ui/matrix_conversation.py:57
-#: app/ui/telegram_conversation.py:216 app/ui/xmpp_conversation.py:67
+#: app/ui/telegram_conversation.py:218 app/ui/xmpp_conversation.py:67
 #: app/ui/x_dialogs.py:284
 msgid "Mensajes (los más recientes al final):"
 msgstr ""
@@ -24020,7 +24156,7 @@ msgstr ""
 msgid "Mensajes fijados de {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:982
+#: app/ui/mf_telegram_handlers.py:982 app/ui/telegram_compartir_dialog.py:55
 msgid "Mensajes guardados"
 msgstr ""
 
@@ -24273,11 +24409,11 @@ msgid ""
 "Minimo 20 segundos. Cuanto mas bajo, antes se entera, pero mas consulta."
 msgstr ""
 
-#: app/ui/telegram_conv_extras.py:50
+#: app/ui/telegram_compartir_dialog.py:203 app/ui/telegram_conv_extras.py:50
 msgid "Minuto"
 msgstr ""
 
-#: app/ui/telegram_conv_extras.py:49
+#: app/ui/telegram_compartir_dialog.py:202 app/ui/telegram_conv_extras.py:49
 msgid "Minuto:"
 msgstr ""
 
@@ -24579,6 +24715,7 @@ msgstr ""
 
 #: app/ui/bluesky_dialogs_moderacion.py:29
 #: app/ui/reddit_controller_acciones.py:232
+#: app/ui/telegram_compartir_dialog.py:144
 msgid "Mostrar"
 msgstr ""
 
@@ -25090,7 +25227,7 @@ msgstr ""
 msgid "Más acciones..."
 msgstr ""
 
-#: app/ui/telegram_conversation.py:332
+#: app/ui/telegram_conversation.py:334
 msgid "Más acciones: encuesta, ubicación, programar, bloquear..."
 msgstr ""
 
@@ -25284,7 +25421,7 @@ msgstr ""
 msgid "Nadie ha citado esta publicación todavía."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1169
+#: app/ui/telegram_conv_mensajes.py:1166
 msgid "Nadie ha reaccionado, o no se puede ver quién."
 msgstr ""
 
@@ -25341,6 +25478,15 @@ msgstr ""
 
 #: app/ui/irc_conversation.py:388
 msgid "Ningún apodo empieza por {0}."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:260
+#: app/ui/telegram_compartir_dialog.py:153
+msgid "Ningún chat elegido."
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:87
+msgid "Ningún mensaje marcado."
 msgstr ""
 
 #: app/ui/telegram_conv_mensajes.py:192
@@ -25483,7 +25629,7 @@ msgstr ""
 msgid "No disponible"
 msgstr ""
 
-#: app/services/rss/rss_parseo.py:1058
+#: app/services/rss/rss_parseo.py:1048
 msgid "No encontrado (404): se comprobará una vez al día."
 msgstr ""
 
@@ -25580,7 +25726,6 @@ msgstr ""
 msgid "No hay categorías."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1102 app/ui/telegram_conv_mensajes.py:1222
 #: app/ui/telegram_dialogs_perfil.py:667
 msgid "No hay chats disponibles."
 msgstr ""
@@ -25641,7 +25786,7 @@ msgstr ""
 msgid "No hay elementos de este tipo."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1854
+#: app/ui/mf_acciones_toot.py:1858
 msgid "No hay elementos previos."
 msgstr ""
 
@@ -25763,7 +25908,7 @@ msgstr ""
 msgid "No hay más dominios."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1838
+#: app/ui/mf_acciones_toot.py:1842
 msgid "No hay más elementos anteriores que cargar."
 msgstr ""
 
@@ -25820,7 +25965,7 @@ msgid "No hay ninguna cuenta RSS."
 msgstr ""
 
 #: app/ui/mf_reproductor_media.py:191 app/ui/mf_reproductor_media.py:200
-#: app/ui/mf_rss_handlers.py:1231
+#: app/ui/mf_rss_handlers.py:1235
 msgid "No hay ninguna cuenta activa de Mastodon seleccionada."
 msgstr ""
 
@@ -25905,7 +26050,7 @@ msgstr ""
 msgid "No hay sugerencias."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1401
+#: app/ui/telegram_conv_mensajes.py:1373
 msgid "No hay tareas."
 msgstr ""
 
@@ -25950,7 +26095,7 @@ msgstr ""
 msgid "No hay texto que leer."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1110
+#: app/ui/mf_rss_handlers.py:1114
 msgid "No hay texto que mostrar para este elemento."
 msgstr ""
 
@@ -26013,7 +26158,7 @@ msgstr ""
 #: app/ui/mastodon_compose.py:394 app/ui/mastodon_perfil_dialogs.py:545
 #: app/ui/mf_acciones_toot.py:540 app/ui/mf_app_despacho.py:112
 #: app/ui/mf_bandeja.py:719 app/ui/mf_media_servicio.py:1073
-#: app/ui/mf_rss_handlers.py:1580 app/ui/mf_telegram_chats.py:536
+#: app/ui/mf_rss_handlers.py:1584 app/ui/mf_telegram_chats.py:536
 #: app/ui/mf_telegram_chats.py:363 app/ui/peertube_biblioteca_dialogs.py:14
 #: app/ui/prefs_servicios.py:73 app/ui/prefs_servicios.py:764
 #: app/ui/thread_editor.py:168
@@ -26193,7 +26338,7 @@ msgstr ""
 msgid "No se encontró: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1511
+#: app/ui/telegram_conv_mensajes.py:1483
 msgid "No se encuentra el archivo."
 msgstr ""
 
@@ -26323,7 +26468,7 @@ msgid "No se pudieron cargar los canales: {0}"
 msgstr ""
 
 #: app/ui/peertube_comment_dialog.py:86 app/ui/reddit_thread_viewer.py:119
-#: app/ui/telegram_conv_mensajes.py:1449
+#: app/ui/telegram_conv_mensajes.py:1421
 msgid "No se pudieron cargar los comentarios: {0}"
 msgstr ""
 
@@ -26523,7 +26668,7 @@ msgstr ""
 msgid "No se pudieron pedir: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1151
+#: app/ui/telegram_conv_mensajes.py:1148
 msgid "No se pudieron quitar las reacciones: {0}"
 msgstr ""
 
@@ -26563,12 +26708,12 @@ msgstr ""
 msgid "No se pudo abrir Mensajes guardados: {0}"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:946
+#: app/ui/mf_rss_handlers.py:948
 msgid "No se pudo abrir el actualizador: {0}"
 msgstr ""
 
 #: app/ui/migration_dialog.py:127 app/ui/migration_dialog.py:128
-#: app/ui/telegram_conv_mensajes.py:937 app/ui/telegram_dialogs_admin.py:1204
+#: app/ui/telegram_conv_mensajes.py:956 app/ui/telegram_dialogs_admin.py:1204
 msgid "No se pudo abrir el archivo: {0}"
 msgstr ""
 
@@ -26623,7 +26768,7 @@ msgstr ""
 msgid "No se pudo abrir la búsqueda: {0}"
 msgstr ""
 
-#: app/ui/log_viewer.py:387 app/ui/telegram_conv_mensajes.py:1519
+#: app/ui/log_viewer.py:387 app/ui/telegram_conv_mensajes.py:1491
 #: app/ui/telegram_dialogs_admin.py:1218
 msgid "No se pudo abrir la carpeta: {0}"
 msgstr ""
@@ -26678,7 +26823,7 @@ msgstr ""
 msgid "No se pudo actualizar PeerTube: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1436
+#: app/ui/telegram_conv_mensajes.py:1408
 msgid "No se pudo actualizar la lista: {0}"
 msgstr ""
 
@@ -26746,14 +26891,14 @@ msgstr ""
 msgid "No se pudo borrar el enlace: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:984 app/ui/telegram_dialogs_admin.py:1231
+#: app/ui/telegram_conv_mensajes.py:1003 app/ui/telegram_dialogs_admin.py:1231
 msgid "No se pudo borrar la descarga: {0}"
 msgstr ""
 
 #: app/ui/mastodon_colecciones_ui.py:366 app/ui/matrix_admin_dialogs.py:636
 #: app/ui/matrix_admin_dialogs.py:868 app/ui/matrix_conversation.py:998
-#: app/ui/matrix_dialogs.py:763 app/ui/mf_rss_handlers.py:1466
-#: app/ui/mf_rss_handlers.py:1492 app/ui/telegram_dialogs_admin.py:1252
+#: app/ui/matrix_dialogs.py:763 app/ui/mf_rss_handlers.py:1470
+#: app/ui/mf_rss_handlers.py:1496 app/ui/telegram_dialogs_admin.py:1252
 #: app/ui/telegram_dialogs_perfil.py:533 app/ui/telegram_dialogs_perfil.py:891
 #: app/ui/wsocial_controller_acciones.py:250
 msgid "No se pudo borrar: {0}"
@@ -26810,7 +26955,7 @@ msgstr ""
 msgid "No se pudo cambiar la confianza: {0}"
 msgstr ""
 
-#: app/ui/bluesky_controller_acciones.py:906 app/ui/mf_rss_handlers.py:1556
+#: app/ui/bluesky_controller_acciones.py:906 app/ui/mf_rss_handlers.py:1560
 msgid "No se pudo cambiar la publicación fijada: {0}"
 msgstr ""
 
@@ -26852,7 +26997,7 @@ msgstr ""
 msgid "No se pudo cargar el registro: {0}"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1410
+#: app/ui/mf_rss_handlers.py:1414
 msgid "No se pudo cargar el toot para editar: {0}"
 msgstr ""
 
@@ -26912,7 +27057,15 @@ msgstr ""
 msgid "No se pudo compartir el contacto: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1325
+#: app/ui/telegram_conv_compartir.py:163
+msgid "No se pudo compartir en ningún chat:"
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:140
+msgid "No se pudo compartir: {0}"
+msgstr ""
+
+#: app/ui/telegram_conv_mensajes.py:1297
 msgid "No se pudo completar la acción de la encuesta: {0}"
 msgstr ""
 
@@ -26968,11 +27121,11 @@ msgstr ""
 msgid "No se pudo comprobar la dirección."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:891
+#: app/ui/mf_rss_handlers.py:893
 msgid "No se pudo comprobar si hay actualizaciones. Revisa tu conexión."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:888
+#: app/ui/mf_rss_handlers.py:890
 msgid "No se pudo comprobar si hay actualizaciones: {0}"
 msgstr ""
 
@@ -27016,14 +27169,14 @@ msgstr ""
 
 #: app/ui/irc_dialogs.py:197 app/ui/matrix_admin_dialogs.py:283
 #: app/ui/matrix_admin_dialogs.py:548 app/ui/telegram_bot_dialogs.py:305
-#: app/ui/telegram_conv_mensajes.py:1166
+#: app/ui/telegram_conv_mensajes.py:1163
 #: app/ui/wsocial_controller_social.py:167
 #: app/ui/wsocial_controller_social.py:473
 #: app/ui/wsocial_controller_social.py:542 app/ui/xmpp_views.py:649
 msgid "No se pudo consultar: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1212
+#: app/ui/telegram_conv_mensajes.py:1209
 msgid "No se pudo copiar el texto."
 msgstr ""
 
@@ -27137,7 +27290,7 @@ msgstr ""
 msgid "No se pudo describir la imagen: {0}"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1370
+#: app/ui/mf_rss_handlers.py:1374
 msgid "No se pudo deshacer el impulso: {0}"
 msgstr ""
 
@@ -27325,7 +27478,7 @@ msgstr ""
 msgid "No se pudo identificar el tema de la tendencia."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1522
+#: app/ui/mf_rss_handlers.py:1526
 msgid "No se pudo identificar la cuenta."
 msgstr ""
 
@@ -27346,11 +27499,11 @@ msgstr ""
 msgid "No se pudo impulsar: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:950
+#: app/ui/telegram_conv_mensajes.py:969
 msgid "No se pudo iniciar el streaming: {0}"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:970
+#: app/ui/mf_rss_handlers.py:972
 msgid "No se pudo iniciar la actualización. Inténtalo de nuevo."
 msgstr ""
 
@@ -27568,10 +27721,6 @@ msgstr ""
 msgid "No se pudo reemplazar: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1112
-msgid "No se pudo reenviar el álbum: {0}"
-msgstr ""
-
 #: app/ui/telegram_conv_extras.py:351 app/ui/xmpp_conversation.py:659
 msgid "No se pudo reenviar: {0}"
 msgstr ""
@@ -27602,7 +27751,7 @@ msgstr ""
 msgid "No se pudo repostear: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:643 app/ui/telegram_dialogs_perfil.py:1444
+#: app/ui/telegram_conv_mensajes.py:650 app/ui/telegram_dialogs_perfil.py:1444
 msgid "No se pudo reproducir el audio."
 msgstr ""
 
@@ -27702,7 +27851,7 @@ msgid "No se pudo votar."
 msgstr ""
 
 #: app/ui/mastodon_lists.py:401 app/ui/matrix_conversation.py:802
-#: app/ui/mf_publicacion.py:72 app/ui/telegram_conv_mensajes.py:1339
+#: app/ui/mf_publicacion.py:72 app/ui/telegram_conv_mensajes.py:1311
 #: app/ui/x_gestion_ui.py:62
 msgid "No se pudo votar: {0}"
 msgstr ""
@@ -27734,7 +27883,7 @@ msgstr ""
 #: app/ui/mf_xmpp_admin.py:61 app/ui/mf_xmpp_handlers.py:244
 #: app/ui/mf_xmpp_handlers.py:273 app/ui/mf_xmpp_handlers.py:298
 #: app/ui/telegram_busqueda.py:327 app/ui/telegram_conv_acciones.py:697
-#: app/ui/telegram_conv_acciones.py:735 app/ui/telegram_conv_mensajes.py:1367
+#: app/ui/telegram_conv_acciones.py:735 app/ui/telegram_conv_mensajes.py:1339
 #: app/ui/telegram_dialogs_perfil.py:871
 #: app/ui/wsocial_controller_acciones.py:201
 #: app/ui/wsocial_controller_social.py:71
@@ -27759,7 +27908,7 @@ msgstr ""
 msgid "No se puede citar un mensaje directo."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1015
+#: app/ui/telegram_conv_mensajes.py:1034
 msgid "No se puede identificar al autor de este mensaje."
 msgstr ""
 
@@ -28444,7 +28593,7 @@ msgstr ""
 msgid "Novedad: nueva publicación, artículo o mensaje"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1163
+#: app/ui/mf_acciones_toot.py:1167
 msgid ""
 "Novedades de SocialRSS {0}:\n"
 "\n"
@@ -28457,7 +28606,7 @@ msgid ""
 "Consulta el manual (F1) para más detalles."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1173 app/ui/mf_acciones_toot.py:1157
+#: app/ui/mf_acciones_toot.py:1177 app/ui/mf_acciones_toot.py:1161
 #: app/ui/mf_ia_dialogos.py:681
 msgid "Novedades de esta versión"
 msgstr ""
@@ -29086,7 +29235,7 @@ msgstr ""
 msgid "Opción"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1329
+#: app/ui/telegram_conv_mensajes.py:1301
 msgid "Opción añadida."
 msgstr ""
 
@@ -29098,7 +29247,7 @@ msgstr ""
 msgid "Opción múltiple"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1330
+#: app/ui/telegram_conv_mensajes.py:1302
 msgid "Opción quitada."
 msgstr ""
 
@@ -29541,7 +29690,7 @@ msgid "Pausado"
 msgstr ""
 
 #: app/ui/matrix_conversation.py:355 app/ui/mf_reproductor_media.py:824
-#: app/ui/telegram_conv_mensajes.py:621 app/ui/xmpp_conversation.py:717
+#: app/ui/telegram_conv_mensajes.py:628 app/ui/xmpp_conversation.py:717
 #: app/ui/player/player_dialog.py:192 app/ui/player/player_dialog.py:446
 msgid "Pausado."
 msgstr ""
@@ -29812,6 +29961,7 @@ msgstr ""
 msgid "Personalizar las teclas de la interfaz &invisible..."
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:39
 #: app/ui/telegram_dialogs_perfil.py:904
 msgid "Personas"
 msgstr ""
@@ -29876,7 +30026,7 @@ msgstr ""
 msgid "Pie de la historia editado."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1091
+#: app/ui/telegram_conv_mensajes.py:1110
 msgid "Pie editado."
 msgstr ""
 
@@ -30051,7 +30201,7 @@ msgid ""
 "chocar con la escritura ni con los atajos normales de la aplicación."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:928
+#: app/ui/telegram_conv_mensajes.py:947
 msgid ""
 "Por seguridad, «{0}» no se abre desde la aplicación (es un archivo "
 "ejecutable o de script). Se abrirá su carpeta para que decidas qué hacer."
@@ -30468,7 +30618,7 @@ msgstr ""
 #: app/ui/mastodon_perfil_dialogs.py:546 app/ui/mf_acciones_toot.py:541
 #: app/ui/mf_app_despacho.py:69 app/ui/mf_app_despacho.py:113
 #: app/ui/mf_app_despacho.py:440 app/ui/mf_bandeja.py:720
-#: app/ui/mf_rss_handlers.py:1581 app/ui/mf_telegram_chats.py:537
+#: app/ui/mf_rss_handlers.py:1585 app/ui/mf_telegram_chats.py:537
 #: app/ui/mf_telegram_chats.py:364 app/ui/peertube_biblioteca_dialogs.py:14
 #: app/ui/prefs_servicios.py:764 app/ui/reddit_moderacion_dialogs.py:631
 msgid "Privado"
@@ -30490,6 +30640,10 @@ msgstr ""
 msgid "Privados"
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:190
+msgid "Pro&gramar el envío"
+msgstr ""
+
 #: app/ui/rss_reglas_ui.py:212
 msgid "Probando las reglas..."
 msgstr ""
@@ -30498,7 +30652,7 @@ msgstr ""
 msgid "Probar la sesión de suscripción"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1358
+#: app/ui/telegram_conv_mensajes.py:1330
 msgid "Procesando GIF..."
 msgstr ""
 
@@ -30865,7 +31019,7 @@ msgstr ""
 msgid "Publicación añadida al filtro."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1468 app/ui/wsocial_controller_acciones.py:247
+#: app/ui/mf_rss_handlers.py:1472 app/ui/wsocial_controller_acciones.py:247
 msgid "Publicación borrada."
 msgstr ""
 
@@ -30917,7 +31071,7 @@ msgstr ""
 msgid "Publicación enviada."
 msgstr ""
 
-#: app/ui/bluesky_controller_acciones.py:908 app/ui/mf_rss_handlers.py:1558
+#: app/ui/bluesky_controller_acciones.py:908 app/ui/mf_rss_handlers.py:1562
 msgid "Publicación fijada en tu perfil."
 msgstr ""
 
@@ -30947,7 +31101,7 @@ msgstr ""
 msgid "Publicación programada."
 msgstr ""
 
-#: app/ui/bluesky_controller_acciones.py:910 app/ui/mf_rss_handlers.py:1560
+#: app/ui/bluesky_controller_acciones.py:910 app/ui/mf_rss_handlers.py:1564
 msgid "Publicación quitada de tu perfil."
 msgstr ""
 
@@ -31266,7 +31420,7 @@ msgstr ""
 #: app/ui/mastodon_compose.py:394 app/ui/mastodon_perfil_dialogs.py:545
 #: app/ui/mf_acciones_toot.py:540 app/ui/mf_app_despacho.py:112
 #: app/ui/mf_bandeja.py:719 app/ui/mf_media_servicio.py:1073
-#: app/ui/mf_rss_handlers.py:1580 app/ui/mf_telegram_chats.py:535
+#: app/ui/mf_rss_handlers.py:1584 app/ui/mf_telegram_chats.py:535
 #: app/ui/mf_telegram_chats.py:362 app/ui/peertube_biblioteca_dialogs.py:14
 #: app/ui/prefs_servicios.py:72 app/ui/prefs_servicios.py:764
 #: app/ui/reddit_moderacion_dialogs.py:630 app/ui/thread_editor.py:168
@@ -31313,7 +31467,7 @@ msgstr ""
 msgid "Quitado de Leer más tarde."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1369
+#: app/ui/telegram_conv_mensajes.py:1341
 msgid "Quitado de Mis GIF."
 msgstr ""
 
@@ -31413,7 +31567,7 @@ msgstr ""
 msgid "Quitar de Leer más tarde"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:866
+#: app/ui/telegram_conv_mensajes.py:885
 msgid "Quitar de Mis GIF"
 msgstr ""
 
@@ -31578,7 +31732,7 @@ msgstr ""
 msgid "Quitar moderador/a"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1299
+#: app/ui/telegram_conv_mensajes.py:1271
 msgid "Quitar opción"
 msgstr ""
 
@@ -31594,7 +31748,7 @@ msgstr ""
 msgid "Quitar publicación fijada de tu perfil"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1141
+#: app/ui/telegram_conv_mensajes.py:1138
 msgid "Quitar reacciones"
 msgstr ""
 
@@ -31647,7 +31801,7 @@ msgstr ""
 msgid "Quitar todas las marcas"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:823
+#: app/ui/telegram_conv_mensajes.py:830
 msgid "Quitar todas las reacciones (admin)"
 msgstr ""
 
@@ -31655,7 +31809,7 @@ msgstr ""
 msgid "Quitar tu estado de ausente"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1275
+#: app/ui/telegram_conv_mensajes.py:1247
 msgid "Quitar una opción..."
 msgstr ""
 
@@ -31728,7 +31882,7 @@ msgstr ""
 msgid "Quién puede responder:"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1179
+#: app/ui/telegram_conv_mensajes.py:1176
 msgid "Quién reaccionó"
 msgstr ""
 
@@ -31847,7 +32001,7 @@ msgid "Reabrir el grupo"
 msgstr ""
 
 #: app/ui/bluesky_dialogs.py:654 app/ui/matrix_conversation.py:962
-#: app/ui/matrix_conversation.py:970 app/ui/telegram_conv_mensajes.py:1061
+#: app/ui/matrix_conversation.py:970 app/ui/telegram_conv_mensajes.py:1080
 #: app/ui/wsocial_dialogs.py:836 app/ui/xmpp_conversation.py:992
 #: app/ui/x_dialogs.py:414
 msgid "Reaccionar"
@@ -31862,7 +32016,7 @@ msgid "Reaccionar al anuncio"
 msgstr ""
 
 #: app/ui/bluesky_dialogs.py:644 app/ui/matrix_conversation.py:675
-#: app/ui/telegram_conv_mensajes.py:813 app/ui/wsocial_dialogs.py:822
+#: app/ui/telegram_conv_mensajes.py:820 app/ui/wsocial_dialogs.py:822
 #: app/ui/xmpp_conversation.py:911
 msgid "Reaccionar..."
 msgstr ""
@@ -31871,7 +32025,7 @@ msgstr ""
 msgid "Reaccionar…"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1153
+#: app/ui/telegram_conv_mensajes.py:1150
 msgid "Reacciones quitadas."
 msgstr ""
 
@@ -31883,7 +32037,7 @@ msgstr ""
 msgid "Reacción añadida."
 msgstr ""
 
-#: app/ui/matrix_conversation.py:984 app/ui/telegram_conv_mensajes.py:1071
+#: app/ui/matrix_conversation.py:984 app/ui/telegram_conv_mensajes.py:1090
 #: app/ui/wsocial_dialogs.py:843 app/ui/x_dialogs.py:419
 msgid "Reacción enviada."
 msgstr ""
@@ -32123,7 +32277,7 @@ msgstr ""
 msgid "Reemplazando archivo de la historia..."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1126
+#: app/ui/telegram_conv_mensajes.py:1123
 msgid "Reemplazando archivo..."
 msgstr ""
 
@@ -32131,7 +32285,7 @@ msgstr ""
 msgid "Reemplazar"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:802
+#: app/ui/telegram_conv_mensajes.py:809
 msgid "Reemplazar archivo..."
 msgstr ""
 
@@ -32163,7 +32317,7 @@ msgstr ""
 msgid "Reenviando código a Telegram..."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:847
+#: app/ui/telegram_conv_mensajes.py:866
 msgid "Reenviar a Mensajes guardados"
 msgstr ""
 
@@ -32183,24 +32337,12 @@ msgstr ""
 msgid "Reenviar código por el siguiente método disponible"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1104
-msgid "Reenviar el álbum a:"
-msgstr ""
-
-#: app/ui/telegram_conv_mensajes.py:844
-msgid "Reenviar el álbum completo a otro chat..."
-msgstr ""
-
 #: app/ui/mastodon_reportar_dialog.py:37
 msgid "Reenviar la denuncia"
 msgstr ""
 
 #: app/ui/mastodon_reportar_dialog.py:36
 msgid "Reenviar también al servidor del autor (si es de otro servidor)"
-msgstr ""
-
-#: app/ui/telegram_conv_mensajes.py:1104
-msgid "Reenviar álbum"
 msgstr ""
 
 #: app/ui/telegram_mensaje_dialog.py:171
@@ -32742,7 +32884,7 @@ msgstr ""
 msgid "Reproduciendo audio."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:955
+#: app/ui/telegram_conv_mensajes.py:974
 msgid "Reproduciendo en streaming."
 msgstr ""
 
@@ -32752,13 +32894,13 @@ msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:962 app/ui/matrix_conversation.py:358
 #: app/ui/mf_media_servicio.py:694 app/ui/mf_reproductor_media.py:827
-#: app/ui/telegram_conv_mensajes.py:973 app/ui/telegram_conv_mensajes.py:624
+#: app/ui/telegram_conv_mensajes.py:992 app/ui/telegram_conv_mensajes.py:631
 #: app/ui/telegram_dialogs_admin.py:1295 app/ui/xmpp_conversation.py:720
 #: app/ui/player/player_dialog.py:195 app/ui/player/player_dialog.py:444
 msgid "Reproduciendo."
 msgstr ""
 
-#: app/ui/matrix_conversation.py:379 app/ui/telegram_conv_mensajes.py:654
+#: app/ui/matrix_conversation.py:379 app/ui/telegram_conv_mensajes.py:661
 #: app/ui/xmpp_conversation.py:744
 msgid "Reproduciendo. Pulse Espacio para pausar."
 msgstr ""
@@ -32770,7 +32912,7 @@ msgid "Reproduciendo: {0}"
 msgstr ""
 
 #: app/ui/peertube_controller_acciones.py:158
-#: app/ui/telegram_conv_mensajes.py:895
+#: app/ui/telegram_conv_mensajes.py:914
 msgid "Reproducir"
 msgstr ""
 
@@ -32827,7 +32969,7 @@ msgid ""
 "abierta (hilo)"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:912
+#: app/ui/telegram_conv_mensajes.py:931
 msgid "Reproducir en streaming (sin descargar)"
 msgstr ""
 
@@ -32945,7 +33087,7 @@ msgstr ""
 #: app/ui/reddit_controller_acciones.py:228
 #: app/ui/reddit_controller_acciones.py:515
 #: app/ui/reddit_controller_acciones.py:267
-#: app/ui/reddit_controller_social.py:60 app/ui/telegram_conv_mensajes.py:783
+#: app/ui/reddit_controller_social.py:60 app/ui/telegram_conv_mensajes.py:790
 #: app/ui/telegram_mensaje_dialog.py:408
 #: app/ui/wsocial_controller_acciones.py:479 app/ui/xmpp_conversation.py:968
 #: app/ui/x_controller.py:600 app/ui/x_controller.py:175 app/ui/x_hilos.py:185
@@ -33013,7 +33155,7 @@ msgstr ""
 msgid "Responder en hilo / ver el hilo..."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:789
+#: app/ui/telegram_conv_mensajes.py:796
 msgid "Responder en privado..."
 msgstr ""
 
@@ -33031,7 +33173,7 @@ msgid ""
 "directos)"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1048
+#: app/ui/mf_rss_handlers.py:1052
 msgid ""
 "Responder solo está disponible en Mastodon, Bluesky, X, Reddit y W Social."
 msgstr ""
@@ -33056,12 +33198,12 @@ msgstr ""
 msgid "Respondiendo a:"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1005
+#: app/ui/telegram_conv_mensajes.py:1024
 msgid "Respondiendo. Escriba su mensaje y pulse Ctrl+Enter."
 msgstr ""
 
 #: app/ui/bluesky_controller_carga.py:24 app/ui/bluesky_controller_carga.py:96
-#: app/ui/mf_acciones_toot.py:1646 app/ui/mf_app_despacho.py:250
+#: app/ui/mf_acciones_toot.py:1650 app/ui/mf_app_despacho.py:250
 #: app/ui/mf_telegram_chats.py:630 app/ui/notif_center_dialog.py:84
 #: app/ui/reddit_fase4_dialogs.py:220 app/ui/telegram_conv_mensajes.py:97
 #: app/ui/wsocial_controller_carga.py:220 app/ui/x_controller.py:368
@@ -33223,6 +33365,10 @@ msgstr ""
 msgid "Resultado"
 msgstr ""
 
+#: app/ui/telegram_conv_compartir.py:167
+msgid "Resultado de compartir"
+msgstr ""
+
 #: app/ui/rss_editar_feed.py:72
 msgid "Resultado de la comprobación de la dirección"
 msgstr ""
@@ -33256,7 +33402,7 @@ msgstr ""
 msgid "Resultados (elige para ver el perfil):"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1316
+#: app/ui/mf_acciones_toot.py:1320
 msgid "Resultados actualizados."
 msgstr ""
 
@@ -33344,7 +33490,7 @@ msgid "Resumir Entrada con IA"
 msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:507
-#: app/ui/telegram_conv_mensajes.py:878
+#: app/ui/telegram_conv_mensajes.py:897
 msgid "Resumir con IA"
 msgstr ""
 
@@ -33392,7 +33538,7 @@ msgstr ""
 msgid "Retirar mensaje"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1272
+#: app/ui/telegram_conv_mensajes.py:1244
 msgid "Retirar mi voto"
 msgstr ""
 
@@ -33827,6 +33973,10 @@ msgstr ""
 
 #: app/services/mastodon/mastodon_estado_cuenta.py:18
 msgid "Se ha mudado a @{0}: ya no publica aquí."
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:160
+msgid "Se ha {0} en {1} de {2} chats. No se pudo en:"
 msgstr ""
 
 #: app/ui/prefs_rss_articulo.py:213
@@ -34297,7 +34447,7 @@ msgstr ""
 msgid "Seleccione el enlace que desea abrir:"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1414
+#: app/ui/mf_acciones_toot.py:1418
 msgid "Seleccione primero una cuenta activa para actualizar."
 msgstr ""
 
@@ -34815,11 +34965,11 @@ msgstr ""
 msgid "Siguiente de la cola: {0}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:651
+#: app/ui/telegram_conv_mensajes.py:658
 msgid "Siguiente nota de voz de {0}."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:652
+#: app/ui/telegram_conv_mensajes.py:659
 msgid "Siguiente nota de voz."
 msgstr ""
 
@@ -35087,7 +35237,7 @@ msgstr ""
 msgid "Sin errores."
 msgstr ""
 
-#: app/services/rss/rss_podcast.py:237
+#: app/services/rss/rss_podcast.py:236
 msgid "Sin espacio: la carpeta de podcasts alcanzó el límite."
 msgstr ""
 
@@ -35149,7 +35299,7 @@ msgstr ""
 msgid "Sin más datos."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1201 app/ui/wsocial_controller_acciones.py:68
+#: app/ui/mf_acciones_toot.py:1205 app/ui/wsocial_controller_acciones.py:68
 msgid "Sin novedades."
 msgstr ""
 
@@ -35235,11 +35385,11 @@ msgid ""
 "{3} cambios enviados al servidor."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1391
+#: app/ui/mf_acciones_toot.py:1395
 msgid "Sincronizando chats de Telegram..."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1365
+#: app/ui/mf_acciones_toot.py:1369
 msgid "Sincronizando feeds de noticias..."
 msgstr ""
 
@@ -35307,7 +35457,7 @@ msgstr ""
 msgid "Sobra «{0}» en la combinación."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1088
+#: app/ui/mf_acciones_toot.py:1092
 msgid "SocialRSS"
 msgstr ""
 
@@ -35346,7 +35496,7 @@ msgid ""
 "Y además: una Bandeja de entrada que reúne, en una sola lista ordenada por tiempo, las publicaciones de las redes que elijas."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:793 app/ui/mf_acciones_toot.py:1023
+#: app/ui/mf_acciones_toot.py:793 app/ui/mf_acciones_toot.py:1027
 msgid "SocialRSS minimizado a la bandeja del sistema."
 msgstr ""
 
@@ -35527,6 +35677,11 @@ msgstr ""
 msgid "Solo con multimedia"
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:159
+#: app/ui/telegram_compartir_dialog.py:275
+msgid "Solo con un grupo con temas elegido"
+msgstr ""
+
 #: app/ui/telegram_dialogs_perfil.py:819
 msgid "Solo contactos"
 msgstr ""
@@ -35607,7 +35762,7 @@ msgstr ""
 msgid "Solo las cuentas que sigo"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1276
+#: app/ui/telegram_conv_mensajes.py:1248
 msgid "Solo leer la encuesta"
 msgstr ""
 
@@ -36140,7 +36295,7 @@ msgstr ""
 msgid "Tareas (una por línea, de 1 a 30):"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1422
+#: app/ui/telegram_conv_mensajes.py:1394
 msgid "Tareas nuevas (una por línea):"
 msgstr ""
 
@@ -36315,6 +36470,10 @@ msgid ""
 "código queda desactivado."
 msgstr ""
 
+#: app/services/telegram/telegram_compartir.py:61
+msgid "Telegram pide esperar {0} segundos antes de seguir enviando"
+msgstr ""
+
 #: app/ui/mf_app_despacho.py:511 app/ui/mf_app_despacho.py:512
 #: app/ui/xmpp_perfil_dialogs.py:17
 msgid "Teléfono"
@@ -36371,12 +36530,20 @@ msgstr ""
 msgid "Tema del canal (Aceptar para cambiarlo, si tienes permiso):"
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:160
+msgid "Tema del foro"
+msgstr ""
+
 #: app/ui/xmpp_views.py:488
 msgid "Tema del grupo"
 msgstr ""
 
 #: app/ui/xmpp_views.py:487
 msgid "Tema del grupo (déjalo vacío para quitarlo):"
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:294
+msgid "Tema general"
 msgstr ""
 
 #: app/ui/rss_buscar_feeds.py:38
@@ -36436,7 +36603,7 @@ msgstr ""
 msgid "Tendencias (elige una):"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1297
+#: app/ui/mf_acciones_toot.py:1301
 msgid "Tendencias actualizadas."
 msgstr ""
 
@@ -36637,7 +36804,7 @@ msgstr ""
 msgid "Texto de la novedad:"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1293
+#: app/ui/telegram_conv_mensajes.py:1265
 msgid "Texto de la nueva opción:"
 msgstr ""
 
@@ -36645,7 +36812,7 @@ msgstr ""
 msgid "Texto de la plantilla"
 msgstr ""
 
-#: app/ui/mastodon_lists.py:322 app/ui/mf_rss_handlers.py:1112
+#: app/ui/mastodon_lists.py:322 app/ui/mf_rss_handlers.py:1116
 #: app/ui/reddit_dialogs.py:107 app/ui/wsocial_dialogs.py:203
 msgid "Texto de la publicación"
 msgstr ""
@@ -36706,7 +36873,7 @@ msgstr ""
 msgid "Texto del mensaje a programar"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1210
+#: app/ui/telegram_conv_mensajes.py:1207
 msgid "Texto del mensaje copiado al portapapeles."
 msgstr ""
 
@@ -36736,6 +36903,10 @@ msgstr ""
 
 #: app/ui/mastodon_compose.py:370
 msgid "Texto principal de su publicación."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:185
+msgid "Texto propio que se envía en cada chat justo antes de lo compartido."
 msgstr ""
 
 #: app/ui/rss_lector_nav.py:154
@@ -37059,8 +37230,8 @@ msgstr ""
 #: app/ui/mastodon_admin_dialogs.py:522 app/ui/mastodon_admin_dialogs.py:532
 #: app/ui/mf_bandeja.py:41 app/ui/mf_telegram_handlers.py:1028
 #: app/ui/prefs_servicios.py:461 app/ui/search_dialog.py:57
-#: app/ui/telegram_conv_extras.py:216 app/ui/wsocial_dialogs.py:248
-#: app/ui/wsocial_dialogs.py:477
+#: app/ui/telegram_compartir_dialog.py:38 app/ui/telegram_conv_extras.py:216
+#: app/ui/wsocial_dialogs.py:248 app/ui/wsocial_dialogs.py:477
 msgid "Todos"
 msgstr ""
 
@@ -37212,7 +37383,7 @@ msgstr ""
 msgid "Toots resultantes del hilo:"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1262
+#: app/ui/telegram_conv_mensajes.py:1234
 msgid "Total de votos: {0}"
 msgstr ""
 
@@ -37323,7 +37494,7 @@ msgstr ""
 msgid "Traducir (Ctrl+T)"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:874
+#: app/ui/telegram_conv_mensajes.py:893
 msgid "Traducir (Telegram)"
 msgstr ""
 
@@ -37336,7 +37507,7 @@ msgid "Traducir artículo"
 msgstr ""
 
 #: app/ui/bluesky_controller_acciones.py:505
-#: app/ui/telegram_conv_mensajes.py:876
+#: app/ui/telegram_conv_mensajes.py:895
 msgid "Traducir con la app"
 msgstr ""
 
@@ -37464,7 +37635,7 @@ msgstr ""
 msgid "Tu apodo en esta red."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1468
+#: app/ui/telegram_conv_mensajes.py:1440
 msgid "Tu comentario:"
 msgstr ""
 
@@ -38044,7 +38215,7 @@ msgstr ""
 #: app/ui/reddit_moderacion_dialogs.py:436
 #: app/ui/reddit_moderacion_dialogs.py:278
 #: app/ui/reddit_moderacion_dialogs.py:489
-#: app/ui/telegram_conv_mensajes.py:1018 app/ui/telegram_dialogs_admin.py:899
+#: app/ui/telegram_conv_mensajes.py:1037 app/ui/telegram_dialogs_admin.py:899
 #: app/ui/telegram_dialogs_perfil.py:1194
 #: app/ui/telegram_mensaje_dialog.py:156
 #: app/ui/wsocial_controller_carga.py:463
@@ -38060,7 +38231,7 @@ msgstr ""
 msgid "Usuario (@usuario), teléfono o ID del contacto:"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1140
+#: app/ui/mf_rss_handlers.py:1144
 msgid "Usuario (acct, por ejemplo nombre@instancia):"
 msgstr ""
 
@@ -38137,7 +38308,7 @@ msgstr ""
 msgid "Usuario de Wallabag:"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1142 app/ui/x_cronologias.py:29
+#: app/ui/mf_rss_handlers.py:1146 app/ui/x_cronologias.py:29
 msgid "Usuario de X (con o sin @):"
 msgstr ""
 
@@ -38468,6 +38639,14 @@ msgid ""
 "contactos desaparecerán de tu lista. ¿Seguro?"
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:132
+msgid "Vas a compartir un mensaje de «{0}»."
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:134
+msgid "Vas a compartir {0} mensajes de «{1}»."
+msgstr ""
+
 #: app/ui/bluesky_controller_social.py:458
 msgid "Vas a expulsar a {0} del grupo. Continuar?"
 msgstr ""
@@ -38523,7 +38702,7 @@ msgstr ""
 msgid "Ventana de conversación de Matrix"
 msgstr ""
 
-#: app/ui/telegram_conversation.py:23
+#: app/ui/telegram_conversation.py:25
 msgid "Ventana de conversación de Telegram"
 msgstr ""
 
@@ -38570,7 +38749,7 @@ msgid "Ver comentarios"
 msgstr ""
 
 #: app/ui/peertube_controller_acciones.py:164
-#: app/ui/telegram_conv_mensajes.py:870
+#: app/ui/telegram_conv_mensajes.py:889
 msgid "Ver comentarios..."
 msgstr ""
 
@@ -38738,7 +38917,7 @@ msgstr ""
 msgid "Ver la conversación de este mensaje"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1070
+#: app/ui/mf_rss_handlers.py:1074
 msgid ""
 "Ver la conversación solo está disponible en Mastodon, Bluesky, X y Reddit."
 msgstr ""
@@ -38865,7 +39044,7 @@ msgstr ""
 msgid "Ver mensaje directo..."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:766 app/ui/telegram_mensaje_dialog.py:404
+#: app/ui/telegram_conv_mensajes.py:773 app/ui/telegram_mensaje_dialog.py:404
 msgid "Ver mensaje..."
 msgstr ""
 
@@ -38944,7 +39123,7 @@ msgstr ""
 msgid "Ver preferencias de notificación..."
 msgstr ""
 
-#: app/ui/telegram_conversation.py:296
+#: app/ui/telegram_conversation.py:298
 msgid "Ver propiedades, perfil y multimedia"
 msgstr ""
 
@@ -39012,7 +39191,7 @@ msgstr ""
 msgid "Ver quién le ha dado me gusta"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:818
+#: app/ui/telegram_conv_mensajes.py:825
 msgid "Ver quién reaccionó..."
 msgstr ""
 
@@ -39527,7 +39706,7 @@ msgstr ""
 msgid "Volver a cargar la conversación"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:901 app/ui/telegram_dialogs_admin.py:1169
+#: app/ui/telegram_conv_mensajes.py:920 app/ui/telegram_dialogs_admin.py:1169
 msgid "Volver a descargar"
 msgstr ""
 
@@ -39563,12 +39742,12 @@ msgstr ""
 msgid "Votando..."
 msgstr ""
 
-#: app/ui/matrix_conversation.py:788 app/ui/telegram_conv_mensajes.py:1306
-#: app/ui/telegram_conv_mensajes.py:1308
+#: app/ui/matrix_conversation.py:788 app/ui/telegram_conv_mensajes.py:1278
+#: app/ui/telegram_conv_mensajes.py:1280
 msgid "Votar"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:852
+#: app/ui/telegram_conv_mensajes.py:871
 msgid "Votar / ver encuesta..."
 msgstr ""
 
@@ -39586,7 +39765,7 @@ msgstr ""
 msgid "Votar positivo o quitar el voto del elemento enfocado"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1270
+#: app/ui/telegram_conv_mensajes.py:1242
 msgid "Votar..."
 msgstr ""
 
@@ -39632,7 +39811,7 @@ msgstr ""
 msgid "Voto positivo."
 msgstr ""
 
-#: app/ui/radio_dialog.py:488 app/ui/telegram_conv_mensajes.py:1341
+#: app/ui/radio_dialog.py:488 app/ui/telegram_conv_mensajes.py:1313
 msgid "Voto registrado."
 msgstr ""
 
@@ -39642,7 +39821,7 @@ msgstr ""
 
 #: app/ui/peertube_controller_social.py:47
 #: app/ui/reddit_controller_acciones.py:278
-#: app/ui/telegram_conv_mensajes.py:1328
+#: app/ui/telegram_conv_mensajes.py:1300
 msgid "Voto retirado."
 msgstr ""
 
@@ -39865,7 +40044,7 @@ msgstr ""
 msgid "XMPP (Jabber)"
 msgstr ""
 
-#: app/services/rss/rss_parseo.py:868
+#: app/services/rss/rss_parseo.py:865
 msgid "Y {0} alertas más en {1}."
 msgstr ""
 
@@ -40001,7 +40180,7 @@ msgstr ""
 msgid "Ya tienes la cronología de esa cuenta."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:896
+#: app/ui/mf_rss_handlers.py:898
 msgid "Ya tienes la última versión ({0})."
 msgstr ""
 
@@ -40246,7 +40425,7 @@ msgstr ""
 #: app/services/bluesky/bluesky_avanzado.py:437
 #: app/services/bluesky/bluesky_avanzado.py:602
 #: app/services/matrix/matrix_mensajes.py:451
-#: app/ui/telegram_conversation.py:206 app/ui/telegram_conversation.py:202
+#: app/ui/telegram_conversation.py:208 app/ui/telegram_conversation.py:204
 msgid "[Mensaje eliminado]"
 msgstr ""
 
@@ -40400,7 +40579,7 @@ msgstr ""
 msgid "activados"
 msgstr ""
 
-#: app/services/matrix/matrix_medios.py:358 app/ui/mf_rss_handlers.py:1438
+#: app/services/matrix/matrix_medios.py:358 app/ui/mf_rss_handlers.py:1442
 msgid "adjunto"
 msgstr ""
 
@@ -40410,6 +40589,10 @@ msgstr ""
 
 #: app/services/peertube/peertube_notificaciones.py:137
 msgid "alguien"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:52
+msgid "alguno de los mensajes ya no existe"
 msgstr ""
 
 #: app/services/rss/rss_foros.py:73
@@ -40493,6 +40676,10 @@ msgstr ""
 msgid "bloqueo"
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:30
+msgid "bot"
+msgstr ""
+
 #: app/ui/telegram_bot_dialogs.py:34
 msgid "botón"
 msgstr ""
@@ -40501,12 +40688,16 @@ msgstr ""
 msgid "cambió el tema a: {0}"
 msgstr ""
 
-#: app/ui/mf_telegram_handlers.py:893
+#: app/ui/mf_telegram_handlers.py:893 app/ui/telegram_compartir_dialog.py:31
 msgid "canal"
 msgstr ""
 
 #: app/ui/rss_reglas_ui.py:62
 msgid "combinación: {0}"
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:151
+msgid "compartido"
 msgstr ""
 
 #: app/ui/telegram_bot_dialogs.py:29
@@ -40537,7 +40728,8 @@ msgstr ""
 msgid "consulta inline en otro chat"
 msgstr ""
 
-#: app/ui/xmpp_dialogs.py:582 app/ui/xmpp_views.py:187
+#: app/ui/telegram_compartir_dialog.py:32 app/ui/xmpp_dialogs.py:582
+#: app/ui/xmpp_views.py:187
 msgid "contacto"
 msgstr ""
 
@@ -40655,6 +40847,14 @@ msgstr ""
 msgid "el canal"
 msgstr ""
 
+#: app/services/telegram/telegram_compartir.py:35
+msgid "el chat de origen tiene el contenido protegido y no permite reenviar"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:59
+msgid "el chat tiene modo lento; espera {0} segundos"
+msgstr ""
+
 #: app/ui/telegram_dialogs_admin.py:493
 msgid "el grupo"
 msgstr ""
@@ -40663,7 +40863,7 @@ msgstr ""
 msgid "el grupo/canal"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1367
+#: app/ui/telegram_conv_mensajes.py:1339
 msgid "el mensaje no es un GIF"
 msgstr ""
 
@@ -40677,6 +40877,10 @@ msgstr ""
 
 #: app/ui/telegram_dialogs_admin.py:492
 msgid "el supergrupo"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:53
+msgid "el tema del foro está cerrado"
 msgstr ""
 
 #: app/ui/telegram_bot_dialogs.py:33
@@ -40701,6 +40905,46 @@ msgstr ""
 
 #: app/ui/ui_helpers.py:113
 msgid "en el futuro"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:43
+msgid "en este chat no se permite enviar GIF"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:41
+msgid "en este chat no se permite enviar archivos"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:39
+msgid "en este chat no se permite enviar audios"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:44
+msgid "en este chat no se permite enviar encuestas"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:37
+msgid "en este chat no se permite enviar fotos"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:36
+msgid "en este chat no se permite enviar multimedia"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:40
+msgid "en este chat no se permite enviar notas de voz"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:42
+msgid "en este chat no se permite enviar stickers"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:45
+msgid "en este chat no se permite enviar texto"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:38
+msgid "en este chat no se permite enviar vídeos"
 msgstr ""
 
 #: app/ui/mf_media_servicio.py:1091
@@ -40735,8 +40979,20 @@ msgstr ""
 msgid "ese nivel"
 msgstr ""
 
+#: app/services/telegram/telegram_compartir.py:56
+msgid "esta persona solo recibe mensajes de usuarios Premium"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:47
+msgid "esta persona te ha bloqueado"
+msgstr ""
+
 #: app/ui/rss_views.py:504
 msgid "este artículo"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:55
+msgid "este chat ya tiene demasiados mensajes programados"
 msgstr ""
 
 #: app/ui/accessible_controls.py:76
@@ -40787,8 +41043,9 @@ msgstr ""
 msgid "filtro del servidor"
 msgstr ""
 
-#: app/ui/xmpp_dialogs.py:582 app/ui/xmpp_views.py:187
-#: app/ui/xmpp_views.py:191
+#: app/ui/telegram_compartir_dialog.py:30
+#: app/ui/telegram_compartir_dialog.py:31 app/ui/xmpp_dialogs.py:582
+#: app/ui/xmpp_views.py:187 app/ui/xmpp_views.py:191
 msgid "grupo"
 msgstr ""
 
@@ -40834,6 +41091,10 @@ msgstr ""
 
 #: app/ui/ui_helpers.py:120
 msgid "hace 1 minuto"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:46
+msgid "hace falta ser administrador de este chat"
 msgstr ""
 
 #: app/ui/ui_helpers.py:115
@@ -40886,6 +41147,10 @@ msgstr ""
 
 #: app/ui/mf_rss_importar.py:184
 msgid "la exportación de YouTube"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:54
+msgid "la fecha programada está demasiado lejos"
 msgstr ""
 
 #: app/ui/rss_lector_nav.py:113
@@ -40961,6 +41226,10 @@ msgstr ""
 msgid "ninguna"
 msgstr ""
 
+#: app/ui/telegram_conv_compartir.py:76
+msgid "ninguno marcado"
+msgstr ""
+
 #: app/services/matrix/matrix_producto.py:202
 msgid "nivel {0}"
 msgstr ""
@@ -41006,8 +41275,16 @@ msgstr ""
 msgid "no leídos"
 msgstr ""
 
+#: app/services/telegram/telegram_compartir.py:51
+msgid "no se encuentra el chat; ábrelo una vez y vuelve a intentarlo"
+msgstr ""
+
 #: app/ui/mf_media_servicio.py:940
 msgid "no te sigue"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:34
+msgid "no tienes permiso para escribir en este chat"
 msgstr ""
 
 #: app/ui/tgdrive_window.py:390
@@ -41055,8 +41332,16 @@ msgstr ""
 msgid "perfil de usuario"
 msgstr ""
 
+#: app/ui/telegram_compartir_dialog.py:30
+msgid "persona"
+msgstr ""
+
 #: app/ui/mastodon_compose_acciones.py:251
 msgid "personalizado"
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:151
+msgid "programado"
 msgstr ""
 
 #: app/services/bluesky/bluesky_moderacion.py:629
@@ -41248,12 +41533,20 @@ msgstr ""
 msgid "texto"
 msgstr ""
 
+#: app/services/telegram/telegram_compartir.py:48
+msgid "tienes bloqueada a esta persona"
+msgstr ""
+
 #: app/ui/reddit_fase3_dialogs.py:279
 msgid "todos"
 msgstr ""
 
 #: app/ui/telegram_conv_acciones.py:643
 msgid "todos los temas"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:49
+msgid "tu cuenta está restringida y no puede escribir en grupos públicos"
 msgstr ""
 
 #: app/ui/xmpp_views.py:613
@@ -41299,6 +41592,10 @@ msgstr ""
 
 #: app/services/ai/providers/openai_compatible_provider.py:42
 msgid "xAI (Grok)"
+msgstr ""
+
+#: app/services/telegram/telegram_compartir.py:50
+msgid "ya no tienes acceso a este chat"
 msgstr ""
 
 #: app/ui/mf_reproductor_media.py:395
@@ -41412,13 +41709,13 @@ msgstr ""
 msgid "{0} ({1}). Elige una cuenta para ver su perfil:"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1455
+#: app/ui/telegram_conv_mensajes.py:1427
 msgid ""
 "{0} ({1}):\n"
 "{2}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1176
+#: app/ui/telegram_conv_mensajes.py:1173
 msgid "{0} ({1}): {2}"
 msgstr ""
 
@@ -41552,6 +41849,10 @@ msgstr ""
 
 #: app/ui/mf_interfaz_invisible.py:731
 msgid "{0} chats de Telegram con mensajes"
+msgstr ""
+
+#: app/ui/telegram_compartir_dialog.py:264
+msgid "{0} chats elegidos."
 msgstr ""
 
 #: app/ui/mf_media_servicio.py:240
@@ -41723,6 +42024,14 @@ msgstr ""
 msgid "{0} emojis. Escribe para filtrar o baja a la lista."
 msgstr ""
 
+#: app/ui/telegram_conv_compartir.py:156
+msgid "{0} en {1} chats."
+msgstr ""
+
+#: app/ui/telegram_conv_compartir.py:154
+msgid "{0} en {1}."
+msgstr ""
+
 #: app/ui/log_viewer.py:315
 msgid "{0} entradas ({1} en total)."
 msgstr ""
@@ -41839,7 +42148,7 @@ msgstr ""
 msgid "{0} listas."
 msgstr ""
 
-#: app/ui/tgdrive_window.py:384
+#: app/ui/telegram_conv_compartir.py:77 app/ui/tgdrive_window.py:384
 msgid "{0} marcados"
 msgstr ""
 
@@ -41946,7 +42255,7 @@ msgstr ""
 msgid "{0} novedades."
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1199
+#: app/ui/mf_acciones_toot.py:1203
 msgid "{0} nuevos."
 msgstr ""
 
@@ -42130,7 +42439,7 @@ msgstr ""
 msgid "{0} tokens de registro:"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1867
+#: app/ui/mf_acciones_toot.py:1871
 msgid "{0} toots antiguos añadidos."
 msgstr ""
 
@@ -42214,7 +42523,7 @@ msgstr ""
 msgid "{0} ya no está silenciada."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1438
+#: app/ui/mf_rss_handlers.py:1442
 msgid "{0} ya publicado"
 msgstr ""
 
@@ -42481,6 +42790,7 @@ msgstr ""
 #: app/ui/mf_app_despacho.py:774 app/ui/mf_app_despacho.py:906
 #: app/ui/mf_ia_dialogos.py:325 app/ui/peertube_controller_notif.py:197
 #: app/ui/peertube_moderacion_dialogs.py:148
+#: app/ui/telegram_conv_compartir.py:158
 msgid "{0}: {1}"
 msgstr ""
 
@@ -42516,7 +42826,7 @@ msgstr ""
 msgid "{0}{1}"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1259
+#: app/ui/telegram_conv_mensajes.py:1231
 msgid "{0}{1} — {2} votos ({3}%)"
 msgstr ""
 
@@ -42532,7 +42842,7 @@ msgid ""
 "{bio}"
 msgstr ""
 
-#: app/ui/mf_acciones_toot.py:1575 app/ui/mf_acciones_toot.py:1654
+#: app/ui/mf_acciones_toot.py:1579 app/ui/mf_acciones_toot.py:1658
 #: app/ui/mf_app_despacho.py:264 app/ui/mf_telegram_chats.py:657
 msgid "{f} favoritos, {r} impulsos, {p} respuestas"
 msgstr ""
@@ -42740,7 +43050,7 @@ msgstr ""
 msgid "¿Borrar esta historia? No se puede deshacer."
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1482
+#: app/ui/mf_rss_handlers.py:1486
 msgid ""
 "¿Borrar esta publicación y volver a redactarla? Se elimina del servidor (sus"
 " respuestas, impulsos y favoritos se pierden) y el compositor se abrirá con "
@@ -42751,7 +43061,7 @@ msgstr ""
 msgid "¿Borrar esta publicación?"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1460
+#: app/ui/mf_rss_handlers.py:1464
 msgid "¿Borrar esta publicación? Esta acción no se puede deshacer."
 msgstr ""
 
@@ -42775,7 +43085,7 @@ msgstr ""
 msgid "¿Borrar este mensaje para ti?"
 msgstr ""
 
-#: app/ui/matrix_conversation.py:989 app/ui/telegram_conv_mensajes.py:1042
+#: app/ui/matrix_conversation.py:989 app/ui/telegram_conv_mensajes.py:1061
 msgid "¿Borrar este mensaje para todos?"
 msgstr ""
 
@@ -42915,7 +43225,7 @@ msgstr ""
 msgid "¿Cómo te sientes?"
 msgstr ""
 
-#: app/ui/mf_rss_handlers.py:1129
+#: app/ui/mf_rss_handlers.py:1133
 msgid "¿De qué usuario quieres ver las publicaciones?"
 msgstr ""
 
@@ -43044,7 +43354,7 @@ msgstr ""
 msgid "¿Es una expresión regular?"
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1459
+#: app/ui/telegram_conv_mensajes.py:1431
 msgid "¿Escribir un comentario?"
 msgstr ""
 
@@ -43181,7 +43491,7 @@ msgid ""
 " volverá a aparecer si llega un mensaje nuevo."
 msgstr ""
 
-#: app/ui/telegram_conv_mensajes.py:1139
+#: app/ui/telegram_conv_mensajes.py:1136
 msgid ""
 "¿Quitar todas las reacciones de este mensaje? Necesitas permisos de "
 "administración."
@@ -43490,10 +43800,6 @@ msgstr ""
 
 #: app/ui/telegram_conv_acciones.py:380
 msgid "Álbum enviado."
-msgstr ""
-
-#: app/ui/telegram_conv_mensajes.py:1113
-msgid "Álbum reenviado."
 msgstr ""
 
 #: app/ui/search_dialog.py:60

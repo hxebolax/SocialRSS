@@ -328,10 +328,9 @@ class _ParseoMixin:
             quiere_fulltext = bool(force_fulltext)
         _fulltext_restantes = 15  # máximo de extracciones de texto completo por actualización
 
-        # DEBUG, no INFO: con decenas de feeds sondeados cada pocos minutos, estas trazas rutinarias
-        # (inicio/304/fin sin novedades) llenaban el 90% del log de una sesión larga. Solo lo
-        # relevante (llegaron artículos nuevos, o hubo un error) sube a INFO/ERROR.
-        log.debug(f"Iniciando descarga de feed: {feed_title} ({url})")
+        # Sin traza de "inicio", "304", "mismo contenido" ni "sin novedades": con ~100 feeds cada
+        # pocos minutos eran 60.000 líneas al día incluso en DEBUG (log de 2026-11-03). Se registra
+        # solo lo que aporta: llegaron artículos, cambió el origen o hubo un error.
         nuevos_articulos = 0
 
         try:
@@ -361,7 +360,6 @@ class _ParseoMixin:
                         # el parseo (feedparser es lo caro y lo que satura el GIL en las ráfagas) y la
                         # poda. 0 artículos nuevos. Esto es lo que quita los tirones con muchos feeds.
                         self._registrar_exito_feed(feed_id, custom_interval, 0, status=304)
-                        log.debug(f"Feed sin cambios (304): {feed_title}")
                         return 0
                     # HASH del cuerpo: bastantes servidores no dan ETag/Last-Modified y
                     # devuelven 200 con el MISMO contenido; parsearlo cada vez era lo que
@@ -371,7 +369,6 @@ class _ParseoMixin:
                     _body_hash = _hlb.sha1(contenido or b"").hexdigest()
                     if _body_hash and _body_hash == body_hash_prev:
                         self._registrar_exito_feed(feed_id, custom_interval, 0, status=200)
-                        log.debug(f"Feed sin cambios (mismo contenido): {feed_title}")
                         return 0
                     # JSON FEED 1.0/1.1 (auditoría, prioridad B): si el cuerpo es JSON, se
                     # parsea directamente (feedparser no lo entiende); si no lo es, XML normal.
@@ -883,8 +880,6 @@ class _ParseoMixin:
             # de un feed, errores— se sigue registrando en su nivel. Las novedades ya se ven en la app.
             if nuevos_articulos:
                 log.debug(f"Actualización completada para {feed_title}. Nuevos artículos: {nuevos_articulos}")
-            else:
-                log.debug(f"Actualización completada para {feed_title}. Sin artículos nuevos.")
             try:
                 from app.core.plugins import plugin_manager, PluginHook
                 plugin_manager.dispatch(PluginHook.FEED_UPDATED, feed_id=feed_id, nuevos=nuevos_articulos)
@@ -936,16 +931,11 @@ class _ParseoMixin:
     def _trabajador_fulltext(self):
         """Vacía la cola de texto completo con calma (modo FONDO total, presupuesto por hora)."""
         import time as _t
-        # THREAD_MODE_BACKGROUND_BEGIN: además de la CPU, baja la prioridad de DISCO y
-        # memoria del hilo. readability (lxml) es intensivo en ambas; con la prioridad
-        # normal de E/S competía con la base de datos y el sistema justo durante la carga.
-        try:
-            import ctypes
-            k32 = ctypes.windll.kernel32
-            if not k32.SetThreadPriority(k32.GetCurrentThread(), 0x00010000):
-                _bajar_prioridad_hilo_actual()
-        except Exception:
-            _bajar_prioridad_hilo_actual()
+        # Prioridad "inferior a la normal", NO THREAD_MODE_BACKGROUND_BEGIN: el modo segundo plano
+        # deja el hilo casi sin CPU en cuanto el equipo está ocupado y, si en ese momento tiene el
+        # GIL (trafilatura es Python puro), el hilo de la interfaz espera a un hilo al que Windows
+        # apenas deja correr: inversión de prioridad y ventana "No responde" (log de 2026-11-03).
+        _bajar_prioridad_hilo_actual()
         try:
             while True:
                 with self._ft_lock:

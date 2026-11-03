@@ -9,6 +9,8 @@ import json
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Tuple, Callable
 from mastodon import Mastodon
+from app.services.mastodon.mastodon_rendimiento import aplicar as _aplicar_cache_tipos
+_aplicar_cache_tipos()
 from app.core.database import db
 from app.core.config_manager import config
 from app.core.security import security

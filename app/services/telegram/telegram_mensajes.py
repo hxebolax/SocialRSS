@@ -82,24 +82,6 @@ class _MensajesMixin:
             db.execute("DELETE FROM telegram_messages WHERE id = ?", (f"{account_id}:{chat_id}:{mid}",))
         return res
 
-    def reenviar_mensaje(self, account_id: int, from_chat_id: int, message_ids, to_chat_id: int):
-        """Reenvía mensajes de un chat a otro."""
-        if isinstance(message_ids, int):
-            message_ids = [message_ids]
-
-        async def _coro():
-            client = await self._cliente(account_id)
-            return await client.forward_messages(to_chat_id, from_chat_id, message_ids)
-        return self._run(_coro())
-
-    def reenviar_album(self, account_id: int, from_chat_id: int, message_id: int, to_chat_id: int):
-        """Reenvía un álbum completo (todos los adjuntos del mismo envío) como álbum
-        (forward_media_group). message_id: cualquiera de los mensajes del álbum."""
-        async def _coro():
-            client = await self._cliente(account_id)
-            return await client.forward_media_group(to_chat_id, from_chat_id, message_id)
-        return self._run(_coro())
-
     def enviar_reaccion(self, account_id: int, chat_id: int, message_id: int, emoji: str):
         """Añade (o cambia) una reacción a un mensaje. emoji vacío la quita."""
         async def _coro():
@@ -155,16 +137,6 @@ class _MensajesMixin:
             client = await self._cliente(account_id)
             return await client.unpin_all_chat_messages(chat_id)
         return self._run(_coro())
-
-    def copiar_mensaje(self, account_id: int, from_chat_id: int, message_id: int,
-                       to_chat_id: int, caption: Optional[str] = None):
-        """Copia un mensaje a otro chat SIN la etiqueta 'reenviado de' (copy_message)."""
-        async def _coro():
-            client = await self._cliente(account_id)
-            return await client.copy_message(to_chat_id, from_chat_id, message_id, caption=caption)
-        msg = self._run(_coro())
-        self._guardar_mensaje(account_id, msg)
-        return msg
 
     def marcar_menciones_leidas(self, account_id: int, chat_id: int):
         """Marca como leídas las menciones pendientes del chat (read_mentions)."""

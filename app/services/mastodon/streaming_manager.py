@@ -185,9 +185,13 @@ class MastodonStreamingManager:
             colgado = silencio > SIN_DATOS_MAX_SEC
             if handles and len(sanos) >= esperados > 0 and not colgado:
                 self._reintentos = 0          # todo sano: resetear el backoff
-                log.debug("Streaming de Mastodon (cuenta %s): sano. %d eventos y %d latidos "
-                          "recibidos; %.0f s desde el último dato.",
-                          account_id, self._n_eventos, self._n_latidos, silencio)
+                # Como mucho una línea cada 10 min: cada 15 s por cuenta eran miles al día.
+                ahora = time.monotonic()
+                if ahora - getattr(self, "_ultimo_log_sano", 0.0) >= 600:
+                    self._ultimo_log_sano = ahora
+                    log.debug("Streaming de Mastodon (cuenta %s): sano. %d eventos y %d latidos "
+                              "recibidos; %.0f s desde el último dato.",
+                              account_id, self._n_eventos, self._n_latidos, silencio)
                 continue
             if colgado:
                 log.warning("Streaming de Mastodon (cuenta %s): %.0f s sin recibir nada (ni "

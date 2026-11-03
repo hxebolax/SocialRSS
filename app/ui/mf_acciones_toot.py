@@ -930,6 +930,8 @@ class _Mf_acciones_toot:
             self._cierre_terminado.set()
             # Cierre limpio: no hay que esperar al vigilante.
             try:
+                from app.core.logger import vaciar
+                vaciar()
                 sys.stdout.flush(); sys.stderr.flush()
             except Exception:
                 pass
@@ -951,6 +953,8 @@ class _Mf_acciones_toot:
                 except Exception:
                     pass
             try:
+                from app.core.logger import vaciar
+                vaciar()
                 sys.stdout.flush(); sys.stderr.flush()
             except Exception:
                 pass

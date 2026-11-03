@@ -781,7 +781,7 @@ el artículo completo se pide primero al propio servidor, que usa sus reglas de 
 - **En la conversación:** **Ctrl+Intro** envía; **Espacio** reproduce/pausa audio, voz o vídeo;
   **Ctrl+C** copia el texto; **Intro** abre el enlace del mensaje (si hay varios, eliges). El
   menú del mensaje (**Aplicaciones**) es **dinámico según tipo y permisos**: responder, editar,
-  borrar, reaccionar (y ver quién reaccionó), fijar, traducir, describir con IA, reenviar,
+  borrar, reaccionar (y ver quién reaccionó), fijar, traducir, describir con IA, compartir,
   responder en privado, votar encuestas, editar pie, reemplazar archivo, listas de tareas, Mis
   GIF… **"Ver mensaje…"** muestra detalles, **todos los adjuntos** (descarga múltiple con
   porcentaje) y las respuestas.
@@ -795,6 +795,21 @@ el artículo completo se pide primero al propio servidor, que usa sus reglas de 
   al pulsar otra vez Buscar vuelve tal como la dejaste (texto, fechas, resultados y el resultado
   en el que estabas), sin repetirla. Se olvida al **cerrarla** con Cerrar o Escape, o al salir del
   chat.
+- **Compartir mensajes (Ctrl+Mayús+C o "Compartir…" en el menú del mensaje):** comparte uno o
+  varios mensajes con uno o varios chats a la vez. Para elegir varios mensajes, márcalos con
+  **Ctrl+Espacio** (la fila empieza por "Marcado" y se anuncia cuántos llevas; "Desmarcar todos"
+  en el menú); sin marcas se comparte el mensaje enfocado. En el diálogo:
+  - **Buscar chat** filtra mientras escribes (nombre o @usuario, con o sin tildes) y **Mostrar**
+    deja solo personas, grupos, canales o bots. Arriba van *Mensajes guardados* y los chats
+    fijados; después los más recientes y, al final, contactos con los que aún no tienes chat.
+  - Marca los destinos con **Espacio**; las marcas se conservan aunque cambies la búsqueda.
+  - **Cómo compartir:** *Reenviar* (se ve quién lo escribió) o *Enviar como copia* (sin el autor
+    original; permite además **quitar los pies de foto**). Con álbumes, **incluir el álbum
+    completo**. **Comentario** propio que se envía antes, **sin sonido** y **programar** el envío.
+    Con un solo destino que sea un grupo con temas, eliges el **tema**.
+  - Si un chat falla, los demás se envían igual y al final se explica el motivo de cada fallo.
+  En chats con contenido protegido Telegram no deja reenviar, así que la opción no aparece.
+  "Reenviar a Mensajes guardados" sigue disponible como atajo directo en el menú del mensaje.
 - **"Más acciones…"** dentro del chat: multimedia y archivos por tipo, ir a una fecha, enviar
   como, comandos e inline de **bots** (sus botones se pulsan con Espacio → lista accesible),
   chat de voz (entrar a escuchar y hablar).

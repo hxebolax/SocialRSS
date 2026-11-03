@@ -17,10 +17,12 @@ from app.services.telegram.telegram_chats import _ChatsMixin
 from app.services.telegram.telegram_perfil import _PerfilMixin
 from app.services.telegram.telegram_admin import _AdminMixin
 from app.services.telegram.telegram_bots import _BotsMixin
+from app.services.telegram.telegram_compartir import _CompartirMixin
 # Telegram Drive: almacenamiento de la nube personal sobre el MISMO cliente/sesión.
 from app.services.tgdrive.tgdrive_storage import _DriveStorageMixin
 
-class TelegramService(_NucleoMixin, _ClienteMixin, _MensajesMixin, _ChatsMixin, _PerfilMixin, _AdminMixin, _BotsMixin, _DriveStorageMixin):
+class TelegramService(_NucleoMixin, _ClienteMixin, _MensajesMixin, _ChatsMixin, _PerfilMixin, _AdminMixin, _BotsMixin,
+                      _CompartirMixin, _DriveStorageMixin):
     """Administrador del cliente de usuario de Telegram (Kurigram)."""
 
     def __init__(self):

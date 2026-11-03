@@ -379,6 +379,9 @@ msgstr "&Buscar (se pregunta al servidor):"
 msgid "&Buscar actualizaciones de reglas..."
 msgstr "&Buscar actualizaciones de reglas..."
 
+msgid "&Buscar chat:"
+msgstr "&Buscar chat:"
+
 msgid "&Buscar cuenta:"
 msgstr "&Buscar cuenta:"
 
@@ -1008,6 +1011,9 @@ msgstr "&Mostrar la clave"
 msgid "&Mostrar respuestas de:"
 msgstr "&Mostrar respuestas de:"
 
+msgid "&Mostrar:"
+msgstr "&Mostrar:"
+
 msgid "&Más acciones..."
 msgstr "&Más acciones..."
 
@@ -1240,6 +1246,9 @@ msgstr "&Quitar el baneo"
 msgid "&Quitar foto"
 msgstr "&Quitar foto"
 
+msgid "&Quitar los pies de foto y descripciones"
+msgstr "&Quitar los pies de foto y descripciones"
+
 msgid "&Quitar mi estado"
 msgstr "&Quitar mi estado"
 
@@ -1290,6 +1299,9 @@ msgstr "&Reemplazar"
 
 msgid "&Reemplazar archivo..."
 msgstr "&Reemplazar archivo..."
+
+msgid "&Reenviar (se ve quién lo escribió)"
+msgstr "&Reenviar (se ve quién lo escribió)"
 
 msgid "&Refrescar"
 msgstr "&Refrescar"
@@ -1470,6 +1482,9 @@ msgstr "&Sí"
 
 msgid "&Telegram"
 msgstr "&Telegram"
+
+msgid "&Tema del foro:"
+msgstr "&Tema del foro:"
 
 msgid "&Tema..."
 msgstr "&Tema..."
@@ -1927,6 +1942,9 @@ msgstr "1 día"
 
 msgid "1 hora"
 msgstr "1 hora"
+
+msgid "1 marcado"
+msgstr "1 marcado"
 
 msgid "1 mes"
 msgstr "1 mes"
@@ -5254,6 +5272,9 @@ msgstr "Buscar canales por nombre o tema"
 msgid "Buscar canales..."
 msgstr "Buscar canales..."
 
+msgid "Buscar chat"
+msgstr "Buscar chat"
+
 msgid "Buscar comunidades"
 msgstr "Buscar comunidades"
 
@@ -5535,8 +5556,14 @@ msgstr "Búsquedas guardadas..."
 msgid "C&ancelar"
 msgstr "C&ancelar"
 
+msgid "C&hats (Espacio marca o desmarca; puedes elegir varios):"
+msgstr "C&hats (Espacio marca o desmarca; puedes elegir varios):"
+
 msgid "C&ola..."
 msgstr "C&ola..."
+
+msgid "C&ompartir"
+msgstr "C&ompartir"
 
 msgid "C&omprobar la dirección"
 msgstr "C&omprobar la dirección"
@@ -6547,6 +6574,9 @@ msgstr "Chat eliminado."
 msgid "Chats a incluir en el enlace"
 msgstr "Chats a incluir en el enlace"
 
+msgid "Chats de destino"
+msgstr "Chats de destino"
+
 msgid "Chats en común"
 msgstr "Chats en común"
 
@@ -6910,6 +6940,9 @@ msgstr "Columna {0}"
 msgid "Columnas (en orden): {0}"
 msgstr "Columnas (en orden): {0}"
 
+msgid "Com&entario (opcional, se envía antes de los mensajes):"
+msgstr "Com&entario (opcional, se envía antes de los mensajes):"
+
 msgid "Comando"
 msgstr "Comando"
 
@@ -7096,6 +7129,12 @@ msgstr ""
 "Comparar con la última vez: quién te ha seguido y quién te ha dejado de "
 "seguir"
 
+msgid "Compartiendo en {0} chats..."
+msgstr "Compartiendo en {0} chats..."
+
+msgid "Compartiendo en {0}..."
+msgstr "Compartiendo en {0}..."
+
 msgid "Compartir (Mastodon o Bluesky)..."
 msgstr "Compartir (Mastodon o Bluesky)..."
 
@@ -7105,8 +7144,23 @@ msgstr "Compartir artículo"
 msgid "Compartir carpeta"
 msgstr "Compartir carpeta"
 
+msgid "Compartir el mensaje marcado... (Ctrl+Mayús+C)"
+msgstr "Compartir el mensaje marcado... (Ctrl+Mayús+C)"
+
+msgid "Compartir los {0} mensajes marcados... (Ctrl+Mayús+C)"
+msgstr "Compartir los {0} mensajes marcados... (Ctrl+Mayús+C)"
+
+msgid "Compartir mensaje"
+msgstr "Compartir mensaje"
+
 msgid "Compartir tu contacto"
 msgstr "Compartir tu contacto"
+
+msgid "Compartir {0} mensajes"
+msgstr "Compartir {0} mensajes"
+
+msgid "Compartir... (Ctrl+Mayús+C)"
+msgstr "Compartir... (Ctrl+Mayús+C)"
 
 msgid "Complemento"
 msgstr "Complemento"
@@ -8142,12 +8196,6 @@ msgstr "Copiar"
 msgid "Copiar (Ctrl+C)"
 msgstr "Copiar (Ctrl+C)"
 
-msgid "Copiar a otro chat"
-msgstr "Copiar a otro chat"
-
-msgid "Copiar a otro chat..."
-msgstr "Copiar a otro chat..."
-
 msgid "Copiar al portapapeles"
 msgstr "Copiar al portapapeles"
 
@@ -8156,9 +8204,6 @@ msgstr "Copiar al portapapeles lo que se ve ahora"
 
 msgid "Copiar artículo completo"
 msgstr "Copiar artículo completo"
-
-msgid "Copiar el mensaje a:"
-msgstr "Copiar el mensaje a:"
 
 msgid "Copiar el texto"
 msgstr "Copiar el texto"
@@ -9130,6 +9175,9 @@ msgstr "Código enviado a {0}."
 msgid "Código reenviado a {0}."
 msgstr "Código reenviado a {0}."
 
+msgid "Cómo compartir"
+msgstr "Cómo compartir"
+
 msgid "Cómo se combinan las condiciones"
 msgstr "Cómo se combinan las condiciones"
 
@@ -9965,8 +10013,17 @@ msgstr "Deshacer republicación"
 msgid "Deshacer retweet"
 msgstr "Deshacer retweet"
 
+msgid "Desmarcado"
+msgstr "Desmarcado"
+
+msgid "Desmarcar este mensaje"
+msgstr "Desmarcar este mensaje"
+
 msgid "Desmarcar todo"
 msgstr "Desmarcar todo"
+
+msgid "Desmarcar todos ({0})"
+msgstr "Desmarcar todos ({0})"
 
 msgid "Desnudez"
 msgstr "Desnudez"
@@ -11334,6 +11391,9 @@ msgstr ""
 msgid "El vídeo supera los 50 MB que admite Bluesky."
 msgstr "El vídeo supera los 50 MB que admite Bluesky."
 
+msgid "Elegido: {0}."
+msgstr "Elegido: {0}."
+
 msgid "Elegir archivo"
 msgstr "Elegir archivo"
 
@@ -11529,6 +11589,9 @@ msgstr "Elige un feed para guardarlo:"
 
 msgid "Elige un fragmento para insertar:"
 msgstr "Elige un fragmento para insertar:"
+
+msgid "Elige un mensaje para compartir."
+msgstr "Elige un mensaje para compartir."
 
 msgid "Elige un paquete para verlo:"
 msgstr "Elige un paquete para verlo:"
@@ -12199,6 +12262,9 @@ msgstr "Enviar"
 msgid "Enviar &mensaje al canal/grupo..."
 msgstr "Enviar &mensaje al canal/grupo..."
 
+msgid "Enviar &sin sonido (no avisa a los destinatarios)"
+msgstr "Enviar &sin sonido (no avisa a los destinatarios)"
+
 msgid "Enviar GIF..."
 msgstr "Enviar GIF..."
 
@@ -12225,6 +12291,9 @@ msgstr "Enviar como"
 
 msgid "Enviar como (elegir perfil/canal)..."
 msgstr "Enviar como (elegir perfil/canal)..."
+
+msgid "Enviar como co&pia (sin el autor original)"
+msgstr "Enviar como co&pia (sin el autor original)"
 
 msgid "Enviar como nota interna (solo moderadores)"
 msgstr "Enviar como nota interna (solo moderadores)"
@@ -12422,9 +12491,6 @@ msgstr "Error al cargar tus listas: {0}"
 
 msgid "Error al comprobar reglas."
 msgstr "Error al comprobar reglas."
-
-msgid "Error al copiar: {0}"
-msgstr "Error al copiar: {0}"
 
 msgid "Error al crear canal: {0}"
 msgstr "Error al crear canal: {0}"
@@ -12855,6 +12921,11 @@ msgstr "Escribe para buscar (nombre o JID):"
 
 msgid "Escribe para filtrar; flecha abajo para ir a la lista."
 msgstr "Escribe para filtrar; flecha abajo para ir a la lista."
+
+msgid ""
+"Escribe parte del nombre o del @usuario para filtrar la lista de chats."
+msgstr ""
+"Escribe parte del nombre o del @usuario para filtrar la lista de chats."
 
 msgid "Escribe parte del nombre o del handle de la cuenta a mencionar:"
 msgstr "Escribe parte del nombre o del handle de la cuenta a mencionar:"
@@ -13481,6 +13552,13 @@ msgid "Este chat no tiene contenido descargable con ese filtro."
 msgstr "Este chat no tiene contenido descargable con ese filtro."
 
 msgid ""
+"Este chat tiene el contenido protegido: Telegram no permite reenviar sus "
+"mensajes."
+msgstr ""
+"Este chat tiene el contenido protegido: Telegram no permite reenviar sus "
+"mensajes."
+
+msgid ""
 "Este chat usa cifrado OMEMO y el envío de archivos cifrados aún no está "
 "disponible. Para no mandar el archivo sin cifrar, se ha cancelado. Desactiva"
 " el cifrado de este chat si quieres enviarlo en claro, sabiendo que no irá "
@@ -13563,8 +13641,14 @@ msgstr ""
 msgid "Este formato puede no reproducirse; intentándolo..."
 msgstr "Este formato puede no reproducirse; intentándolo..."
 
+msgid "Este grupo no tiene temas"
+msgstr "Este grupo no tiene temas"
+
 msgid "Este grupo no tiene temas de foro."
 msgstr "Este grupo no tiene temas de foro."
+
+msgid "Este grupo tiene {0} temas: puedes elegir en cuál compartir."
+msgstr "Este grupo tiene {0} temas: puedes elegir en cuál compartir."
 
 msgid "Este mensaje comparte un contacto."
 msgstr "Este mensaje comparte un contacto."
@@ -14023,6 +14107,9 @@ msgstr "Fallidos"
 
 msgid "Fallo en la prueba: {0}"
 msgstr "Fallo en la prueba: {0}"
+
+msgid "Falló en {0}."
+msgstr "Falló en {0}."
 
 msgid "Falló una importación de vídeo"
 msgstr "Falló una importación de vídeo"
@@ -15802,6 +15889,9 @@ msgstr "Inactivo desde hace"
 msgid "Inactivo desde hace {0} minutos."
 msgstr "Inactivo desde hace {0} minutos."
 
+msgid "Incluir el álbum comp&leto"
+msgstr "Incluir el álbum comp&leto"
+
 msgid "Incumple las normas del servidor"
 msgstr "Incumple las normas del servidor"
 
@@ -17551,6 +17641,9 @@ msgstr "Mapa de teclas de Windows 11"
 msgid "Marca al menos un adjunto."
 msgstr "Marca al menos un adjunto."
 
+msgid "Marca al menos un chat de destino con la barra espaciadora."
+msgstr "Marca al menos un chat de destino con la barra espaciadora."
+
 msgid "Marca al menos una cuenta."
 msgstr "Marca al menos una cuenta."
 
@@ -17607,6 +17700,9 @@ msgstr "Marcada como leída."
 msgid "Marcada como vista."
 msgstr "Marcada como vista."
 
+msgid "Marcado"
+msgstr "Marcado"
+
 msgid "Marcado como +18."
 msgstr "Marcado como +18."
 
@@ -17627,6 +17723,9 @@ msgstr "Marcado como spam."
 
 msgid "Marcado como spoiler."
 msgstr "Marcado como spoiler."
+
+msgid "Marcado: "
+msgstr "Marcado: "
 
 msgid "Marcador quitado."
 msgstr "Marcador quitado."
@@ -17737,6 +17836,9 @@ msgid ""
 msgstr ""
 "Marcar o quitar favorito (Mastodon) o me gusta (Bluesky/X). Para impulsar "
 "usa el menú contextual."
+
+msgid "Marcar para compartir"
+msgstr "Marcar para compartir"
 
 msgid "Marcar para leer más tarde"
 msgstr "Marcar para leer más tarde"
@@ -19171,6 +19273,12 @@ msgstr "Ninguno"
 msgid "Ningún apodo empieza por {0}."
 msgstr "Ningún apodo empieza por {0}."
 
+msgid "Ningún chat elegido."
+msgstr "Ningún chat elegido."
+
+msgid "Ningún mensaje marcado."
+msgstr "Ningún mensaje marcado."
+
 msgid "Ningún miembro coincide con eso."
 msgstr "Ningún miembro coincide con eso."
 
@@ -20361,6 +20469,12 @@ msgstr "No se pudo cerrar: {0}"
 msgid "No se pudo compartir el contacto: {0}"
 msgstr "No se pudo compartir el contacto: {0}"
 
+msgid "No se pudo compartir en ningún chat:"
+msgstr "No se pudo compartir en ningún chat:"
+
+msgid "No se pudo compartir: {0}"
+msgstr "No se pudo compartir: {0}"
+
 msgid "No se pudo completar la acción de la encuesta: {0}"
 msgstr "No se pudo completar la acción de la encuesta: {0}"
 
@@ -20842,9 +20956,6 @@ msgstr "No se pudo reaccionar: {0}"
 
 msgid "No se pudo reemplazar: {0}"
 msgstr "No se pudo reemplazar: {0}"
-
-msgid "No se pudo reenviar el álbum: {0}"
-msgstr "No se pudo reenviar el álbum: {0}"
 
 msgid "No se pudo reenviar: {0}"
 msgstr "No se pudo reenviar: {0}"
@@ -23010,6 +23121,9 @@ msgstr "Privado de IRC"
 msgid "Privados"
 msgstr "Privados"
 
+msgid "Pro&gramar el envío"
+msgstr "Pro&gramar el envío"
+
 msgid "Probando las reglas..."
 msgstr "Probando las reglas..."
 
@@ -24287,20 +24401,11 @@ msgstr "Reenviar código"
 msgid "Reenviar código por el siguiente método disponible"
 msgstr "Reenviar código por el siguiente método disponible"
 
-msgid "Reenviar el álbum a:"
-msgstr "Reenviar el álbum a:"
-
-msgid "Reenviar el álbum completo a otro chat..."
-msgstr "Reenviar el álbum completo a otro chat..."
-
 msgid "Reenviar la denuncia"
 msgstr "Reenviar la denuncia"
 
 msgid "Reenviar también al servidor del autor (si es de otro servidor)"
 msgstr "Reenviar también al servidor del autor (si es de otro servidor)"
-
-msgid "Reenviar álbum"
-msgstr "Reenviar álbum"
 
 msgid "Reenvíos"
 msgstr "Reenvíos"
@@ -25066,6 +25171,9 @@ msgstr "Resueltos"
 msgid "Resultado"
 msgstr "Resultado"
 
+msgid "Resultado de compartir"
+msgstr "Resultado de compartir"
+
 msgid "Resultado de la comprobación de la dirección"
 msgstr "Resultado de la comprobación de la dirección"
 
@@ -25553,6 +25661,9 @@ msgstr ""
 
 msgid "Se ha mudado a @{0}: ya no publica aquí."
 msgstr "Se ha mudado a @{0}: ya no publica aquí."
+
+msgid "Se ha {0} en {1} de {2} chats. No se pudo en:"
+msgstr "Se ha {0} en {1} de {2} chats. No se pudo en:"
 
 msgid ""
 "Se han actualizado las reglas correctamente a la versión {0}.\n"
@@ -26926,6 +27037,9 @@ msgstr "Solo con audio o vídeo (podcasts)"
 msgid "Solo con multimedia"
 msgstr "Solo con multimedia"
 
+msgid "Solo con un grupo con temas elegido"
+msgstr "Solo con un grupo con temas elegido"
+
 msgid "Solo contactos"
 msgstr "Solo contactos"
 
@@ -27535,6 +27649,9 @@ msgstr ""
 "Telegram no ha ofrecido SMS ni llamada para este intento; por eso Reenviar "
 "código queda desactivado."
 
+msgid "Telegram pide esperar {0} segundos antes de seguir enviando"
+msgstr "Telegram pide esperar {0} segundos antes de seguir enviando"
+
 msgid "Teléfono"
 msgstr "Teléfono"
 
@@ -27574,11 +27691,17 @@ msgstr "Tema de {0}"
 msgid "Tema del canal (Aceptar para cambiarlo, si tienes permiso):"
 msgstr "Tema del canal (Aceptar para cambiarlo, si tienes permiso):"
 
+msgid "Tema del foro"
+msgstr "Tema del foro"
+
 msgid "Tema del grupo"
 msgstr "Tema del grupo"
 
 msgid "Tema del grupo (déjalo vacío para quitarlo):"
 msgstr "Tema del grupo (déjalo vacío para quitarlo):"
+
+msgid "Tema general"
+msgstr "Tema general"
 
 msgid "Tema, nombre del podcast o de la web. Intro busca."
 msgstr "Tema, nombre del podcast o de la web. Intro busca."
@@ -27837,6 +27960,9 @@ msgstr "Texto opcional (un detalle):"
 
 msgid "Texto principal de su publicación."
 msgstr "Texto principal de su publicación."
+
+msgid "Texto propio que se envía en cada chat justo antes de lo compartido."
+msgstr "Texto propio que se envía en cada chat justo antes de lo compartido."
 
 msgid "Texto que buscar en el artículo:"
 msgstr "Texto que buscar en el artículo:"
@@ -29226,6 +29352,12 @@ msgid ""
 msgstr ""
 "Vas a cancelar tu registro en {0}. Dejarás de usar esa pasarela y sus "
 "contactos desaparecerán de tu lista. ¿Seguro?"
+
+msgid "Vas a compartir un mensaje de «{0}»."
+msgstr "Vas a compartir un mensaje de «{0}»."
+
+msgid "Vas a compartir {0} mensajes de «{1}»."
+msgstr "Vas a compartir {0} mensajes de «{1}»."
 
 msgid "Vas a expulsar a {0} del grupo. Continuar?"
 msgstr "Vas a expulsar a {0} del grupo. Continuar?"
@@ -30680,6 +30812,9 @@ msgstr "administrador/a"
 msgid "alguien"
 msgstr "alguien"
 
+msgid "alguno de los mensajes ya no existe"
+msgstr "alguno de los mensajes ya no existe"
+
 msgid "anónimo"
 msgstr "anónimo"
 
@@ -30740,6 +30875,9 @@ msgstr "bloqueado"
 msgid "bloqueo"
 msgstr "bloqueo"
 
+msgid "bot"
+msgstr "bot"
+
 msgid "botón"
 msgstr "botón"
 
@@ -30751,6 +30889,9 @@ msgstr "canal"
 
 msgid "combinación: {0}"
 msgstr "combinación: {0}"
+
+msgid "compartido"
+msgstr "compartido"
 
 msgid "compartir tu contacto"
 msgstr "compartir tu contacto"
@@ -30860,6 +31001,12 @@ msgstr "el archivo"
 msgid "el canal"
 msgstr "el canal"
 
+msgid "el chat de origen tiene el contenido protegido y no permite reenviar"
+msgstr "el chat de origen tiene el contenido protegido y no permite reenviar"
+
+msgid "el chat tiene modo lento; espera {0} segundos"
+msgstr "el chat tiene modo lento; espera {0} segundos"
+
 msgid "el grupo"
 msgstr "el grupo"
 
@@ -30878,6 +31025,9 @@ msgstr "el servidor no ha devuelto ningún enlace"
 msgid "el supergrupo"
 msgstr "el supergrupo"
 
+msgid "el tema del foro está cerrado"
+msgstr "el tema del foro está cerrado"
+
 msgid "elegir chat"
 msgstr "elegir chat"
 
@@ -30895,6 +31045,36 @@ msgstr "en blanco"
 
 msgid "en el futuro"
 msgstr "en el futuro"
+
+msgid "en este chat no se permite enviar GIF"
+msgstr "en este chat no se permite enviar GIF"
+
+msgid "en este chat no se permite enviar archivos"
+msgstr "en este chat no se permite enviar archivos"
+
+msgid "en este chat no se permite enviar audios"
+msgstr "en este chat no se permite enviar audios"
+
+msgid "en este chat no se permite enviar encuestas"
+msgstr "en este chat no se permite enviar encuestas"
+
+msgid "en este chat no se permite enviar fotos"
+msgstr "en este chat no se permite enviar fotos"
+
+msgid "en este chat no se permite enviar multimedia"
+msgstr "en este chat no se permite enviar multimedia"
+
+msgid "en este chat no se permite enviar notas de voz"
+msgstr "en este chat no se permite enviar notas de voz"
+
+msgid "en este chat no se permite enviar stickers"
+msgstr "en este chat no se permite enviar stickers"
+
+msgid "en este chat no se permite enviar texto"
+msgstr "en este chat no se permite enviar texto"
+
+msgid "en este chat no se permite enviar vídeos"
+msgstr "en este chat no se permite enviar vídeos"
 
 msgid "en marcadores"
 msgstr "en marcadores"
@@ -30920,8 +31100,17 @@ msgstr "escuchado"
 msgid "ese nivel"
 msgstr "ese nivel"
 
+msgid "esta persona solo recibe mensajes de usuarios Premium"
+msgstr "esta persona solo recibe mensajes de usuarios Premium"
+
+msgid "esta persona te ha bloqueado"
+msgstr "esta persona te ha bloqueado"
+
 msgid "este artículo"
 msgstr "este artículo"
+
+msgid "este chat ya tiene demasiados mensajes programados"
+msgstr "este chat ya tiene demasiados mensajes programados"
 
 msgid "este control"
 msgstr "este control"
@@ -30995,6 +31184,9 @@ msgstr "hace 1 mes"
 msgid "hace 1 minuto"
 msgstr "hace 1 minuto"
 
+msgid "hace falta ser administrador de este chat"
+msgstr "hace falta ser administrador de este chat"
+
 msgid "hace unos segundos"
 msgstr "hace unos segundos"
 
@@ -31033,6 +31225,9 @@ msgstr "la cita"
 
 msgid "la exportación de YouTube"
 msgstr "la exportación de YouTube"
+
+msgid "la fecha programada está demasiado lejos"
+msgstr "la fecha programada está demasiado lejos"
 
 msgid "la lista"
 msgstr "la lista"
@@ -31088,6 +31283,9 @@ msgstr "nadie"
 msgid "ninguna"
 msgstr "ninguna"
 
+msgid "ninguno marcado"
+msgstr "ninguno marcado"
+
 msgid "nivel {0}"
 msgstr "nivel {0}"
 
@@ -31118,8 +31316,14 @@ msgstr "no le sigues"
 msgid "no leídos"
 msgstr "no leídos"
 
+msgid "no se encuentra el chat; ábrelo una vez y vuelve a intentarlo"
+msgstr "no se encuentra el chat; ábrelo una vez y vuelve a intentarlo"
+
 msgid "no te sigue"
 msgstr "no te sigue"
+
+msgid "no tienes permiso para escribir en este chat"
+msgstr "no tienes permiso para escribir en este chat"
 
 msgid "nube: {0} carpetas, {1} archivos, {2}"
 msgstr "nube: {0} carpetas, {1} archivos, {2}"
@@ -31154,8 +31358,14 @@ msgstr "pendiente de que la acepte"
 msgid "perfil de usuario"
 msgstr "perfil de usuario"
 
+msgid "persona"
+msgstr "persona"
+
 msgid "personalizado"
 msgstr "personalizado"
+
+msgid "programado"
+msgstr "programado"
 
 msgid "publicación no disponible"
 msgstr "publicación no disponible"
@@ -31292,11 +31502,17 @@ msgstr "tendencia {0}, revisión {1}"
 msgid "texto"
 msgstr "texto"
 
+msgid "tienes bloqueada a esta persona"
+msgstr "tienes bloqueada a esta persona"
+
 msgid "todos"
 msgstr "todos"
 
 msgid "todos los temas"
 msgstr "todos los temas"
+
+msgid "tu cuenta está restringida y no puede escribir en grupos públicos"
+msgstr "tu cuenta está restringida y no puede escribir en grupos públicos"
 
 msgid "tú lo ves"
 msgstr "tú lo ves"
@@ -31327,6 +31543,9 @@ msgstr "verificado"
 
 msgid "xAI (Grok)"
 msgstr "xAI (Grok)"
+
+msgid "ya no tienes acceso a este chat"
+msgstr "ya no tienes acceso a este chat"
 
 msgid "{0}"
 msgstr "{0}"
@@ -31536,6 +31755,9 @@ msgstr "{0} carpetas."
 msgid "{0} chats de Telegram con mensajes"
 msgstr "{0} chats de Telegram con mensajes"
 
+msgid "{0} chats elegidos."
+msgstr "{0} chats elegidos."
+
 msgid "{0} chats marcados como leídos."
 msgstr "{0} chats marcados como leídos."
 
@@ -31661,6 +31883,12 @@ msgstr "{0} emojis."
 
 msgid "{0} emojis. Escribe para filtrar o baja a la lista."
 msgstr "{0} emojis. Escribe para filtrar o baja a la lista."
+
+msgid "{0} en {1} chats."
+msgstr "{0} en {1} chats."
+
+msgid "{0} en {1}."
+msgstr "{0} en {1}."
 
 msgid "{0} entradas ({1} en total)."
 msgstr "{0} entradas ({1} en total)."
@@ -33092,9 +33320,6 @@ msgstr "Álbum"
 
 msgid "Álbum enviado."
 msgstr "Álbum enviado."
-
-msgid "Álbum reenviado."
-msgstr "Álbum reenviado."
 
 msgid "Ámbito de búsqueda"
 msgstr "Ámbito de búsqueda"

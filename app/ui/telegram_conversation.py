@@ -11,9 +11,11 @@ from .telegram_conv_mensajes import _ConvMensajesMixin
 from .telegram_conv_acciones import _ConvAccionesMixin
 from .telegram_conv_extras import _ConvExtrasMixin
 from .telegram_conv_bots import _ConvBotsMixin
+from .telegram_conv_compartir import _ConvCompartirMixin
 
 
-class TelegramConversationDialog(_ConvMensajesMixin, _ConvAccionesMixin, _ConvExtrasMixin, _ConvBotsMixin, wx.Dialog):
+class TelegramConversationDialog(_ConvCompartirMixin, _ConvMensajesMixin, _ConvAccionesMixin, _ConvExtrasMixin,
+                                 _ConvBotsMixin, wx.Dialog):
     def __init__(self, parent, account_id: int, chat_id: int, chat_title: str, chat_type: str = "private"):
         super().__init__(
             parent,

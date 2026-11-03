@@ -252,7 +252,10 @@ o RSS), igual que en su buffer original; la app "adivina" sola a qué red perten
 | **Ctrl+T** | Traducir el texto del mensaje | Conversación |
 | **Ctrl+C** | Copiar el texto del mensaje al portapapeles | Conversación |
 | **Ctrl+Shift+D** | Ver la descripción del mensaje multimedia | Conversación |
-| **Aplicaciones** | Menú del mensaje (responder, reaccionar, fijar, copiar, traducir, IA…) | Conversación |
+| **Ctrl+Espacio** | Marcar o desmarcar el mensaje para compartirlo junto con otros | Conversación (lista de mensajes) |
+| **Ctrl+Shift+C** | Compartir los mensajes marcados (o el enfocado) con uno o varios chats | Conversación (lista de mensajes) |
+| **Espacio** | Marcar o desmarcar el chat de destino | Diálogo Compartir |
+| **Aplicaciones** | Menú del mensaje (responder, reaccionar, fijar, compartir, copiar, traducir, IA…) | Conversación |
 
 ---
 

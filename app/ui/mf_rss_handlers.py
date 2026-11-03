@@ -850,6 +850,8 @@ class _Mf_rss_handlers:
         #    única, de modo que el ayudante puede arrancar la nueva sin el aviso de "ya en ejecución".
         log.info("Reiniciando la aplicación para aplicar las plantillas.")
         try:
+            from app.core.logger import vaciar
+            vaciar()
             sys.stdout.flush(); sys.stderr.flush()
         except Exception:
             pass
@@ -971,6 +973,8 @@ class _Mf_rss_handlers:
             return
         log.info("Aplicando la actualización y reiniciando.")
         try:
+            from app.core.logger import vaciar
+            vaciar()
             _sys.stdout.flush(); _sys.stderr.flush()
         except Exception:
             pass

@@ -16,21 +16,54 @@ from .paths import get_data_path
 # Número de archivos de log por sesión que se conservan (se borran los más viejos).
 _MAX_SESIONES = 5
 
+# TOPE de tamaño por sesión. Una sesión de varios días con el nivel en DEBUG llegó a 150 MB de
+# .log + 200 MB de .jsonl (2026-11-03). Al llegar al tope, el archivo pasa a session_X.log.1 y se
+# empieza otro; se guardan 2 partes antiguas: como mucho ~30 MB de texto por sesión.
+_MAX_BYTES_LOG = 10 * 1024 * 1024
+_PARTES_LOG = 2
+# El .jsonl es para analizar problemas a distancia: solo WARNING o más, con su propio tope.
+_MAX_BYTES_JSONL = 5 * 1024 * 1024
 
-def _limpiar_logs_antiguos(patron: str, conservar: int = _MAX_SESIONES):
-    """Deja solo los 'conservar' archivos más recientes que casen con el patrón.
+# Escritura ASÍNCRONA: los hilos (también el de la interfaz) solo dejan el registro en una cola y
+# un hilo propio lo escribe en disco. Antes cada línea se escribía en el acto bajo el cerrojo del
+# manejador: con el log en DEBUG y un disco lento, el hilo de la interfaz podía quedarse esperando
+# a que otro hilo terminara de escribir.
+_escritor = None
 
-    Borra los más antiguos para que la carpeta de logs no crezca sin control.
-    """
+
+def _limpiar_logs_antiguos(logs_dir, conservar: int = _MAX_SESIONES):
+    """Deja solo las 'conservar' sesiones más recientes (con TODAS sus partes: .log, .log.1,
+    .jsonl...) y borra el resto para que la carpeta de logs no crezca sin control."""
     try:
-        archivos = glob.glob(patron)
-        archivos.sort(key=lambda p: os.path.getmtime(p))  # más antiguos primero
-        if len(archivos) > conservar:
-            for p in archivos[:-conservar]:
+        principales = glob.glob(os.path.join(str(logs_dir), "session_*.log"))
+        principales.sort(key=lambda p: os.path.getmtime(p))  # más antiguos primero
+        vivas = {os.path.basename(p)[:-len(".log")] for p in principales[-conservar:]}
+        for p in glob.glob(os.path.join(str(logs_dir), "session_*")):
+            nombre = os.path.basename(p)
+            sesion = nombre.split(".", 1)[0]
+            if sesion not in vivas:
                 try:
                     os.remove(p)
                 except Exception:
                     pass
+    except Exception:
+        pass
+
+
+def vaciar(timeout: float = 2.0):
+    """Escribe en disco lo que quede en la cola del registro. Llamar justo antes de os._exit
+    (que no ejecuta atexit): sin esto se perderían las últimas líneas de la sesión."""
+    escritor = _escritor
+    if escritor is None:
+        return
+    try:
+        hilo = getattr(escritor, "_thread", None)
+        if hilo is None:
+            return
+        escritor.enqueue_sentinel()
+        hilo.join(timeout)
+        if not hilo.is_alive():
+            escritor._thread = None
     except Exception:
         pass
 
@@ -96,22 +129,26 @@ def configurar_logging(debug_mode: bool = False):
         "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)d] - %(message)s"
     )
     
-    # Manejador del log de esta sesión (un archivo nuevo por arranque).
-    handler = logging.FileHandler(log_file, encoding="utf-8")
+    # Manejador del log de esta sesión (un archivo nuevo por arranque, con tope de tamaño).
+    handler = logging.handlers.RotatingFileHandler(
+        log_file, maxBytes=_MAX_BYTES_LOG, backupCount=_PARTES_LOG, encoding="utf-8")
     handler.setFormatter(formatter)
     
-    # Aplicar filtro de sanitización
+    # Aplicar filtro de sanitización (corre en el hilo escritor, no en el que registra)
     handler.addFilter(SanitizingFilter())
+    manejadores = [handler]
     
     # Configurar logger raíz
     root_logger = logging.getLogger()
     root_logger.setLevel(level)
     
     # Limpiar manejadores previos (evitar duplicados si se vuelve a configurar)
+    global _escritor
+    if _escritor is not None:
+        vaciar()
+        _escritor = None
     for h in list(root_logger.handlers):
         root_logger.removeHandler(h)
-        
-    root_logger.addHandler(handler)
 
     # Manejador adicional en formato JSONL (un objeto JSON por línea) para
     # facilitar el análisis remoto cuando el usuario envía sus logs.
@@ -130,17 +167,36 @@ def configurar_logging(debug_mode: bool = False):
                 }
                 return _json.dumps(datos, ensure_ascii=False)
 
-        json_handler = logging.FileHandler(json_file, encoding="utf-8")
+        json_handler = logging.handlers.RotatingFileHandler(
+            json_file, maxBytes=_MAX_BYTES_JSONL, backupCount=1, encoding="utf-8", delay=True)
         json_handler.setFormatter(_JsonFormatter())
-        root_logger.addHandler(json_handler)
+        json_handler.setLevel(logging.WARNING)
+        manejadores.append(json_handler)
     except Exception:
         pass
 
-    # Conservar solo los 5 logs de sesión más recientes de cada formato; borrar
-    # los más antiguos. Se hace después de crear los de esta sesión, así que el
-    # actual cuenta entre los 5 que se mantienen.
-    _limpiar_logs_antiguos(str(logs_dir / "session_*.log"))
-    _limpiar_logs_antiguos(str(logs_dir / "session_*.jsonl"))
+    # Cola + hilo escritor (respect_handler_level: el .jsonl conserva su nivel WARNING).
+    try:
+        import queue as _queue
+        cola = _queue.SimpleQueue()
+        _escritor = logging.handlers.QueueListener(cola, *manejadores, respect_handler_level=True)
+        _escritor.start()
+        try:
+            _escritor._thread.name = "log-writer"
+        except Exception:
+            pass
+        root_logger.addHandler(logging.handlers.QueueHandler(cola))
+        import atexit
+        atexit.register(vaciar)
+    except Exception:
+        _escritor = None
+        for h in manejadores:
+            root_logger.addHandler(h)
+
+    # Conservar solo las 5 sesiones más recientes (con todas sus partes); borrar las
+    # más antiguas. Se hace después de crear la de esta sesión, así que la actual
+    # cuenta entre las 5 que se mantienen.
+    _limpiar_logs_antiguos(logs_dir)
 
     # Silenciar el ruido de librerías de terceros muy verbosas. pyrogram (Telegram) emite MILES de
     # WARNING de propiedades obsoletas (forward_from, forward_from_chat, forward_sender_name...) cada
@@ -179,9 +235,13 @@ def configurar_logging(debug_mode: bool = False):
     # de CADA nodo de CADA página ("readability score..."): con la cola de texto completo
     # llegó a meter 7.300+ líneas en una sesión (el 92% del registro), inflando el archivo
     # y ralentizando el equipo justo durante la carga (fallo reportado). bs4/lxml, igual.
+    # trafilatura (+ htmldate, courlan, justext) hace lo mismo que readability: era el 30 % del
+    # registro del 2026-11-03 ("extra in p: ..." por párrafo). websockets registra cada PING/PONG
+    # del tiempo real de Mastodon (cada pocos segundos por cuenta) y aiosqlite cada operación.
     for _http in ("urllib3", "urllib3.connectionpool", "requests", "peewee", "asyncio",
                   "charset_normalizer", "readability", "readability.readability",
-                  "bs4", "lxml", "yt_dlp"):
+                  "bs4", "lxml", "yt_dlp", "trafilatura", "htmldate", "courlan", "justext",
+                  "websockets", "websockets.client", "aiosqlite"):
         try:
             logging.getLogger(_http).setLevel(logging.WARNING)
         except Exception:

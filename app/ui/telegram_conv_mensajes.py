@@ -546,9 +546,16 @@ class _ConvMensajesMixin:
 
     def _on_msg_key(self, event):
         """Espacio: si el mensaje tiene botones de bot, abre el diálogo de botones; si no, reproduce/
-        pausa su audio. Ctrl+I: describir imagen. Ctrl+T: traducir."""
+        pausa su audio. Ctrl+Espacio: marcar para compartir. Ctrl+Mayús+C: compartir.
+        Ctrl+I: describir imagen. Ctrl+T: traducir."""
         code = event.GetKeyCode()
         mods = event.GetModifiers()
+        if code == wx.WXK_SPACE and mods == wx.MOD_CONTROL:
+            self._alternar_marca_compartir(self.lista_msgs.GetFocusedItem())
+            return
+        if mods == (wx.MOD_CONTROL | wx.MOD_SHIFT) and code == ord('C'):
+            self._on_compartir()
+            return
         if code == wx.WXK_SPACE and mods == wx.MOD_NONE:
             idx = self.lista_msgs.GetFocusedItem()
             if 0 <= idx < len(self.msg_rows):
@@ -834,15 +841,27 @@ class _ConvMensajesMixin:
             item_copiar_txt = menu.Append(wx.ID_ANY, _("Copiar texto del mensaje"))
             self.Bind(wx.EVT_MENU, lambda e, m=meta: self._on_copiar_texto_mensaje(m), item_copiar_txt)
 
-        # Copiar/reenviar SOLO si el chat no tiene contenido protegido (noforwards): si lo tiene,
-        # Telegram no deja reenviarlo y ofrecerlo sería engañoso.
+        # Compartir SOLO si el chat no tiene contenido protegido (noforwards): si lo tiene,
+        # Telegram no deja reenviarlo y ofrecerlo sería engañoso. «Compartir» reúne lo que antes
+        # eran «Copiar a otro chat» y «Reenviar el álbum» (copia sin autor, álbum completo...).
         if not getattr(self, "_protegido", False):
-            item_copiar = menu.Append(wx.ID_ANY, _("Copiar a otro chat..."))
-            self.Bind(wx.EVT_MENU, lambda e, m=meta: self._on_copiar_a_chat(m), item_copiar)
+            marcas = self._marcas_compartir()
+            if len(marcas) > 1:
+                etiqueta = _("Compartir los {0} mensajes marcados... (Ctrl+Mayús+C)").format(len(marcas))
+            elif marcas:
+                etiqueta = _("Compartir el mensaje marcado... (Ctrl+Mayús+C)")
+            else:
+                etiqueta = _("Compartir... (Ctrl+Mayús+C)")
+            item_comp = menu.Append(wx.ID_ANY, etiqueta)
+            self.Bind(wx.EVT_MENU, lambda e, m=meta: self._on_compartir(m), item_comp)
 
-            if meta.get("media_group_id"):
-                item_album = menu.Append(wx.ID_ANY, _("Reenviar el álbum completo a otro chat..."))
-                self.Bind(wx.EVT_MENU, lambda e, m=meta: self._on_reenviar_album(m), item_album)
+            marcado = meta["message_id"] in marcas
+            item_marca = menu.Append(wx.ID_ANY, (_("Desmarcar este mensaje") if marcado
+                                                 else _("Marcar para compartir")) + " (Ctrl+Espacio)")
+            self.Bind(wx.EVT_MENU, lambda e, i=idx: self._alternar_marca_compartir(i), item_marca)
+            if marcas:
+                item_desm = menu.Append(wx.ID_ANY, _("Desmarcar todos ({0})").format(len(marcas)))
+                self.Bind(wx.EVT_MENU, lambda e: self._desmarcar_todos_compartir(), item_desm)
 
             item_guardar = menu.Append(wx.ID_ANY, _("Reenviar a Mensajes guardados"))
             self.Bind(wx.EVT_MENU, lambda e, m=meta: self._on_reenviar_guardados(m), item_guardar)
@@ -1092,28 +1111,6 @@ class _ConvMensajesMixin:
             task_manager.start_task(_bg, callback=_finish, pass_context=True)
         dlg.Destroy()
 
-    def _on_reenviar_album(self, meta):
-        """Reenvía a otro chat el álbum completo al que pertenece este mensaje."""
-        filas = db.query(
-            "SELECT chat_id, title FROM telegram_chats WHERE account_id = ? ORDER BY title COLLATE NOCASE",
-            (self.account_id,))
-        chats = [(r[0], r[1] or str(r[0])) for r in filas]
-        if not chats:
-            speak(_("No hay chats disponibles."), interrupt=True)
-            return
-        dlg = wx.SingleChoiceDialog(self, _("Reenviar el álbum a:"), _("Reenviar álbum"),
-                                    [t for _c, t in chats])
-        if dlg.ShowModal() == wx.ID_OK:
-            destino = chats[dlg.GetSelection()][0]
-            mid = meta["message_id"]
-            def _bg(ctx):
-                return telegram_service.reenviar_album(self.account_id, self.chat_id, mid, destino)
-            def _finish(res, err):
-                notificar(_("No se pudo reenviar el álbum: {0}").format(err) if err
-                          else _("Álbum reenviado."))
-            task_manager.start_task(_bg, callback=_finish, pass_context=True)
-        dlg.Destroy()
-
     def _on_reemplazar_media(self, meta):
         """Reemplazar el archivo multimedia de un mensaje propio por otro del disco."""
         with wx.FileDialog(self, _("Elija el archivo que reemplazará al actual"),
@@ -1210,31 +1207,6 @@ class _ConvMensajesMixin:
             notificar(_("Texto del mensaje copiado al portapapeles."))
         else:
             speak(_("No se pudo copiar el texto."), interrupt=True)
-
-    def _on_copiar_a_chat(self, meta):
-        # Elegir destino entre los chats cacheados de esta cuenta.
-        filas = db.query(
-            "SELECT chat_id, title FROM telegram_chats WHERE account_id = ? ORDER BY title COLLATE NOCASE",
-            (self.account_id,)
-        )
-        chats = [(r[0], r[1] or str(r[0])) for r in filas]
-        if not chats:
-            speak(_("No hay chats disponibles."), interrupt=True)
-            return
-        etiquetas = [t for _cid, t in chats]
-        dlg = wx.SingleChoiceDialog(self, _("Copiar el mensaje a:"), _("Copiar a otro chat"), etiquetas)
-        if dlg.ShowModal() == wx.ID_OK:
-            destino = chats[dlg.GetSelection()][0]
-            mid = meta["message_id"]
-            def _bg(ctx):
-                return telegram_service.copiar_mensaje(self.account_id, self.chat_id, mid, destino)
-            def _finish(res, err):
-                if err:
-                    notificar(_("Error al copiar: {0}").format(err))
-                else:
-                    notificar(_("Mensaje copiado."))
-            task_manager.start_task(_bg, callback=_finish, pass_context=True)
-        dlg.Destroy()
 
     def _on_ver_encuesta(self, meta):
         mid = meta["message_id"]

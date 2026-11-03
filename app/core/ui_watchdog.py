@@ -73,6 +73,103 @@ def _volcar_pila_hilo_principal(nivel=logging.WARNING):
         pass
 
 
+def _tiempos_cpu() -> dict:
+    """{id nativo del hilo: (nombre, segundos de CPU)} de los hilos de Python vivos (Windows).
+
+    Con la PILA no basta: si la interfaz solo dice "MainLoop" no se sabe si estaba OCUPADA en
+    código nativo o ESPERANDO (el GIL, otro proceso...). Comparando la CPU consumida por cada hilo
+    entre el ping y el volcado se ve quién trabajó de verdad durante el bloqueo."""
+    datos = {}
+    try:
+        import ctypes
+        from ctypes import wintypes
+        k32 = ctypes.windll.kernel32
+        k32.OpenThread.restype = wintypes.HANDLE
+        k32.OpenThread.argtypes = (wintypes.DWORD, wintypes.BOOL, wintypes.DWORD)
+        k32.GetThreadTimes.argtypes = (wintypes.HANDLE,) + (ctypes.POINTER(ctypes.c_ulonglong),) * 4
+        k32.CloseHandle.argtypes = (wintypes.HANDLE,)
+        for t in threading.enumerate():
+            tid = getattr(t, "native_id", None)
+            if not tid:
+                continue
+            h = k32.OpenThread(0x0800, False, tid)  # THREAD_QUERY_LIMITED_INFORMATION
+            if not h:
+                continue
+            try:
+                c, e, kern, user = (ctypes.c_ulonglong() for _ in range(4))
+                if k32.GetThreadTimes(h, ctypes.byref(c), ctypes.byref(e),
+                                      ctypes.byref(kern), ctypes.byref(user)):
+                    datos[tid] = (t.name, (kern.value + user.value) / 1e7)
+            finally:
+                k32.CloseHandle(h)
+    except Exception:
+        pass
+    return datos
+
+
+def _estado_gui_principal() -> str:
+    """Si la interfaz está dentro de un bucle NATIVO (menú, mover/redimensionar...), Windows lo
+    dice: en esos bucles wx no atiende sus eventos y la pila de Python solo muestra MainLoop."""
+    try:
+        import ctypes
+        from ctypes import wintypes
+
+        class GUITHREADINFO(ctypes.Structure):
+            _fields_ = [("cbSize", wintypes.DWORD), ("flags", wintypes.DWORD),
+                        ("hwndActive", wintypes.HWND), ("hwndFocus", wintypes.HWND),
+                        ("hwndCapture", wintypes.HWND), ("hwndMenuOwner", wintypes.HWND),
+                        ("hwndMoveSize", wintypes.HWND), ("hwndCaret", wintypes.HWND),
+                        ("rcCaret", wintypes.RECT)]
+
+        u32 = ctypes.windll.user32
+        info = GUITHREADINFO()
+        info.cbSize = ctypes.sizeof(GUITHREADINFO)
+        if not u32.GetGUIThreadInfo(threading.main_thread().native_id, ctypes.byref(info)):
+            return ""
+        nombres = [(0x04, "menú"), (0x10, "menú emergente"), (0x08, "menú del sistema"),
+                   (0x02, "moviendo o redimensionando la ventana")]
+        modos = [n for bit, n in nombres if info.flags & bit]
+
+        def _clase(hwnd):
+            if not hwnd:
+                return "-"
+            b = ctypes.create_unicode_buffer(128)
+            u32.GetClassNameW(hwnd, b, 128)
+            return b.value
+        return (f"modo nativo: {', '.join(modos) if modos else 'ninguno'}; ventana activa: "
+                f"{_clase(info.hwndActive)}; foco: {_clase(info.hwndFocus)}")
+    except Exception:
+        return ""
+
+
+def _resumen_cpu(base: dict, transcurrido: float) -> str:
+    """Texto con la CPU del hilo de la interfaz y de los hilos que más consumieron desde 'base'."""
+    if not base:
+        return ""
+    ahora = _tiempos_cpu()
+    principal = threading.main_thread().native_id
+    deltas = []
+    cpu_ui = None
+    for tid, (nombre, cpu) in ahora.items():
+        d = cpu - base.get(tid, ("", 0.0))[1]  # hilo nacido durante el bloqueo: toda su CPU
+        if tid == principal:
+            cpu_ui = d
+        elif d >= 0.05:
+            deltas.append((d, nombre))
+    deltas.sort(reverse=True)
+    partes = []
+    if cpu_ui is not None:
+        estado = ("OCUPADA en código nativo" if cpu_ui >= transcurrido * 0.6
+                  else "ESPERANDO (GIL, un cerrojo u otro proceso)")
+        partes.append(f"la interfaz usó {cpu_ui:.1f} s de CPU en {transcurrido:.1f} s: {estado}")
+    if deltas:
+        partes.append("más CPU: " + ", ".join(f"{n} {d:.1f} s" for d, n in deltas[:4]))
+    gui = _estado_gui_principal()
+    if gui:
+        partes.append(gui)
+    return "; ".join(partes)
+
+
 def _bucle():
     import wx
     ultimo_aviso = 0.0
@@ -86,6 +183,7 @@ def _bucle():
         def _pong():
             recibido.set()
 
+        base_cpu = _tiempos_cpu()
         enviado = time.monotonic()
         try:
             wx.CallAfter(_pong)
@@ -102,14 +200,19 @@ def _bucle():
         if not recibido.wait(max(0.0, _UMBRAL - (time.monotonic() - enviado))):
             if (time.monotonic() - ultimo_aviso) > 10.0:
                 _volcar_pila_hilo_principal()
+                resumen = _resumen_cpu(base_cpu, time.monotonic() - enviado)
+                if resumen:
+                    log.warning("Durante el bloqueo: %s.", resumen)
             recibido.wait(30.0)
         tardo = time.monotonic() - enviado
         if tardo >= _UMBRAL and (time.monotonic() - ultimo_aviso) > 10.0:
             ultimo_aviso = time.monotonic()
+            resumen = _resumen_cpu(base_cpu, tardo)
             log.warning(
                 "El hilo de la INTERFAZ estuvo bloqueado %.1f s (la ventana pudo aparecer "
                 "como 'No responde'). Si coincide con el arranque o una acción concreta, "
-                "esta marca de tiempo acota al culpable.", tardo)
+                "esta marca de tiempo acota al culpable.%s", tardo,
+                f" En total: {resumen}." if resumen else "")
         elif tardo >= 0.75:
             # LAG fino: sin llegar a congelación, este retraso ya encola las teclas del
             # lector (sus consultas a la ventana son síncronas). En INFO para poder ver

@@ -204,13 +204,12 @@ class _PodcastColaMixin:
             self._cola_worker.start()
 
     def _prioridad_fondo(self):
-        """THREAD_MODE_BACKGROUND: baja CPU y DISCO del hilo (la descarga no compite con
-        la base de datos ni con el lector). Respaldo a prioridad baja normal."""
+        """Prioridad "inferior a la normal" (no THREAD_MODE_BACKGROUND: con el equipo ocupado el
+        hilo se quedaba casi sin CPU y, si tenía el GIL, la interfaz esperaba por él)."""
         try:
             import ctypes
             k32 = ctypes.windll.kernel32
-            if not k32.SetThreadPriority(k32.GetCurrentThread(), 0x00010000):
-                k32.SetThreadPriority(k32.GetCurrentThread(), -1)
+            k32.SetThreadPriority(k32.GetCurrentThread(), -1)
         except Exception:
             pass
 
