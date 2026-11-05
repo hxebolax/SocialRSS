@@ -12,6 +12,7 @@ haga perder el foco.
 - [Para quien quiere usarla](#para-quien-quiere-usarla)
 - [En Linux: escritorio GTK 4 con Orca](#en-linux-escritorio-gtk-4-con-orca)
 - [Para quien quiere compilarla](#para-quien-quiere-compilarla)
+- [Colaboradores](#colaboradores)
 - [Licencia](#licencia)
 
 ---
@@ -470,6 +471,19 @@ Los detalles están en [scripts/README.md](scripts/README.md).
   interfaz solo pinta el resultado.
 - Las listas se actualizan sin mover el foco ni hacer que el lector repita lo que ya leyó.
 - Los textos visibles van siempre dentro de `_()` para poder traducirlos.
+
+---
+
+## Colaboradores
+
+- **[Francisco Javier Dorado](https://github.com/javido)** (`javido`) ha desarrollado la **versión para Linux**:
+  el núcleo independiente de la plataforma, la interfaz GTK 4 accesible con Orca, la voz, el audio y el
+  almacén de secretos de Linux, y la traducción al inglés de esa interfaz
+  ([#1](https://github.com/hxebolax/SocialRSS/pull/1), [#2](https://github.com/hxebolax/SocialRSS/pull/2) y
+  [#3](https://github.com/hxebolax/SocialRSS/pull/3), incluidas en la versión 1.0.29).
+
+¿Quieres colaborar? Abre una *issue* o una *pull request*; lo que se añada para Windows debe tener también su
+equivalente en Linux, y al revés.
 
 ---
 
