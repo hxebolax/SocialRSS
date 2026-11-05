@@ -1,0 +1,71 @@
+# Maintainer: Javier Dorado <javier@dorado.digital>
+#
+# SocialRSS Accessible Suite para Arch Linux (interfaz GTK 4, accesible con Orca).
+#
+# Se construye a partir del paquete de Linux que se publica en cada release de GitHub. Muchas de
+# las dependencias de Python (kurigram, atproto, twifork, py-tgcalls...) no están en los
+# repositorios de Arch, así que se instalan con pip dentro del propio paquete
+# (/usr/share/socialrss/lib); PyGObject y GStreamer sí vienen del sistema.
+#
+# Como esas dependencias incluyen módulos compilados, cuando Arch cambie de versión de Python
+# (3.14 -> 3.15...) hay que volver a construir el paquete.
+#
+# Uso: makepkg -si
+
+pkgname=socialrss
+pkgver=1.0.29
+pkgrel=1
+pkgdesc="Redes sociales, chats y noticias en una sola ventana accesible (Mastodon, Bluesky, Telegram, RSS...)"
+arch=('x86_64' 'aarch64')
+url="https://github.com/hxebolax/SocialRSS"
+license=('GPL-3.0-or-later')
+depends=('python' 'python-gobject' 'gtk4' 'gstreamer' 'gst-plugins-base' 'gst-plugins-good'
+         'at-spi2-core')
+makedepends=('python-pip')
+optdepends=('orca: lector de pantalla'
+            'speech-dispatcher: anuncios hablados sin lector de pantalla'
+            'libsecret: guardar las contraseñas en el llavero del sistema'
+            'ffmpeg: audio y vídeo de Telegram, descargas y conversión de medios'
+            'gst-plugins-bad: más formatos en el reproductor'
+            'gst-plugins-ugly: más formatos en el reproductor'
+            'gst-libav: más formatos en el reproductor'
+            'python-olm: salas cifradas de Matrix')
+# Lleva bibliotecas de Python compiladas: sin quitarles los símbolos ni comprobar que sean
+# reproducibles (no lo son, vienen de pip).
+options=('!strip' '!debug')
+source=("https://github.com/hxebolax/SocialRSS/releases/download/v${pkgver}/SocialRSS_v${pkgver}_linux.tar.gz"
+        'socialrss.sh')
+sha256sums=('8792d26e571302ce95c6f303fd63ccd4dcc8aa37f93df43c815e8241fd21b2fd'
+            'SKIP')
+
+build() {
+    cd SocialRSS
+    rm -rf "$srcdir/lib"
+    # pip --target instala todo lo de la lista aunque alguna biblioteca esté también en el sistema,
+    # para que el paquete no dependa de las versiones que haya instaladas.
+    PIP_DISABLE_PIP_VERSION_CHECK=1 python -m pip install --no-warn-script-location \
+        --no-compile --target "$srcdir/lib" -r requirements-linux.txt
+    # Los ejecutables que pip deja en lib/bin apuntan a rutas del directorio de construcción.
+    rm -rf "$srcdir/lib/bin"
+}
+
+package() {
+    local app="$pkgdir/usr/share/socialrss"
+    cd SocialRSS
+
+    install -dm755 "$app"
+    cp -r app main.py requirements-linux.txt "$app/"
+    install -dm755 "$app/data"
+    cp -r data/docs data/locales data/plugins data/sounds "$app/data/"
+    cp -r "$srcdir/lib" "$app/lib"
+    find "$app" -name '__pycache__' -prune -exec rm -rf {} +
+    # Precompila para no intentar escribir .pyc en /usr al arrancar.
+    python -m compileall -q -j0 -s "$pkgdir" -p / "$app" || true
+    chmod -R u=rwX,go=rX "$app"
+
+    install -Dm755 "$srcdir/socialrss.sh" "$pkgdir/usr/bin/socialrss"
+    install -Dm644 socialrss.desktop "$pkgdir/usr/share/applications/socialrss.desktop"
+    sed -i 's#^Icon=.*#Icon=internet-news-reader#' "$pkgdir/usr/share/applications/socialrss.desktop"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md MANUAL.md TECLAS.md
+}
