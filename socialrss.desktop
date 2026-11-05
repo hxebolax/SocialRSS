@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=SocialRSS Accessible Suite
+Name[es]=SocialRSS Accessible Suite
+Comment=Social networks, chats and news in one accessible window
+Comment[es]=Redes sociales, chats y noticias en una sola ventana accesible
+Exec=socialrss
+Icon=socialrss
+Terminal=false
+Categories=Network;News;Feed;
+Keywords=RSS;podcast;Mastodon;Bluesky;accessibility;
+StartupNotify=true
+X-GNOME-UsesNotifications=true
+X-GNOME-Accessibility=true

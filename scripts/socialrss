@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Lanzador de SocialRSS Accessible Suite en Linux (interfaz GTK 4).
+# Uso: scripts/socialrss      (o enlázalo como ~/.local/bin/socialrss)
+set -e
+DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)"
+# Si hay un entorno virtual junto al proyecto (.venv), se usa; si no, el python del sistema.
+if [ -x "$DIR/.venv/bin/python" ]; then PY="$DIR/.venv/bin/python"; else PY="${PYTHON:-python3}"; fi
+export SOCIALRSS_UI=gtk
+export GTK_A11Y="${GTK_A11Y:-atspi}"
+exec "$PY" "$DIR/main.py" "$@"
