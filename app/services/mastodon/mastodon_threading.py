@@ -197,7 +197,7 @@ class MastodonThreadingManager:
         """Longitud CONTABLE según las reglas de Mastodon (URLs=23, menciones sin dominio,
         grafemas, el CW cuenta). Es la que valida el servidor, no len() de Python."""
         try:
-            from app.ui.mastodon_compose_helpers import longitud_contable_mastodon
+            from app.services.mastodon.mastodon_longitud import longitud_contable_mastodon
             return longitud_contable_mastodon(texto, cw)
         except Exception:
             return len(cw or "") + len(texto or "")

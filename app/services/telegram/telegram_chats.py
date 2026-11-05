@@ -746,7 +746,7 @@ class _ChatsMixin:
         if "offline" in nombre:
             ultima = getattr(user, "last_online_date", None)
             if ultima:
-                from app.ui.main_frame import formatear_tiempo_relativo
+                from app.ui.ui_helpers import formatear_tiempo_relativo  # sin wx: vale también en Linux
                 return "Última conexión " + formatear_tiempo_relativo(
                     ultima.isoformat() if hasattr(ultima, "isoformat") else str(ultima)
                 )

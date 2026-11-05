@@ -47,11 +47,11 @@ if [ -n "$faltan" ]; then
             echo "  sudo apt install python3-venv python3-gi gir1.2-gtk-4.0 gir1.2-gstreamer-1.0 \\"
             echo "    gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \\"
             echo "    gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-pulseaudio at-spi2-core \\"
-            echo "    libsecret-tools speech-dispatcher ffmpeg" ;;
+            echo "    libsecret-tools speech-dispatcher ffmpeg python3-olm" ;;
         *fedora*|*rhel*)
             echo "Instálalos con:"
             echo "  sudo dnf install python3-gobject gtk4 gstreamer1-plugins-base gstreamer1-plugins-good \\"
-            echo "    gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free at-spi2-core libsecret speech-dispatcher" ;;
+            echo "    gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free at-spi2-core libsecret speech-dispatcher python3-olm" ;;
         *arch*)
             echo "Instálalos con:"
             echo "  sudo pacman -S python-gobject gtk4 gstreamer gst-plugins-base gst-plugins-good \\"

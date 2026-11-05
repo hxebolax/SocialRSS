@@ -211,10 +211,16 @@ class BackendFalso:
     a un canal real. Cada subida es un mensaje con id incremental. Permite simular un límite
     de tamaño pequeño (para forzar la división) y mensajes inexistentes."""
 
+    _ultimo_id = 0
+
     def __init__(self, limite=10 ** 12):
         self.limite = limite
         self.mensajes = {}          # message_id -> {"bytes":..., "name":...}
-        self._siguiente = 1000
+        # Numeración ÚNICA entre instancias, como en un canal real: la base de datos del módulo es
+        # compartida y, si cada prueba empezara en 1000, un archivo de una prueba anterior con el mismo
+        # número haría creer al servicio que otra copia sigue usando el mensaje (y no lo borraría).
+        BackendFalso._ultimo_id += 1000
+        self._siguiente = BackendFalso._ultimo_id
         self.canal = -100999888777
 
     def crear_canal(self, account_id, titulo):

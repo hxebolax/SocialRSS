@@ -73,8 +73,13 @@ pydle[sasl]==1.1.0
 # El CIFRADO requiere python-olm (C): NO va aquí porque en Windows hay que compilarlo con
 # una receta especial -> ejecutar UNA VEZ tools/build_python_olm.bat (instala python-olm y
 # matrix-nio[e2e]). Si olm no está, Matrix funciona igual pero sin salas cifradas.
-# En Linux: pip install "matrix-nio[e2e]==0.25.2" (con CMake 4+: CMAKE_POLICY_VERSION_MINIMUM=3.5 pip install python-olm).
+# En Linux el cifrado se activa con el python-olm de la distribución (Debian/Ubuntu y Fedora: python3-olm), que el
+# entorno ve por --system-site-packages, o con pip install python-olm (con CMake 4+: CMAKE_POLICY_VERSION_MINIMUM=3.5).
 matrix-nio==0.25.2
+# Resto de matrix-nio[e2e] (Python puro): sin ellos, con olm presente, nio no llega ni a importarse y Matrix entero falla.
+atomicwrites~=1.4
+cachetools~=5.3
+peewee~=3.14
 # pyspellchecker: corrector ortográfico (puro Python, sin dependencias nativas)
 pyspellchecker>=0.8.0
 # yt-dlp: extraer audio de YouTube/SoundCloud/etc. para el reproductor

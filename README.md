@@ -276,14 +276,14 @@ que se eligen en Preferencias, y se codifica a Opus con ffmpeg o, si no lo hay, 
      sudo apt install python3 python3-venv python3-gi gir1.2-gtk-4.0 gir1.2-gstreamer-1.0 \
        gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
        gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-pulseaudio at-spi2-core \
-       libsecret-tools speech-dispatcher ffmpeg
+       libsecret-tools speech-dispatcher ffmpeg python3-olm
      ```
 
    - Fedora:
 
      ```bash
      sudo dnf install python3 python3-gobject gtk4 gstreamer1-plugins-base gstreamer1-plugins-good \
-       gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free at-spi2-core libsecret speech-dispatcher
+       gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free at-spi2-core libsecret speech-dispatcher python3-olm
      ```
 
    - Arch:
@@ -295,7 +295,7 @@ que se eligen en Preferencias, y se codifica a Opus con ffmpeg o, si no lo hay, 
 
    `libsecret` guarda la clave de cifrado en el llavero del escritorio (si no está, va a un archivo
    que solo puede leer tu usuario), `speech-dispatcher` da avisos por voz si no usas Orca y `ffmpeg`
-   convierte las notas de voz (si falta, se usa GStreamer).
+   convierte las notas de voz (si falta, se usa GStreamer). `python3-olm` activa el cifrado de Matrix.
 
 2. Descarga `SocialRSS_vX.Y.Z_linux.tar.gz` de
    [Releases](https://github.com/hxebolax/SocialRSS/releases/latest), descomprímelo donde quieras e
