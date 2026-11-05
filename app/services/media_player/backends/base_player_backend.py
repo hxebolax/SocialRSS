@@ -6,6 +6,10 @@ Define el contrato para poder intercambiar motores de audio (basskit, VLC, etc.)
 
 from abc import ABC, abstractmethod
 
+# Ecualizador de 10 bandas (Hz) y límites de velocidad: iguales para todos los motores.
+BANDAS_EQ = (31, 62, 125, 250, 500, 1000, 2000, 4000, 8000, 16000)
+VELOCIDAD_MIN, VELOCIDAD_MAX = 0.5, 3.0
+
 class BasePlayerBackend(ABC):
     """Interfaz abstracta para motores de reproducción de audio/vídeo."""
     
@@ -60,3 +64,20 @@ class BasePlayerBackend(ABC):
     @abstractmethod
     def cerrar(self):
         """Cierra el canal actual y libera recursos asociados."""
+
+    # --- Opcionales: un motor que no los ofrezca conserva este comportamiento neutro ---
+    al_terminar = None  # callable sin argumentos que el motor llama (en otro hilo) al acabar la pista
+
+    def ultimo_error(self) -> str:
+        """Mensaje legible del último fallo de carga, o cadena vacía."""
+        return ""
+
+    def establecer_ecualizador(self, ganancias, preamp_db: float = 0.0):
+        """Ganancias en dB (-15..+15) de las bandas de BANDAS_EQ y preamplificador en dB."""
+
+    def obtener_ecualizador(self):
+        return [0.0] * len(BANDAS_EQ), 0.0
+
+    def nivel_db(self, ventana: float = 0.05) -> float:
+        """Nivel (RMS, dB) de lo que suena ahora; -100 si no hay señal o no se puede medir."""
+        return -100.0

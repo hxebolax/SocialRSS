@@ -81,6 +81,10 @@ class AntiClickbaitPlugin(PluginBase):
         return {"title": "⚠ " + (article.get("title", "") or "")}
 
     # --- Panel de configuración ---
+    def get_settings_dialog_gtk(self, parent):
+        from app.gtk.plugins_ui import DialogoAjustesClickbait
+        return DialogoAjustesClickbait(parent, self)
+
     def get_settings_panel(self, parent):
         import wx
         panel = wx.Panel(parent)

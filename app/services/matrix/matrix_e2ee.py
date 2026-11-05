@@ -263,8 +263,10 @@ class _E2EEMixin:
                     if "emoji" not in (getattr(event, "short_authentication_string", None) or []):
                         await cliente.cancel_key_verification(txid, reject=True)
                         return
+                    # Solo se acepta: matrix-nio comparte NUESTRA clave solo, justo después de recibir la del
+                    # otro (que es el orden de la especificación). Mandarla aquí además hacía que saliera dos
+                    # veces, el otro la veía repetida y cancelaba con «Unexpected message» cuando ya estaba verificado.
                     await cliente.accept_key_verification(txid)
-                    await _enviar_clave(txid)
                 elif isinstance(event, KeyVerificationAccept):
                     # NOSOTROS iniciamos y el otro aceptó: ahora toca enviar nuestra clave.
                     await _enviar_clave(txid)

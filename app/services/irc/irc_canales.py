@@ -10,7 +10,7 @@ if not hasattr(builtins, "_"):
 
 from app.core.config_manager import config
 from app.services.irc.irc_common import (
-    asyncio, Any, Dict, Optional, List, db, log, IRCError, quitar_formato_mirc)
+    asyncio, Any, Dict, Optional, List, db, log, IRCError, quitar_formato_mirc, db_id_canal)
 
 
 class _CanalesMixin:
@@ -136,14 +136,14 @@ class _CanalesMixin:
     def nivel_aviso(self, account_id: int, canal: str) -> str:
         """Nivel de aviso sonoro del canal: 'all' (todo), 'mentions' (solo menciones), 'none'."""
         fila = db.query_one("SELECT COALESCE(notify_level,'all') FROM irc_channels "
-                            "WHERE account_id = ? AND name = ?", (account_id, (canal or "").lower()))
+                            "WHERE id = ?", (db_id_canal(account_id, canal),))
         return fila[0] if fila and fila[0] in ("all", "mentions", "none") else "all"
 
     def fijar_nivel_aviso(self, account_id: int, canal: str, nivel: str):
         if nivel not in ("all", "mentions", "none"):
             return
-        db.execute("UPDATE irc_channels SET notify_level = ? WHERE account_id = ? AND name = ?",
-                   (nivel, account_id, (canal or "").lower()))
+        db.execute("UPDATE irc_channels SET notify_level = ? WHERE id = ?",
+                   (nivel, db_id_canal(account_id, canal)))
 
     def mostrar_eventos(self, account_id: int, canal: str) -> bool:
         """¿Se muestran entradas/salidas (join/part/quit) en la conversación de este canal? El ajuste
@@ -156,9 +156,9 @@ class _CanalesMixin:
         except Exception:
             pass
         fila = db.query_one("SELECT COALESCE(show_events,1) FROM irc_channels "
-                            "WHERE account_id = ? AND name = ?", (account_id, (canal or "").lower()))
+                            "WHERE id = ?", (db_id_canal(account_id, canal),))
         return bool(fila[0]) if fila else True
 
     def fijar_mostrar_eventos(self, account_id: int, canal: str, valor: bool):
-        db.execute("UPDATE irc_channels SET show_events = ? WHERE account_id = ? AND name = ?",
-                   (1 if valor else 0, account_id, (canal or "").lower()))
+        db.execute("UPDATE irc_channels SET show_events = ? WHERE id = ?",
+                   (1 if valor else 0, db_id_canal(account_id, canal)))

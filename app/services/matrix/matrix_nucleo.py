@@ -114,11 +114,13 @@ class _NucleoMixin:
         device_id se activa el CIFRADO con store de claves persistente por cuenta (protegido
         con una clave guardada en security); sin ellos (login inicial), cliente efímero."""
         from nio import AsyncClient, AsyncClientConfig
-        from nio.store import SqliteStore
         # Antes de que nio cree su sesión aiohttp: usar el resolutor DNS del sistema (evita el
         # 'Could not contact DNS servers' de aiodns/c-ares en algunos equipos).
         _forzar_resolver_dns_os()
         if account_id and device_id and self.cifrado_disponible():
+            # Solo existe con el motor de cifrado (python-olm): sin él nio no lo exporta y el import fallaría
+            # incluso para iniciar sesión.
+            from nio.store import SqliteStore
             # store_name FIJO: sin él, nio nombra el archivo con el user_id (que lleva ':')
             # y en NTFS eso crea un Alternate Data Stream invisible que se PIERDE al copiar
             # la carpeta o hacer una copia de seguridad. Con nombre propio, el store es un

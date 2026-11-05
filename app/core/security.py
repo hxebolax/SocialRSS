@@ -20,6 +20,10 @@ MIGRACIÓN: los `secrets.enc` antiguos (cifrados con la clave derivada de
 MachineGuid, o con la clave "legacy" anterior a esa) se descifran con las claves
 antiguas y se recifran automáticamente con la clave maestra nueva. Si DPAPI no
 está disponible (no-Windows), se mantiene la derivación por MachineGuid.
+
+En LINUX la clave maestra aleatoria se guarda en el llavero del escritorio (Secret Service, vía
+`secret-tool`: GNOME Keyring, KWallet...) si está disponible y, si no, en `secrets.key` con
+permisos 0600 (solo legible por el usuario).
 """
 
 import os
@@ -128,6 +132,42 @@ def _dpapi_desproteger(datos: bytes) -> Optional[bytes]:
         return None
 
 
+_SS_ATRIBUTOS = ("application", "SocialRSS", "clave", "secretos")
+
+
+def _secret_tool(*args, entrada: bytes = None) -> Optional[bytes]:
+    """Ejecuta `secret-tool`; devuelve su salida o None si no existe o falla."""
+    import shutil
+    import subprocess
+    exe = shutil.which("secret-tool")
+    if not exe:
+        return None
+    try:
+        r = subprocess.run([exe, *args], input=entrada, capture_output=True, timeout=15)
+        return r.stdout if r.returncode == 0 else None
+    except Exception as e:
+        log.debug(f"secret-tool falló: {e}")
+        return None
+
+
+def _llavero_leer() -> Optional[bytes]:
+    """Clave maestra guardada en el llavero del escritorio (Linux), o None."""
+    salida = _secret_tool("lookup", *_SS_ATRIBUTOS)
+    if not salida:
+        return None
+    try:
+        bruta = base64.b64decode(salida.strip())
+        return bruta if len(bruta) >= 32 else None
+    except Exception:
+        return None
+
+
+def _llavero_guardar(bruta: bytes) -> bool:
+    """Guarda la clave maestra en el llavero del escritorio (Linux)."""
+    return _secret_tool("store", "--label=SocialRSS", *_SS_ATRIBUTOS,
+                        entrada=base64.b64encode(bruta)) is not None
+
+
 def _identificador_maquina_legacy() -> str:
     """Reproduce el identificador ANTIGUO (MachineGuid|MAC|COMPUTERNAME) solo para poder
     descifrar y migrar secretos guardados con versiones anteriores."""
@@ -175,6 +215,8 @@ class SecurityManager:
         """Devuelve un Fernet con la clave MAESTRA aleatoria protegida por DPAPI
         (data/config/secrets.key), creándola si no existe. None si DPAPI no está
         disponible o la clave existente no se puede desproteger (otro usuario/PC)."""
+        if os.name != "nt":
+            return self._clave_maestra_posix()
         try:
             if self._keyfile.exists():
                 protegida = self._keyfile.read_bytes()
@@ -202,6 +244,41 @@ class SecurityManager:
             return Fernet(base64.urlsafe_b64encode(bruta))
         except Exception as e:
             log.error(f"No se pudo cargar/crear la clave maestra DPAPI: {e}")
+            return None
+
+    def _clave_maestra_posix(self):
+        """Clave maestra en Linux/macOS: llavero del escritorio y, si no hay, fichero 0600."""
+        try:
+            bruta = _llavero_leer()
+            if bruta is not None:
+                return Fernet(base64.urlsafe_b64encode(bruta[:32]))
+            if self._keyfile.exists():
+                bruta = self._keyfile.read_bytes()
+                if len(bruta) < 32:
+                    return None
+                # Primera vez con llavero disponible: subir la clave y quitar el fichero.
+                if _llavero_guardar(bruta[:32]) and _llavero_leer() is not None:
+                    try:
+                        self._keyfile.unlink()
+                    except Exception:
+                        pass
+                return Fernet(base64.urlsafe_b64encode(bruta[:32]))
+            bruta = os.urandom(32)
+            if _llavero_guardar(bruta) and _llavero_leer() == bruta:
+                log.info("Creada clave maestra de secretos en el llavero del escritorio.")
+                return Fernet(base64.urlsafe_b64encode(bruta))
+            self._keyfile.parent.mkdir(parents=True, exist_ok=True)
+            tmp = self._keyfile.with_suffix(".key.tmp")
+            fd = os.open(str(tmp), os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+            with os.fdopen(fd, "wb") as f:
+                f.write(bruta)
+                f.flush()
+                os.fsync(f.fileno())
+            tmp.replace(self._keyfile)
+            log.info("Creada clave maestra de secretos en secrets.key (permisos 0600).")
+            return Fernet(base64.urlsafe_b64encode(bruta))
+        except Exception as e:
+            log.error(f"No se pudo cargar/crear la clave maestra: {e}")
             return None
 
     def _init_cifrado(self):
@@ -368,6 +445,11 @@ class SecurityManager:
             f.write(datos)
             f.flush()
             os.fsync(f.fileno())
+        if os.name != "nt":
+            try:
+                os.chmod(tmp, 0o600)
+            except OSError:
+                pass
         tmp.replace(self._fallback_file)
 
 

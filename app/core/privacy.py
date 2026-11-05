@@ -54,37 +54,15 @@ def _confirmar_esquema(url: str) -> bool:
     enlace llegado en un artículo o mensaje podría activar aplicaciones locales.
     Si no hay interfaz disponible, se deniega por seguridad."""
     try:
-        import wx
-        if not wx.App.Get():
+        from .plataforma import confirmar_ui, hay_interfaz
+        if not hay_interfaz():
             return False
         esquema = _esquema(url) or "?"
         resumen = url if len(url) <= 120 else url[:120] + "…"
-
-        def _preguntar():
-            dlg = wx.MessageDialog(
-                None,
-                _("Este enlace usa el protocolo \"{0}\", que puede abrir una aplicación "
-                  "de tu equipo:\n\n{1}\n\n¿Quieres abrirlo?").format(esquema, resumen),
-                _("Abrir enlace con protocolo no estándar"),
-                wx.YES_NO | wx.NO_DEFAULT | wx.ICON_WARNING)
-            resp = dlg.ShowModal()
-            dlg.Destroy()
-            return resp == wx.ID_YES
-        if wx.IsMainThread():
-            return _preguntar()
-        # Desde un hilo de fondo: pasar la pregunta al hilo de interfaz y esperar.
-        import threading
-        resultado = {}
-        hecho = threading.Event()
-
-        def _en_ui():
-            try:
-                resultado["ok"] = _preguntar()
-            finally:
-                hecho.set()
-        wx.CallAfter(_en_ui)
-        hecho.wait(timeout=120)
-        return bool(resultado.get("ok"))
+        return confirmar_ui(
+            _("Este enlace usa el protocolo \"{0}\", que puede abrir una aplicación "
+              "de tu equipo:\n\n{1}\n\n¿Quieres abrirlo?").format(esquema, resumen),
+            _("Abrir enlace con protocolo no estándar"))
     except Exception as e:
         log.debug(f"No se pudo confirmar el protocolo de '{url}': {e}")
         return False

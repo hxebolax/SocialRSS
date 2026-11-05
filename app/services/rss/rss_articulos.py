@@ -3,6 +3,7 @@
 
 Mixin de RSSService (parte de la refactorización modular).
 """
+from app.core.plataforma import llamar_en_ui
 import logging
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Callable
@@ -422,8 +423,7 @@ class _ArticulosMixin:
                         if hecho > MAX_EPISODIO:
                             raise ValueError(_("El episodio supera el tamaño máximo (1 GiB)."))
                         if progreso and total:
-                            import wx
-                            wx.CallAfter(progreso, hecho, total)
+                            llamar_en_ui(progreso, hecho, total)
                 # Si el servidor declaró el tamaño y llegó menos, la descarga está truncada.
                 if total and hecho < total:
                     raise IOError(_("Descarga incompleta ({0} de {1} bytes).").format(hecho, total))

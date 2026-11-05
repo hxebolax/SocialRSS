@@ -183,7 +183,7 @@ class _AvanzadoMixin:
             raise MatrixError(_("La clave del campo no puede estar vacía."))
         uid = self._user_id(account_id)
         ruta = ("/_matrix/client/v3/profile/" + q_seg(uid) +
-                "/" + q_seg(clave, safe=""))
+                "/" + q_seg(clave))
         self._api_http(account_id, "PUT", ruta, {clave: valor})
 
     def borrar_campo_perfil(self, account_id: int, clave: str):
@@ -195,7 +195,7 @@ class _AvanzadoMixin:
             raise MatrixError(_("El nombre y el avatar se cambian desde sus propias opciones."))
         uid = self._user_id(account_id)
         ruta = ("/_matrix/client/v3/profile/" + q_seg(uid) +
-                "/" + q_seg(clave, safe=""))
+                "/" + q_seg(clave))
         self._api_http(account_id, "DELETE", ruta)
 
     def mi_zona_horaria(self, account_id: int) -> str:

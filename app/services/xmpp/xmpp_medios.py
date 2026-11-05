@@ -296,7 +296,7 @@ class _MediosMixin:
         from app.services.audio import microphone
         ruta = str(get_data_path("temp") / f"voz_xmpp_{int(_t.time())}.wav")
         dispositivo, volumen = microphone.config_microfono()
-        grabador = microphone.GrabadorBass()
+        grabador = microphone.crear_grabador()
         try:
             grabador.iniciar(dispositivo or None, volumen)
         except RuntimeError as e:

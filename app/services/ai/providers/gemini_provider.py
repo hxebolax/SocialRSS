@@ -54,7 +54,7 @@ class GeminiProvider(BaseAIProvider):
     def _get_client(self):
         """Devuelve el cliente de Gemini con la clave activa actual."""
         if not HAS_GEMINI:
-            raise AIError("La librería google-genai no está instalada.")
+            raise AIError("La librería google-genai no está instalada. Instálala (pip install google-genai) para usar Gemini.")
         _asegurar_sdk()
         claves = self._get_keys()
         if not claves:
@@ -122,7 +122,7 @@ class GeminiProvider(BaseAIProvider):
 
     def describir_imagen(self, ruta_imagen: str, prompt: str) -> str:
         if not HAS_GEMINI:
-            raise AIError("La librería google-genai no está instalada.")
+            raise AIError("La librería google-genai no está instalada. Instálala (pip install google-genai) para usar Gemini.")
         _asegurar_sdk()
         path = Path(ruta_imagen)
         if not path.exists():

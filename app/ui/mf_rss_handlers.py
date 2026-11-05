@@ -412,53 +412,9 @@ class _Mf_rss_handlers:
         except Exception:
             pass
 
-        def _int_cfg(seccion, clave):
-            try:
-                return int(config.get(seccion, clave, 0))
-            except Exception:
-                return 0
-        # Límites por servicio (cada red tiene su propia opción en Preferencias). 0 = SIN LÍMITE:
-        # por petición del usuario, NINGÚN buffer se recorta a menos que él ponga un máximo. Sin
-        # límite, los buffers conservan todo lo cargado (ojo: la base puede crecer en sesiones muy
-        # largas; el usuario puede fijar un máximo por red en Preferencias si lo desea).
-        mst_buf = _int_cfg("mastodon", "max_items_buffer")       # 0 = sin límite
-        mst_notif = _int_cfg("mastodon", "max_notifications")    # 0 = sin límite
-        bsky_buf = _int_cfg("bluesky", "max_items_buffer")       # 0 = sin límite
-        bsky_notif = _int_cfg("bluesky", "max_notifications")    # 0 = sin límite
-        max_tg = _int_cfg("telegram", "max_messages_per_chat")   # 0 = sin límite
-        leer_prefs_srv = bool(config.get("mastodon", "read_preferences_from_instance", False))
         def _bg(ctx):
-            # Mastodon solo se poda si el usuario fijó un máximo (>0); si no, se conserva todo.
-            if mst_buf > 0 or mst_notif > 0:
-                for (mid,) in db.query("SELECT id FROM accounts WHERE service_id = 'mastodon' AND active = 1"):
-                    mastodon_service.podar_antiguos(mid, max_buffer=mst_buf, max_notif=mst_notif)
-            # Precargar en segundo plano las preferencias del servidor (visibilidad por
-            # defecto) para que el compositor las tenga listas sin bloquear la interfaz.
-            if leer_prefs_srv:
-                for (mid,) in db.query("SELECT id FROM accounts WHERE service_id = 'mastodon' AND active = 1"):
-                    try:
-                        mastodon_service.obtener_preferencias_servidor(mid)
-                    except Exception:
-                        pass
-            if bsky_buf > 0 or bsky_notif > 0:
-                from app.services.bluesky import bluesky_service as _bsky
-                for (bid,) in db.query("SELECT id FROM accounts WHERE service_id = 'bluesky' AND active = 1"):
-                    _bsky.podar_antiguos(bid, max_buffer=bsky_buf, max_notif=bsky_notif)
-            if max_tg > 0:
-                for (tid,) in db.query("SELECT id FROM accounts WHERE service_id = 'telegram' AND active = 1"):
-                    telegram_service.podar_mensajes_antiguos(tid, max_por_chat=max_tg)
-            for (rid,) in db.query("SELECT id FROM accounts WHERE service_id = 'rss' AND active = 1"):
-                try:
-                    rss_service.limpieza_mantenimiento(rid)
-                except Exception:
-                    pass
-            # Limpiar filas huérfanas de las tablas FTS (índices de búsqueda sin su registro).
-            try:
-                from app.core.data_cleanup import limpiar_huerfanos_fts
-                limpiar_huerfanos_fts()
-            except Exception as e:
-                log.debug(f"No se pudieron limpiar huérfanos FTS en mantenimiento: {e}")
-            return True
+            from app.core.mantenimiento import podar_historico
+            return podar_historico()
         task_manager.start_task(_bg, pass_context=True)
 
     # --- DIÁLOGOS DE ENLACE ---

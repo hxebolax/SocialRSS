@@ -28,6 +28,10 @@ class YoutubeSuscripcionesPlugin(PluginBase):
         return True
 
     def _abrir(self):
+        if self.api.interfaz() == "gtk":
+            from app.gtk.plugins_ui import DialogoSuscripcionesYouTube
+            DialogoSuscripcionesYouTube(self.api.get_main_window()).present()
+            return
         cls = _obtener_dialogo()
         dlg = cls(self.api.get_main_window())
         dlg.ShowModal()
@@ -105,7 +109,7 @@ def _crear_dialogo_class():
             nombre = d.GetValue().strip() if d.ShowModal() == wx.ID_OK else ""
             d.Destroy()
             if nombre:
-                rss_service.agregar_categoria(nombre)
+                rss_service.agregar_categoria(self._cuenta_rss(), nombre)
                 self._cargar_categorias()
                 # Seleccionar la recién creada.
                 for i, c in enumerate(self._cats):

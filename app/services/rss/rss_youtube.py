@@ -5,6 +5,7 @@
 - Suscribe un canal como feed de YouTube y descarga TODO su catálogo de vídeos (sin límite), que se
   guardan como artículos; las novedades posteriores entran solas por el feed RSS del canal.
 """
+from app.core.plataforma import llamar_en_ui
 import logging
 from datetime import datetime, timedelta
 
@@ -140,7 +141,6 @@ class _YoutubeMixin:
                     except Exception as ex:
                         log.debug(f"No se pudo guardar el vídeo {vid}: {ex}")
             if progreso and total:
-                import wx
-                wx.CallAfter(progreso, min(j + LOTE, len(pendientes)), max(len(pendientes), 1))
+                llamar_en_ui(progreso, min(j + LOTE, len(pendientes)), max(len(pendientes), 1))
         log.info(f"YouTube: canal '{titulo}' suscrito con {guardados}/{total} vídeos.")
         return {"feed_id": feed_id, "titulo": titulo, "videos": guardados}

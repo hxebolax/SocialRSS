@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Módulo para el gestor de tareas en segundo plano.
-Evita el bloqueo de la interfaz gráfica y se comunica de forma segura usando wx.CallAfter.
+Evita el bloqueo de la interfaz gráfica y se comunica de forma segura con el hilo de la interfaz (llamar_en_ui).
 Soporta cancelación y notificación de progreso.
 """
 
@@ -12,7 +12,7 @@ import time
 import uuid
 import concurrent.futures
 from typing import Callable, Any, Optional, Dict
-import wx
+from .plataforma import llamar_en_ui
 from .speech import speak
 from .event_bus import event_bus
 
@@ -140,8 +140,8 @@ class TaskContext:
     def report_progress(self, percent: int, msg: str = ""):
         """Informa del progreso actual de la tarea (0-100)."""
         if self.progress_callback:
-            # Asegurar que se llame en el hilo principal de wx
-            wx.CallAfter(self.progress_callback, percent, msg)
+            # Asegurar que se llame en el hilo de la interfaz
+            llamar_en_ui(self.progress_callback, percent, msg)
 
 
 class TaskManager:
@@ -223,7 +223,7 @@ class TaskManager:
                 log.debug(f"Tarea duplicada descartada (key={unique_key}).")
                 if callback is not None:
                     try:
-                        wx.CallAfter(callback, None,
+                        llamar_en_ui(callback, None,
                                      TareaDuplicadaError("Esa actualización ya está en curso."))
                     except Exception:
                         pass
@@ -350,10 +350,10 @@ class TaskManager:
         if ctx.is_cancelled() and not error:
             error = Exception("Tarea cancelada por el usuario.")
             
-        # Ejecutar callbacks y notificaciones en el hilo principal de wxPython. Durante el
-        # cierre, el bucle de wx puede ya no existir: no debe tumbar el hilo de trabajo.
+        # Ejecutar callbacks y notificaciones en el hilo de la interfaz. Durante el
+        # cierre, el bucle de la UI puede ya no existir: no debe tumbar el hilo de trabajo.
         try:
-            wx.CallAfter(
+            llamar_en_ui(
                 self._finish_task,
                 result,
                 error,

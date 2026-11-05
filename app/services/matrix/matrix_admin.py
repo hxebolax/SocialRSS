@@ -51,8 +51,11 @@ class _AdminMixin:
         params = {"from": "0", "limit": str(max(1, limite)), "order_by": "name", "dir": "f"}
         if busqueda:
             params["name"] = busqueda
-        if not incluir_desactivados:
-            params["deactivated"] = "false"
+        # Ambos son «incluir» (por defecto Synapse oculta las cuentas desactivadas y las bloqueadas): sin ellos
+        # una cuenta bloqueada desaparecía de la lista y no se podía volver a desbloquear desde aquí.
+        if incluir_desactivados:
+            params["deactivated"] = "true"
+        params["locked"] = "true"
         ruta = "/_synapse/admin/v2/users?" + urllib.parse.urlencode(params)
         r = self._api_http(account_id, "GET", ruta)
         salida = []

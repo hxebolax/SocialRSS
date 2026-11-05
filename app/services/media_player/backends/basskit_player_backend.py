@@ -7,7 +7,7 @@ Soporta audio local, streaming de URLs directas y control de tempo (velocidad) s
 import ctypes
 import logging
 from pathlib import Path
-from .base_player_backend import BasePlayerBackend
+from .base_player_backend import BasePlayerBackend, BANDAS_EQ, VELOCIDAD_MIN, VELOCIDAD_MAX
 
 # Cargar dependencias de basskit. Desde basskit 0.4 los tipos de callback (DOWNLOADPROC...)
 # viven en basskit.callbacks.bass (antes también se exportaban desde basskit.dlls.bass); este
@@ -26,8 +26,7 @@ from basskit.constantes.bass_fx import (
 
 # Ecualizador de 10 bandas (BASS_FX PEAKEQ, una banda por frecuencia, ancho de una octava) y
 # preamplificador (BASS_FX VOLUME). Se aplican sobre el canal que suena y se reaplican al cargar.
-BANDAS_EQ = (31, 62, 125, 250, 500, 1000, 2000, 4000, 8000, 16000)
-VELOCIDAD_MIN, VELOCIDAD_MAX = 0.5, 3.0
+# (BANDAS_EQ y los límites de velocidad viven en base_player_backend.)
 
 log = logging.getLogger(__name__)
 

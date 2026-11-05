@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Módulo para la salida de voz accesible e integración con lectores de pantalla.
-Utiliza accessible_output2 para soportar NVDA, JAWS, SAPI5 y otros.
+Utiliza accessible_output2 (NVDA, JAWS, SAPI5...) en Windows y Orca / speech-dispatcher en Linux.
 """
 
 import logging
@@ -31,9 +31,15 @@ def inicializar_voz():
         if _inicializado:
             return
         try:
-            from accessible_output2.outputs.auto import Auto
-            _output_api = Auto()
-            log.info("Lector de pantalla inicializado con éxito mediante accessible_output2.")
+            from .plataforma import ES_WINDOWS
+            if ES_WINDOWS:
+                from accessible_output2.outputs.auto import Auto
+                _output_api = Auto()
+                log.info("Lector de pantalla inicializado con éxito mediante accessible_output2.")
+            else:
+                from .voz_linux import SalidaLinux
+                _output_api = SalidaLinux()
+                log.info("Salida de voz de Linux inicializada (Orca / speech-dispatcher).")
         except Exception as e:
             log.error(f"No se pudo inicializar accessible_output2: {e}")
             _output_api = None
@@ -166,73 +172,23 @@ def notificar(text: str, titulo: str = None):
 
 
 def _mostrar_toast(text: str, titulo: str = None):
-    """Muestra una notificación nativa de Windows con wx.adv.NotificationMessage (Action Center).
-    No requiere dependencias nuevas. Seguro desde cualquier hilo (se difiere al hilo de la UI)."""
-    def _show():
-        try:
-            import wx
-            import wx.adv
-            if wx.GetApp() is None:
-                return
-            n = wx.adv.NotificationMessage(titulo or "SocialRSS", text)
-            try:
-                n.SetFlags(wx.ICON_INFORMATION)
-            except Exception:
-                pass
-            n.Show(timeout=wx.adv.NotificationMessage.Timeout_Auto)
-        except Exception as e:
-            log.debug(f"No se pudo mostrar el toast de Windows: {e}")
-    try:
-        import wx
-        if wx.GetApp() is None:
-            return
-        if wx.IsMainThread():
-            _show()
-        else:
-            wx.CallAfter(_show)
-    except Exception:
-        pass
+    """Notificación nativa del sistema (Centro de actividades de Windows, notificaciones del
+    escritorio en Linux). Segura desde cualquier hilo; la entrega la hace la interfaz activa."""
+    from .plataforma import mostrar_toast
+    mostrar_toast(text, titulo)
 
 
 def _mostrar_aviso_dialogo(text: str, titulo: str = None):
-    """Muestra un mensaje en un cuadro de diálogo de wx, en el hilo de la interfaz. Los
-    botones salen en español gracias a la locale de wx fijada al arrancar."""
-    def _show():
-        try:
-            import wx
-            app = wx.GetApp()
-            if app is None:
-                return
-            parent = app.GetTopWindow()
-            dlg = wx.MessageDialog(parent, text, titulo or "SocialRSS Accessible Suite",
-                                   wx.OK | wx.ICON_INFORMATION)
-            dlg.ShowModal()
-            dlg.Destroy()
-        except Exception as e:
-            log.debug(f"No se pudo mostrar el aviso en diálogo: {e}")
-    try:
-        import wx
-        if wx.GetApp() is None:
-            return
-        if wx.IsMainThread():
-            _show()
-        else:
-            wx.CallAfter(_show)
-    except Exception:
-        pass
+    """Muestra un mensaje en un cuadro de diálogo, en el hilo de la interfaz."""
+    from .plataforma import mostrar_aviso_dialogo
+    mostrar_aviso_dialogo(text, titulo)
 
 
 def copiar_al_portapapeles(text: str, mensaje_anuncio: str = "Copiado al portapapeles"):
-    """Copia una cadena al portapapeles de Windows de forma accesible."""
-    try:
-        import win32clipboard
-        win32clipboard.OpenClipboard()
-        win32clipboard.EmptyClipboard()
-        win32clipboard.SetClipboardText(text, win32clipboard.CF_UNICODETEXT)
-        win32clipboard.CloseClipboard()
-        if mensaje_anuncio:
-            speak(mensaje_anuncio)
-        return True
-    except Exception as e:
-        log.error(f"Error al copiar al portapapeles: {e}")
+    """Copia una cadena al portapapeles del sistema de forma accesible."""
+    from .plataforma import copiar_texto
+    if not copiar_texto(text):
         return False
+    if mensaje_anuncio:
+        speak(mensaje_anuncio)
+    return True

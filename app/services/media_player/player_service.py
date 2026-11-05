@@ -5,15 +5,15 @@ Administra el motor activo, la cola de reproducción y el historial.
 Ejecuta la carga de contenidos en segundo plano para no congelar la UI.
 """
 
+from app.core.plataforma import llamar_en_ui
 import logging
 import threading
 from typing import Optional, Dict, Any, Callable
-import wx
 
 from app.core.config_manager import config
 from app.core.event_bus import event_bus
 from app.core.task_manager import task_manager
-from .backends.basskit_player_backend import BasskitPlayerBackend
+from .backends import crear_backend
 from .player_queue import PlayerQueue
 from .player_history import PlayerHistory
 
@@ -23,7 +23,7 @@ class PlayerService:
     """Servicio principal del reproductor multimedia."""
     
     def __init__(self):
-        self.backend = BasskitPlayerBackend()
+        self.backend = crear_backend()
         self.cola = PlayerQueue()
         self.historial = PlayerHistory()
 
@@ -137,7 +137,7 @@ class PlayerService:
         """Carga una pista y, en cuanto esté lista, comienza a reproducirla."""
         def _cb(exito):
             if exito:
-                wx.CallAfter(self.reproducir)
+                llamar_en_ui(self.reproducir)
         self.cargar_async(media_url, title, service_origin=service_origin,
                           account_origin_id=account_origin_id, source_link=source_link,
                           resume=resume, callback=_cb)

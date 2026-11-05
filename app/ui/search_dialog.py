@@ -12,9 +12,6 @@ from app.core.privacy import abrir_url
 from app.core.speech import speak, notificar
 from app.core.database import db
 from app.core.task_manager import task_manager
-from app.services.mastodon.mastodon_service import mastodon_service
-from app.services.rss.rss_service import rss_service
-from app.core.html_utils import html_a_texto
 from .accessible_controls import AccessibleListCtrl, AccessibleTextCtrl, mostrar_info
 
 
@@ -104,101 +101,9 @@ class GlobalSearchDialog(wx.Dialog):
         speak(_("Buscando..."), interrupt=True)
         self.btn_buscar.Disable()
 
-        from app.core.feature_flags import servicio_habilitado
-
         def _bg(ctx):
-            res = []
-            # Un servicio DESACTIVADO no se busca, ni siquiera con el ámbito "Todos".
-            if ambito in (0, 1) and servicio_habilitado("mastodon"):
-                for acc in self._cuentas("mastodon"):
-                    for st in mastodon_service.buscar_statuses_fts(acc, query, limit=100):
-                        res.append({
-                            "service": "mastodon", "db_id": st.id,
-                            "origen": getattr(st, "author_name", "") or "",
-                            "texto": html_a_texto(getattr(st, "content", "") or ""),
-                            "fecha": str(getattr(st, "created_at", "") or ""),
-                        })
-            if ambito in (0, 2) and servicio_habilitado("bluesky"):
-                from app.services.bluesky import bluesky_service
-                for acc in self._cuentas("bluesky"):
-                    for po in bluesky_service.buscar_posts_fts(acc, query, limit=100):
-                        res.append({
-                            "service": "bluesky", "db_id": po.id,
-                            "origen": getattr(po, "author_name", "") or "",
-                            "texto": (getattr(po, "content", "") or ""),
-                            "fecha": str(getattr(po, "indexed_at", "") or ""),
-                        })
-            # W Social: se busca en lo YA descargado (índice de texto completo local), como en
-            # el resto de redes; la búsqueda global nunca depende de la red.
-            if ambito in (0, 9) and servicio_habilitado("wsocial"):
-                from app.services.wsocial import wsocial_service
-                for fila in wsocial_service.buscar_local(query, limite=100):
-                    res.append({
-                        "service": "wsocial", "db_id": fila[0],
-                        "origen": fila[1] or fila[2] or "",
-                        "texto": fila[3] or "",
-                        "fecha": str(fila[4] or ""),
-                    })
-            if ambito in (0, 3) and servicio_habilitado("rss"):
-                for acc in self._cuentas("rss"):
-                    for art in rss_service.buscar_articulos_fts(acc, query, limit=100):
-                        res.append({
-                            "service": "rss", "db_id": art.id,
-                            "origen": getattr(art, "author", "") or "",
-                            "texto": (getattr(art, "title", "") or ""),
-                            "fecha": str(getattr(art, "published_at", "") or ""),
-                        })
-            # Telegram y X no tienen FTS; se buscan con LIKE sobre el texto cacheado.
-            like = f"%{query}%"
-            if ambito in (0, 4) and servicio_habilitado("telegram"):
-                for acc in self._cuentas("telegram"):
-                    for row in db.query(
-                            "SELECT id, sender_name, text, date, chat_id FROM telegram_messages "
-                            "WHERE account_id = ? AND text LIKE ? ORDER BY date DESC LIMIT 100",
-                            (acc, like)):
-                        res.append({
-                            "service": "telegram", "db_id": row[0], "chat_id": row[4],
-                            "origen": row[1] or "", "texto": row[2] or "", "fecha": str(row[3] or ""),
-                        })
-            if ambito in (0, 5) and servicio_habilitado("x"):
-                for acc in self._cuentas("x"):
-                    for row in db.query(
-                            "SELECT id, author_name, author_screen_name, text, created_at, tweet_id "
-                            "FROM x_tweets WHERE account_id = ? AND text LIKE ? ORDER BY created_at DESC LIMIT 100",
-                            (acc, like)):
-                        res.append({
-                            "service": "x", "db_id": row[0], "screen": row[2] or "", "tweet_id": row[5],
-                            "origen": row[1] or row[2] or "", "texto": row[3] or "", "fecha": str(row[4] or ""),
-                        })
-            if ambito in (0, 7) and servicio_habilitado("matrix"):
-                from app.services.matrix import matrix_service
-                for acc in self._cuentas("matrix"):
-                    for m in matrix_service.buscar_mensajes_fts(acc, query, limit=100):
-                        res.append({
-                            "service": "matrix", "db_id": m["db_id"], "account_id": acc,
-                            "room_id": m["room_id"], "origen": m["quien"] or "",
-                            "texto": m["texto"] or "", "fecha": str(m["date"] or ""),
-                        })
-            if ambito in (0, 6) and servicio_habilitado("irc"):
-                from app.services.irc import irc_service
-                for acc in self._cuentas("irc"):
-                    for m in irc_service.buscar_mensajes_fts(acc, query, limit=100):
-                        res.append({
-                            "service": "irc", "db_id": m["db_id"], "account_id": acc,
-                            "channel": m["channel"],
-                            "origen": f"{m['nick']} ({m['channel']})" if m.get("nick") else m["channel"],
-                            "texto": m["text"] or "", "fecha": str(m["date"] or ""),
-                        })
-            if ambito in (0, 8) and servicio_habilitado("xmpp"):
-                from app.services.xmpp.xmpp_service import xmpp_service
-                for acc in self._cuentas("xmpp"):
-                    for m in xmpp_service.buscar_mensajes_fts(acc, query, limit=100):
-                        res.append({
-                            "service": "xmpp", "db_id": m["db_id"], "account_id": acc,
-                            "chat_jid": m["chat_jid"], "origen": m["quien"] or m["chat_jid"],
-                            "texto": m["texto"] or "", "fecha": str(m["date"] or ""),
-                        })
-            return res
+            from app.core.busqueda_global import buscar
+            return buscar(query, ambito)
 
         def _finish(res, err):
             self.btn_buscar.Enable()

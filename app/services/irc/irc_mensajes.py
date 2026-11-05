@@ -50,6 +50,19 @@ class _MensajesMixin:
         self._guardar_mensaje(account_id, destino_bd, "notice", cliente.nickname or "", texto,
                               propio=True, es_privado=not destino.startswith(("#", "&", "+", "!")))
 
+    def unirse_canal(self, account_id: int, canal: str):
+        """Entra en un canal (bloqueante: llamar desde segundo plano)."""
+        canal = (canal or "").strip()
+        if not canal:
+            return
+        if not canal.startswith(("#", "&", "+", "!")):
+            canal = "#" + canal
+        self._run(self._cliente_conectado(account_id).join(canal), timeout=20.0)
+
+    def salir_canal(self, account_id: int, canal: str):
+        """Sale de un canal (bloqueante: llamar desde segundo plano)."""
+        self._run(self._cliente_conectado(account_id).part(canal), timeout=20.0)
+
     def abrir_privado(self, account_id: int, nick: str):
         """Crea (si no existe) el chat privado con un nick, para escribirle tú primero."""
         nick = (nick or "").strip().lstrip("@")
