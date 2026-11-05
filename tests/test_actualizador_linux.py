@@ -139,3 +139,21 @@ def test_el_paquete_de_linux_no_lleva_nada_de_windows():
     for r in rels:
         assert not r.startswith(("__pip__/", "nvda_addon/", "tests/", "tools/", "data/bin/", "build/", "adjuntos/"))
         assert not r.endswith((".bat", ".cmd", ".exe", ".pyc")) and r not in ("setup.py", "requirements.txt")
+        assert not r.startswith("packaging/")
+
+
+def test_pkgbuild_de_arch_sigue_a_la_release(tmp_path):
+    pkgbuild = tmp_path / "PKGBUILD"
+    pkgbuild.write_text("pkgname=socialrss\npkgver=1.0.29\npkgrel=3\n"
+                        "sha256sums=('" + "aa" * 32 + "'\n            '" + "cc" * 32 + "')\n",
+                        encoding="utf-8", newline="")
+    assert empaquetar_linux.actualizar_pkgbuild("1.0.30", "bb" * 32, str(pkgbuild))
+    texto = pkgbuild.read_text(encoding="utf-8")
+    assert "pkgver=1.0.30\npkgrel=1\n" in texto
+    assert "sha256sums=('" + "bb" * 32 + "'" in texto and "cc" * 32 in texto
+    # Misma versión: solo cambia la suma y pkgrel se respeta.
+    pkgbuild.write_text(texto.replace("pkgrel=1", "pkgrel=2"), encoding="utf-8", newline="")
+    assert empaquetar_linux.actualizar_pkgbuild("1.0.30", "dd" * 32, str(pkgbuild))
+    assert "pkgrel=2" in pkgbuild.read_text(encoding="utf-8")
+    assert not empaquetar_linux.actualizar_pkgbuild("1.0.30", "dd" * 32, str(pkgbuild))
+    assert not empaquetar_linux.actualizar_pkgbuild("1.0.30", "dd" * 32, str(tmp_path / "no_existe"))

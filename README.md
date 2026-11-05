@@ -314,10 +314,30 @@ que se eligen en Preferencias, y se codifica a Opus con ffmpeg o, si no lo hay, 
 
 3. Arranca con `socialrss`, desde el menú de aplicaciones o con `./scripts/socialrss`.
 
-Tus datos viven en la carpeta `data`, junto al programa, igual que en Windows. Para actualizar,
-descomprime la versión nueva encima de la anterior (tus datos no se tocan) y vuelve a ejecutar
-`./instalar.sh`. La aplicación avisa cuando hay versión nueva y abre la página de descargas, pero no
-se actualiza sola.
+Tus datos viven en la carpeta `data`, junto al programa, igual que en Windows. Cuando hay versión
+nueva, la aplicación la descarga, la verifica y la instala sin tocar tus datos (también puedes
+descomprimirla encima de la anterior y volver a ejecutar `./instalar.sh`).
+
+#### Arch Linux: paquete de pacman
+
+En Arch (y derivadas con Python 3.14) se puede instalar como paquete del sistema. Cada release trae
+`socialrss-X.Y.Z-N-x86_64.pkg.tar.zst`:
+
+```bash
+sudo pacman -U socialrss-X.Y.Z-N-x86_64.pkg.tar.zst
+```
+
+O constrúyelo tú con el `PKGBUILD` de [`packaging/arch`](packaging/arch) (sirve también en aarch64):
+
+```bash
+cd packaging/arch
+makepkg -si
+```
+
+El programa queda en `/usr/share/socialrss` con sus bibliotecas de Python dentro y se arranca con
+`socialrss` o desde el menú. Tus datos van a `~/.local/share/socialrss` (o `$XDG_DATA_HOME/socialrss`).
+Con el paquete la aplicación no se actualiza sola: se actualiza con el paquete nuevo. Si Arch cambia
+de versión de Python hay que volver a construirlo.
 
 Desde el código fuente también funciona sin instalador:
 
@@ -460,6 +480,7 @@ Los detalles están en [scripts/README.md](scripts/README.md).
 | `tools/` | Utilidades de compilación: complemento de NVDA, `python-olm`, firma del manifiesto, traducciones, normalización de saltos de línea. |
 | `scripts/` | Herramientas de traducción (plantilla, editor accesible, compilación) y `socialrss`, el lanzador de Linux. |
 | `instalar.sh`, `socialrss.desktop`, `requirements-linux.txt` | Instalación en Linux. `tools/empaquetar_linux.py` genera el paquete de la release. |
+| `packaging/arch/` | `PKGBUILD` y lanzador del paquete de Arch Linux. Al compilar, su versión y su sha256 se ponen al día solos. |
 | `setup.py`, `comprimir_build.py`, `build.bat` | Compilación con cx_Freeze, empaquetado y menú de administración. |
 | `MANUAL.md`, `TECLAS.md` | Manual de usuario y lista de teclas (se empaquetan en `data/docs`). |
 

@@ -88,5 +88,30 @@ def empaquetar(destino_dir: str = None):
     return destino, h.hexdigest(), tam
 
 
+def actualizar_pkgbuild(ver: str, sha256: str, ruta: str = None) -> bool:
+    """Pone en packaging/arch/PKGBUILD la versión y el sha256 del .tar.gz recién generado (el que se
+    sube a la release), para que el paquete de Arch se construya siempre desde la última versión.
+    Con una versión nueva pkgrel vuelve a 1. Devuelve True si cambió algo."""
+    ruta = ruta or os.path.join(RAIZ, "packaging", "arch", "PKGBUILD")
+    if not os.path.isfile(ruta):
+        return False
+    with open(ruta, encoding="utf-8", newline="") as f:
+        texto = f.read()
+    nuevo = texto
+    m = re.search(r"^pkgver=(\S+)$", nuevo, re.M)
+    if m and m.group(1) != ver:
+        nuevo = re.sub(r"^pkgver=\S+$", f"pkgver={ver}", nuevo, count=1, flags=re.M)
+        nuevo = re.sub(r"^pkgrel=\S+$", "pkgrel=1", nuevo, count=1, flags=re.M)
+    # La primera suma de sha256sums es la del .tar.gz (primer elemento de source).
+    nuevo = re.sub(r"^(sha256sums=\(')[0-9a-fA-F]{64}(')", rf"\g<1>{sha256}\g<2>", nuevo, count=1, flags=re.M)
+    if nuevo == texto:
+        return False
+    with open(ruta, "w", encoding="utf-8", newline="") as f:
+        f.write(nuevo)
+    print(f"PKGBUILD de Arch actualizado a la versión {ver}.")
+    return True
+
+
 if __name__ == "__main__":
-    empaquetar(sys.argv[1] if len(sys.argv) > 1 else None)
+    _ruta, _sha, _tam = empaquetar(sys.argv[1] if len(sys.argv) > 1 else None)
+    actualizar_pkgbuild(version(), _sha)

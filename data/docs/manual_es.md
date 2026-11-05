@@ -1234,6 +1234,12 @@ ventana, la voz (Orca o speech-dispatcher) y el audio (GStreamer en lugar de BAS
    aplicaciones. `./instalar.sh --desinstalar` las quita (tus datos se quedan).
 3. Arranca con `socialrss` o desde el menú de aplicaciones.
 
+**En Arch Linux** también puedes instalarla como paquete del sistema con
+`sudo pacman -U socialrss-X.Y.Z-N-x86_64.pkg.tar.zst` (está en cada release) o construirlo con el
+`PKGBUILD` de la carpeta `packaging/arch` del repositorio (`makepkg -si`). El programa queda en
+`/usr/share/socialrss` y tus datos en `~/.local/share/socialrss`. Así instalada no se actualiza sola:
+se actualiza con el paquete de cada versión.
+
 **Moverte:** la ventana tiene tres paneles, Navegación (árbol), la lista y el contenido. Tab y
 Mayús+Tab pasan de uno a otro, y Alt+1, Alt+2 y Alt+3 saltan directos. Las acciones se anuncian a Orca
 sin mover el foco y Ctrl+Mayús+B repite la barra de estado. Las teclas son las mismas que en Windows

@@ -116,8 +116,13 @@ def main():
     # (con su propia firma), que es lo que lee el actualizador en Linux.
     sys.path.insert(0, "tools")
     try:
-        from empaquetar_linux import empaquetar
+        from empaquetar_linux import empaquetar, actualizar_pkgbuild
         ruta_linux, sha_linux, tam_linux = empaquetar(os.path.dirname(destino))
+        # El PKGBUILD de Arch apunta al .tar.gz de la release: si falla, la compilación sigue igual.
+        try:
+            actualizar_pkgbuild(version, sha_linux)
+        except Exception as e:
+            print(f"Aviso: no se pudo actualizar packaging/arch/PKGBUILD: {e}")
     finally:
         sys.path.remove("tools")
     info["linux"] = {"file": os.path.basename(ruta_linux), "sha256": sha_linux, "size": tam_linux}
