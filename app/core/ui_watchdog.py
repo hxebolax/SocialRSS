@@ -10,6 +10,8 @@ colgada al arrancar" llega con la evidencia de cuándo y cuánto, en vez de a ci
 Sin coste apreciable: un CallAfter cada pocos segundos.
 """
 import logging
+import os
+import sys
 import threading
 import time
 
@@ -79,6 +81,8 @@ def _tiempos_cpu() -> dict:
     Con la PILA no basta: si la interfaz solo dice "MainLoop" no se sabe si estaba OCUPADA en
     código nativo o ESPERANDO (el GIL, otro proceso...). Comparando la CPU consumida por cada hilo
     entre el ping y el volcado se ve quién trabajó de verdad durante el bloqueo."""
+    if sys.platform != "win32":
+        return _tiempos_cpu_linux()
     datos = {}
     try:
         import ctypes
@@ -102,6 +106,27 @@ def _tiempos_cpu() -> dict:
                     datos[tid] = (t.name, (kern.value + user.value) / 1e7)
             finally:
                 k32.CloseHandle(h)
+    except Exception:
+        pass
+    return datos
+
+
+def _tiempos_cpu_linux() -> dict:
+    """Lo mismo en Linux: /proc/self/task/<tid>/stat da la CPU de cada hilo en tics de reloj
+    (campos utime y stime, el 14 y el 15)."""
+    datos = {}
+    try:
+        tic = os.sysconf("SC_CLK_TCK") or 100
+        for t in threading.enumerate():
+            tid = getattr(t, "native_id", None)
+            if not tid:
+                continue
+            try:
+                with open(f"/proc/self/task/{tid}/stat", encoding="ascii", errors="replace") as f:
+                    campos = f.read().rsplit(")", 1)[1].split()   # el nombre puede llevar espacios
+                datos[tid] = (t.name, (int(campos[11]) + int(campos[12])) / tic)
+            except (OSError, IndexError, ValueError):
+                continue
     except Exception:
         pass
     return datos

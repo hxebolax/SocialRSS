@@ -308,22 +308,46 @@ class _HerramientasMixin:
         self.avisar(_("Gracias. Se ha abierto la página de donaciones en el navegador."))
 
     def ayuda_actualizaciones(self):
-        """Comprueba si hay una versión nueva. En Linux no se instala sola: se ofrece abrir la página de descargas."""
+        """Ayuda, Buscar actualizaciones: si hay una versión nueva, ofrece instalarla (como en Windows)."""
+        self.buscar_actualizaciones(silencioso=False)
+
+    def comprobar_actualizaciones_arranque(self):
+        """Comprobación silenciosa al arrancar (Preferencias, General): solo dice algo si hay versión nueva."""
+        from app.core.config_manager import config
+        if config.get("general", "check_updates_on_start", True):
+            self.buscar_actualizaciones(silencioso=True)
+        return False
+
+    def buscar_actualizaciones(self, silencioso: bool = False):
         from app.core.task_manager import task_manager
         from app.services.updater import update_service as upd
-        from .dialogos import confirmar_async
-        self.avisar(_("Comprobando actualizaciones…"))
+        if not silencioso:
+            self.avisar(_("Comprobando actualizaciones…"))
 
-        def _fin(remota, err):
+        def _fin(info, err):
+            remota = str((info or {}).get("version", "")).strip()
             if err or not remota:
-                self.avisar(_("No se pudo comprobar si hay actualizaciones: {0}").format(err or _("revisa tu conexión")))
-            elif upd.hay_actualizacion(remota):
-                def _abrir():
-                    from app.core.privacy import abrir_url
-                    abrir_url("https://github.com/hxebolax/SocialRSS/releases")
-                confirmar_async(self, _("Hay una versión nueva: {r} (tienes la {l}). ¿Abrir la página de descargas?").format(
-                    r=remota, l=upd.version_local()), _abrir, titulo=_("Actualización disponible"),
-                    etiqueta_si=_("Abrir la página"))
-            else:
+                if not silencioso:
+                    self.avisar(_("No se pudo comprobar si hay actualizaciones: {0}").format(err or _("revisa tu conexión")))
+            elif upd.hay_actualizacion(remota) and upd.manifiesto_de_plataforma(info) is not None:
+                self.ofrecer_actualizacion(remota)
+            elif not silencioso:
                 self.avisar(_("Ya tienes la última versión ({0}).").format(upd.version_local()))
-        task_manager.start_task(lambda ctx: upd.obtener_version_remota(), callback=_fin, pass_context=True)
+        task_manager.start_task(lambda ctx: upd.obtener_info_remota(), callback=_fin, pass_context=True)
+
+    def ofrecer_actualizacion(self, remota: str):
+        """Diálogo de instalación automática; en un clon de git (que no se actualiza solo), la página de descargas."""
+        from app.services.updater import update_service as upd
+        if upd.actualizacion_disponible_para_instalar():
+            from .dialogo_actualizacion import DialogoActualizacion
+            DialogoActualizacion(self, remota).present()
+            return
+        from .dialogos import confirmar_async
+
+        def _abrir():
+            from app.core.privacy import abrir_url
+            abrir_url("https://github.com/hxebolax/SocialRSS/releases")
+        confirmar_async(self, _("Hay una versión nueva: {r} (tienes la {l}). Esta copia es un clon del repositorio y no se "
+                                "actualiza sola: ponla al día con git pull. ¿Abrir la página de descargas?").format(
+            r=remota, l=upd.version_local()), _abrir, titulo=_("Actualización disponible"),
+            etiqueta_si=_("Abrir la página"))

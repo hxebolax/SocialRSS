@@ -63,7 +63,7 @@ def test_sin_servidor_ni_github_no_hay_version(monkeypatch):
 def test_el_zip_se_baja_de_github_si_el_servidor_falla(monkeypatch, tmp_path):
     pedidas = []
     url_gh = upd.url_del_zip_github("9.9.9")
-    assert url_gh.endswith("/download/v9.9.9/SocialRSS_v9.9.9.zip")
+    assert url_gh.endswith(f"/download/v9.9.9/{upd.nombre_paquete('9.9.9')}")
     monkeypatch.setattr(upd.urllib.request, "urlopen",
                         _urlopen_falso({url_gh: b"zip de github"}, pedidas))
     destino = tmp_path / "a.zip"

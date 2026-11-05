@@ -115,6 +115,7 @@ class VentanaPrincipal(_ATMixin, _MastodonExtraMixin, _BotoneraMixin, _OrdenMixi
         self.iniciar_tiempo_real()
         GLib.idle_add(self._avisar_complementos_arranque)
         GLib.timeout_add_seconds(20, self._mantenimiento_datos)
+        GLib.timeout_add_seconds(7, self.comprobar_actualizaciones_arranque)
         GLib.timeout_add_seconds(SONDEO_SEGUNDOS, self._sondeo_automatico)
         GLib.timeout_add_seconds(1, self._latido_reproductor)
 

@@ -43,7 +43,9 @@ def test_texto_plano_sin_etiquetas():
     assert e.texto == "línea uno\nlínea dos" and e.marcas == []
 
 
-def test_mapa_utf16_con_emojis():
+def test_mapa_utf16_con_emojis(monkeypatch):
+    # Los cuadros de texto de Windows cuentan en UTF-16; los de GTK, en caracteres (ahí el mapa es directo).
+    monkeypatch.setattr(te, "_PLATAFORMA_UTF16", True)
     texto = "a😀b😀c"
     m = te.MapaUtf16(texto)
     for i in range(len(texto) + 1):

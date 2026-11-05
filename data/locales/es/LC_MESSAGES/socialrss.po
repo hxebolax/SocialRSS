@@ -47183,3 +47183,55 @@ msgstr "Álbum reenviado."
 
 msgid "No se pudo compartir"
 msgstr "No se pudo compartir"
+
+msgid "usuario"
+msgstr "usuario"
+
+msgid "_Ahora no"
+msgstr "_Ahora no"
+
+msgid "_Instalar ahora"
+msgstr "_Instalar ahora"
+
+msgid "Progreso de la actualización"
+msgstr "Progreso de la actualización"
+
+msgid "Instalación manual"
+msgstr "Instalación manual"
+
+msgid ""
+"Esta copia de la aplicación es un clon del repositorio o está en una carpeta"
+" sin permiso de escritura, así que no se actualiza sola. Ponla al día con "
+"git pull o descarga el paquete de Linux desde la página de descargas."
+msgstr ""
+"Esta copia de la aplicación es un clon del repositorio o está en una carpeta"
+" sin permiso de escritura, así que no se actualiza sola. Ponla al día con "
+"git pull o descarga el paquete de Linux desde la página de descargas."
+
+msgid "{0} %"
+msgstr "{0} %"
+
+msgid "Descargando: {0} de {1}"
+msgstr "Descargando: {0} de {1}"
+
+msgid "Buscar act_ualizaciones al arrancar:"
+msgstr "Buscar act_ualizaciones al arrancar:"
+
+msgid ""
+"Si hay una versión nueva, se ofrece descargarla e instalarla; la aplicación "
+"se reinicia sola."
+msgstr ""
+"Si hay una versión nueva, se ofrece descargarla e instalarla; la aplicación "
+"se reinicia sola."
+
+msgid ""
+"Hay una versión nueva: {r} (tienes la {l}). Esta copia es un clon del "
+"repositorio y no se actualiza sola: ponla al día con git pull. ¿Abrir la "
+"página de descargas?"
+msgstr ""
+"Hay una versión nueva: {r} (tienes la {l}). Esta copia es un clon del "
+"repositorio y no se actualiza sola: ponla al día con git pull. ¿Abrir la "
+"página de descargas?"
+
+msgid "Esta versión no publica paquete para tu sistema; no se instalará."
+msgstr "Esta versión no publica paquete para tu sistema; no se instalará."

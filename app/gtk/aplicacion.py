@@ -797,6 +797,13 @@ class Aplicacion(Gtk.Application):
     def do_startup(self):
         Gtk.Application.do_startup(self)
         plataforma_gtk.registrar(self)
+        # Vigilante de congelaciones de la interfaz, como en Windows: deja en el registro cuándo y cuánto
+        # se bloqueó la ventana y qué hilo se comía la CPU.
+        try:
+            from app.core import ui_watchdog
+            ui_watchdog.iniciar()
+        except Exception as e:
+            log.debug(f"No se pudo iniciar el vigilante de interfaz: {e}")
         self.account_id = datos.cuenta_rss()
 
         def accion(nombre, fn, accels=()):

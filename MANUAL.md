@@ -4,7 +4,8 @@
 
 **SocialRSS Accessible Suite** reúne en una sola ventana **Mastodon, Bluesky, W Social, RSS,
 Telegram, X (experimental), IRC, Matrix, XMPP, Reddit y PeerTube**. Está pensada al 100 % para el **teclado** y
-para lectores de pantalla (**NVDA** y **JAWS**).
+para lectores de pantalla (**NVDA** y **JAWS** en Windows, **Orca** en Linux). Funciona en Windows y en Linux
+(apartado 21).
 
 Este manual es una guía breve: lo justo para entenderlo todo. La lista completa de teclas está en
 **Ayuda → Teclas de la aplicación**, y los sonidos se aprenden en **Ayuda → Prueba de sonidos**.
@@ -1200,6 +1201,12 @@ se reinicia. Si el servidor de actualizaciones no responde, la actualización se
 releases de GitHub (github.com/hxebolax/SocialRSS), con las mismas comprobaciones. Ahí está
 también el código fuente.
 
+En **Linux** funciona igual: se descarga el paquete de Linux de la versión nueva, se verifica con la
+misma firma y la misma huella, se copia sobre la instalación sin tocar tus datos, se ponen al día las
+dependencias de Python y la aplicación se reinicia. Solo se actualiza sola la copia instalada desde el
+paquete de la release; un clon del repositorio se pone al día con `git pull`. La comprobación al
+arrancar se activa o desactiva en **Preferencias → General → Buscar actualizaciones al arrancar**.
+
 ## 20. Menú Ayuda y consejos para NVDA
 
 **Ayuda:** este manual, las teclas (lista actual, con tus cambios), el último changelog, la prueba
@@ -1209,6 +1216,32 @@ de sonidos, buscar actualizaciones, donaciones y Acerca de.
 lee el panel de detalles con las flechas; si se te pierden avisos, sube el "Retardo de los
 mensajes de voz" en Preferencias → Accesibilidad; e instala el **complemento de NVDA** para leer
 completas las publicaciones largas.
+
+## 21. En Linux (GTK 4 con Orca)
+
+En Linux la aplicación tiene su propia ventana, hecha con **GTK 4** y pensada para **Orca**. Usa el
+mismo núcleo, las mismas cuentas, la misma configuración y los mismos datos que en Windows; cambian la
+ventana, la voz (Orca o speech-dispatcher) y el audio (GStreamer en lugar de BASS).
+
+**Instalar:**
+
+1. Instala los paquetes del sistema: GTK 4.14 o posterior, PyGObject, GStreamer (base, good, bad y
+   ugly) y AT-SPI. Las órdenes exactas para Debian y Ubuntu, Fedora y Arch están en el README del
+   repositorio; si falta algo, el instalador te dice qué y cómo instalarlo.
+2. Descarga `SocialRSS_vX.Y.Z_linux.tar.gz` de la página de releases, descomprímelo donde quieras y,
+   dentro de la carpeta `SocialRSS`, ejecuta `./instalar.sh`. No pide permisos de administrador: crea
+   el entorno de Python dentro de la carpeta y añade la orden `socialrss` y la entrada del menú de
+   aplicaciones. `./instalar.sh --desinstalar` las quita (tus datos se quedan).
+3. Arranca con `socialrss` o desde el menú de aplicaciones.
+
+**Moverte:** la ventana tiene tres paneles, Navegación (árbol), la lista y el contenido. Tab y
+Mayús+Tab pasan de uno a otro, y Alt+1, Alt+2 y Alt+3 saltan directos. Las acciones se anuncian a Orca
+sin mover el foco y Ctrl+Mayús+B repite la barra de estado. Las teclas son las mismas que en Windows
+siempre que tienen sentido; la lista completa está en **Ayuda → Teclas de la aplicación**.
+
+**Diferencias con Windows:** la clave que protege tus contraseñas se guarda en el llavero del
+escritorio (GNOME Keyring, KWallet...) y, si no hay, en un archivo que solo puede leer tu usuario. Las
+notas de voz se graban con GStreamer.
 
 ---
 

@@ -58686,6 +58686,7 @@ msgstr "Who can me_ssage me?…"
 
 msgid "Álbum para {t}"
 msgstr "Album for {t}"
+
 #: app/ui/mastodon_filtros_dialogs.py:470
 msgid "&Dejar de ignorar"
 msgstr "&Stop ignoring"
@@ -59081,6 +59082,66 @@ msgstr "Comm&ent (optional, sent before the messages):"
 msgid "Incluir el álbum comp&leto"
 msgstr "Include the comp&lete album"
 
+msgid "Álbum reenviado."
+msgstr "Album forwarded."
+
+msgid "No se pudo compartir"
+msgstr "Could not share"
+
+msgid "usuario"
+msgstr "user"
+
+msgid "_Ahora no"
+msgstr "_Not now"
+
+msgid "_Instalar ahora"
+msgstr "_Install now"
+
+msgid "Progreso de la actualización"
+msgstr "Update progress"
+
+msgid "Instalación manual"
+msgstr "Manual installation"
+
+msgid ""
+"Esta copia de la aplicación es un clon del repositorio o está en una carpeta"
+" sin permiso de escritura, así que no se actualiza sola. Ponla al día con "
+"git pull o descarga el paquete de Linux desde la página de descargas."
+msgstr ""
+"This copy of the application is a clone of the repository or is in a folder "
+"without write permission, so it does not update by itself. Update it with "
+"git pull or download the Linux package from the downloads page."
+
+msgid "{0} %"
+msgstr "{0} %"
+
+msgid "Descargando: {0} de {1}"
+msgstr "Downloading: {0} of {1}"
+
+msgid "Buscar act_ualizaciones al arrancar:"
+msgstr "Check for _updates at startup:"
+
+msgid ""
+"Si hay una versión nueva, se ofrece descargarla e instalarla; la aplicación "
+"se reinicia sola."
+msgstr ""
+"If there is a new version, you are offered to download and install it; the "
+"application restarts by itself."
+
+msgid ""
+"Hay una versión nueva: {r} (tienes la {l}). Esta copia es un clon del "
+"repositorio y no se actualiza sola: ponla al día con git pull. ¿Abrir la "
+"página de descargas?"
+msgstr ""
+"There is a new version: {r} (you have {l}). This copy is a clone of the "
+"repository and does not update by itself: update it with git pull. Open the "
+"downloads page?"
+
+msgid "Esta versión no publica paquete para tu sistema; no se instalará."
+msgstr ""
+"This version does not publish a package for your system; it will not be "
+"installed."
+
 #~ msgid "&Chats (Espacio marca o desmarca; puedes elegir varios):"
 #~ msgstr "&Chats (Mark or uncheck space; you can choose several):"
 
@@ -59122,9 +59183,3 @@ msgstr "Include the comp&lete album"
 
 #~ msgid "Silenciando conversación..."
 #~ msgstr "Silencing conversation..."
-
-msgid "Álbum reenviado."
-msgstr "Album forwarded."
-
-msgid "No se pudo compartir"
-msgstr "Could not share"

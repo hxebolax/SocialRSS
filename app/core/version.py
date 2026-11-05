@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 """Versión central de la aplicación."""
 
-APP_VERSION = "1.0.28"
+APP_VERSION = "1.0.29"

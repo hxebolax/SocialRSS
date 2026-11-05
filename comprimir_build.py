@@ -6,7 +6,9 @@ máxima compresión, con la versión en el nombre (p. ej. SocialRSS_v1.0.1.zip).
 Además genera, junto al zip, el archivo version.json LISTO PARA SUBIR AL SERVIDOR
 (con la versión, el sha256 y el tamaño del zip): el actualizador de la app lo usa
 para saber si hay versión nueva y para VERIFICAR la descarga antes de instalarla.
-Basta con subir al servidor los dos archivos que quedan en build/.
+También genera el paquete de Linux de la misma versión (tools/empaquetar_linux.py), cuyo sha256 va
+en el bloque "linux" del mismo version.json. Basta con subir al servidor los tres archivos que
+quedan en build/ (zip, .tar.gz de Linux y version.json).
 
 Además FIRMA el version.json con la clave Ed25519 del proyecto
 (tools/claves/socialrss_ed25519.key): el actualizador lleva la clave pública
@@ -109,6 +111,16 @@ def main():
         "size": tam,
         "date": date.today().isoformat(),
     }
+
+    # Paquete de Linux de la misma versión: su sha256 va en el bloque "linux" del mismo manifiesto
+    # (con su propia firma), que es lo que lee el actualizador en Linux.
+    sys.path.insert(0, "tools")
+    try:
+        from empaquetar_linux import empaquetar
+        ruta_linux, sha_linux, tam_linux = empaquetar(os.path.dirname(destino))
+    finally:
+        sys.path.remove("tools")
+    info["linux"] = {"file": os.path.basename(ruta_linux), "sha256": sha_linux, "size": tam_linux}
     ruta_json = os.path.join("build", "version.json")
     with open(ruta_json, "w", encoding="utf-8") as f:
         json.dump(info, f, indent=4, ensure_ascii=False)
@@ -118,9 +130,10 @@ def main():
     if not _firmar_manifiesto(ruta_json):
         return 1
 
-    print(f"Generado y FIRMADO {ruta_json}. Sube al servidor ESTOS DOS archivos:")
+    print(f"Generado y FIRMADO {ruta_json}. Sube al servidor ESTOS TRES archivos:")
     print(f"  1) {destino}")
-    print(f"  2) {ruta_json}")
+    print(f"  2) {ruta_linux}")
+    print(f"  3) {ruta_json}")
     return 0
 
 

@@ -1,5 +1,42 @@
 SocialRSS Accessible Suite. Novedades de la versión 1.0.29.
 
+NUEVO: SOCIALRSS LLEGA A LINUX
+
+- La aplicación funciona ahora también en Linux, con una ventana propia hecha con GTK 4 y pensada
+  para el lector de pantalla Orca. Usa el mismo núcleo, las mismas redes, la misma configuración y
+  los mismos datos que en Windows: RSS y podcasts, Mastodon, Bluesky, W Social, Telegram (con
+  Telegram Drive), X, IRC, Matrix, XMPP, Reddit y PeerTube, la bandeja de entrada unificada, el menú
+  Herramientas, la inteligencia artificial y la traducción.
+- Cada versión trae dos paquetes: el de Windows de siempre y SocialRSS_vX.Y.Z_linux.tar.gz. En Linux
+  se descomprime y se ejecuta instalar.sh, que comprueba los paquetes del sistema (y dice cuáles
+  faltan y cómo instalarlos en Debian, Ubuntu, Fedora o Arch), prepara las dependencias de Python y
+  añade la orden socialrss y la entrada del menú de aplicaciones, sin pedir permisos de
+  administrador.
+- La voz va por Orca (o por speech-dispatcher si no lo usas), el audio por GStreamer y la clave que
+  protege tus contraseñas se guarda en el llavero del escritorio.
+- Toda la interfaz de Linux está traducida al inglés.
+- El manual tiene un apartado nuevo, En Linux, con la instalación y el uso con Orca.
+
+NUEVO: ACTUALIZACIÓN AUTOMÁTICA TAMBIÉN EN LINUX
+
+- En Linux, al arrancar y en Ayuda, Buscar actualizaciones, la aplicación ofrece instalar la versión
+  nueva igual que en Windows: la descarga con barra de progreso (y avisos cada 25 por ciento), la
+  verifica con la misma firma digital y la misma huella, la copia sin tocar tus datos, pone al día las
+  dependencias de Python y se reinicia sola.
+- La comprobación al arrancar se puede desactivar en Preferencias, General, Buscar actualizaciones al
+  arrancar.
+
+CORREGIDO: ARREGLOS QUE AFECTAN TAMBIÉN A WINDOWS
+
+- Matrix: añadir o borrar un campo de tu perfil fallaba siempre. Ya funciona.
+- Matrix: en la verificación por emojis iniciada desde otro dispositivo (por ejemplo, desde Element),
+  la aplicación enviaba su clave dos veces y el otro lado podía cancelar la verificación.
+- Matrix, administración del servidor: la opción de incluir las cuentas desactivadas no las mostraba,
+  y las cuentas bloqueadas no aparecían en la lista, así que no se podían desbloquear desde aquí.
+- Complemento Suscripciones de YouTube: crear una carpeta nueva desde el complemento daba error.
+- IRC: el nivel de aviso y las entradas y salidas de un canal no se guardaban si su nombre llevaba
+  mayúsculas.
+
 CORREGIDO: LA NAVEGACIÓN IBA CON RETRASO CON LA BOTONERA ACTIVADA
 
 - Con la botonera de acciones activada, cada flecha en la lista destruía todos los botones y los

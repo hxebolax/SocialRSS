@@ -255,6 +255,9 @@ else:
     print("=" * 78)
 
 excludes = [
+    # Interfaz GTK 4 de Linux: main.py la menciona, pero en Windows nunca se usa (ni gi existe).
+    "app.gtk",
+    "gi",
     "tkinter",
     "unittest",
     "pydoc",

@@ -5,7 +5,6 @@ Mixin de MastodonService (parte de la refactorización modular).
 """
 import logging
 import json
-import time
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Callable
 from app.core.database import db
@@ -315,9 +314,8 @@ class _TimelinesMixin:
             statuses = []
             with db.transaccion() as _conn:
                 for status in results:
-                    # Cede el intérprete un instante entre toots: procesar una página entera (HTML, SQLite,
-                    # FTS) en una ráfaga dejaba al hilo de la interfaz esperando el GIL durante segundos.
-                    time.sleep(0.002)
+                    # Sin esperas aquí: dormir dentro de la transacción alarga el bloqueo de escritura. La
+                    # CPU que robaba el GIL ya se quitó en origen (mastodon_rendimiento.py).
                     try:
                         if timeline_type == "notifications":
                             # Devolver también los dicts de notificación para que la capa de UI

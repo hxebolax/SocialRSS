@@ -10,12 +10,18 @@ SHA-256, vengan de donde vengan.
 Flujo:
 1. Comprobar la versión publicada en el servidor (version.json) y compararla con la local. Si el
    servidor no responde, se lee el version.json de la última release de GitHub.
-2. Si hay una versión nueva, descargar el ZIP con esa versión (SocialRSS_v<version>.zip): primero
-   del servidor y, si falla, de la release de GitHub de esa versión.
-3. Extraer el ZIP a una carpeta temporal (quitando la carpeta raíz que contiene).
-4. Crear un script que ESPERA a que se cierre la aplicación, copia los archivos nuevos sobre la
-   instalación (sin tocar la base de datos ni la configuración del usuario, que NO van en el ZIP),
-   limpia y relanza la aplicación.
+2. Si hay una versión nueva, descargar el paquete de esa versión para ESTA plataforma: en Windows
+   el ZIP compilado (SocialRSS_v<version>.zip) y en Linux el paquete de código
+   (SocialRSS_v<version>_linux.tar.gz). Primero del servidor y, si falla, de la release de GitHub.
+3. Extraerlo a una carpeta temporal (quitando la carpeta raíz que contiene).
+4. Crear un script (.bat en Windows, de shell en Linux) que ESPERA a que se cierre la aplicación,
+   copia los archivos nuevos sobre la instalación (sin tocar la base de datos ni la configuración del
+   usuario, que NO van en el paquete), limpia y relanza la aplicación. En Linux además pone al día las
+   dependencias de Python del entorno .venv.
+
+El version.json es UNO para las dos plataformas: los campos de primer nivel (sha256, firma...) son
+los del ZIP de Windows (así lo leen las versiones antiguas) y el bloque "linux" lleva el sha256, el
+tamaño y la firma propios del paquete de Linux (firma de "<version>:<sha256 de Linux>").
 
 La descarga, extracción y copia se hacen siempre fuera del hilo de la interfaz.
 """
@@ -25,11 +31,14 @@ import re
 import sys
 import json
 import shutil
+import shlex
+import tarfile
 import zipfile
 import logging
 import urllib.request
 
 from app.core.paths import ROOT_DIR, IS_FROZEN
+from app.core.plataforma import ES_WINDOWS
 from app.core.version import APP_VERSION
 
 log = logging.getLogger(__name__)
@@ -44,9 +53,9 @@ _CABECERAS = {"User-Agent": "SocialRSS-Updater"}
 _TIEMPO_ESPERA = 20
 
 # Nombres de los archivos temporales que se crean junto a la instalación durante la actualización.
-NOMBRE_ZIP_DESCARGA = "_actualizacion_socialrss.zip"
+NOMBRE_ZIP_DESCARGA = "_actualizacion_socialrss.zip" if ES_WINDOWS else "_actualizacion_socialrss.tar.gz"
 NOMBRE_CARPETA_TEMP = "_actualizacion_temp"
-NOMBRE_SCRIPT = "_actualizar_socialrss.bat"
+NOMBRE_SCRIPT = "_actualizar_socialrss.bat" if ES_WINDOWS else "_actualizar_socialrss.sh"
 
 # Límites de extracción del paquete (defensa ante un ZIP corrupto o malicioso: el hash
 # sha256 protege el transporte, pero si el SERVIDOR se viera comprometido el zip y su
@@ -105,6 +114,20 @@ def obtener_info_remota(timeout=_TIEMPO_ESPERA):
     if datos:
         log.info("El servidor de actualizaciones no responde: se usa la release de GitHub.")
     return datos
+
+
+def manifiesto_de_plataforma(datos, windows: bool = ES_WINDOWS):
+    """La parte del version.json que corresponde a ESTA plataforma, con la forma {version, sha256,
+    size, firma_ed25519}. En Windows es el manifiesto tal cual; en Linux, la versión más el bloque
+    "linux". None si esa versión no publica paquete para esta plataforma."""
+    if not isinstance(datos, dict):
+        return None
+    if windows:
+        return datos
+    linux = datos.get("linux")
+    if not isinstance(linux, dict) or not str(linux.get("sha256", "")).strip():
+        return None
+    return {**linux, "version": datos.get("version", "")}
 
 
 def obtener_version_remota(timeout=_TIEMPO_ESPERA):
@@ -176,20 +199,39 @@ def hay_actualizacion(version_remota, version_local_=None):
         return False
 
 
+def nombre_paquete(version, windows: bool = ES_WINDOWS):
+    """Nombre del paquete de esa versión: el ZIP compilado en Windows y el .tar.gz de código en Linux."""
+    return f"SocialRSS_v{version}.zip" if windows else f"SocialRSS_v{version}_linux.tar.gz"
+
+
 def url_del_zip(version):
-    """URL del ZIP de esa versión: misma carpeta del servidor + 'SocialRSS_v<version>.zip'."""
-    return f"{URL_BASE}/SocialRSS_v{version}.zip"
+    """URL del paquete de esa versión (para esta plataforma) en la carpeta del servidor."""
+    return f"{URL_BASE}/{nombre_paquete(version)}"
 
 
 def url_del_zip_github(version):
-    """URL del ZIP de esa versión en su release de GitHub (etiqueta 'v<version>')."""
-    return f"{URL_GITHUB_RELEASES}/download/v{version}/SocialRSS_v{version}.zip"
+    """URL del paquete de esa versión en su release de GitHub (etiqueta 'v<version>')."""
+    return f"{URL_GITHUB_RELEASES}/download/v{version}/{nombre_paquete(version)}"
 
 
 def actualizacion_disponible_para_instalar():
-    """La instalación automática SOLO tiene sentido en la versión compilada (.exe). En código
-    fuente se puede comprobar y avisar, pero no sobreescribir (no hay paquete equivalente)."""
-    return bool(IS_FROZEN)
+    """En Windows la instalación automática SOLO tiene sentido en la versión compilada (.exe): en
+    código fuente se puede comprobar y avisar, pero no sobreescribir. En Linux la aplicación ES el
+    código: se actualiza la instalación hecha desde el paquete de la release, pero no un clon de git
+    (ese se pone al día con git pull) ni una carpeta en la que no se puede escribir."""
+    if ES_WINDOWS:
+        return bool(IS_FROZEN)
+    return not os.path.exists(os.path.join(str(ROOT_DIR), ".git")) and os.access(str(ROOT_DIR), os.W_OK)
+
+
+def verificar_descarga(info: dict, ruta_paquete):
+    """Firma del manifiesto y SHA-256 del paquete descargado, con los datos de ESTA plataforma.
+    Lanza ValueError si algo no cuadra (no debe instalarse)."""
+    datos = manifiesto_de_plataforma(info)
+    if datos is None:
+        raise ValueError(_("Esta versión no publica paquete para tu sistema; no se instalará."))
+    verificar_manifiesto(datos)
+    verificar_zip(ruta_paquete, datos.get("sha256", ""))
 
 
 def ruta_base_instalacion():
@@ -301,6 +343,60 @@ def extraer_zip(ruta_zip, ruta_temp, progreso=None):
                          "no se aplicará.")
 
 
+def extraer_paquete(ruta_paquete, ruta_temp, progreso=None):
+    """Extrae el paquete descargado (ZIP en Windows, .tar.gz en Linux) a 'ruta_temp'."""
+    if str(ruta_paquete).lower().endswith(".zip"):
+        return extraer_zip(ruta_paquete, ruta_temp, progreso)
+    return extraer_tar(ruta_paquete, ruta_temp, progreso)
+
+
+def extraer_tar(ruta_tar, ruta_temp, progreso=None):
+    """Extrae el paquete de Linux (.tar.gz) a 'ruta_temp' quitando su carpeta raíz, con las mismas
+    defensas que el ZIP: nada fuera de la carpeta, límites de tamaño y solo archivos y carpetas
+    normales (sin enlaces ni dispositivos). Conserva el permiso de ejecución de los scripts."""
+    if os.path.exists(ruta_temp):
+        shutil.rmtree(ruta_temp, ignore_errors=True)
+    os.makedirs(ruta_temp, exist_ok=True)
+    with tarfile.open(ruta_tar, "r:gz") as tf:
+        infos = tf.getmembers()
+        if len(infos) > _MAX_MIEMBROS_ZIP:
+            raise ValueError(f"El paquete contiene demasiados archivos ({len(infos)}); "
+                             "no se instalará.")
+        nombres = [i.name for i in infos]
+        total = len(nombres) or 1
+        prefijo = ""
+        if nombres:
+            top = nombres[0].split("/")[0]
+            if top and all(n == top or n.startswith(top + "/") for n in nombres):
+                prefijo = top + "/"
+        raiz_segura = os.path.realpath(ruta_temp)
+        total_escrito = 0
+        for i, info in enumerate(infos):
+            rel = info.name[len(prefijo):] if prefijo and info.name.startswith(prefijo) else info.name
+            if rel and not (info.isdir() or info.isfile()):
+                log.warning(f"Miembro del paquete que no es un archivo normal (omitido): {info.name}")
+            elif rel:
+                destino = os.path.realpath(os.path.join(ruta_temp, rel))
+                if os.path.commonpath([raiz_segura, destino]) != raiz_segura:
+                    log.warning(f"Miembro del paquete fuera de la carpeta de extracción (omitido): {info.name}")
+                elif info.isdir():
+                    os.makedirs(destino, exist_ok=True)
+                else:
+                    if info.size > _MAX_TAM_MIEMBRO or total_escrito + info.size > _MAX_TAM_TOTAL:
+                        raise ValueError("El paquete se expande más de lo permitido; no se instalará.")
+                    os.makedirs(os.path.dirname(destino), exist_ok=True)
+                    with tf.extractfile(info) as origen, open(destino, "wb") as dst:
+                        shutil.copyfileobj(origen, dst, 1024 * 1024)
+                    total_escrito += info.size
+                    if info.mode & 0o111:
+                        os.chmod(destino, 0o755)
+            if progreso:
+                progreso(i + 1, total)
+    if not os.path.exists(os.path.join(ruta_temp, "main.py")):
+        raise ValueError("El paquete extraído no parece una instalación de SocialRSS; "
+                         "no se aplicará.")
+
+
 def comando_relanzar():
     """Comando 'start' para volver a abrir la aplicación, tanto en la versión compilada (.exe)
     como en código fuente (intérprete + script). Se usa en los .bat de actualización y reinicio."""
@@ -311,6 +407,62 @@ def comando_relanzar():
 
 
 def crear_script_actualizacion(ruta_base, ruta_temp, ruta_zip):
+    """Script que aplica la actualización al cerrarse la app: .bat en Windows y de shell en Linux."""
+    if ES_WINDOWS:
+        return _crear_script_windows(ruta_base, ruta_temp, ruta_zip)
+    return _crear_script_linux(ruta_base, ruta_temp, ruta_zip)
+
+
+def _crear_script_linux(ruta_base, ruta_temp, ruta_zip):
+    """Script de shell que espera a que muera este proceso, copia la versión nueva sobre la
+    instalación (cp -a solo escribe lo que trae el paquete: la base de datos y la configuración no
+    van en él), pone al día las dependencias del entorno .venv si lo hay, limpia, relanza la
+    aplicación con el mismo intérprete y argumentos, y se borra. Si la copia falla, conserva los
+    temporales y deja _actualizacion_error.log, como en Windows."""
+    pid = os.getpid()
+    q = shlex.quote
+    base = str(ruta_base)
+    venv_py = q(os.path.join(base, ".venv", "bin", "python"))
+    error_log = q(os.path.join(base, "_actualizacion_error.log"))
+    relanzar = " ".join(q(a) for a in [sys.executable, os.path.abspath(sys.argv[0])] + sys.argv[1:])
+    script_path = os.path.join(base, NOMBRE_SCRIPT)
+    contenido = (
+        "#!/bin/sh\n"
+        "# Actualización de SocialRSS (Linux). Lo crea la aplicación y se borra solo al terminar.\n"
+        "i=0\n"
+        f"while kill -0 {pid} 2>/dev/null; do\n"
+        "    i=$((i+1))\n"
+        f"    if [ $i -gt 100 ]; then kill -9 {pid} 2>/dev/null; break; fi\n"
+        "    sleep 0.3\n"
+        "done\n"
+        f"if cp -a {q(str(ruta_temp))}/. {q(base)}/; then\n"
+        f"    rm -rf {q(str(ruta_temp))}\n"
+        f"    rm -f {q(str(ruta_zip))} {error_log}\n"
+        "else\n"
+        f"    echo 'La copia de la actualización falló' > {error_log}\n"
+        "fi\n"
+        f"chmod +x {q(os.path.join(base, 'scripts', 'socialrss'))} {q(os.path.join(base, 'instalar.sh'))} 2>/dev/null\n"
+        f"if [ -x {venv_py} ]; then\n"
+        f"    {venv_py} -m pip install --quiet -r {q(os.path.join(base, 'requirements-linux.txt'))} "
+        f"> {q(os.path.join(base, '_actualizacion_pip.log'))} 2>&1 || true\n"
+        "fi\n"
+        'rm -f "$0"\n'
+        f"exec {relanzar}\n"
+    )
+    with open(script_path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(contenido)
+    os.chmod(script_path, 0o755)
+    return script_path
+
+
+def lanzar_script_actualizacion(script_path):
+    """Lanza, desacoplado, el script de actualización de Linux. La interfaz debe cerrarse justo después."""
+    import subprocess
+    subprocess.Popen(["sh", script_path], start_new_session=True, stdin=subprocess.DEVNULL,
+                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, cwd=os.path.dirname(script_path))
+
+
+def _crear_script_windows(ruta_base, ruta_temp, ruta_zip):
     """Crea un .bat (cmd) que aplica la actualización EN CALIENTE (con la app abierta): espera a
     que muera este proceso, copia los archivos nuevos sobre la instalación con robocopy (que NUNCA
     borra la base de datos ni la configuración del usuario: solo escribe lo que trae el paquete),

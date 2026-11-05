@@ -15,7 +15,8 @@ Uso:
 
   2) Firmar el version.json de cada release (tras generar el zip y su sha256):
         python tools/firmar_version.py firmar claves_socialrss.key version.json
-     Añade el campo "firma_ed25519" al version.json (firma de "<version>:<sha256>").
+     Añade el campo "firma_ed25519" al version.json (firma de "<version>:<sha256>") y, si lleva
+     el bloque "linux", también el suyo (firma de "<version>:<sha256 del paquete de Linux>").
 """
 
 import json
@@ -50,6 +51,11 @@ def firmar(ruta_privada: str, ruta_version_json: str):
         raise SystemExit("El version.json debe tener 'version' y 'sha256' antes de firmarse.")
     mensaje = f"{version}:{sha256}".encode("utf-8")
     manifiesto["firma_ed25519"] = base64.b64encode(priv.sign(mensaje)).decode("ascii")
+    # El paquete de Linux lleva su propia firma, sobre "<version>:<sha256 del .tar.gz>".
+    linux = manifiesto.get("linux")
+    if isinstance(linux, dict) and str(linux.get("sha256", "")).strip():
+        mensaje = f"{version}:{str(linux['sha256']).strip().lower()}".encode("utf-8")
+        linux["firma_ed25519"] = base64.b64encode(priv.sign(mensaje)).decode("ascii")
     Path(ruta_version_json).write_text(
         json.dumps(manifiesto, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Firmado: {ruta_version_json} (versión {version})")

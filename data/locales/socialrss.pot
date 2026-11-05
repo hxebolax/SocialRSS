@@ -57291,3 +57291,47 @@ msgstr ""
 
 msgid "No se pudo compartir"
 msgstr ""
+
+msgid "usuario"
+msgstr ""
+
+msgid "_Ahora no"
+msgstr ""
+
+msgid "_Instalar ahora"
+msgstr ""
+
+msgid "Progreso de la actualización"
+msgstr ""
+
+msgid "Instalación manual"
+msgstr ""
+
+msgid ""
+"Esta copia de la aplicación es un clon del repositorio o está en una carpeta"
+" sin permiso de escritura, así que no se actualiza sola. Ponla al día con "
+"git pull o descarga el paquete de Linux desde la página de descargas."
+msgstr ""
+
+msgid "{0} %"
+msgstr ""
+
+msgid "Descargando: {0} de {1}"
+msgstr ""
+
+msgid "Buscar act_ualizaciones al arrancar:"
+msgstr ""
+
+msgid ""
+"Si hay una versión nueva, se ofrece descargarla e instalarla; la aplicación "
+"se reinicia sola."
+msgstr ""
+
+msgid ""
+"Hay una versión nueva: {r} (tienes la {l}). Esta copia es un clon del "
+"repositorio y no se actualiza sola: ponla al día con git pull. ¿Abrir la "
+"página de descargas?"
+msgstr ""
+
+msgid "Esta versión no publica paquete para tu sistema; no se instalará."
+msgstr ""

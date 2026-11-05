@@ -25,16 +25,12 @@ haga perder el foco.
   quieres, un panel de detalles para leer el contenido con las flechas.
 - **Listas que se actualizan solas sin moverte el foco**: lo nuevo aparece en su sitio y el lector
   no te vuelve a leer nada. Las redes que lo admiten funcionan en **tiempo real**.
-- **Botonera de acciones** (opcional, una casilla por red en Preferencias, como en Windows): una fila de botones bajo la lista con
-las acciones más usadas del elemento enfocado (Responder, Me gusta, Impulsar, Conversación, Marcar leído, Voto +...) cuyas
-etiquetas reflejan el estado. Se llega con Tab desde la lista, Izquierda y Derecha pasan de un botón a otro, y «Más acciones…»
-abre el menú completo. En la bandeja actúa sobre la red de origen de cada publicación.
-
-**Reordenar el árbol:** con el foco en el árbol, Ctrl+Arriba y Ctrl+Abajo mueven el elemento elegido: los servicios, las cuentas,
-los buffers de cada red (el orden vale para todas sus cuentas), los buffers fijos de RSS, las categorías y los feeds (los feeds
-fijados siempre van arriba) y los buffers abiertos en la sesión (menos las conversaciones, cronologías y búsquedas de Mastodon, Bluesky y W Social, que se conservan entre sesiones y se reordenan dentro de su grupo). En X se mueven también las listas, las búsquedas, las cronologías y las conversaciones guardadas, y en Reddit los subreddits, las búsquedas y los demás buffers guardados; siempre dentro de su grupo. El orden se guarda en la misma configuración que usa Windows.
-
-**Bandeja de entrada unificada**: un único buffer con lo importante de varias redes.
+- **Botonera de acciones** (opcional, una casilla por red en Preferencias): una fila de botones bajo
+  la lista con las acciones más usadas del elemento enfocado (Responder, Me gusta, Impulsar,
+  Conversación, Marcar leído...), cuyas etiquetas reflejan el estado. Se llega con Tab desde la lista.
+- **Reordenar el árbol**: con el foco en el árbol, Ctrl+Arriba y Ctrl+Abajo mueven servicios,
+  cuentas, buffers, carpetas y feeds.
+- **Bandeja de entrada unificada**: un único buffer con lo importante de varias redes.
 - **Cada red, completa**:
   - Mastodon: publicar (con encuestas, avisos de contenido, adjuntos con descripción, programado,
     hilos), citas, filtros del servidor, listas, hashtags, notificaciones agrupadas, borradores,
@@ -60,7 +56,8 @@ fijados siempre van arriba) y los buffers abiertos en la sesión (menos las conv
 
 ### Requisitos
 
-- Windows 10 u 11 de 64 bits.
+- Windows 10 u 11 de 64 bits, o un escritorio Linux con GTK 4 (ver
+  [En Linux](#en-linux-escritorio-gtk-4-con-orca)).
 - Un lector de pantalla (NVDA o JAWS) si lo necesitas. La aplicación también se puede usar sin él.
 
 ### Descargar e instalar
@@ -70,6 +67,9 @@ fijados siempre van arriba) y los buffers abiertos en la sesión (menos las conv
 2. Descomprímelo en la carpeta que quieras (por ejemplo, `C:\SocialRSS`). No necesita
    instalación ni permisos de administrador: es portable.
 3. Ejecuta `SocialRSS.exe`.
+
+En Linux se descarga `SocialRSS_vX.Y.Z_linux.tar.gz` de la misma página; los pasos están en
+[En Linux](#en-linux-escritorio-gtk-4-con-orca).
 
 Tus datos (cuentas, configuración, base de datos) se guardan en la carpeta `data`, junto al
 ejecutable. Las contraseñas y los tokens se guardan cifrados y ligados a tu equipo.
@@ -126,6 +126,7 @@ conversaciones, cronologías de usuario, perfil (seguir, silenciar, bloquear), b
 listas (crear y gestionar sus miembros), mensajes directos, palabras silenciadas, moderación de
 contenido, servicios de etiquetado, denuncias, contraseñas de aplicación y tiempo real, además de
 traducir, resumir y describir imágenes con IA, e hilos largos (Ctrl+Mayús+N, públicos o por mensaje directo). También en Bluesky y W Social: tendencias (Intro busca el tema), paquetes de inicio (ver, crear y borrar), buscar cuentas, grupos de chat (crear, entrar con un enlace, añadir y expulsar miembros, renombrar, enlace de invitación, solicitudes de entrada y salir), la salida pendiente de las dos redes, y en Bluesky las solicitudes de mensajes, las cuentas a cuya actividad sigues, las cuentas similares, los seguidores en común y los feeds del autor.
+
 **W Social**: alta con usuario y contraseña de aplicación (con «Comprobar el servidor» para ver dónde vive la cuenta
 antes de enviar nada, y «Volver a autorizar»), Inicio, Notificaciones, Menciones, Mis publicaciones, Me gusta, Marcadores y
 mensajes directos; publicar con imágenes o vídeo, responder (con control de quién puede responder), citar, me gusta,
@@ -136,11 +137,13 @@ mensajes nuevos. Comparte las teclas de Mastodon y Bluesky. Los hilos largos se 
 Mastodon. También: borradores del servidor, salida pendiente (reintentar o descartar), palabras silenciadas, preferencias de
 contenido, servicios de etiquetado, grupos de chat, paquetes de inicio y tendencias. Todavía faltan la búsqueda con filtros, la
 moderación de verificación de edad y los contactos. No se ha probado con una cuenta real de W Social.
+
 **Telegram** (necesita `kurigram`, ver más abajo): alta con teléfono, código y verificación en dos pasos
 (las credenciales `api_id` y `api_hash` se piden en my.telegram.org y se indican desde el menú Telegram);
 lista de chats y de chats sin leer, cada conversación como un buffer del árbol, enviar, responder, editar,
 borrar, reaccionar, reenviar, copiar, descargar y abrir adjuntos, reproducir notas de voz y audios, enviar
 archivos, mensajes guardados, silenciar, fijar, archivar, marcar leído, información del chat y avisos de mensajes nuevos en
+
 **tiempo real** (por voz solo de la conversación abierta y de chats privados). También: carpetas de chats (con enlaces para
 compartirlas), crear grupos, foros y canales, unirse por enlace, búsquedas (en todos los chats, en uno y de publicaciones de
 canales), chats frecuentes y canales parecidos, contenido compartido; administración de grupos y canales (miembros,
@@ -155,13 +158,15 @@ chats, cambio de número, importar contactos y más acciones sobre historias (ar
 chats de voz. En Bluesky y W Social: cuentas sugeridas y cambio de nombre de usuario; en Bluesky, la vista de las cronologías y los
 hilos y la lista de hilos silenciados y publicaciones ocultas; en W Social, estado de la cuenta, información del servidor,
 verificación de edad, estado temporal, quién puede escribirte, copia del repositorio, feeds populares y búsqueda con filtros.
+
 **IRC** (necesita `pydle`): redes con TLS, SASL y NickServ; cada red es una cuenta con los buffers Canales,
 Privados y Avisos del servidor, y cada conversación se abre como un buffer del árbol. Se escribe con Ctrl+N
 (Ctrl+R responde mencionando) y todo lo que empieza por barra es un comando (`/help` los enseña: `/me`, `/join`,
 `/mode`, `/kick`, `/whois`...). Incluye usuarios del canal con sus rangos, canales del servidor con filtro,
 tema, modos y baneos, nivel de aviso por canal, entradas y salidas ocultables, ignorados, amigos, ausente,
 consola del servidor, exportar la conversación y reconexión automática. Los mensajes llegan en **tiempo real**
-(por voz: la conversación abierta, los privados y las menciones, según el nivel de aviso). El resto de redes
+(por voz: la conversación abierta, los privados y las menciones, según el nivel de aviso).
+
 **XMPP / Jabber** (necesita `slixmpp`; `slixmpp-omemo` para cifrar): alta con JID y contraseña, cuentas con
 Conversaciones, Contactos, Grupos, Solicitudes y Archivados, y una rama propia por cada pasarela (WhatsApp, Discord...).
 Cada conversación es un buffer del árbol. Escribir, responder citando, corregir tu último mensaje, retirarlo,
@@ -172,6 +177,7 @@ vaciar y exportar conversaciones, cifrado OMEMO con verificación de huellas, y 
 Los mensajes, la presencia y las solicitudes llegan en **tiempo real**. También: los comandos del servidor (formularios de
 administración y de bots), las pasarelas (registrarse, comandos, chat y cancelar el registro), la búsqueda de usuarios,
 editar tu ficha, cambiar la contraseña y crear o borrar cuentas en el servidor. Aún falta la grabación de notas de voz.
+
 **Matrix** (necesita `matrix-nio`; el cifrado necesita además `python-olm`, que hay que compilar con `libolm`): alta con
 usuario y contraseña, inicio de sesión por navegador (servidores con MAS/OAuth) y registro de cuentas nuevas. Cada cuenta
 tiene Salas, Mensajes directos e Invitaciones, y cada sala se abre como un buffer del árbol. Escribir, responder, editar,
@@ -189,6 +195,7 @@ cruzada y exportar e importar claves para leer el historial desde otro usuario);
 el entorno, o con el `libolm` del sistema si tu distribución lo trae. La administración del servidor Synapse (usuarios, salas, mensajes reportados, tokens de registro, federación,
 mantenimiento de archivos y estadísticas) se activa en Preferencias y exige una cuenta administradora. Aún falta la
 grabación de notas de voz.
+
 **X (Twitter)** (cliente no oficial, necesita `twifork`, que se importa como `twikit`; riesgo real de limitación o bloqueo
 de la cuenta, que el alta te recuerda): alta leyendo las cookies del navegador (en Linux funciona Firefox), pegándolas
 (`auth_token` y `ct0`) o con usuario y contraseña, y reimportarlas si la sesión caduca (se intenta sola una vez).
@@ -200,6 +207,7 @@ hecho retweet, buscar publicaciones y cuentas, tendencias (también de un país 
 directos con tiempo real (por streaming, con un sonido cuando la otra persona escribe). **X no se actualiza solo**: se descarga al entrar en un buffer vacío y con
 Ctrl+Mayús+R; la actualización automática es opcional en Preferencias. Gestión de tus listas (crear, editar, borrar y sus
 miembros) y de comunidades (buscarlas, abrirlas como buffer, unirse y salir).
+
 **Reddit** (necesita `praw`): el alta pide el identificador de una aplicación que registras tú en reddit.com/prefs/apps
 (tipo «installed app», redirección `http://localhost:8080`) y abre el navegador para autorizar; la sesión se guarda cifrada. Cada
 cuenta tiene Página principal, Populares, r/all, Bandeja de entrada (con sin leer, menciones y enviados), Mis publicaciones,
@@ -209,6 +217,7 @@ anidados, donde se puede responder, votar, guardar, editar, borrar y traducir. A
 galería o encuesta con etiqueta, +18 y spoiler, crosspost, votos, guardados, ocultar, perfiles (seguir, bloquear, mensaje), mensajes
 privados, buscar publicaciones, subreddits y usuarios, y cambiar el orden de un buffer. La lectura de cada elemento usa tus
 plantillas de lectura. El menú Reddit abre la wiki de un subreddit (leer, editar si tienes permiso, crear páginas y ver revisiones) y el modmail (bandejas, responder con nota interna, archivar y crear conversaciones), los hilos en directo (leer y publicar novedades), las colecciones de un subreddit y los borradores de Reddit. Etiquetas (flair), emojis y barra lateral de un subreddit. Para moderadores: las colas (cola de moderación, reportados, spam, sin moderar y editados) con aprobar, eliminar, distinguir, bloquear y mensaje de eliminación, «Moderar…» sobre cualquier publicación o comentario, los usuarios del subreddit (baneados, silenciados, contribuidores y moderadores con sus permisos), los motivos de eliminación, la configuración y el registro de moderación.
+
 **PeerTube** (necesita `httpx`): el alta pide la instancia, el usuario y la contraseña (y el código de doble factor si lo tienes).
 Cada cuenta tiene Vídeos recientes, Populares, Tendencias, Locales, Federados, Suscripciones, Directos, Notificaciones, la
 rama Mi biblioteca (Mis vídeos, Mis canales, Listas de reproducción, Ver más tarde, Me gusta e Historial) y las búsquedas
@@ -256,25 +265,68 @@ anteriores; y en Ayuda, el manual, el documento de teclas, el changelog, la prue
 Ctrl+Alt+Mayús+A la cancela. En Linux se graba con GStreamer (en Windows sigue siendo BASS), con el micrófono y el volumen
 que se eligen en Preferencias, y se codifica a Opus con ffmpeg o, si no lo hay, con el propio GStreamer (`opusenc`).
 
-### Qué necesitas
+### Instalar
 
-Paquetes del sistema (nombres de Arch; en Debian/Ubuntu y Fedora son los equivalentes):
+1. Instala los paquetes del sistema (GTK 4.14 o posterior, PyGObject, GStreamer y Python 3.12 o
+   posterior). Por distribución:
 
-- `gtk4`, `python-gobject` (PyGObject) y `at-spi2-core` (accesibilidad, Orca).
-- `gstreamer`, `gst-plugins-base`, `gst-plugins-good`, `gst-plugins-bad`, `gst-plugins-ugly`
-  (reproductor y sonidos; los dos últimos dan los códecs de audio habituales).
-- Opcionales: `libsecret` (guarda la clave de cifrado en el llavero del escritorio), `speech-dispatcher`
-  (avisos por voz si no usas Orca), `ffmpeg`.
-- Python 3.12 o superior.
+   - Debian 13, Ubuntu 24.04 o posteriores:
+
+     ```bash
+     sudo apt install python3 python3-venv python3-gi gir1.2-gtk-4.0 gir1.2-gstreamer-1.0 \
+       gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
+       gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-pulseaudio at-spi2-core \
+       libsecret-tools speech-dispatcher ffmpeg
+     ```
+
+   - Fedora:
+
+     ```bash
+     sudo dnf install python3 python3-gobject gtk4 gstreamer1-plugins-base gstreamer1-plugins-good \
+       gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free at-spi2-core libsecret speech-dispatcher
+     ```
+
+   - Arch:
+
+     ```bash
+     sudo pacman -S python python-gobject gtk4 gstreamer gst-plugins-base gst-plugins-good \
+       gst-plugins-bad gst-plugins-ugly gst-libav at-spi2-core libsecret speech-dispatcher ffmpeg
+     ```
+
+   `libsecret` guarda la clave de cifrado en el llavero del escritorio (si no está, va a un archivo
+   que solo puede leer tu usuario), `speech-dispatcher` da avisos por voz si no usas Orca y `ffmpeg`
+   convierte las notas de voz (si falta, se usa GStreamer).
+
+2. Descarga `SocialRSS_vX.Y.Z_linux.tar.gz` de
+   [Releases](https://github.com/hxebolax/SocialRSS/releases/latest), descomprímelo donde quieras e
+   instala las dependencias de Python:
+
+   ```bash
+   tar xzf SocialRSS_vX.Y.Z_linux.tar.gz
+   cd SocialRSS
+   ./instalar.sh
+   ```
+
+   `instalar.sh` comprueba los paquetes del sistema (y dice cuáles faltan), crea el entorno `.venv`
+   dentro de la carpeta, instala lo de `requirements-linux.txt`, y añade la orden `socialrss` (en
+   `~/.local/bin`) y la entrada del menú de aplicaciones. No pide permisos de administrador.
+
+3. Arranca con `socialrss`, desde el menú de aplicaciones o con `./scripts/socialrss`.
+
+Tus datos viven en la carpeta `data`, junto al programa, igual que en Windows. Para actualizar,
+descomprime la versión nueva encima de la anterior (tus datos no se tocan) y vuelve a ejecutar
+`./instalar.sh`. La aplicación avisa cuando hay versión nueva y abre la página de descargas, pero no
+se actualiza sola.
+
+Desde el código fuente también funciona sin instalador:
 
 ```bash
-python -m venv --system-site-packages .venv   # --system-site-packages: para ver PyGObject
+python3 -m venv --system-site-packages .venv   # --system-site-packages: para ver PyGObject
 .venv/bin/pip install -r requirements-linux.txt
 scripts/socialrss                              # o: python main.py
 ```
 
 En Linux `main.py` abre la interfaz GTK 4 por sí solo (`SOCIALRSS_UI=wx` fuerza wxPython).
-Tus datos viven en la carpeta `data`, junto al código, igual que en Windows.
 
 ### Cómo se usa con Orca
 
@@ -398,13 +450,15 @@ Los detalles están en [scripts/README.md](scripts/README.md).
 | `main.py` | Punto de entrada. |
 | `app/core/` | Infraestructura: rutas, configuración, base de datos SQLite, secretos cifrados, voz, traducciones, tareas en segundo plano, registro. |
 | `app/services/` | Un paquete por red o servicio (mastodon, bluesky, wsocial, rss, telegram, x, irc, matrix, xmpp, reddit, peertube), más audio, reproductor, IA, traducción y actualizador. |
-| `app/ui/` | Interfaz wxPython: ventana principal (dividida en mixins), diálogos y controles accesibles. |
+| `app/ui/` | Interfaz wxPython (Windows): ventana principal (dividida en mixins), diálogos y controles accesibles. |
+| `app/gtk/` | Interfaz GTK 4 (Linux, accesible con Orca). Usa el mismo núcleo y los mismos servicios. |
 | `data/` | Carpeta de ejecución. En el repositorio solo va lo que se empaqueta: `bin/ffmpeg.exe`, `docs/` (changelog, manual y teclas), `locales/`, `plugins/` y `sounds/default/`. El resto (base de datos, configuración, sesiones, registros...) lo crea la aplicación al arrancar y nunca se sube. |
 | `__pip__/` | Wheel de `basskit`, la librería de audio propia del autor. |
 | `nvda_addon/` | Código del complemento de NVDA que se empaqueta con la aplicación. |
 | `tests/` | Pruebas con pytest. |
 | `tools/` | Utilidades de compilación: complemento de NVDA, `python-olm`, firma del manifiesto, traducciones, normalización de saltos de línea. |
-| `scripts/` | Herramientas de traducción (plantilla, editor accesible, compilación). |
+| `scripts/` | Herramientas de traducción (plantilla, editor accesible, compilación) y `socialrss`, el lanzador de Linux. |
+| `instalar.sh`, `socialrss.desktop`, `requirements-linux.txt` | Instalación en Linux. `tools/empaquetar_linux.py` genera el paquete de la release. |
 | `setup.py`, `comprimir_build.py`, `build.bat` | Compilación con cx_Freeze, empaquetado y menú de administración. |
 | `MANUAL.md`, `TECLAS.md` | Manual de usuario y lista de teclas (se empaquetan en `data/docs`). |
 

@@ -122,15 +122,24 @@ def en_ui_o_ahora(fn: Callable, *args, **kwargs):
 
 
 def mostrar_aviso_dialogo(texto: str, titulo: str = None):
-    """Muestra un mensaje informativo en un cuadro de diálogo (si la interfaz sabe hacerlo)."""
+    """Muestra un mensaje informativo en un cuadro de diálogo (si la interfaz sabe hacerlo). Desde el hilo de
+    la UI sale en el acto, como hacía la versión de Windows antes de esta capa."""
     if _interfaz.mostrar_aviso:
-        llamar_en_ui(_interfaz.mostrar_aviso, texto, titulo)
+        en_ui_o_ahora(_sin_fallar, _interfaz.mostrar_aviso, texto, titulo)
 
 
 def mostrar_toast(texto: str, titulo: str = None):
     """Notificación del sistema (centro de notificaciones) si la interfaz la ofrece."""
     if _interfaz.mostrar_toast:
-        llamar_en_ui(_interfaz.mostrar_toast, texto, titulo)
+        en_ui_o_ahora(_sin_fallar, _interfaz.mostrar_toast, texto, titulo)
+
+
+def _sin_fallar(fn: Callable, *args):
+    """Un aviso que no se puede mostrar no debe romper a quien avisa."""
+    try:
+        fn(*args)
+    except Exception as e:
+        log.debug(f"No se pudo mostrar el aviso: {e}")
 
 
 def copiar_texto(texto: str) -> bool:

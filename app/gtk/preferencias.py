@@ -180,6 +180,9 @@ class DialogoPreferencias(Gtk.Window):
         p.campo(_("_Sonidos de la aplicación:"), self.sonidos)
         self.voz = p.interruptor(config.get("accessibility", "speech_announcements", True))
         p.campo(_("_Avisos al lector de pantalla:"), self.voz)
+        self.buscar_act = p.interruptor(config.get("general", "check_updates_on_start", True))
+        p.campo(_("Buscar act_ualizaciones al arrancar:"), self.buscar_act,
+                _("Si hay una versión nueva, se ofrece descargarla e instalarla; la aplicación se reinicia sola."))
         self.completo = p.interruptor(config.get("rss", "fulltext_auto", True))
         p.campo(_("Descargar el artículo completo al a_brirlo:"), self.completo)
         self.solo_no_leidos = p.interruptor(config.get("rss", "show_only_unread", False))
@@ -505,6 +508,7 @@ class DialogoPreferencias(Gtk.Window):
     def aceptar(self):
         config.set("accessibility", "enable_sounds", self.sonidos.get_active())
         config.set("accessibility", "speech_announcements", self.voz.get_active())
+        config.set("general", "check_updates_on_start", self.buscar_act.get_active())
         config.set("rss", "fulltext_auto", self.completo.get_active())
         config.set("rss", "show_only_unread", self.solo_no_leidos.get_active())
         for clave, _nombre in REDES_BOTONERA:
