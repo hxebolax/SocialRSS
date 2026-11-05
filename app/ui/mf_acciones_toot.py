@@ -215,14 +215,51 @@ class _Mf_acciones_toot:
         finally:
             if guardado is not None:
                 self._restaurar_contexto_bandeja(guardado)
-        self.sizer_botonera.Clear(True)
-        for etiqueta, accion in botones:
-            fn = self._envolver_accion_bandeja(accion) if es_bandeja else accion
-            b = wx.Button(self.panel_botonera, label=etiqueta)
-            b.Bind(wx.EVT_BUTTON, lambda e, f=fn: f())
-            self.sizer_botonera.Add(b, 0, wx.ALL, 2)
-        self.panel_botonera.Show(bool(botones))
-        self.panel_der.Layout()
+        # REUTILIZAR los botones (2026-11-03): antes se destruían y se creaban de nuevo en CADA flecha
+        # y se recolocaba el panel entero. Cada botón es una ventana nativa: crearla y destruirla manda
+        # una ráfaga de eventos de accesibilidad a NVDA, que se atascaba procesándolos (la navegación
+        # por la lista y hasta los menús iban "con lag"). Ahora solo se cambian las etiquetas que
+        # difieren, se añaden o quitan los botones sobrantes y se recoloca solo si algo cambió.
+        btns = getattr(self, "_botonera_btns", None)
+        if btns is None:
+            btns = self._botonera_btns = []
+            self._botonera_etiquetas = []
+        cambio = False
+        while len(btns) > len(botones):
+            b = btns.pop()
+            self._botonera_etiquetas.pop()
+            self.sizer_botonera.Detach(b)
+            b.Destroy()
+            cambio = True
+        acciones = []
+        for i, (etiqueta, accion) in enumerate(botones):
+            acciones.append(self._envolver_accion_bandeja(accion) if es_bandeja else accion)
+            if i < len(btns):
+                if self._botonera_etiquetas[i] != etiqueta:
+                    btns[i].SetLabel(etiqueta)
+                    self._botonera_etiquetas[i] = etiqueta
+                    cambio = True
+            else:
+                b = wx.Button(self.panel_botonera, label=etiqueta)
+                b.Bind(wx.EVT_BUTTON, lambda e, i=i: self._pulsar_botonera(i))
+                self.sizer_botonera.Add(b, 0, wx.ALL, 2)
+                btns.append(b)
+                self._botonera_etiquetas.append(etiqueta)
+                cambio = True
+        self._botonera_acciones = acciones
+        visible = bool(botones)
+        if self.panel_botonera.IsShown() != visible:
+            self.panel_botonera.Show(visible)
+            cambio = True
+        if cambio:
+            self.panel_der.Layout()
+
+    def _pulsar_botonera(self, i):
+        """Clic en el botón i de la botonera: ejecuta la acción que tiene AHORA (la del elemento
+        enfocado), no la del elemento para el que se creó el botón."""
+        acciones = getattr(self, "_botonera_acciones", [])
+        if 0 <= i < len(acciones):
+            acciones[i]()
 
     def _precargar_relacion_debounce(self, db_id):
         """Programa, con ANTI-REBOTE (350 ms), consultar si sigues al autor del toot enfocado, para

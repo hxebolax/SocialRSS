@@ -1,1 +1,9 @@
 SocialRSS Accessible Suite. Novedades de la versión 1.0.29.
+
+CORREGIDO: LA NAVEGACIÓN IBA CON RETRASO CON LA BOTONERA ACTIVADA
+
+- Con la botonera de acciones activada, cada flecha en la lista destruía todos los botones y los
+  volvía a crear, aunque fueran los mismos. Cada botón nuevo avisaba al lector de pantalla, que se
+  quedaba atascado procesando esos avisos: moverse por la lista costaba y el retraso se notaba
+  también en los menús. Ahora los botones se reutilizan y solo cambia el texto del que cambie (por
+  ejemplo, Favorito o Quitar favorito).
