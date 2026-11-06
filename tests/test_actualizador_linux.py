@@ -157,3 +157,22 @@ def test_pkgbuild_de_arch_sigue_a_la_release(tmp_path):
     assert "pkgrel=2" in pkgbuild.read_text(encoding="utf-8")
     assert not empaquetar_linux.actualizar_pkgbuild("1.0.30", "dd" * 32, str(pkgbuild))
     assert not empaquetar_linux.actualizar_pkgbuild("1.0.30", "dd" * 32, str(tmp_path / "no_existe"))
+
+
+def test_un_paquete_del_sistema_no_se_actualiza_solo(tmp_path, monkeypatch):
+    """El lanzador del paquete de Arch pone SOCIALRSS_PAQUETE: aunque la carpeta se pudiera escribir,
+    la actualización es cosa de pacman y la app no intenta sobreescribirse."""
+    monkeypatch.setattr(upd, "ES_WINDOWS", False)
+    monkeypatch.setattr(upd, "ROOT_DIR", tmp_path)          # carpeta escribible y sin .git
+    monkeypatch.delenv("SOCIALRSS_PAQUETE", raising=False)
+    assert upd.paquete_del_sistema() == ""
+    assert upd.actualizacion_disponible_para_instalar()
+    monkeypatch.setenv("SOCIALRSS_PAQUETE", " Arch ")
+    assert upd.paquete_del_sistema() == "arch"
+    assert not upd.actualizacion_disponible_para_instalar()
+
+
+def test_el_lanzador_de_arch_avisa_de_que_es_un_paquete():
+    raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    with open(os.path.join(raiz, "packaging", "arch", "socialrss.sh"), encoding="utf-8") as f:
+        assert "export SOCIALRSS_PAQUETE=arch" in f.read()

@@ -47235,3 +47235,28 @@ msgstr ""
 
 msgid "Esta versión no publica paquete para tu sistema; no se instalará."
 msgstr "Esta versión no publica paquete para tu sistema; no se instalará."
+
+msgid ""
+"Esta copia está instalada como paquete de Arch Linux y se actualiza con "
+"pacman: descarga el paquete nuevo (.pkg.tar.zst) de la página de descargas e"
+" instálalo con sudo pacman -U, o constrúyelo con makepkg -si en la carpeta "
+"packaging/arch del repositorio."
+msgstr ""
+"Esta copia está instalada como paquete de Arch Linux y se actualiza con "
+"pacman: descarga el paquete nuevo (.pkg.tar.zst) de la página de descargas e"
+" instálalo con sudo pacman -U, o constrúyelo con makepkg -si en la carpeta "
+"packaging/arch del repositorio."
+
+msgid ""
+"Esta copia está instalada como paquete del sistema y se actualiza con el "
+"gestor de paquetes de tu distribución."
+msgstr ""
+"Esta copia está instalada como paquete del sistema y se actualiza con el "
+"gestor de paquetes de tu distribución."
+
+msgid "Hay una versión nueva: {r} (tienes la {l})."
+msgstr "Hay una versión nueva: {r} (tienes la {l})."
+
+msgid "¿Abrir la página de descargas?"
+msgstr "¿Abrir la página de descargas?"
+

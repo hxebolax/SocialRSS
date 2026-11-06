@@ -31,6 +31,8 @@ done
 
 export SOCIALRSS_DATA_DIR="$DATOS"
 export SOCIALRSS_UI=gtk
+# Avisa a la app de que la actualiza pacman: no intentará actualizarse sola.
+export SOCIALRSS_PAQUETE=arch
 export GTK_A11Y="${GTK_A11Y:-atspi}"
 # Dependencias de Python que no están en los repositorios de Arch: van dentro del paquete.
 export PYTHONPATH="$APP/lib${PYTHONPATH:+:$PYTHONPATH}"

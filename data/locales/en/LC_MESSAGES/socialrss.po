@@ -59142,6 +59142,30 @@ msgstr ""
 "This version does not publish a package for your system; it will not be "
 "installed."
 
+msgid ""
+"Esta copia está instalada como paquete de Arch Linux y se actualiza con "
+"pacman: descarga el paquete nuevo (.pkg.tar.zst) de la página de descargas e"
+" instálalo con sudo pacman -U, o constrúyelo con makepkg -si en la carpeta "
+"packaging/arch del repositorio."
+msgstr ""
+"This copy is installed as an Arch Linux package and is updated with pacman: "
+"download the new package (.pkg.tar.zst) from the downloads page and install "
+"it with sudo pacman -U, or build it with makepkg -si in the packaging/arch "
+"folder of the repository."
+
+msgid ""
+"Esta copia está instalada como paquete del sistema y se actualiza con el "
+"gestor de paquetes de tu distribución."
+msgstr ""
+"This copy is installed as a system package and is updated with your "
+"distribution's package manager."
+
+msgid "Hay una versión nueva: {r} (tienes la {l})."
+msgstr "There is a new version: {r} (you have {l})."
+
+msgid "¿Abrir la página de descargas?"
+msgstr "Open the downloads page?"
+
 #~ msgid "&Chats (Espacio marca o desmarca; puedes elegir varios):"
 #~ msgstr "&Chats (Mark or uncheck space; you can choose several):"
 

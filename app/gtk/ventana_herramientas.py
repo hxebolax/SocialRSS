@@ -336,8 +336,10 @@ class _HerramientasMixin:
         task_manager.start_task(lambda ctx: upd.obtener_info_remota(), callback=_fin, pass_context=True)
 
     def ofrecer_actualizacion(self, remota: str):
-        """Diálogo de instalación automática; en un clon de git (que no se actualiza solo), la página de descargas."""
+        """Diálogo de instalación automática; en un clon de git o un paquete del sistema (que no se
+        actualizan solos), cómo ponerlo al día y la página de descargas."""
         from app.services.updater import update_service as upd
+        from .dialogo_actualizacion import como_actualizar_a_mano
         if upd.actualizacion_disponible_para_instalar():
             from .dialogo_actualizacion import DialogoActualizacion
             DialogoActualizacion(self, remota).present()
@@ -347,7 +349,12 @@ class _HerramientasMixin:
         def _abrir():
             from app.core.privacy import abrir_url
             abrir_url("https://github.com/hxebolax/SocialRSS/releases")
-        confirmar_async(self, _("Hay una versión nueva: {r} (tienes la {l}). Esta copia es un clon del repositorio y no se "
-                                "actualiza sola: ponla al día con git pull. ¿Abrir la página de descargas?").format(
-            r=remota, l=upd.version_local()), _abrir, titulo=_("Actualización disponible"),
+        if upd.paquete_del_sistema():
+            texto = _("Hay una versión nueva: {r} (tienes la {l}).").format(r=remota, l=upd.version_local()) + \
+                " " + como_actualizar_a_mano() + " " + _("¿Abrir la página de descargas?")
+        else:
+            texto = _("Hay una versión nueva: {r} (tienes la {l}). Esta copia es un clon del repositorio y no se "
+                      "actualiza sola: ponla al día con git pull. ¿Abrir la página de descargas?").format(
+                r=remota, l=upd.version_local())
+        confirmar_async(self, texto, _abrir, titulo=_("Actualización disponible"),
             etiqueta_si=_("Abrir la página"))
