@@ -30,6 +30,22 @@ def _tam(n: int) -> str:
     return f"{n / (1024 * 1024):.1f} MB"
 
 
+def como_actualizar_a_mano() -> str:
+    """Explica cómo poner al día esta copia cuando no puede actualizarse sola: un paquete del sistema
+    se actualiza con su gestor de paquetes y un clon del repositorio con git pull."""
+    paquete = upd.paquete_del_sistema()
+    if paquete == "arch":
+        return _("Esta copia está instalada como paquete de Arch Linux y se actualiza con pacman: descarga "
+                 "el paquete nuevo (.pkg.tar.zst) de la página de descargas e instálalo con sudo pacman -U, "
+                 "o constrúyelo con makepkg -si en la carpeta packaging/arch del repositorio.")
+    if paquete:
+        return _("Esta copia está instalada como paquete del sistema y se actualiza con el gestor de "
+                 "paquetes de tu distribución.")
+    return _("Esta copia de la aplicación es un clon del repositorio o está en una carpeta sin permiso de "
+             "escritura, así que no se actualiza sola. Ponla al día con git pull o descarga el paquete de "
+             "Linux desde la página de descargas.")
+
+
 def _informar(padre, titulo: str, texto: str, al_cerrar=None):
     """Mensaje con un único botón Aceptar; `al_cerrar()` se llama al cerrarlo."""
     dlg = Gtk.AlertDialog()
@@ -103,10 +119,7 @@ class DialogoActualizacion(DialogoBase):
         if self._trabajando:
             return
         if not upd.actualizacion_disponible_para_instalar():
-            _informar(self, _("Instalación manual"), _(
-                "Esta copia de la aplicación es un clon del repositorio o está en una carpeta sin permiso de "
-                "escritura, así que no se actualiza sola. Ponla al día con git pull o descarga el paquete de "
-                "Linux desde la página de descargas."))
+            _informar(self, _("Instalación manual"), como_actualizar_a_mano())
             return
         self._trabajando = True
         self._cancelado = False

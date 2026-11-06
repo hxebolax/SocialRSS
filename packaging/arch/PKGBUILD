@@ -36,7 +36,7 @@ options=('!strip' '!debug')
 source=("https://github.com/hxebolax/SocialRSS/releases/download/v${pkgver}/SocialRSS_v${pkgver}_linux.tar.gz"
         'socialrss.sh')
 sha256sums=('8792d26e571302ce95c6f303fd63ccd4dcc8aa37f93df43c815e8241fd21b2fd'
-            '6d5a0b36168495293ddd3602092a60175459bb4e6a0b05c606d2ea51a48be50f')
+            '8492c7e46ee0a249516058742b8cefd20b99c9d7605f50e692f3692129cf402c')
 
 build() {
     cd SocialRSS

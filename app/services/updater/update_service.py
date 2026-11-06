@@ -214,13 +214,22 @@ def url_del_zip_github(version):
     return f"{URL_GITHUB_RELEASES}/download/v{version}/{nombre_paquete(version)}"
 
 
+def paquete_del_sistema() -> str:
+    """Distribución cuyo paquete instaló esta copia ("arch"...), o "" si no viene de un paquete del
+    sistema. Lo indica el lanzador del paquete con la variable SOCIALRSS_PAQUETE."""
+    return os.environ.get("SOCIALRSS_PAQUETE", "").strip().lower()
+
+
 def actualizacion_disponible_para_instalar():
     """En Windows la instalación automática SOLO tiene sentido en la versión compilada (.exe): en
     código fuente se puede comprobar y avisar, pero no sobreescribir. En Linux la aplicación ES el
     código: se actualiza la instalación hecha desde el paquete de la release, pero no un clon de git
-    (ese se pone al día con git pull) ni una carpeta en la que no se puede escribir."""
+    (ese se pone al día con git pull), ni un paquete del sistema (lo actualiza su gestor de paquetes),
+    ni una carpeta en la que no se puede escribir."""
     if ES_WINDOWS:
         return bool(IS_FROZEN)
+    if paquete_del_sistema():
+        return False
     return not os.path.exists(os.path.join(str(ROOT_DIR), ".git")) and os.access(str(ROOT_DIR), os.W_OK)
 
 
