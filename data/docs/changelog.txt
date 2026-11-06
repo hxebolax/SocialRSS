@@ -1,11 +1,1 @@
-SocialRSS Accessible Suite. Novedades de la versión 1.0.30.
-
-NUEVO: PAQUETE PARA ARCH LINUX
-
-- En Arch Linux la aplicación se puede instalar como paquete del sistema: cada release trae
-  socialrss-X.Y.Z-N-x86_64.pkg.tar.zst, que se instala con sudo pacman -U, y el repositorio incluye
-  el PKGBUILD en packaging/arch para construirlo con makepkg -si.
-- El programa queda en /usr/share/socialrss con sus bibliotecas de Python dentro y se arranca con la
-  orden socialrss o desde el menú de aplicaciones. Tus datos van a ~/.local/share/socialrss.
-- Instalada así, la aplicación no se actualiza sola: se actualiza con el paquete de cada versión.
-  Cuando sale una nueva, el aviso explica cómo instalarla con pacman en vez de hablar de git.
+SocialRSS Accessible Suite. Novedades de la versión 1.0.31.
