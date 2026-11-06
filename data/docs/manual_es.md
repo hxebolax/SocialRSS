@@ -1238,7 +1238,8 @@ ventana, la voz (Orca o speech-dispatcher) y el audio (GStreamer en lugar de BAS
 `sudo pacman -U socialrss-X.Y.Z-N-x86_64.pkg.tar.zst` (está en cada release) o construirlo con el
 `PKGBUILD` de la carpeta `packaging/arch` del repositorio (`makepkg -si`). El programa queda en
 `/usr/share/socialrss` y tus datos en `~/.local/share/socialrss`. Así instalada no se actualiza sola:
-se actualiza con el paquete de cada versión.
+se actualiza con el paquete de cada versión, y el aviso de versión nueva te explica cómo instalarlo con
+pacman.
 
 **Moverte:** la ventana tiene tres paneles, Navegación (árbol), la lista y el contenido. Tab y
 Mayús+Tab pasan de uno a otro, y Alt+1, Alt+2 y Alt+3 saltan directos. Las acciones se anuncian a Orca

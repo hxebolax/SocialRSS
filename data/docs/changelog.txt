@@ -8,3 +8,4 @@ NUEVO: PAQUETE PARA ARCH LINUX
 - El programa queda en /usr/share/socialrss con sus bibliotecas de Python dentro y se arranca con la
   orden socialrss o desde el menú de aplicaciones. Tus datos van a ~/.local/share/socialrss.
 - Instalada así, la aplicación no se actualiza sola: se actualiza con el paquete de cada versión.
+  Cuando sale una nueva, el aviso explica cómo instalarla con pacman en vez de hablar de git.

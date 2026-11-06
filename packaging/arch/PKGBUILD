@@ -13,7 +13,7 @@
 # Uso: makepkg -si
 
 pkgname=socialrss
-pkgver=1.0.29
+pkgver=1.0.30
 pkgrel=1
 pkgdesc="Redes sociales, chats y noticias en una sola ventana accesible (Mastodon, Bluesky, Telegram, RSS...)"
 arch=('x86_64' 'aarch64')
@@ -35,7 +35,7 @@ optdepends=('orca: lector de pantalla'
 options=('!strip' '!debug')
 source=("https://github.com/hxebolax/SocialRSS/releases/download/v${pkgver}/SocialRSS_v${pkgver}_linux.tar.gz"
         'socialrss.sh')
-sha256sums=('8792d26e571302ce95c6f303fd63ccd4dcc8aa37f93df43c815e8241fd21b2fd'
+sha256sums=('e697783dcd337f4441a5c553bfcb5d989a47ed906105bbb4c8a67984d0648d40'
             '8492c7e46ee0a249516058742b8cefd20b99c9d7605f50e692f3692129cf402c')
 
 build() {
